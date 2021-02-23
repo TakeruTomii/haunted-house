@@ -1,0 +1,28 @@
+<div id="bg-living-room" class="background">
+  <!-- 部屋移動 -->
+  <div class="move-vec move-left"  (click)="onMove('workShop')">
+    <img src="../../../assets/img/move_left.png" alt="Work Shop">
+    <p>Work Shop</p>
+  </div>
+
+  <div class="move-vec move-right"  (click)="onMove('teaRoom')">
+    <img src="../../../assets/img/move_right.png" alt="Tea Room">
+    <p>Tea Room</p>
+  </div>
+
+  <div class="move-vec move-up"  (click)="onMove('casino')">
+    <img src="../../../assets/img/move_up.png" alt="Casino">
+    <p>Casino</p>
+  </div>
+
+  <!-- キャラクター -->
+  <div id="nurarihyon" class="charactors" (click)="serifModal.show()">
+    <img src="../../../assets/img/Nurarihyon_neutral.png" alt="nurarihyon">
+  </div>
+
+  <!-- セリフ -->
+  <div bsModal  #serifModal="bs-modal" class="modal" tabindex="-1" role="dialog" (onShow)="openSerifs()">
+    <app-serif [modal]="serifModal" [room]="'LivingRoom'" [clicked]="'Nurarihyon'"></app-serif>
+  </div>
+
+</div>

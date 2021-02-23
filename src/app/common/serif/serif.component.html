@@ -1,0 +1,17 @@
+  <div id="serif-container">
+    <div id="serif-content" class="d-flex flex-column">
+      <!-- キャラクター表示 -->
+      <div id="character-box" class="d-flex justify-content-center">
+        <img [src]="img_chara" alt="charactor">
+      </div>
+
+      <!-- セリフのエリア -->
+      <div id="serif-box">
+        <div id="name-area">{{name_chara}}</div>
+        <div id="serif-area" (click)="onTalk()">
+          {{current_serif}}
+        </div>
+      </div>
+
+    </div>
+  </div>

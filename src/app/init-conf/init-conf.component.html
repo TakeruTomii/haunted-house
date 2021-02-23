@@ -1,0 +1,35 @@
+<div class="background">
+  <div class="conf-modal">
+  <!-- TODO:多言語対応時に文言切り替え -->
+  <p>Configure before entering.</p>
+  <!-- コンフィグ -->
+  <form #confForm="ngForm" (ngSubmit)="configure()">
+    <div class="lang">
+      <label>Langage:</label><br>
+      <ng-container *ngFor="let la of langs">
+        <label>
+          <input type="radio" name="langs"
+          [(ngModel)]="lang_selected"
+          [value]="la.value">
+          {{la.label}}
+        </label><br>
+      </ng-container>
+    </div>
+    <div class="sound">
+      <label>Sound:</label><br>
+      <ng-container *ngFor="let s of sounds">
+        <label>
+          <input type="radio" name="sounds"
+          [(ngModel)]="sound_selected"
+          [value]="s.value">
+          {{s.label}}
+        </label><br>
+      </ng-container>
+    </div>
+    <div>
+      <input type="submit" value="OK">
+    </div>
+  </form>
+
+  </div>
+</div>

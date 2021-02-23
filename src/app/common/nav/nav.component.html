@@ -1,0 +1,61 @@
+
+<nav class="navbar-primary d-flex justify-content-between">
+  <!-- サイトマップ -->
+  <div class="btn-group" dropdown>
+    <button id="sitemap" dropdownToggle type="button" class="btn dropdown-toggle"
+            aria-controls="sitemap-dropdown">
+      <img src="../../../assets/img/icon_sitemap.png" width="30" height="30" alt="">
+      Site Map
+    </button>
+    <ul id="sitemap-dropdown" *dropdownMenu class="dropdown-menu nav-dropdown"
+        role="menu" aria-labelledby="sitemap">
+      <li class="page-category">Creator</li>
+      <li role="menuitem"><a class="dropdown-item" href="#">About Me</a></li>
+      <li role="menuitem"><a class="dropdown-item" href="#">Inquiry</a></li>
+      <li class="divider dropdown-divider"></li>
+
+      <li class="page-category">Site</li>
+      <li role="menuitem"><a class="dropdown-item" href="#">Comcept</a></li>
+      <li role="menuitem"><a class="dropdown-item" href="#">Character List</a></li>
+      <li class="divider dropdown-divider"></li>
+
+      <li class="page-category">Works</li>
+      <li role="menuitem"><a class="dropdown-item" href="#">Blog</a></li>
+      <li role="menuitem"><a class="dropdown-item" href="#">Services</a></li>
+      <li role="menuitem"><a class="dropdown-item" href="#">Mini Games</a></li>
+    </ul>
+  </div>
+  <!-- ロゴ -->
+  <div>
+    <a class="navbar-brand" href="home">
+      Haunted House
+      <!-- TODO:そのうち画像に差し替え -->
+    </a>
+  </div>
+
+  <!-- コンフィグ -->
+  <div class="btn-group" dropdown>
+    <button id="sitemap" dropdownToggle type="button" class="btn dropdown-toggle"
+            aria-controls="sitemap-dropdown">
+      <img src="../../../assets/img/icon_config.png" width="30" height="30" alt="">
+      Config
+    </button>
+    <ul id="sitemap-dropdown" *dropdownMenu class="dropdown-menu dropdown-menu-right nav-dropdown"
+        role="menu" aria-labelledby="sitemap">
+      <li class="conf-category">Sound</li>
+      <li role="menuitem">
+        <!-- サウンド設定 -->
+        <div class="sound">
+          <ng-container *ngFor="let s of sounds">
+            <label>
+              <input type="radio" name="sounds"
+              [(ngModel)]="sound_selected"
+              [value]="s.value">
+              {{s.label}}
+            </label><br>
+          </ng-container>
+        </div>
+      </li>
+    </ul>
+  </div>
+</nav>

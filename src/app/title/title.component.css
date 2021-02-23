@@ -1,0 +1,14 @@
+#bg-title {
+  background-image: url(../../assets/img/obakeyashiki.png);
+}
+
+/* TODO:BootStrapで改修 */
+#enter {
+  position:fixed;
+  width:5em;
+  height:2em;
+  top:80vh;
+  left:50vw;
+  transform: translate(-50%, -50%);
+  font-size: xx-large;
+}

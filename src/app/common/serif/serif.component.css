@@ -1,0 +1,44 @@
+/* キャラクター */
+#serif-container {
+  margin: 0 5vw;
+  height: 100vh;
+}
+
+#serif-content {
+  height: 100vh;
+}
+
+#character-box {
+  height:65%;
+}
+
+
+#character-box img {
+  width: auto;
+  height: 120%;
+}
+
+
+/* セリフ */
+#serif-box {
+  height: 30%;
+}
+
+#name-area {
+  width: min-content;
+  height: 2em;
+  color: white;
+  border:outset red 5px;
+  background: linear-gradient(to top right, red, black);
+  font-size: x-large;
+}
+
+#serif-area {
+  width: 100%;
+  height: 8em;
+  border:inset red 5px;
+  color: white;
+  background: linear-gradient(to top right, red, black);
+  font-size: x-large;
+  overflow-y: auto;
+}

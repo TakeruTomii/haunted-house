@@ -1,0 +1,18 @@
+/* Application-wide Styles */
+#loading-wanyudo {
+  width: 100vw;
+  height: 80vh;
+  text-align: center;
+  vertical-align: center;
+}
+
+#loading-wanyudo img {
+  width: 15em;
+  height: 15em;
+}
+
+#loading-wanyudo h1 {
+  color: #369;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 250%;
+}

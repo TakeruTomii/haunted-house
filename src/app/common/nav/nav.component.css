@@ -1,0 +1,41 @@
+nav {
+  background-color: indigo;
+}
+
+a {
+  color: white;
+}
+
+button {
+  color: white;
+}
+
+li {
+  text-align: center;
+}
+
+.dropdown-divider {
+  margin: 2em 0;
+}
+
+.nav-dropdown {
+  color: white;
+  width: 100vw;
+  height: 100vh;
+  background:rgba(0,0,0,0.9);
+}
+
+.page-category {
+  font: xx-large bold;
+  color: gold;
+}
+
+.conf-category {
+  font: xx-large bold;
+  color: hotpink;
+}
+
+.sound {
+  width:100%;
+  display: inline;
+}

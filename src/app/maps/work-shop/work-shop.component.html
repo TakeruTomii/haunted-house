@@ -1,0 +1,17 @@
+<div id="bg-work-shop" class="background">
+  <!-- 部屋移動 -->
+  <div class="move-vec move-right" (click)="onMove('livingRoom')">
+    <img src="../../../assets/img/move_right.png" alt="Living Room">
+    <p>Living Room</p>
+  </div>
+
+  <!-- キャラクター -->
+  <div id="ittan-momen" class="charactors" (click)="serifModal.show()">
+    <img src="../../../assets/img/Ittan-momen_neutral.png" alt="Ittan-momen">
+  </div>
+
+  <!-- セリフ -->
+  <div bsModal  #serifModal="bs-modal" class="modal" tabindex="-1" role="dialog" (onShow)="openSerifs()">
+    <app-serif [modal]="serifModal" [room]="'WorkShop'" [clicked]="'Ittan-momen'"></app-serif>
+  </div>
+</div>
