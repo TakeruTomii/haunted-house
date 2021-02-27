@@ -16,13 +16,8 @@
   </div>
 
   <!-- キャラクター -->
-  <div id="nurarihyon" class="charactors" (click)="serifModal.show()">
+  <div id="nurarihyon" class="charactors" (click)="openSerifs('LivingRoom', 'Nurarihyon')">
     <img src="../../../assets/img/Nurarihyon_neutral.png" alt="nurarihyon">
-  </div>
-
-  <!-- セリフ -->
-  <div bsModal  #serifModal="bs-modal" class="modal" tabindex="-1" role="dialog" (onShow)="openSerifs()">
-    <app-serif [modal]="serifModal" [room]="'LivingRoom'" [clicked]="'Nurarihyon'"></app-serif>
   </div>
 
 </div>

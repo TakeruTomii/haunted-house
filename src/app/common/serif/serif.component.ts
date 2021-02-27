@@ -1,4 +1,5 @@
 import { Component,  Input, OnInit } from '@angular/core';
+import { BsModalRef } from 'ngx-bootstrap/modal';
 import { fetchSerifsParam } from 'src/app/dto';
 import { HandleSerifsService } from 'src/app/service/handle-serifs/handle-serifs.service';
 
@@ -14,16 +15,18 @@ export class SerifComponent implements OnInit{
   current_serif="";
   name_chara="";
 
+  //画像フォルダ
   private img_folder : string = "../../../assets/img/";
 
   //呼び出し元画面からの引数
-  @Input() modal: any;      //呼び出したモーダル操作用
   @Input() clicked: string; //クリックしたキャラクター
   @Input() room: string;    //部屋
 
-  constructor(private serifs:HandleSerifsService) {}
+  constructor(private serifs:HandleSerifsService, public bsModalRef: BsModalRef) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.initModal();
+  }
 
   //モーダルオープン時にセリフ初期化
   initModal() : void {
@@ -46,7 +49,7 @@ export class SerifComponent implements OnInit{
 
     if (next_data == null) {
         //セリフ終了の場合モーダルを閉じる
-        this.modal.hide();
+        this.bsModalRef.hide();
     } else {
       //新しいセリフを表示
       this.setDisplayInfos(next_data);

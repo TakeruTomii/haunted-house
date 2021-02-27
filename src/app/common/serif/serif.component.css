@@ -1,3 +1,5 @@
+
+
 /* キャラクター */
 #serif-container {
   margin: 0 5vw;
@@ -25,7 +27,7 @@
 }
 
 #name-area {
-  width: min-content;
+  width: fit-content;
   height: 2em;
   color: white;
   border:outset red 5px;
