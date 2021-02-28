@@ -1,149 +1,184 @@
 [
-    {
-        "id":1,
-        "serif":"Welcome!",
-        "room":"LivingRoom",
-        "clicked":"Nurarihyon",
-        "speacker":"Nurarihyon",
-        "isStart":true,
-        "next":[
-            {
-                "option":"",
-                "nextId":"2"
-            }
-        ],
-        "transition":"",
-        "emotion":"neutral",
-        "animation":"none",
-        "extention":"png"
-    },
-    {
-        "id":2,
-        "serif":"This is test to display serifs!\n It'll be main entertainment of this site.",
-        "room":"LivingRoom",
-        "clicked":"Nurarihyon",
-        "speacker":"Nurarihyon",
-        "isStart":false,
-        "next":[
-            {
-                "option":"",
-                "nextId":"3"
-            }
-        ],
-        "transition":"",
-        "emotion":"neutral",
-        "animation":"none",
-        "extention":"png"
-    },
-    {
-        "id":3,
-        "serif":"Enjoy your life! Cheerio!",
-        "room":"LivingRoom",
-        "clicked":"Nurarihyon",
-        "speacker":"Nurarihyon",
-        "isStart":false,
-        "next":[],
-        "transition":"",
-        "emotion":"neutral",
-        "animation":"none",
-        "extention":"png"
-    },
-    {
-      "id":4,
-      "serif":"Ho! A human entered here? whacha doing?",
-      "room":"WorkShop",
-      "clicked":"Ittan-momen",
-      "speacker":"Ittan-momen",
-      "isStart":true,
-      "next":[
+  {
+      "id": 1,
+      "serif": "Welcome!",
+      "room": "LivingRoom",
+      "clicked": "Nurarihyon",
+      "speacker": "Nurarihyon",
+      "isStart": true,
+      "next": [
           {
-              "option":"",
-              "nextId":"5"
+              "option": "",
+              "nextId": "2"
           }
       ],
-      "transition":"",
-      "emotion":"neutral",
-      "animation":"none",
-      "extention":"png"
+      "transition": "",
+      "emotion": "neutral",
+      "animation": "none",
+      "extention": "png"
   },
   {
-      "id":5,
-      "serif":"Here's the world-greatest workshop made by the gifted developer Tommy the great!!",
-      "room":"WorkShop",
-      "clicked":"Ittan-momen",
-      "speacker":"Ittan-momen",
-      "isStart":false,
-      "next":[
+      "id": 2,
+      "serif": "This is test to display serifs!\n It'll be main entertainment of this site.",
+      "room": "LivingRoom",
+      "clicked": "Nurarihyon",
+      "speacker": "Nurarihyon",
+      "isStart": false,
+      "next": [
           {
-              "option":"",
-              "nextId":"6"
+              "option": "",
+              "nextId": "3"
           }
       ],
-      "transition":"",
-      "emotion":"neutral",
-      "animation":"none",
-      "extention":"png"
+      "transition": "",
+      "emotion": "neutral",
+      "animation": "none",
+      "extention": "png"
   },
   {
-      "id":6,
-      "serif":"You can watch his works and get hypnotized! But remember you don't touch anything here.\nOtherwise... Hee! Hee!! Heeeeeeeeeeee!!!",
-      "room":"WorkShop",
-      "clicked":"Ittan-momen",
-      "speacker":"Ittan-momen",
-      "isStart":false,
-      "next":[],
-      "transition":"",
-      "emotion":"neutral",
-      "animation":"none",
-      "extention":"png"
+      "id": 3,
+      "serif": "Ask me anytime you worried. Do you have questions?",
+      "room": "LivingRoom",
+      "clicked": "Nurarihyon",
+      "speacker": "Nurarihyon",
+      "isStart": false,
+      "next": [
+          {
+              "option": "Where is here? I wanna go home...",
+              "nextId": "10"
+          },
+          {
+              "option": "Nothing. I'll go walking around!",
+              "nextId": "11"
+          }
+      ],
+      "transition": "",
+      "emotion": "neutral",
+      "animation": "none",
+      "extention": "png"
   },
   {
-    "id":7,
-    "serif":"Aloha! I'm Jessica, the wife of the developer and I've made images here.",
-    "room":"LivingRoom",
-    "clicked":"Jessica",
-    "speacker":"Jessica",
-    "isStart":true,
-    "next":[
-        {
-            "option":"",
-            "nextId":"8"
-        }
-    ],
-    "transition":"",
-    "emotion":"neutral",
-    "animation":"none",
-    "extention":"png"
-},
-{
-    "id":8,
-    "serif":"Ah? Bathroom? God knows because we don't need to pee-pee.",
-    "room":"LivingRoom",
-    "clicked":"Jessica",
-    "speacker":"Jessica",
-    "isStart":false,
-    "next":[
-        {
-            "option":"",
-            "nextId":"9"
-        }
-    ],
-    "transition":"",
-    "emotion":"neutral",
-    "animation":"none",
-    "extention":"png"
-},
-{
-    "id":9,
-    "serif":"It's better to ask google for the nearest one. Hurry up!",
-    "room":"LivingRoom",
-    "clicked":"Jessica",
-    "speacker":"Jessica",
-    "isStart":false,
-    "next":[],
-    "transition":"https://www.google.com",
-    "emotion":"neutral",
-    "animation":"none",
-    "extention":"png"
-}
+      "id": 4,
+      "serif": "Ho! A human entered here? whacha doing?",
+      "room": "WorkShop",
+      "clicked": "Ittan-momen",
+      "speacker": "Ittan-momen",
+      "isStart": true,
+      "next": [
+          {
+              "option": "",
+              "nextId": "5"
+          }
+      ],
+      "transition": "",
+      "emotion": "neutral",
+      "animation": "none",
+      "extention": "png"
+  },
+  {
+      "id": 5,
+      "serif": "Here's the world-greatest workshop made by the gifted developer Tommy the great!!",
+      "room": "WorkShop",
+      "clicked": "Ittan-momen",
+      "speacker": "Ittan-momen",
+      "isStart": false,
+      "next": [
+          {
+              "option": "",
+              "nextId": "6"
+          }
+      ],
+      "transition": "",
+      "emotion": "neutral",
+      "animation": "none",
+      "extention": "png"
+  },
+  {
+      "id": 6,
+      "serif": "You can watch his works and get hypnotized! But remember you don't touch anything here.\nOtherwise... Hee! Hee!! Heeeeeeeeeeee!!!",
+      "room": "WorkShop",
+      "clicked": "Ittan-momen",
+      "speacker": "Ittan-momen",
+      "isStart": false,
+      "next": [],
+      "transition": "",
+      "emotion": "neutral",
+      "animation": "none",
+      "extention": "png"
+  },
+  {
+      "id": 7,
+      "serif": "Aloha! I'm Jessica, the wife of the developer and I've made images here.",
+      "room": "LivingRoom",
+      "clicked": "Jessica",
+      "speacker": "Jessica",
+      "isStart": true,
+      "next": [
+          {
+              "option": "",
+              "nextId": "8"
+          }
+      ],
+      "transition": "",
+      "emotion": "neutral",
+      "animation": "none",
+      "extention": "png"
+  },
+  {
+      "id": 8,
+      "serif": "Ah? Bathroom? God knows because we don't need to pee-pee.",
+      "room": "LivingRoom",
+      "clicked": "Jessica",
+      "speacker": "Jessica",
+      "isStart": false,
+      "next": [
+          {
+              "option": "",
+              "nextId": "9"
+          }
+      ],
+      "transition": "",
+      "emotion": "neutral",
+      "animation": "none",
+      "extention": "png"
+  },
+  {
+      "id": 9,
+      "serif": "It's better to ask google for the nearest one. Hurry up!",
+      "room": "LivingRoom",
+      "clicked": "Jessica",
+      "speacker": "Jessica",
+      "isStart": false,
+      "next": [],
+      "transition": "https://www.google.com",
+      "emotion": "neutral",
+      "animation": "none",
+      "extention": "png"
+  },
+  {
+      "id": 10,
+      "serif": "Ahh... You've just lost. OK, then here's the exit. Be careful your way home!!",
+      "room": "LivingRoom",
+      "clicked": "Nurarihyon",
+      "speacker": "Nurarihyon",
+      "isStart": false,
+      "next": [],
+      "transition": "./",
+      "emotion": "neutral",
+      "animation": "none",
+      "extention": "png"
+  },
+  {
+      "id": 11,
+      "serif": "Hahha! I like energitic kiddo! Have a good time!\n I reccomend to go work shop. There's many things to see!",
+      "room": "LivingRoom",
+      "clicked": "Nurarihyon",
+      "speacker": "Nurarihyon",
+      "isStart": false,
+      "next": [],
+      "transition": "",
+      "emotion": "neutral",
+      "animation": "none",
+      "extention": "png"
+  }
 ]

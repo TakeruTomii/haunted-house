@@ -1,17 +1,30 @@
-  <div id="serif-container">
-    <div id="serif-content" class="d-flex flex-column">
-      <!-- キャラクター表示 -->
-      <div id="character-box" class="d-flex justify-content-center">
-        <img [src]="img_chara" alt="charactor">
-      </div>
-
-      <!-- セリフのエリア -->
-      <div id="serif-box">
-        <div id="name-area">{{name_chara}}</div>
-        <div id="serif-area" (click)="onTalk()">
-          {{current_serif}}
-        </div>
-      </div>
-
+<div id="serif-container">
+  <div id="serif-content" class="d-flex flex-column">
+    <!-- キャラクター表示 -->
+    <div id="character-box" class="d-flex justify-content-center">
+      <img [src]="img_chara" alt="charactor">
     </div>
+
+    <!-- セリフのエリア -->
+    <div id="serif-box">
+      <div id="name-area">{{name_chara}}</div>
+      <div id="serif-area" (click)="onTalk()">
+        {{current_serif}}
+      </div>
+    </div>
+
   </div>
+</div>
+
+<!-- 選択肢モーダル -->
+<div *ngIf="isSelection" bsModal #selectionModal="bs-modal"
+  class="modal fade" [config]="{ show: true, backdrop: 'static' }">
+  <div class="d-flex flex-column justify-content-center">
+    <ng-container *ngFor="let s of selections">
+      <div class="choice d-flex justify-content-center align-items-center"
+        (click)="selectRoute(s.nextId)">
+        {{s.option}}
+      </div>
+    </ng-container>
+  </div>
+</div>

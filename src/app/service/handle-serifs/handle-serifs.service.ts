@@ -65,8 +65,14 @@ export class HandleSerifsService {
 
     }
   }
+
+  //選択肢を選んだあと次のセリフを設定
+  setNextSerif(nextId : number) {
+    this.next_serif_id = nextId;
+  }
+
   //セリフ破棄
-  discardSerif(){
+  discardSerif() {
     this.next_serif_id = 0;
     this.current_serifs = [];
     this.is_start = true;
