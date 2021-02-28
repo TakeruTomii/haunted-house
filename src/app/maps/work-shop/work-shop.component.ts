@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { RoomInfo } from 'src/app/dto';
 import { MoveRoomService } from 'src/app/service/move-room/move-room.service';
 import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';

@@ -96,5 +96,54 @@
       "emotion":"neutral",
       "animation":"none",
       "extention":"png"
-  }
+  },
+  {
+    "id":7,
+    "serif":"Aloha! I'm Jessica, the wife of the developer and I've made images here.",
+    "room":"LivingRoom",
+    "clicked":"Jessica",
+    "speacker":"Jessica",
+    "isStart":true,
+    "next":[
+        {
+            "option":"",
+            "nextId":"8"
+        }
+    ],
+    "transition":"",
+    "emotion":"neutral",
+    "animation":"none",
+    "extention":"png"
+},
+{
+    "id":8,
+    "serif":"Ah? Bathroom? God knows because we don't need to pee-pee.",
+    "room":"LivingRoom",
+    "clicked":"Jessica",
+    "speacker":"Jessica",
+    "isStart":false,
+    "next":[
+        {
+            "option":"",
+            "nextId":"9"
+        }
+    ],
+    "transition":"",
+    "emotion":"neutral",
+    "animation":"none",
+    "extention":"png"
+},
+{
+    "id":9,
+    "serif":"It's better to ask google for the nearest one. Hurry up!",
+    "room":"LivingRoom",
+    "clicked":"Jessica",
+    "speacker":"Jessica",
+    "isStart":false,
+    "next":[],
+    "transition":"https://www.google.com",
+    "emotion":"neutral",
+    "animation":"none",
+    "extention":"png"
+}
 ]

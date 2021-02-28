@@ -1,7 +1,7 @@
-import { Component, OnInit, TemplateRef, ViewChild } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { RoomInfo } from 'src/app/dto';
 import { MoveRoomService } from 'src/app/service/move-room/move-room.service';
-import { BsModalRef, BsModalService, ModalOptions } from 'ngx-bootstrap/modal';
+import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
 import { SerifComponent } from 'src/app/common/serif/serif.component';
 
 @Component({
