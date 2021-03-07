@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { RoomInfo } from 'src/app/dto';
-import { MoveRoomService } from 'src/app/service/move-room/move-room.service';
+
 import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
-import { SerifComponent } from 'src/app/common/serif/serif.component';
+import { MoveRoomService } from '../move-room/move-room.service';
+import { SerifComponent } from 'src/app/shared/serif/serif.component';
 
 @Component({
   selector: 'app-work-shop',

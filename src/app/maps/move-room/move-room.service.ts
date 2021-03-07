@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Subject } from 'rxjs';
 import { RoomInfo } from '../../dto';
+import { MapsModule } from '../maps.module';
 
 @Injectable({
   providedIn: 'root'

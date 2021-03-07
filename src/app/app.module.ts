@@ -5,26 +5,18 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { FormsModule, NgForm } from '@angular/forms';
 
-//bootstrapモジュール
-import { ButtonsModule } from 'ngx-bootstrap/buttons';
-import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
-import { ModalModule } from 'ngx-bootstrap/modal';
+//共通部品
+import { SharedModule } from './shared/shared.module';
 
 //部屋
-import { LivingRoomComponent } from './maps/living-room/living-room.component';
-import { MoveRoomService } from './service/move-room/move-room.service';
-import { SerifComponent } from './common/serif/serif.component';
-import { TeaRoomComponent } from './maps/tea-room/tea-room.component';
-import { CasinoComponent } from './maps/casino/casino.component';
-import { GardenComponent } from './maps/garden/garden.component';
+import { MapsModule } from './maps/maps.module'
+import { MoveRoomService } from './maps/move-room/move-room.service';
 
 //画面
 import { InitConfComponent } from './init-conf/init-conf.component';
 import { LoadingComponent } from './loading/loading.component';
 import { TitleComponent } from './title/title.component';
 import { HomeScreenComponent } from './home-screen/home-screen.component';
-import { NavComponent } from './common/nav/nav.component';
-
 
 @NgModule({
   declarations: [
@@ -32,22 +24,15 @@ import { NavComponent } from './common/nav/nav.component';
     TitleComponent,
     HomeScreenComponent,
     LoadingComponent,
-    InitConfComponent,
-    NavComponent,
-    LivingRoomComponent,
-    TeaRoomComponent,
-    CasinoComponent,
-    GardenComponent,
-    SerifComponent
+    InitConfComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    ButtonsModule.forRoot(),
     BrowserAnimationsModule,
-    BsDropdownModule.forRoot(),
-    ModalModule.forRoot()
+    SharedModule,
+    MapsModule
   ],
   providers: [MoveRoomService],
   bootstrap: [AppComponent]

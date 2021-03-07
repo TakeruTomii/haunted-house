@@ -1,7 +1,7 @@
-import { Component, OnInit, TemplateRef, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { BsModalRef, ModalDirective } from 'ngx-bootstrap/modal';
 import { fetchSerifsParam } from 'src/app/dto';
-import { HandleSerifsService } from 'src/app/service/handle-serifs/handle-serifs.service';
+import { HandleSerifsService } from 'src/app/shared/serif/handle-serifs/handle-serifs.service';
 
 @Component({
   selector: 'app-serif',
@@ -10,7 +10,7 @@ import { HandleSerifsService } from 'src/app/service/handle-serifs/handle-serifs
 })
 export class SerifComponent implements OnInit{
   //選択肢モーダル
-  @ViewChild('selectionModal', { static: false }) selectionModal: ModalDirective;
+  @ViewChild('selectionModal', {static: false}) public selectionModal: ModalDirective;
 
   //画面表示情報
   img_chara="";

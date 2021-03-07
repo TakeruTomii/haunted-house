@@ -4,9 +4,9 @@ import { RoomInfo } from '../dto';
 import { CasinoComponent } from '../maps/casino/casino.component';
 import { GardenComponent } from '../maps/garden/garden.component';
 import { LivingRoomComponent } from '../maps/living-room/living-room.component';
+import { MoveRoomService } from '../maps/move-room/move-room.service';
 import { TeaRoomComponent } from '../maps/tea-room/tea-room.component';
 import { WorkShopComponent } from '../maps/work-shop/work-shop.component';
-import { MoveRoomService } from '../service/move-room/move-room.service';
 
 @Component({
   selector: 'app-home-screen',
