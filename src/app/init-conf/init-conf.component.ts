@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { InitConf } from '../shared/dto';
+import { INIT_LANGS, INIT_SOUNDS } from '../shared/const';
 
 @Component({
   selector: 'app-init-conf',
@@ -10,17 +11,11 @@ import { InitConf } from '../shared/dto';
 export class InitConfComponent implements OnInit {
   //言語設定
   lang_selected='en';
-  langs = [
-    {label:'English', value: 'en'},
-    {label:'日本語', value: 'ja'},
-    {label:'Português', value: 'pt'}
-  ]
+  langs = INIT_LANGS;
+
   //サウンド設定
   sound_selected='on';
-  sounds = [
-    {label:'ON', value: 'on'},
-    {label:'OFF', value: 'off'}
-  ]
+  sounds = INIT_SOUNDS;
 
   constructor(private router: Router) { }
 
