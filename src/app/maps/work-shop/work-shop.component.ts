@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { RoomInfo } from 'src/app/dto';
+import { RoomInfo } from '../../shared/dto';
 
 import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
 import { MoveRoomService } from '../move-room/move-room.service';

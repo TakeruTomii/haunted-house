@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { BsModalRef, ModalDirective } from 'ngx-bootstrap/modal';
-import { fetchSerifsParam } from 'src/app/dto';
+import { fetchSerifsParam } from '../../shared/dto';
 import { HandleSerifsService } from 'src/app/shared/serif/handle-serifs/handle-serifs.service';
 
 @Component({

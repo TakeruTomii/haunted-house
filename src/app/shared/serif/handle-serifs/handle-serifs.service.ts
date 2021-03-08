@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { fetchSerifsParam } from 'src/app/dto';
+import { fetchSerifsParam } from '../../dto';
 import enSerifs from 'src/assets/serifs/en.serifs.json'
 
 @Injectable({

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { InitConf } from '../dto';
+import { InitConf } from '../shared/dto';
 
 @Component({
   selector: 'app-init-conf',

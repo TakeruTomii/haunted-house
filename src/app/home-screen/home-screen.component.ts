@@ -1,6 +1,6 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
-import { RoomInfo } from '../dto';
+import { RoomInfo } from '../shared/dto';
 import { CasinoComponent } from '../maps/casino/casino.component';
 import { GardenComponent } from '../maps/garden/garden.component';
 import { LivingRoomComponent } from '../maps/living-room/living-room.component';

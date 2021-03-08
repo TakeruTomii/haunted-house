@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Subject } from 'rxjs';
-import { RoomInfo } from '../../dto';
+import { RoomInfo } from '../../shared/dto';
 import { MapsModule } from '../maps.module';
 
 @Injectable({
