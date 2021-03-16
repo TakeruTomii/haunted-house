@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-//自作モジュール
+// handmade modules
 import { NavComponent } from './nav/nav.component';
 import { SerifComponent } from './serif/serif.component';
 
-//bootstrapモジュール
+// bootstrap modules
 import { ButtonsModule } from 'ngx-bootstrap/buttons';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { ModalModule } from 'ngx-bootstrap/modal';

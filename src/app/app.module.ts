@@ -5,14 +5,14 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { FormsModule, NgForm } from '@angular/forms';
 
-//共通部品
+// Common Parts
 import { SharedModule } from './shared/shared.module';
 
-//部屋
+// Rooms
 import { MapsModule } from './maps/maps.module'
 import { MoveRoomService } from './maps/move-room/move-room.service';
 
-//画面
+// Screens
 import { InitConfComponent } from './init-conf/init-conf.component';
 import { LoadingComponent } from './loading/loading.component';
 import { TitleComponent } from './title/title.component';

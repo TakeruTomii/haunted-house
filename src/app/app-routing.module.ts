@@ -1,22 +1,23 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-//ルーティング対象コンポーネント
-//ページを増やしたらimportを追加
+// Components for Routeing
+// Add import when creating new pages
 import { LoadingComponent } from './loading/loading.component';
 import { TitleComponent } from './title/title.component';
 import { HomeScreenComponent } from './home-screen/home-screen.component';
 import { InitConfComponent } from './init-conf/init-conf.component';
 
-//ルーティングテーブル
-//ページを増やしたら追加
+// Routing table
+// Add items when creating new pages
 const routes: Routes = [
   { path: '', component: InitConfComponent },
   { path: 'loading', component: LoadingComponent },
-  //英語版サイト
+  //Path for English
   { path: 'title', component: TitleComponent },
   { path: 'home', component: HomeScreenComponent },
-  //デフォルト
+  //TODO: Path for Japanese
+  //default
   { path: '**', component: LoadingComponent }
 ];
 

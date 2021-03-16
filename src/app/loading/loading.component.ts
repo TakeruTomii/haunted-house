@@ -7,14 +7,14 @@ import { ActivatedRoute, ParamMap } from '@angular/router';
   styleUrls: ['./loading.component.css']
 })
 export class LoadingComponent implements OnInit {
-  //初期設定
+  // Initial Settings
   lang=''
   sound=''
 
   constructor(private route: ActivatedRoute) { }
 
   ngOnInit(): void {
-    //受け渡しパラメータ取得
+    // Fetch passed initial parameters
     this.route.paramMap.subscribe(
       (conf:ParamMap)=>{
         this.lang = conf.get('lang');
@@ -22,14 +22,14 @@ export class LoadingComponent implements OnInit {
       }
 
     );
-    //３秒後にタイトル画面に遷移
+    // Go to title Screen in 3 seconds
     setTimeout(this.movePage(this.lang), 3000);
   }
 
-  //画面遷移処理
-  //選択言語に合わせてページ遷移
+  // Screen Transition
+  // Transit Screen along Languages
   private movePage(lang) {
-    //TODO: 多言語対応時に値に合わせて遷移先を変更
+    //TODO: Code switching process when multilingual supports
     return 'location.href = "./title";';
   }
 

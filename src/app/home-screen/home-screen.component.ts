@@ -10,13 +10,13 @@ import { MoveRoomService } from '../maps/move-room/move-room.service';
   styleUrls: ['./home-screen.component.css']
 })
 export class HomeScreenComponent implements OnInit, OnDestroy {
-  //初期遷移時は居間を表示
+  // Show Living Room for Initiation.
   public room : RoomInfo = { roomName: 'livingRoom' }
 
-  //遷移可能な部屋一覧
+  // Transitable Rooms List
   rooms = TRANSITABLE_ROOMS;
 
-  //表示する部屋のコンポーネント
+  // Component of Rooms on display
   public currentRoomComponent: any = this.rooms[this.room.roomName];
 
   private subscription : Subscription;
@@ -24,8 +24,8 @@ export class HomeScreenComponent implements OnInit, OnDestroy {
   constructor(private move: MoveRoomService) { }
 
   ngOnInit(): void {
-    //部屋情報更新時のデータを自動取得
-    //イベントリスナーのようなもの
+    // Automatically follow updating room informations
+    // It's a type of event listener
     this.subscription = this.move.currentRoom$.subscribe(
         RoomInfo => {
           this.room = RoomInfo;
@@ -35,7 +35,7 @@ export class HomeScreenComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy(): void {
-    //リソースリーク防止
+    // Prevent Resource Leak
     this.subscription.unsubscribe();
   }
 

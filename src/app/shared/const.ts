@@ -5,20 +5,20 @@ import { MoveRoomService } from '../maps/move-room/move-room.service';
 import { TeaRoomComponent } from '../maps/tea-room/tea-room.component';
 import { WorkShopComponent } from '../maps/work-shop/work-shop.component';
 
-//言語設定
+// Language Settings
 export const INIT_LANGS = [
   {label:'English', value: 'en'},
   {label:'日本語', value: 'ja'},
   {label:'Português', value: 'pt'}
 ]
 
-//サウンドON・OFF
+// Switching Sounds
 export const INIT_SOUNDS = [
   {label:'ON', value: 'on'},
   {label:'OFF', value: 'off'}
 ]
 
-//遷移可能な部屋
+// Transitable Rooms
 export const TRANSITABLE_ROOMS = {
   'livingRoom': LivingRoomComponent,
   'workShop': WorkShopComponent,

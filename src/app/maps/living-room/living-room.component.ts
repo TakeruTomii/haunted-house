@@ -17,16 +17,16 @@ export class LivingRoomComponent implements OnInit {
 
   ngOnInit(): void { }
 
-  //部屋移動
+  // Move Rooms
   onMove(rname: string) {
     let room : RoomInfo = { roomName : rname };
     this.move.moveRoom(room);
   }
 
-  //セリフ用モーダルオープン
+  // Open modal for serifs
   openSerifs(room : string, clicked : string){
 
-    //オープン用コンフィグ
+    // Configs to open
     let initialState = {
       room: room,
       clicked: clicked

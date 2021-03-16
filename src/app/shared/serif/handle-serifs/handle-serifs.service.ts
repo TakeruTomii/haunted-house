@@ -6,33 +6,33 @@ import enSerifs from 'src/assets/serifs/en.serifs.json'
   providedIn: 'root'
 })
 export class HandleSerifsService {
-  private next_serif_id: number = 0;
-  private current_serifs: any[] = [];
-  private is_start: boolean = false;
+  private next_serif_id: number = 0;  // id of Next Serif
+  private current_serifs: any[] = []; // the serif currently processed
+  private is_start: boolean = false;  // if it's the first of serifs
 
   constructor() { }
 
-  //セリフ取得
+  // Initiate Serifs
   initSerifs(param : fetchSerifsParam){
-    //検索条件
+    // Search condition
     let lang = param.lang;
     let room = param.room;
     let clicked = param.clicked;
 
-    //TODO: 多言語対応時に言語ごとにJSONファイルを切り替え
+    //TODO: Switch JSON files when multilingual support
     let serif_source = enSerifs;
 
-    //セリフ初期設定
+    // Initiating Serifs
     this.current_serifs = serif_source.filter(
       x => x.room === room &&
       x.clicked === clicked);
 
     this.is_start = true;
   }
-  //セリフPOP
+  // Pop a serif
   popSerif(){
     if(this.is_start){
-      //一番最初のセリフの場合
+      // Case : First serif
       let res = this.current_serifs.find(x => x.isStart);
       this.current_serifs = this.current_serifs.filter(x => !x.isStart);
       this.next_serif_id = parseInt(res['next'][0]['nextId']);
@@ -41,7 +41,7 @@ export class HandleSerifsService {
       return res;
 
     } else if(this.next_serif_id == -1) {
-      //セリフがなくなった場合
+      // Case : Last of serifs
       let res = this.current_serifs.find(x => x.id == this.next_serif_id);
       this.current_serifs = this.current_serifs.filter(x => !(x.id == this.next_serif_id));
       this.discardSerif();
@@ -49,15 +49,15 @@ export class HandleSerifsService {
       return null;
 
     } else {
-      //途中のセリフの場合
+      // Case : Proceed
       let res = this.current_serifs.find(x => x.id == this.next_serif_id);
       this.current_serifs = this.current_serifs.filter(x => !(x.id == this.next_serif_id));
 
       if(res['next'].length == 0){
-        //次のセリフがない場合
+        // Case : no next serifs
         this.next_serif_id = -1;
       } else {
-        //次のセリフがある場合
+        // Case : have next serif
         this.next_serif_id = parseInt(res['next'][0]['nextId']);
       }
 
@@ -66,12 +66,12 @@ export class HandleSerifsService {
     }
   }
 
-  //選択肢を選んだあと次のセリフを設定
+  // set next serif after selection
   setNextSerif(nextId : number) {
     this.next_serif_id = nextId;
   }
 
-  //セリフ破棄
+  // discard Serifs
   discardSerif() {
     this.next_serif_id = 0;
     this.current_serifs = [];

@@ -9,11 +9,11 @@ import { INIT_LANGS, INIT_SOUNDS } from '../shared/const';
   styleUrls: ['./init-conf.component.css']
 })
 export class InitConfComponent implements OnInit {
-  //言語設定
+  // Language setting
   lang_selected='en';
   langs = INIT_LANGS;
 
-  //サウンド設定
+  // Sound setting
   sound_selected='on';
   sounds = INIT_SOUNDS;
 
@@ -22,14 +22,14 @@ export class InitConfComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  //初期設定をLoading画面に受け渡し
+  // Pass initial settings to Loading Screen
   configure(){
-    //引き渡し用パラメータ
+    // Parameters to pass
     let conf : InitConf = {
       lang:this.lang_selected,
       sound:this.sound_selected
     };
-    //loading画面に遷移
+    // Transit Loading Screen
     this.router.navigate(['/loading', conf])
   }
 }

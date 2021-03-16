@@ -9,7 +9,7 @@ import { BsDropdownConfig } from 'ngx-bootstrap/dropdown';
 })
 export class NavComponent implements OnInit {
 
-  //サウンド設定
+  // Sound Settings
   sound_selected='on';
   sounds = [
     {label:'ON', value: 'on'},

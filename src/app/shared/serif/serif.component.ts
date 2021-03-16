@@ -9,24 +9,24 @@ import { HandleSerifsService } from 'src/app/shared/serif/handle-serifs/handle-s
   styleUrls: ['./serif.component.css']
 })
 export class SerifComponent implements OnInit{
-  //選択肢モーダル
+  // Modal for Selections
   @ViewChild('selectionModal', {static: false}) public selectionModal: ModalDirective;
 
-  //画面表示情報
+  // Information for display
   img_chara="";
   current_serif="";
   name_chara="";
   isSelection=false;
   selections=[];
 
-  //画像フォルダ
+  // Path of Image Forlder
   private img_folder : string = "../../../assets/img/";
 
-  //呼び出し元画面からの引数
-  private clicked: string; //クリックしたキャラクター
-  private room: string;    //部屋
+  // arguments from caller screen
+  private clicked: string; // clicked charactor
+  private room: string;    // room
 
-  //遷移先情報
+  //URL to transit
   private transition_url: string;
 
   constructor(private serifs:HandleSerifsService, public bsModalRef: BsModalRef) {}
@@ -35,46 +35,50 @@ export class SerifComponent implements OnInit{
     this.initModal();
   }
 
-  //モーダルオープン時にセリフ初期化
+  // Initiate serifs when opening modal
   initModal() : void {
-    //呼び出すセリフ設定
+    // configure calling serifs
     let params : fetchSerifsParam = {
       lang: 'en',
       room: this.room,
       clicked: this.clicked
     };
-    //セリフ初期化
+    // Initiate serifs
     this.serifs.initSerifs(params);
 
     let serif_info : any = this.serifs.popSerif();
     this.setDisplayInfos(serif_info);
   }
 
-  //会話を進める
+  // keep conversation forward
   onTalk() : void {
     let next_data = this.serifs.popSerif();
 
     if (next_data == null) {
-        //セリフ終了の場合モーダルを閉じる
+        // Case : the end of serifs
+        // close modal
         this.bsModalRef.hide();
-        //遷移先のURLが設定されていたら、会話終了後遷移する。
+        // Case : Transiton
+        // Transit after finishing conversation
         if(this.transition_url) {
           this.transitScreen(this.transition_url);
         }
     } else if (next_data['next'].length >= 2) {
-      //選択肢がある場合
+      // Case : Selections
       this.showSelection(next_data['next']);
     } else {
-      //新しいセリフを表示
+      // Case : Proceed
+      // Display new serif
       this.setDisplayInfos(next_data);
-      //遷移先のURLが設定されていたらバッファに格納
+      // Case : TransitonTransition
+      // Cache in buffer the URL to transit
       if(next_data['transition']) {
         this.transition_url = next_data['transition'];
       }
     }
   }
 
-  //選択肢を選ぶ
+  // Select Selections
   selectRoute(nextId: number) {
     this.serifs.setNextSerif(nextId);
     this.closeSelection();
@@ -82,28 +86,28 @@ export class SerifComponent implements OnInit{
     this.onTalk();
   }
 
-  //キャラクターの画像までのパスを返却
+  // Return the path to the Image of the charactor
   private getImgPath (speaker : string, emotion : string, extention : string) {
     return this.img_folder + speaker + '_' + emotion + '.' + extention;
   }
 
-  //選択肢表示
+  // Display Selections
   private showSelection(next_options : any[]) {
     this.selections = next_options;
     this.isSelection = true;
   }
 
-  //選択肢のモーダルを閉じる
+  // Close Selections Modal
   private closeSelection() {
     this.selectionModal.hide();
   }
 
-  //選択肢をDOMから削除
+  // Hide Selection Modal from DOM
   private onHidden(){
     this.isSelection = false;
   }
 
-  // 画面に表示する情報の設定
+  // Set Informations to display
   private setDisplayInfos(serif_info : any) {
     this.current_serif = serif_info['serif'];
     this.name_chara = serif_info['speacker'];
@@ -111,15 +115,17 @@ export class SerifComponent implements OnInit{
       serif_info['speacker'], serif_info['emotion'], serif_info['extention']);
   }
 
-  //画面遷移処理
+  // Transition after serifs
   private transitScreen(url: string) {
     if (url.startsWith('https://')) {
-      //httpsで始まるのは外部サイトなので、別タブで開く
-      //https以外の外部サイトには遷移しない予定
+      // Starting "https" means external site
+      // Open in new Tab.
+      // Only for "https"
       window.open(url);
     } else {
-      //その他は相対パスである予定
-      //相対パスで指定されているのは内部ページなので、自ウィンドウで開く
+      // Others are set in relative path
+      // URL which expressed in relative path means internal site
+      // Open in the current window.
       location.href = url;
     }
   }
