@@ -12,6 +12,9 @@ import { SharedModule } from './shared/shared.module';
 import { MapsModule } from './maps/maps.module'
 import { MoveRoomService } from './maps/move-room/move-room.service';
 
+// Creators
+import { CreatorModule } from './creator/creator.module';
+
 // Screens
 import { InitConfComponent } from './init-conf/init-conf.component';
 import { LoadingComponent } from './loading/loading.component';
@@ -32,7 +35,8 @@ import { HomeScreenComponent } from './home-screen/home-screen.component';
     FormsModule,
     BrowserAnimationsModule,
     SharedModule,
-    MapsModule
+    MapsModule,
+    CreatorModule
   ],
   providers: [MoveRoomService],
   bootstrap: [AppComponent]

@@ -1,0 +1,34 @@
+.darkerred_background {
+  background-image: linear-gradient(to bottom, red, black);
+  margin-bottom: 0;
+}
+
+#greeting_area {
+  width: 100%;
+  text-align: center;
+  line-height: 3em;
+  color: white;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+h1 {
+  font-size: 12em;
+  font-weight: bolder;
+  font-family: 'Monotype Corsiva', fantasy;
+  color: gold;
+  text-shadow: 3px 3px 3px black;
+}
+
+.strongly {
+  font-size: xx-large;
+  font-weight: bold;
+  font-style: italic;
+  font-family: 'Monotype Corsiva', fantasy;
+  color:goldenrod;
+}
+
+.notice {
+  font-size: large;
+  font-style: italic;
+  color: darkviolet;
+}
