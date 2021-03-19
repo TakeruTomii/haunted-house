@@ -1,7 +1,7 @@
 <div class="darkerred_background">
 
  <!-- Ice breaking -->
- <div id="greeting_area" class="greeting">
+ <div id="greeting_area" class="greeting chapter">
     <h1>Welcome</h1>
     <p>
       Youkoso very much! I've been waiting for you!!
@@ -26,28 +26,166 @@
       If you have some interests on me, I'm glad you to check out althrough this site!
     </p>
   </div>
-  <!-- Introduction -->
-  <div id="status_area" class="status">
 
-    <div class="right-half">
-      <div id="card"></div>
+  <!-- Introduction -->
+  <div id="status_area" class="status chapter container-fluid">
+    <div class="row justify-content-center">
+      <h1 class="">Status</h1>
     </div>
 
-    <div class="left-half">
-      <div id="comment"></div>
-      <table id="profile"></table>
-      <table id="equipment"></table>
-      <div id="expression"></div>
+    <div class="row">
+      <div class="left-half col-md-4 d-flex justify-content-center">
+        <div id="card">
+          <div id="inner-box">
+            <div id="rarelity">★★★★★</div>
+            <div id="portrait"></div>
+            <div id="strength"></div>
+            <div id="attribute"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="right-half col-md-8 d-flex flex-column justify-content-between">
+        <div id="comment">
+          " Does this placement truly lead users click it?  ―――― "
+        </div>
+        <table id="profile">
+          <thead>
+            <tr>
+              <td class="black-strongly">Profile</td>
+              <td></td>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="black-notice">Lv</td>
+              <td><span>26</span> (years old)</td>
+            </tr>
+            <tr>
+              <td class="black-notice">Sex</td>
+              <td>Male</td>
+            </tr>
+            <tr>
+              <td class="black-notice">Birth Place</td>
+              <td>Japan</td>
+            </tr>
+            <tr>
+              <td class="black-notice">Language</td>
+              <td>Japanese(Native) / English(Business Lv)</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <table id="equipment">
+          <thead>
+            <tr>
+              <td class="black-strongly">Equipment</td>
+              <td></td>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <a [href]="url_ipa_exam">Fundamental Information Technology Engineer Examanation</a>
+              </td>
+              <td>(2017/10)</td>
+            </tr>
+            <tr>
+              <td>
+                <a [href]="url_ipa_exam">Applied Information Technology Engineer Examanation </a>
+              </td>
+              <td>(2018/10)</td>
+            </tr>
+            <tr>
+              <td>
+                <a [href]="url_python_exam">Python 3 Certified Engineer Basic Examination</a>
+              </td>
+              <td>(2019/11)</td>
+            </tr>
+            <tr>
+              <td>
+                <a href="#">Toefl iBT Score </a> XXXX points
+              </td>
+              <td>(2021/XX)</td>
+            </tr>
+          </tbody>
+        </table>
+        <div id="expression">
+          <p id="speacies" class="black-strongly">Winged Beast</p>
+          <p id="detail">
+            This card save 20% man-hours of labor in total.<br>
+            He works pretty speedy as a racing car like Lady Godiva and your project travels at the speed of light.
+          </p>
+        </div>
+      </div>
     </div>
 
   </div>
 
   <!-- Skill Sets -->
-  <div id="skills_area" class="skills">
-
+  <div id="skills_area" class="skills chapter">
+    <h1>Skills</h1>
+    <h2 class="strongly">～  Legend  ～</h2>
+    <table id="legend" class="table bg-white">
+      <tr>
+        <td>
+          <div class="gauge_on"></div>
+          <div class="gauge_on"></div>
+          <div class="gauge_on"></div>
+          <div class="gauge_on"></div>
+          <div class="gauge_on"></div>
+        </td>
+        <td>Expert</td>
+        <td>Leave it to me.</td>
+      </tr>
+      <tr>
+        <td>
+          <div class="gauge_on"></div>
+          <div class="gauge_on"></div>
+          <div class="gauge_on"></div>
+          <div class="gauge_on"></div>
+          <div class="gauge_off"></div>
+        </td>
+        <td>Advanced</td>
+        <td>Better than anyone else in high probability.</td>
+      </tr>
+      <tr>
+        <td>
+          <div class="gauge_on"></div>
+          <div class="gauge_on"></div>
+          <div class="gauge_on"></div>
+          <div class="gauge_off"></div>
+          <div class="gauge_off"></div>
+        </td>
+        <td>Intermediate</td>
+        <td>Basically I can handle it by myself. </td>
+      </tr>
+      <tr>
+        <td>
+          <div class="gauge_on"></div>
+          <div class="gauge_on"></div>
+          <div class="gauge_off"></div>
+          <div class="gauge_off"></div>
+          <div class="gauge_off"></div>
+        </td>
+        <td>Elemetary</td>
+        <td>Know a little. But possibly need a help in deep level.</td>
+      </tr>
+      <tr>
+        <td>
+          <div class="gauge_on"></div>
+          <div class="gauge_off"></div>
+          <div class="gauge_off"></div>
+          <div class="gauge_off"></div>
+          <div class="gauge_off"></div>
+        </td>
+        <td>Begginer</td>
+        <td>Under studying. Not bussiness level at current.</td>
+      </tr>
+    </table>
   </div>
   <!-- Education and Personal history -->
-  <div id="career_area" class="career">
+  <div id="career_area" class="career chapter">
 
   </div>
 </div>
