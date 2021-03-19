@@ -127,7 +127,9 @@
   <!-- Skill Sets -->
   <div id="skills_area" class="skills chapter">
     <h1>Skills</h1>
-    <h2 class="strongly" style="background-color:white;">～  Legend  ～</h2>
+    <h2 class="strongly" style="background-color:white;width:90%;margin-left:5%;">
+      ～  Legend  ～
+    </h2>
     <table id="legend" class="table bg-white">
       <tr>
         <td>
@@ -186,9 +188,9 @@
       </tr>
     </table>
 
-    <carousel>
+    <carousel [interval]="stop_sliding">
       <slide>
-        <div class="skill-title"> Summary</div>
+        <div class="skill-title">Summary</div>
         <table id="summary" class="table table-warning">
           <tr>
             <td>Coding</td>
@@ -246,25 +248,22 @@
           </tr>
           <tr>
             <td>Potential</td>
-            <td class="text-nowrap">
-              <div class="gauge_on"></div>
-              <div class="gauge_on"></div>
-              <div class="gauge_on"></div>
-              <div class="gauge_on"></div>
-              <div class="gauge_on"></div>
-              <div class="gauge_on"></div>
-              <div class="gauge_on"></div>
-              <div class="gauge_on"></div>
-              <div class="gauge_on"></div>
-              <div class="gauge_on"></div>
+            <td>
+              <div class="gauge_overflow"></div>
+              <div class="gauge_overflow"></div>
+              <div class="gauge_overflow"></div>
+              <div class="gauge_overflow"></div>
+              <div class="gauge_overflow"></div>
+              <div class="gauge_overflow"></div>
+              <div class="gauge_overflow"></div>
+              <div class="gauge_overflow"></div>
+              <div class="gauge_overflow"></div>
             </td>
           </tr>
         </table>
       </slide>
-      <slide>
-        <div style="width:90%;height:25em;background-color: palegreen;margin-left:5%;">
-          another slide
-        </div>
+      <slide style="width:90%;height:25em;margin-left:5%;background-color: paleturquoise;">
+        Dummy Slide
       </slide>
     </carousel>
 

@@ -10,6 +10,9 @@ export class AboutMeComponent implements OnInit {
   url_ipa_exam = "https://www.jitec.ipa.go.jp/2_01english/02examcategories.html";
   url_python_exam = "https://www.pythonic-exam.com/basic-examination";
 
+  // prevent sliding of carousel
+  stop_sliding = 0;
+
   constructor() { }
 
   ngOnInit(): void {
