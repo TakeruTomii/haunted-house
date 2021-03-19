@@ -189,7 +189,7 @@ h1 {
 
 .gauge_on {
   display: inline-block;
-  width: 15%;
+  width: 5em;
   min-width: 1em;
   height:1em;
   margin-right: 1em;
@@ -201,7 +201,7 @@ h1 {
 
 .gauge_off {
   display: inline-block;
-  width: 15%;
+  width: 5em;
   min-width: 1em;
   height:1em;
   margin-right: 1em;
@@ -209,4 +209,34 @@ h1 {
   background-color: gray;
   border-color: gray;
   border-width: 3px;
+}
+
+slide {
+  height:25em;
+}
+
+.carousel-control {
+  color: black;
+}
+
+.skill-title {
+  margin-left: 5%;
+  width: 90%;
+  background-color: white;
+  font-size: xx-large;
+}
+
+slide table {
+  margin-left: 5%;
+  width: 90%;
+  max-height: 25em;
+}
+
+#summary tr td:nth-of-type(1) {
+  width: 15%;
+  text-align: end;
+}
+
+#summary tr td:nth-of-type(2) {
+  text-align: start;
 }
