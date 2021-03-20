@@ -38,16 +38,24 @@
         <div id="card">
           <div id="inner-box">
             <div id="rarelity">★★★★★</div>
-            <div id="portrait"></div>
-            <div id="strength"></div>
-            <div id="attribute"></div>
+            <div id="portrait">
+              <img [src]="portrait_path" alt="portrait">
+            </div>
+            <div id="strength">
+              <p id="str_title">STR</p>
+              <p id="str_val">{{str_val}}</p>
+              <p id="str_unit">{{str_unit}}</p>
+            </div>
+            <div id="attribute">
+              <img [src]="attr_path" alt="attribute">
+            </div>
           </div>
         </div>
       </div>
 
       <div class="right-half col-md-8 d-flex flex-column justify-content-between">
         <div id="comment">
-          " Does this placement truly lead users click it?  ―――― "
+          {{comment_content}}
         </div>
 
         <table id="profile">
@@ -113,11 +121,10 @@
         </table>
 
         <div id="expression">
-          <p id="speacies" class="black-strongly">Winged Beast</p>
+          <p id="speacies" class="black-strongly">{{speacies}}</p>
           <p id="detail">
-            This card save 20% man-hours of labor in total.<br>
-            He works pretty speedy as a racing car like Lady Godiva and your project travels at the speed of light.
-          </p>
+            {{exp_content}}
+         </p>
         </div>
       </div>
     </div>
