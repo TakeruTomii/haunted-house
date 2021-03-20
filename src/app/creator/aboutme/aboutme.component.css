@@ -136,6 +136,23 @@ h1 {
   font-size: xx-small;
 }
 
+#card_name {
+  position:absolute;
+  bottom: 3%;
+  left: 50%;
+  transform: translate(-50%, 0%);
+  width: 6em;
+  height: 1.5em;
+  border-style: ridge;
+  border-color: gold;
+  border-radius: 5%;
+  background-color: white;
+  text-align: center;
+  font-size: x-large;
+  font-family: 'Monotype Corsiva', fantasy;
+  z-index: 2;
+}
+
 #attribute {
   position:absolute;
   bottom: 0;

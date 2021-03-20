@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
 import { SerifComponent } from '../../shared/serif/serif.component';
-import { STATUS_PATTERNS, PREFIX_PORTRAIT, IMG_PATH_ABOUT_ME, EXT_PORTRAIT, EXT_ATTR} from '../../shared/const';
+import { STATUS_PATTERNS, SKILL_SLIDES, PREFIX_PORTRAIT, IMG_PATH_ABOUT_ME, EXT_PORTRAIT, EXT_ATTR} from '../../shared/const';
 
 @Component({
   selector: 'app-aboutme',
@@ -15,9 +15,6 @@ export class AboutMeComponent implements OnInit {
   url_ipa_exam = "https://www.jitec.ipa.go.jp/2_01english/02examcategories.html";
   url_python_exam = "https://www.pythonic-exam.com/basic-examination";
 
-  // prevent sliding of carousel
-  stop_sliding = 0;
-
   // Status variables
   portrait_path : string;
   attr_path : string;
@@ -26,6 +23,11 @@ export class AboutMeComponent implements OnInit {
   comment_content : string;
   speacies : string;
   exp_content : string;
+
+  // Carousel of Skills
+  slides = SKILL_SLIDES;
+  stop_sliding = 0; // prevent sliding of carousel
+
 
   constructor(private modal: BsModalService) { }
 

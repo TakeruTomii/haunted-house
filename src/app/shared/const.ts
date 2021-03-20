@@ -28,8 +28,15 @@ export const TRANSITABLE_ROOMS = {
 };
 
 // About Me
+// Path Properties
+export const PREFIX_PORTRAIT = 'portrait_';
+export const IMG_PATH_ABOUT_ME = '../../../assets/img/';
+export const EXT_PORTRAIT = '.jpg';
+export const EXT_ATTR = '.png';
+
 // Status Patterns
 export const STATUS_PATTERNS = [
+  // fire
   {
     'attr': 'fire',
     'str_val' : '200',
@@ -38,6 +45,7 @@ export const STATUS_PATTERNS = [
     'speacies': 'Zombie',
     'exp': 'fire!! That\'s why he is called Mr. Fahrenheit.'
   },
+  // water
   {
     'attr': 'water',
     'str_val' : '40,000',
@@ -46,6 +54,7 @@ export const STATUS_PATTERNS = [
     'speacies': 'Fairy',
     'exp': 'water!!'
   },
+  // thunder
   {
     'attr': 'thunder',
     'str_val' : '5,000',
@@ -54,6 +63,7 @@ export const STATUS_PATTERNS = [
     'speacies': 'Spell Caster',
     'exp': 'thunder!!'
   },
+  // wind
   {
     'attr': 'wind',
     'str_val' : '700',
@@ -62,6 +72,7 @@ export const STATUS_PATTERNS = [
     'speacies': 'Winged Beast',
     'exp': 'This card save 20% man-hours of labor in total.\n He works pretty speedy as a racing car like Lady Godiva and your project travels at the speed of light.'
   },
+  // ground
   {
     'attr': 'ground',
     'str_val' : '530,000',
@@ -72,7 +83,140 @@ export const STATUS_PATTERNS = [
   }
 ]
 
-export const PREFIX_PORTRAIT = 'portrait_';
-export const IMG_PATH_ABOUT_ME = '../../../assets/img/';
-export const EXT_PORTRAIT = '.jpg';
-export const EXT_ATTR = '.png';
+// Slide Properties
+export const SKILL_SLIDES = [
+  // Language
+  {
+    'title': 'Language',
+    'clazz': 'bg-blue',
+    'rows': [
+      {
+        'item': 'HTML',
+        'rate': 4
+      },
+      {
+        'item': 'CSS',
+        'rate': 4
+      },
+      {
+        'item': 'JavaScript',
+        'rate': 4
+      },
+      {
+        'item': 'C#',
+        'rate': 4
+      },      {
+        'item': 'Python',
+        'rate': 3
+      },
+      {
+        'item': 'Java',
+        'rate': 3
+      },
+      {
+        'item': 'TypeScript',
+        'rate': 2
+      }
+    ]
+  },
+  // Frameworks
+  {
+    'title': 'Framework',
+    'clazz': 'bg-yellow',
+    'rows': [
+      {
+        'item': 'ASP.NET MVC',
+        'rate': 5
+      },
+      {
+        'item': 'Angular',
+        'rate': 5
+      },
+      {
+        'item': 'jQuery',
+        'rate': 5
+      },
+      {
+        'item': 'Node.js',
+        'rate': 2
+      },      {
+        'item': 'Spring Framework',
+        'rate': 2
+      }
+    ]
+  },
+  // OS
+  {
+    'title': 'OS',
+    'clazz': 'bg-yellow',
+    'rows': [
+      {
+        'item': 'Windows',
+        'rate': 4
+      },
+      {
+        'item': 'Linux(CentOS)',
+        'rate': 3
+      },
+      {
+        'item': 'Mac',
+        'rate': 3
+      }
+    ]
+  },
+  // DB
+  {
+    'title': 'DB',
+    'clazz': 'bg-yellow',
+    'rows': [
+      {
+        'item': 'SQL Server',
+        'rate': 4
+      },
+      {
+        'item': 'Oracle',
+        'rate': 2
+      },
+      {
+        'item': 'Postgres',
+        'rate': 2
+      }
+    ]
+  },
+  // Cloud
+  {
+    'title': 'Cloud',
+    'clazz': 'bg-yellow',
+    'rows': [
+      {
+        'item': 'Azure Logic Apps',
+        'rate': 5
+      },
+      {
+        'item': 'Azure Functions',
+        'rate': 5
+      },
+      {
+        'item': 'Azure API Management',
+        'rate': 4
+      }
+      ,
+      {
+        'item': 'Azure App Service',
+        'rate': 3
+      },
+      {
+        'item': 'Azure Strage Blob',
+        'rate': 3
+      },
+      {
+        'item': 'Azure DevOps',
+        'rate': 2
+      },
+      {
+        'item': 'Azure SQL Database',
+        'rate': 2
+      }
+    ]
+  }
+]
