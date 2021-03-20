@@ -48,6 +48,11 @@ export class SerifComponent implements OnInit{
 
     let serif_info : any = this.serifs.popSerif();
     this.setDisplayInfos(serif_info);
+
+    if (serif_info['next'].length >= 2) {
+      // Case : Selections
+      this.showSelection(serif_info['next']);
+    }
   }
 
   // keep conversation forward
