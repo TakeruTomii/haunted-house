@@ -45,11 +45,14 @@ h1 span:nth-of-type(10){ animation-delay: 0.45s; }
 @keyframes wave-text{
   0%{
     transform: translateY(0em);
+    color: gold;
   }
-  60%{
+  50%{
     transform: translateY(-1em);
+    color:goldenrod;
   }
   100%{
     transform: translateY(0em);
+    color: yellow;
   }
 }
