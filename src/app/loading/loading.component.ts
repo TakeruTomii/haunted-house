@@ -23,7 +23,7 @@ export class LoadingComponent implements OnInit {
 
     );
     // Go to title Screen in 3 seconds
-    setTimeout(this.movePage(this.lang), 3000);
+    setTimeout(this.movePage(this.lang), 5000);
   }
 
   // Screen Transition
