@@ -5,27 +5,32 @@
     </div>
     <form #confForm="ngForm" (ngSubmit)="configure()">
       <div class="modal-body">
-        <div class="lang">
-          <label>Langage:</label><br>
-          <ng-container *ngFor="let la of langs">
-            <label>
-              <input type="radio" name="langs"
-              [(ngModel)]="lang_selected"
-              [value]="la.value">
-              {{la.label}}
-            </label><br>
-          </ng-container>
-        </div>
+        <div class="lang form-check-inline">
+          <label>Langage:</label>
+          <div class="btn-group">
+            <ng-container *ngFor="let la of langs">
+              <label class="btn btn-outline-primary">
+                <input type="radio" name="langs"
+                [(ngModel)]="lang_selected"
+                [value]="la.value">
+                {{la.label}}
+              </label>
+            </ng-container>
+          </div>
+          </div>
+
         <div class="sound">
-          <label>Sound:</label><br>
-          <ng-container *ngFor="let s of sounds">
-            <label>
-              <input type="radio" name="sounds"
-              [(ngModel)]="sound_selected"
-              [value]="s.value">
-              {{s.label}}
-            </label><br>
-          </ng-container>
+          <label>Sound:</label>
+          <div class="btn-group">
+            <ng-container *ngFor="let s of sounds">
+              <label class="btn btn-outline-primary">
+                <input type="radio" name="sounds"
+                [(ngModel)]="sound_selected"
+                [value]="s.value">
+                {{s.label}}
+              </label>
+            </ng-container>
+          </div>
         </div>
       </div>
       <div class="modal-footer">
