@@ -1,8 +1,7 @@
 /* Common in this page */
 
-.darkerred_background {
-  background-image: linear-gradient(to bottom, red, black);
-  margin-bottom: 0;
+.main-content {
+  background-color: rgba(0, 0, 0, 0);
 }
 
 h1 {
@@ -47,12 +46,33 @@ h1 {
   color: black;
 }
 
+/* background image layer */
+.parallax-bg {
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.red-plum {
+  width: 100vw;
+  height: 100vh;
+  background-image: url('../../../assets/img/bg-redplum.jpg');
+  background-size: 100% auto;
+}
+
+.white-plum {
+  width: 100vw;
+  height: 100vh;
+  background-image: url('../../../assets/img/bg-whiteplum.jpg');
+  background-size: 100% auto;
+}
+
 /* Ice Breaking */
 #greeting_area {
   width: 100%;
   text-align: center;
-  line-height: 3em;
-
+  background-color: rgba(0, 0, 0, 0);
 }
 
 /* Introduction */
