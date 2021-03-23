@@ -101,6 +101,7 @@ h1 {
 /* Introduction */
 #status_area {
   padding-bottom: 1em;
+  background: radial-gradient(red, black);
 }
 
 .left-half {
