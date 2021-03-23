@@ -68,7 +68,7 @@ h1 {
   background-size: 15em 15em;
   background-image: url('../../../assets/img/whose_eye.png');
   background-color: black;
-  background-position: 5em bottom;
+  background-position: 5em center;
 }
 
 
@@ -277,7 +277,7 @@ h1 {
 .gauge_on {
   display: inline-block;
   width: 15%;
-  min-width: 1em;
+  min-width: 5em;
   height:1em;
   margin-right: 1em;
   border-style: outset;
@@ -290,7 +290,7 @@ h1 {
 .gauge_off {
   display: inline-block;
   width: 15%;
-  min-width: 1em;
+  min-width: 5em;
   height:1em;
   margin-right: 1em;
   border-style: outset;
@@ -301,8 +301,8 @@ h1 {
 
 .gauge_overflow {
   display: inline-block;
-  width: 5em;
-  min-width: 1em;
+  width: 15%;
+  min-width: 5em;
   height:1em;
   margin-right: 1em;
   border-style: outset;
@@ -312,7 +312,7 @@ h1 {
 }
 
 slide {
-  height:25em;
+  height:max-content;
 }
 
 .skill-title {
@@ -559,3 +559,8 @@ details[open] .makimono-inner {
   left: -0.5em;
   margin-top: -0.5em;
 }
+
+/* for smartphone */
+/* @media screen and (max-width: 480px) {
+
+} */
