@@ -142,12 +142,10 @@
   <div class="horror-eye parallax-bg"></div>
 
   <!-- Skill Sets -->
-  <div id="skills_area" class="skills light-shadow">
+  <div id="skills_area" class="skills">
     <h1>Skills</h1>
-    <h2 class="strongly" style="background-color:white;width:90%;margin-left:5%;">
-      ～  Legend  ～
-    </h2>
-    <table id="legend" class="table bg-white">
+    <div class="skill-title strongly">～  Legend  ～</div>
+    <table id="legend" class="table table-dark">
       <tr>
         <td>
           <div class="d-flex flex-column-reverse flex-sm-row align-items-center">
@@ -158,7 +156,7 @@
             <div class="gauge_on"></div>
           </div>
         </td>
-        <td>Expert</td>
+        <td class="align-middle">Expert</td>
         <td class="d-none d-sm-table-cell">Leave it to me.</td>
       </tr>
       <tr>
@@ -171,7 +169,7 @@
             <div class="gauge_off"></div>
           </div>
         </td>
-        <td>Advanced</td>
+        <td class="align-middle">Advanced</td>
         <td class="d-none d-sm-table-cell">Better than anyone else in high probability.</td>
       </tr>
       <tr>
@@ -184,7 +182,7 @@
             <div class="gauge_off"></div>
           </div>
         </td>
-        <td>Intermediate</td>
+        <td class="align-middle">Intermediate</td>
         <td class="d-none d-sm-table-cell">Basically I can handle it by myself. </td>
       </tr>
       <tr>
@@ -197,7 +195,7 @@
             <div class="gauge_off"></div>
           </div>
         </td>
-        <td>Elemetary</td>
+        <td class="align-middle">Elemetary</td>
         <td class="d-none d-sm-table-cell">Know a little. But possibly need a help in deep level.</td>
       </tr>
       <tr>
@@ -210,17 +208,17 @@
             <div class="gauge_off"></div>
           </div>
         </td>
-        <td>Begginer</td>
+        <td class="align-middle">Begginer</td>
         <td class="d-none d-sm-table-cell">Under studying. Not bussiness level at current.</td>
       </tr>
     </table>
 
     <carousel [interval]="stop_sliding">
       <slide>
-        <div class="skill-title">Summary</div>
-        <table id="summary" class="table table-warning">
+        <div class="skill-title strongly">Summary</div>
+        <table id="summary" class="table table-dark">
           <tr>
-            <td>Coding</td>
+            <td class="align-middle">Coding</td>
             <td>
               <div class="d-flex flex-column-reverse flex-sm-row align-items-center">
                 <div class="gauge_on"></div>
@@ -232,7 +230,7 @@
             </td>
           </tr>
           <tr>
-            <td>Cooking</td>
+            <td class="align-middle">Cooking</td>
             <td>
               <div class="d-flex flex-column-reverse flex-sm-row align-items-center">
                 <div class="gauge_on"></div>
@@ -244,7 +242,7 @@
             </td>
           </tr>
           <tr>
-            <td>Karaoke</td>
+            <td class="align-middle">Karaoke</td>
             <td>
               <div class="d-flex flex-column-reverse flex-sm-row align-items-center">
                 <div class="gauge_on"></div>
@@ -256,7 +254,7 @@
             </td>
           </tr>
           <tr>
-            <td>Design</td>
+            <td class="align-middle">Design</td>
             <td>
               <div class="text-center text-sm-left">
                 You know ;)
@@ -264,7 +262,7 @@
             </td>
           </tr>
           <tr>
-            <td>Money</td>
+            <td class="align-middle">Money</td>
             <td>
               <div class="d-flex flex-column-reverse flex-sm-row align-items-center">
                 <div class="gauge_on"></div>
@@ -276,7 +274,7 @@
             </td>
           </tr>
           <tr>
-            <td>Fame</td>
+            <td class="align-middle">Fame</td>
             <td>
               <div class="d-flex flex-column-reverse flex-sm-row align-items-center">
                 <div class="gauge_off"></div>
@@ -288,9 +286,9 @@
             </td>
           </tr>
           <tr>
-            <td>Potential</td>
+            <td class="align-middle">Potential</td>
             <td>
-              <div class="d-flex flex-column-reverse flex-sm-row align-items-center">
+              <div class="gauge-potential d-flex flex-column-reverse flex-sm-row align-items-center">
                 <div class="gauge_overflow"></div>
                 <div class="gauge_overflow"></div>
                 <div class="gauge_overflow"></div>
@@ -307,10 +305,10 @@
       </slide>
       <!-- Regular Skill Slides -->
       <slide *ngFor="let s of slides;">
-        <div class="skill-title" [ngClass]="s.clazz">{{s.title}}</div>
-        <table class="table table-warning">
+        <div class="strongly skill-title" [ngClass]="s.clazz">{{s.title}}</div>
+        <table class="regular-skills table table-dark">
           <tr *ngFor="let r of s.rows;">
-            <td>{{r.item}}</td>
+            <td class="align-middle">{{r.item}}</td>
             <td>
               <div class="d-flex flex-column-reverse flex-sm-row align-items-center">
                 <div [ngClass]="r.rate > 0 ? 'gauge_on' : 'gauge_off'"></div>
@@ -327,7 +325,7 @@
 
   </div>
   <!-- Education and Personal history -->
-  <div id="career_area" class="career light-shadow">
+  <div id="career_area" class="career">
     <h1>Career</h1>
     <details>
       <summary>

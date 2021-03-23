@@ -39,14 +39,6 @@ h1 {
   color: black;
 }
 
-.deep-shadow {
-  box-shadow: 10px 10px;
-}
-
-.light-shadow {
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-}
-
 /* background image layer */
 .parallax-bg {
   background-attachment: fixed;
@@ -259,6 +251,10 @@ h1 {
 /* Skill Sets */
 #skills_area {
   text-align: center;
+  background: linear-gradient(to Top right, black, mediumvioletred);
+  border-top-right-radius: 60%;
+  border-bottom-right-radius: 80%;
+  box-shadow: 1em 1em 5em;
 }
 
 #legend {
@@ -272,6 +268,16 @@ h1 {
 
 #legend tr td:nth-of-type(2) {
   width: 5em;
+  text-align: left;
+  font-weight: bold;
+}
+
+#legend tr td:nth-of-type(3) {
+  text-align: left;
+}
+
+#legend, #summary, .regular-skills {
+  background-color: rgba(0, 0, 0, 0.8);
 }
 
 .gauge_on {
@@ -318,8 +324,7 @@ slide {
 .skill-title {
   margin-left: 5%;
   width: 90%;
-  background-color: white;
-  font-size: xx-large;
+  background-color: black;
 }
 
 slide table {
@@ -331,23 +336,15 @@ slide table {
 slide table tr td:nth-of-type(1) {
   width: 10em;
   text-align: end;
+  font-weight: bold;
 }
 
 slide table tr td:nth-of-type(2) {
   text-align: start;
 }
 
-.potential {
-  margin-left: 5%;
-  width: 90%;
-  overflow: hidden;
-  white-space: nowrap;
-
-}
-
-.potential .title {
-  width: 10em;
-  text-align: end;
+.gauge-potential {
+  /* TODO: How express gauge overflowed */
 }
 
 /* Education and Personal history */
