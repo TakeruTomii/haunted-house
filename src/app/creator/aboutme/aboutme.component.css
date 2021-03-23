@@ -59,14 +59,14 @@ h1 {
   width: 100%;
   height: 100vh;
   background-image: url('../../../assets/img/bg-redplum.jpg');
-  background-size: 100% auto;
+  background-size: cover;
 }
 
 .white-plum {
   width: 100%;
   height: 100vh;
   background-image: url('../../../assets/img/bg-whiteplum.jpg');
-  background-size: 100% auto;
+  background-size: cover;
 }
 
 /* Ice Breaking */
@@ -272,7 +272,7 @@ h1 {
 
 .gauge_on {
   display: inline-block;
-  width: 5em;
+  width: 15%;
   min-width: 1em;
   height:1em;
   margin-right: 1em;
@@ -282,9 +282,10 @@ h1 {
   border-width: 3px;
 }
 
+
 .gauge_off {
   display: inline-block;
-  width: 5em;
+  width: 15%;
   min-width: 1em;
   height:1em;
   margin-right: 1em;
