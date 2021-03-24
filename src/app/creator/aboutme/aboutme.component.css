@@ -313,8 +313,12 @@ h1 {
   text-align: left;
 }
 
-#legend, #summary, .regular-skills {
+#legend, #summary, #potential, .regular-skills {
   background-color: rgba(0, 0, 0, 0.6);
+}
+
+#summary {
+  margin-bottom: 0;
 }
 
 .gauge_on {
@@ -380,8 +384,25 @@ slide table tr td:nth-of-type(2) {
   text-align: start;
 }
 
+#potential {
+  width: 100vw;
+}
+
+@media screen and (max-width: 576px){
+  #potential {
+    width: 90%;
+  }
+}
+
+.item-potential {
+  display: block;
+  width: 10em;
+  text-align: end;
+  font-weight: bold;
+}
+
 .gauge-potential {
-  /* TODO: How express gauge overflowed */
+  width: 100%;
 }
 
 /* Education and Personal history */
