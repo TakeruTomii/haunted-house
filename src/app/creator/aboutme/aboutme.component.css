@@ -388,7 +388,7 @@ slide table tr td:nth-of-type(2) {
   width: 100vw;
 }
 
-@media screen and (max-width: 576px){
+@media screen and (max-width: 992px){
   #potential {
     width: 90%;
   }
