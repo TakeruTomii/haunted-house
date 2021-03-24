@@ -143,187 +143,198 @@
 
   <!-- Skill Sets -->
   <div id="skills_area" class="skills">
-    <h1>Skills</h1>
-    <div class="skill-title strongly">～  Legend  ～</div>
-    <table id="legend" class="table table-dark">
-      <tr>
-        <td>
-          <div class="d-flex flex-column-reverse flex-sm-row align-items-center">
-            <div class="gauge_on"></div>
-            <div class="gauge_on"></div>
-            <div class="gauge_on"></div>
-            <div class="gauge_on"></div>
-            <div class="gauge_on"></div>
-          </div>
-        </td>
-        <td class="align-middle">Expert</td>
-        <td class="d-none d-sm-table-cell">Leave it to me.</td>
-      </tr>
-      <tr>
-        <td>
-          <div class="d-flex flex-column-reverse flex-sm-row align-items-center">
-            <div class="gauge_on"></div>
-            <div class="gauge_on"></div>
-            <div class="gauge_on"></div>
-            <div class="gauge_on"></div>
-            <div class="gauge_off"></div>
-          </div>
-        </td>
-        <td class="align-middle">Advanced</td>
-        <td class="d-none d-sm-table-cell">Better than anyone else in high probability.</td>
-      </tr>
-      <tr>
-        <td>
-          <div class="d-flex flex-column-reverse flex-sm-row align-items-center">
-            <div class="gauge_on"></div>
-            <div class="gauge_on"></div>
-            <div class="gauge_on"></div>
-            <div class="gauge_off"></div>
-            <div class="gauge_off"></div>
-          </div>
-        </td>
-        <td class="align-middle">Intermediate</td>
-        <td class="d-none d-sm-table-cell">Basically I can handle it by myself. </td>
-      </tr>
-      <tr>
-        <td>
-          <div class="d-flex flex-column-reverse flex-sm-row align-items-center">
-            <div class="gauge_on"></div>
-            <div class="gauge_on"></div>
-            <div class="gauge_off"></div>
-            <div class="gauge_off"></div>
-            <div class="gauge_off"></div>
-          </div>
-        </td>
-        <td class="align-middle">Elemetary</td>
-        <td class="d-none d-sm-table-cell">Know a little. But possibly need a help in deep level.</td>
-      </tr>
-      <tr>
-        <td>
-          <div class="d-flex flex-column-reverse flex-sm-row align-items-center">
-            <div class="gauge_on"></div>
-            <div class="gauge_off"></div>
-            <div class="gauge_off"></div>
-            <div class="gauge_off"></div>
-            <div class="gauge_off"></div>
-          </div>
-        </td>
-        <td class="align-middle">Begginer</td>
-        <td class="d-none d-sm-table-cell">Under studying. Not bussiness level at current.</td>
-      </tr>
-    </table>
+    <!-- background shapes -->
+    <div id="wing1" class="wing"></div>
+    <div id="wing2" class="wing"></div>
+    <div id="wing3" class="wing"></div>
+    <div id="wing4" class="wing"></div>
 
-    <carousel [interval]="stop_sliding">
-      <slide>
-        <div class="skill-title strongly">Summary</div>
-        <table id="summary" class="table table-dark">
-          <tr>
-            <td class="align-middle">Coding</td>
-            <td>
-              <div class="d-flex flex-column-reverse flex-sm-row align-items-center">
-                <div class="gauge_on"></div>
-                <div class="gauge_on"></div>
-                <div class="gauge_on"></div>
-                <div class="gauge_on"></div>
-                <div class="gauge_off"></div>
-              </div>
-            </td>
-          </tr>
-          <tr>
-            <td class="align-middle">Cooking</td>
-            <td>
-              <div class="d-flex flex-column-reverse flex-sm-row align-items-center">
-                <div class="gauge_on"></div>
-                <div class="gauge_on"></div>
-                <div class="gauge_on"></div>
-                <div class="gauge_on"></div>
-                <div class="gauge_on"></div>
-              </div>
-            </td>
-          </tr>
-          <tr>
-            <td class="align-middle">Karaoke</td>
-            <td>
-              <div class="d-flex flex-column-reverse flex-sm-row align-items-center">
-                <div class="gauge_on"></div>
-                <div class="gauge_on"></div>
-                <div class="gauge_on"></div>
-                <div class="gauge_on"></div>
-                <div class="gauge_on"></div>
-              </div>
-            </td>
-          </tr>
-          <tr>
-            <td class="align-middle">Design</td>
-            <td>
-              <div class="text-center text-sm-left">
-                You know ;)
-              </div>
-            </td>
-          </tr>
-          <tr>
-            <td class="align-middle">Money</td>
-            <td>
-              <div class="d-flex flex-column-reverse flex-sm-row align-items-center">
-                <div class="gauge_on"></div>
-                <div class="gauge_off"></div>
-                <div class="gauge_off"></div>
-                <div class="gauge_off"></div>
-                <div class="gauge_off"></div>
-              </div>
-            </td>
-          </tr>
-          <tr>
-            <td class="align-middle">Fame</td>
-            <td>
-              <div class="d-flex flex-column-reverse flex-sm-row align-items-center">
-                <div class="gauge_off"></div>
-                <div class="gauge_off"></div>
-                <div class="gauge_off"></div>
-                <div class="gauge_off"></div>
-                <div class="gauge_off"></div>
-              </div>
-            </td>
-          </tr>
-          <tr>
-            <td class="align-middle">Potential</td>
-            <td>
-              <div class="gauge-potential d-flex flex-column-reverse flex-sm-row align-items-center">
-                <div class="gauge_overflow"></div>
-                <div class="gauge_overflow"></div>
-                <div class="gauge_overflow"></div>
-                <div class="gauge_overflow"></div>
-                <div class="gauge_overflow"></div>
-                <div class="gauge_overflow"></div>
-                <div class="gauge_overflow"></div>
-                <div class="gauge_overflow"></div>
-                <div class="gauge_overflow"></div>
-              </div>
-            </td>
-          </tr>
-        </table>
-      </slide>
-      <!-- Regular Skill Slides -->
-      <slide *ngFor="let s of slides;">
-        <div class="strongly skill-title" [ngClass]="s.clazz">{{s.title}}</div>
-        <table class="regular-skills table table-dark">
-          <tr *ngFor="let r of s.rows;">
-            <td class="align-middle">{{r.item}}</td>
-            <td>
-              <div class="d-flex flex-column-reverse flex-sm-row align-items-center">
-                <div [ngClass]="r.rate > 0 ? 'gauge_on' : 'gauge_off'"></div>
-                <div [ngClass]="r.rate > 1 ? 'gauge_on' : 'gauge_off'"></div>
-                <div [ngClass]="r.rate > 2 ? 'gauge_on' : 'gauge_off'"></div>
-                <div [ngClass]="r.rate > 3 ? 'gauge_on' : 'gauge_off'"></div>
-                <div [ngClass]="r.rate > 4 ? 'gauge_on' : 'gauge_off'"></div>
-              </div>
-            </td>
-          </tr>
-        </table>
-      </slide>
-    </carousel>
+    <div id="skills_container">
+      <h1>Skills</h1>
+      <div class="skill-title strongly">～  Legend  ～</div>
+      <table id="legend" class="table table-dark">
+        <tr>
+          <td>
+            <div class="d-flex flex-column-reverse flex-sm-row align-items-center">
+              <div class="gauge_on"></div>
+              <div class="gauge_on"></div>
+              <div class="gauge_on"></div>
+              <div class="gauge_on"></div>
+              <div class="gauge_on"></div>
+            </div>
+          </td>
+          <td class="align-middle">Expert</td>
+          <td class="d-none d-sm-table-cell">Leave it to me.</td>
+        </tr>
+        <tr>
+          <td>
+            <div class="d-flex flex-column-reverse flex-sm-row align-items-center">
+              <div class="gauge_on"></div>
+              <div class="gauge_on"></div>
+              <div class="gauge_on"></div>
+              <div class="gauge_on"></div>
+              <div class="gauge_off"></div>
+            </div>
+          </td>
+          <td class="align-middle">Advanced</td>
+          <td class="d-none d-sm-table-cell">Better than anyone else in high probability.</td>
+        </tr>
+        <tr>
+          <td>
+            <div class="d-flex flex-column-reverse flex-sm-row align-items-center">
+              <div class="gauge_on"></div>
+              <div class="gauge_on"></div>
+              <div class="gauge_on"></div>
+              <div class="gauge_off"></div>
+              <div class="gauge_off"></div>
+            </div>
+          </td>
+          <td class="align-middle">Intermediate</td>
+          <td class="d-none d-sm-table-cell">Basically I can handle it by myself. </td>
+        </tr>
+        <tr>
+          <td>
+            <div class="d-flex flex-column-reverse flex-sm-row align-items-center">
+              <div class="gauge_on"></div>
+              <div class="gauge_on"></div>
+              <div class="gauge_off"></div>
+              <div class="gauge_off"></div>
+              <div class="gauge_off"></div>
+            </div>
+          </td>
+          <td class="align-middle">Elemetary</td>
+          <td class="d-none d-sm-table-cell">Know a little. But possibly need a help in deep level.</td>
+        </tr>
+        <tr>
+          <td>
+            <div class="d-flex flex-column-reverse flex-sm-row align-items-center">
+              <div class="gauge_on"></div>
+              <div class="gauge_off"></div>
+              <div class="gauge_off"></div>
+              <div class="gauge_off"></div>
+              <div class="gauge_off"></div>
+            </div>
+          </td>
+          <td class="align-middle">Begginer</td>
+          <td class="d-none d-sm-table-cell">Under studying. Not bussiness level at current.</td>
+        </tr>
+      </table>
+
+      <carousel [interval]="stop_sliding">
+        <slide>
+          <div class="skill-title strongly">Summary</div>
+          <table id="summary" class="table table-dark">
+            <tr>
+              <td class="align-middle">Coding</td>
+              <td>
+                <div class="d-flex flex-column-reverse flex-sm-row align-items-center">
+                  <div class="gauge_on"></div>
+                  <div class="gauge_on"></div>
+                  <div class="gauge_on"></div>
+                  <div class="gauge_on"></div>
+                  <div class="gauge_off"></div>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td class="align-middle">Cooking</td>
+              <td>
+                <div class="d-flex flex-column-reverse flex-sm-row align-items-center">
+                  <div class="gauge_on"></div>
+                  <div class="gauge_on"></div>
+                  <div class="gauge_on"></div>
+                  <div class="gauge_on"></div>
+                  <div class="gauge_on"></div>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td class="align-middle">Karaoke</td>
+              <td>
+                <div class="d-flex flex-column-reverse flex-sm-row align-items-center">
+                  <div class="gauge_on"></div>
+                  <div class="gauge_on"></div>
+                  <div class="gauge_on"></div>
+                  <div class="gauge_on"></div>
+                  <div class="gauge_on"></div>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td class="align-middle">Design</td>
+              <td>
+                <div class="text-center text-sm-left">
+                  You know ;)
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td class="align-middle">Money</td>
+              <td>
+                <div class="d-flex flex-column-reverse flex-sm-row align-items-center">
+                  <div class="gauge_on"></div>
+                  <div class="gauge_off"></div>
+                  <div class="gauge_off"></div>
+                  <div class="gauge_off"></div>
+                  <div class="gauge_off"></div>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td class="align-middle">Fame</td>
+              <td>
+                <div class="d-flex flex-column-reverse flex-sm-row align-items-center">
+                  <div class="gauge_off"></div>
+                  <div class="gauge_off"></div>
+                  <div class="gauge_off"></div>
+                  <div class="gauge_off"></div>
+                  <div class="gauge_off"></div>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td class="align-middle">Potential</td>
+              <td>
+                <div class="gauge-potential d-flex flex-column-reverse flex-sm-row align-items-center">
+                  <div class="gauge_overflow"></div>
+                  <div class="gauge_overflow"></div>
+                  <div class="gauge_overflow"></div>
+                  <div class="gauge_overflow"></div>
+                  <div class="gauge_overflow"></div>
+                  <div class="gauge_overflow"></div>
+                  <div class="gauge_overflow"></div>
+                  <div class="gauge_overflow"></div>
+                  <div class="gauge_overflow"></div>
+                </div>
+              </td>
+            </tr>
+          </table>
+        </slide>
+        <!-- Regular Skill Slides -->
+        <slide *ngFor="let s of slides;">
+          <div class="strongly skill-title" [ngClass]="s.clazz">{{s.title}}</div>
+          <table class="regular-skills table table-dark">
+            <tr *ngFor="let r of s.rows;">
+              <td class="align-middle">{{r.item}}</td>
+              <td>
+                <div class="d-flex flex-column-reverse flex-sm-row align-items-center">
+                  <div [ngClass]="r.rate > 0 ? 'gauge_on' : 'gauge_off'"></div>
+                  <div [ngClass]="r.rate > 1 ? 'gauge_on' : 'gauge_off'"></div>
+                  <div [ngClass]="r.rate > 2 ? 'gauge_on' : 'gauge_off'"></div>
+                  <div [ngClass]="r.rate > 3 ? 'gauge_on' : 'gauge_off'"></div>
+                  <div [ngClass]="r.rate > 4 ? 'gauge_on' : 'gauge_off'"></div>
+                </div>
+              </td>
+            </tr>
+          </table>
+        </slide>
+      </carousel>
+    </div>
 
   </div>
+
+
+
   <!-- Education and Personal history -->
   <div id="career_area" class="career">
     <h1>Career</h1>

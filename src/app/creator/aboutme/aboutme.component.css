@@ -250,11 +250,48 @@ h1 {
 
 /* Skill Sets */
 #skills_area {
+  position: relative;
   text-align: center;
   background: linear-gradient(to Top right, black, mediumvioletred);
-  border-top-right-radius: 60%;
-  border-bottom-right-radius: 80%;
+  /* border-top-right-radius: 60%;
+  border-bottom-right-radius: 80%; */
   box-shadow: 1em 1em 5em;
+}
+
+
+#skills_container {
+  position: relative;
+  z-index: 5;
+}
+
+.wing {
+  filter: drop-shadow(2em 1em 1em #000000);
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+
+#wing1{
+  background-color: white;
+  clip-path: polygon(0 30%, 100% 10%, 20% 80%);
+  z-index: 4;
+}
+
+#wing2 {
+  background-color: deeppink;
+  clip-path: polygon(0 30%, 90% 30%, 20% 80%);
+  z-index: 3;
+}
+
+#wing3 {
+  background-color: magenta;
+  clip-path: polygon(0 30%, 80% 50%, 20% 80%);
+  z-index: 2;
+}
+#wing4 {
+  background-color: mediumorchid;
+  clip-path: polygon(0 30%, 70% 60%, 20% 80%);
+  z-index: 1;
 }
 
 #legend {
@@ -277,7 +314,7 @@ h1 {
 }
 
 #legend, #summary, .regular-skills {
-  background-color: rgba(0, 0, 0, 0.8);
+  background-color: rgba(0, 0, 0, 0.6);
 }
 
 .gauge_on {
@@ -324,7 +361,7 @@ slide {
 .skill-title {
   margin-left: 5%;
   width: 90%;
-  background-color: black;
+  background-color: rgba(0, 0, 0, 0.9);
 }
 
 slide table {
