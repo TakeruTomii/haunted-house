@@ -213,35 +213,20 @@ h1 {
   font-size: large;
 }
 
-#comment {
+#comment, #profile, #equipment, #expression {
   border-style: ridge;
-  background-color: palegoldenrod;
+  background: radial-gradient(farthest-corner, lightyellow, palegoldenrod);
   border-color: gold;
+}
+
+#comment {
   font-family: 'Monotype Corsiva', fantasy;
   font-style: italic;
   font-size:x-large;
 }
 
-#profile {
-  border-style: ridge;
-  background-color: palegoldenrod;
-  border-color: gold;
-}
-
-#profyle thead td {
+#profile thead td {
   font-weight: bold;
-}
-
-#equipment {
-  border-style: ridge;
-  background-color: palegoldenrod;
-  border-color: gold;
-}
-
-#expression {
-  border-style: ridge;
-  background-color: palegoldenrod;
-  border-color: gold;
 }
 
 #speacies {
