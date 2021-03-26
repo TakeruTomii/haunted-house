@@ -551,7 +551,7 @@ details summary:focus {
   font-family: "HGS行書体", "HG行書体", serif;
 }
 
-@media screen and (max-width:480px) {
+@media screen and (max-width:767px) {
   #history td {
     display: block;
   }
