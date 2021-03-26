@@ -396,39 +396,14 @@ slide table tr td:nth-of-type(2) {
   padding-top: 3em;
 
   /* background-image */
-  background-color:silver;
   background-image:
-  radial-gradient(circle at 100% 150%, silver 24%, white 24%, white 28%, silver 28%, silver 36%, white 36%, white 40%, transparent 40%, transparent),
-  radial-gradient(circle at 0    150%, silver 24%, white 24%, white 28%, silver 28%, silver 36%, white 36%, white 40%, transparent 40%, transparent),
-  radial-gradient(circle at 50%  100%, white 10%, silver 10%, silver 23%, white 23%, white 30%, silver 30%, silver 43%, white 43%, white 50%, silver 50%, silver 63%, white 63%, white 71%, transparent 71%, transparent),
-  radial-gradient(circle at 100% 50%, white 5%, silver 5%, silver 15%, white 15%, white 20%, silver 20%, silver 29%, white 29%, white 34%, silver 34%, silver 44%, white 44%, white 49%, transparent 49%, transparent),
-  radial-gradient(circle at 0    50%, white 5%, silver 5%, silver 15%, white 15%, white 20%, silver 20%, silver 29%, white 29%, white 34%, silver 34%, silver 44%, white 44%, white 49%, transparent 49%, transparent);
+  radial-gradient(circle at 100% 150%, lavenderblush 24%, white 24%, white 28%, lavenderblush 28%, lavenderblush 36%, white 36%, white 40%, transparent 40%, transparent),
+  radial-gradient(circle at 0    150%, lavenderblush 24%, white 24%, white 28%, lavenderblush 28%, lavenderblush 36%, white 36%, white 40%, transparent 40%, transparent),
+  radial-gradient(circle at 50%  100%, white 10%, lavenderblush 10%, lavenderblush 23%, white 23%, white 30%, lavenderblush 30%, lavenderblush 43%, white 43%, white 50%, lavenderblush 50%, lavenderblush 63%, white 63%, white 71%, transparent 71%, transparent),
+  radial-gradient(circle at 100% 50%, white 5%, lavenderblush 5%, lavenderblush 15%, white 15%, white 20%, lavenderblush 20%, lavenderblush 29%, white 29%, white 34%, lavenderblush 34%, lavenderblush 44%, white 44%, white 49%, transparent 49%, transparent),
+  radial-gradient(circle at 0    50%, white 5%, lavenderblush 5%, lavenderblush 15%, white 15%, white 20%, lavenderblush 20%, lavenderblush 29%, white 29%, white 34%, lavenderblush 34%, lavenderblush 44%, white 44%, white 49%, transparent 49%, transparent);
   background-size: 100px 50px;
 
-  /* background: radial-gradient(4rem,
-    rgba(255,255,255,0) 80%,
-    #778691 80%, #778691 99%,
-    rgba(255,255,255, 0)
-    ) 0 0,
-    radial-gradient(4rem,
-    rgba(255,255,255,0) 80%,
-    #778691 80%, #778691 99%,
-    rgba(255,255,255, 0)
-    ) 4em 4em,
-    radial-gradient(4.7rem,
-    rgba(255,255,255,0) 50%,
-    #B1C2B3 50%,
-    #B1C2B3 75%, #B1C2B3 99%,
-    rgba(255,255,255, 0)
-    ) 4em 4em,
-    radial-gradient(4.7rem,
-    rgba(255,255,255,0) 50%,
-    #B1C2B3 50%,
-    #F5FCD0 75%, #B1C2B3 99%,
-    rgba(255,255,255, 0)
-    ) 0 0;
-  background-size: 8rem 8rem;
-  background-color: #F5FCD0; */
 }
 
 .click-it {
