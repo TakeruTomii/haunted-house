@@ -349,7 +349,7 @@ h1 {
 }
 
 slide {
-  height:max-content;
+  height: max-content;
 }
 
 .skill-title {
@@ -361,7 +361,10 @@ slide {
 slide table {
   margin-left: 5%;
   width: 90%;
-  max-height: 25em;
+}
+
+slide table:not(#potential) {
+  min-height: 50vh;
 }
 
 slide table tr td:nth-of-type(1) {
