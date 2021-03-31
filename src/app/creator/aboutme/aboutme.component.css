@@ -682,11 +682,12 @@ details summary:focus {
 #exit {
   position: relative;
   padding: 2em;
+  background: radial-gradient(black, darkred);
 }
 
 #akabeko {
-  width: 10em;
-  height: 10em;
+  width: 8em;
+  height: 8em;
 }
 
 #akabeko img {
@@ -703,9 +704,9 @@ details summary:focus {
   font-size: large;
   align-items: center;
   justify-content: center;
-  color:#FFF;
+  color:black;
   padding: 1em;
-  background-color: orange;
+  background-color: white;
   border-radius: 50%;
   margin-left: 1em;
 }
@@ -715,14 +716,10 @@ details summary:focus {
   display: block;
   z-index: 1;
   border-style: solid;
-  border-color: transparent orange;
+  border-color: transparent white;
   border-width: 10px 10px 10px 0;
   top: 50%;
   left: -0.5em;
   margin-top: -0.5em;
 }
 
-/* for smartphone */
-/* @media screen and (max-width: 480px) {
-
-} */
