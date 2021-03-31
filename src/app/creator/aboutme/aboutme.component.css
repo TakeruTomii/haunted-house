@@ -394,10 +394,13 @@ slide table tr td:nth-of-type(2) {
 .gauge-potential {
   width: 100%;
 }
+
 /* Japanese style pattern */
 .japanese-pattern {
   width: 100%;
   height: 100vh;
+  display: flex;
+  overflow: hidden;
 
   background-image:
   radial-gradient(circle at 100% 150%, silver 24%, white 24%, white 28%, silver 28%, silver 36%, white 36%, white 40%, transparent 40%, transparent),
@@ -409,9 +412,36 @@ slide table tr td:nth-of-type(2) {
 
 }
 
+/* clouds scroll horizontally and loop  */
 .cloud {
-  width: 100%;
+  width: 100vw;
   height: 100%;
+}
+
+#cloud0 {
+  animation: loop0 20s -20s linear infinite;
+}
+
+#cloud1 {
+  animation: loop1 20s -10s linear infinite;
+}
+
+@keyframes loop0 {
+  0% {
+    transform: translateX(120vw);
+  }
+  100% {
+    transform: translateX(-120vw);
+  }
+}
+
+@keyframes loop1 {
+  0% {
+    transform: translateX(40vw);
+  }
+  100% {
+    transform: translateX(-200vw);
+  }
 }
 
 /* Education and Personal history */
@@ -434,7 +464,6 @@ slide table tr td:nth-of-type(2) {
 
 #career_title div {
   background:black;
-  /* box-shadow: -1em 1em 2em khaki inset; */
   width: 100%;
   height: 90%;
   margin: 0.5em;
