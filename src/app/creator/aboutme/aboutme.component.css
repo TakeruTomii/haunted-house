@@ -684,8 +684,26 @@ details summary:focus {
 /* Exit */
 #exit {
   position: relative;
-  padding: 2em;
-  background: radial-gradient(black, darkred);
+  padding: 3em;
+  animation: inhaling 0.2s linear infinite;
+}
+
+@keyframes inhaling {
+  0% {
+    background: repeating-radial-gradient(circle , darkred 5px, black 10px, darkred 15px);
+  }
+  25% {
+    background: repeating-radial-gradient(circle , darkred 3px, black 8px, darkred 13px);
+  }
+  50% {
+    background: repeating-radial-gradient(circle , black 5px, darkred 10px, black 15px);
+  }
+  75% {
+    background: repeating-radial-gradient(circle , black 3px, darkred 8px, black 13px);
+  }
+  100% {
+    background: repeating-radial-gradient(circle , darkred 5px, black 10px, darkred 15px);
+  }
 }
 
 #akabeko {
