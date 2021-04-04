@@ -1,0 +1,76 @@
+#bg-washi {
+  background-image: url('../../../assets/img/tesukiwashi-pattern-08.jpg');
+  background-size: cover;
+}
+
+#chara_side {
+  height: 100vh;
+}
+
+#akabeko {
+  width: 8em;
+  height: 8em;
+}
+
+#akabeko img {
+  width: 100%;
+  height: 100%;
+}
+
+/* bubble */
+.bubble {
+  position: relative;
+  display: flex;
+  width: max-content;
+  min-width: 10em;
+  font-size: large;
+  align-items: center;
+  justify-content: center;
+  color:black;
+  padding: 1em;
+  background-color: white;
+  border-radius: 50%;
+  margin-left: 1em;
+}
+.bubble:before {
+  content: '';
+  position: absolute;
+  display: block;
+  z-index: 1;
+  border-style: solid;
+  border-color: transparent white;
+  border-width: 10px 10px 10px 0;
+  top: 50%;
+  left: -0.5em;
+  margin-top: -0.5em;
+}
+
+
+#form_side {
+  height: 100vh;
+}
+
+input, textarea {
+  border-right:none;
+  border-left:none;
+  border-top:none;
+  border-bottom: 2px silver solid;
+  background-color: transparent;
+  border-radius: 0;
+}
+
+input:focus, textarea:focus {
+  background-color: transparent;
+  outline: 0;
+}
+
+#send {
+  width: 5em;
+  height: 3em;
+  border: 3px black double;
+  background-color: transparent;
+}
+
+#send:hover {
+  background-color: rgba(100, 100, 100, 0.2);
+}
