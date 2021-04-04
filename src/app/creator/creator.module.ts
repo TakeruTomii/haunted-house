@@ -6,9 +6,10 @@ import { AccordionModule } from 'ngx-bootstrap/accordion';
 
 // bootstrap
 import { CarouselModule } from 'ngx-bootstrap/carousel';
+import { ContactMeComponent } from './contactme/contactme.component';
 
 @NgModule({
-  declarations: [AboutMeComponent],
+  declarations: [AboutMeComponent, ContactMeComponent],
   imports: [
     CommonModule,
     BrowserAnimationsModule,

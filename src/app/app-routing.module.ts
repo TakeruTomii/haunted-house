@@ -7,7 +7,8 @@ import { LoadingComponent } from './loading/loading.component';
 import { TitleComponent } from './title/title.component';
 import { HomeScreenComponent } from './home-screen/home-screen.component';
 import { InitConfComponent } from './init-conf/init-conf.component';
-import { AboutMeComponent } from './creator/aboutme/aboutme.component'
+import { AboutMeComponent } from './creator/aboutme/aboutme.component';
+import { ContactMeComponent } from './creator/contactme/contactme.component'
 
 // Routing table
 // Add items when creating new pages
@@ -18,6 +19,7 @@ const routes: Routes = [
   { path: 'title', component: TitleComponent },
   { path: 'home', component: HomeScreenComponent },
   { path: 'aboutme', component: AboutMeComponent },
+  { path: 'contactme', component: ContactMeComponent },
   //TODO: Path for Japanese
   //default
   { path: '**', component: LoadingComponent }
