@@ -166,7 +166,7 @@ h1 {
   height: 4em;
   border-style: outset;
   border-color: crimson;
-  background-color: crimson;
+  background: linear-gradient(to right bottom, maroon, crimson);
   border-radius: 10%;
   z-index: 2;
   text-align: center;
@@ -189,14 +189,14 @@ h1 {
   bottom: 3%;
   left: 50%;
   transform: translate(-50%, 0%);
-  width: 6em;
+  width: 5em;
   height: 1.5em;
   border-style: ridge;
   border-color: gold;
   border-radius: 5%;
   background-color: white;
   text-align: center;
-  font-size: x-large;
+  font-size: xx-large;
   font-family: 'Monotype Corsiva', fantasy;
   z-index: 2;
 }
@@ -211,6 +211,7 @@ h1 {
   border-color: gold;
   border-radius: 50%;
   z-index: 2;
+  cursor: pointer;
 }
 
 .right-half  {

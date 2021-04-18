@@ -32,6 +32,10 @@ export class AboutMeComponent implements OnInit {
   constructor(private modal: BsModalService) { }
 
   ngOnInit(): void {
+    this.setPortraitAttr()
+  }
+
+  setPortraitAttr() {
     // Initiate display items of status
     // get current status randomly
     let len_patterns = STATUS_PATTERNS.length;
@@ -46,7 +50,6 @@ export class AboutMeComponent implements OnInit {
     this.comment_content = current_status.comment;
     this.speacies = current_status.speacies;
     this.exp_content = current_status.exp;
-
   }
 
   // Open modal for serifs

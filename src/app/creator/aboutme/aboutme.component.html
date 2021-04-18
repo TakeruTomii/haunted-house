@@ -52,8 +52,8 @@
               <p id="str_val">{{str_val}}</p>
               <p id="str_unit">{{str_unit}}</p>
             </div>
-            <div id="card_name">Takeru Tomii</div>
-            <div id="attribute">
+            <div id="card_name">Tommy</div>
+            <div id="attribute" (click)="setPortraitAttr()">
               <img [src]="attr_path" alt="attribute">
             </div>
           </div>
@@ -73,6 +73,10 @@
             </tr>
           </thead>
           <tbody>
+            <tr>
+            <td class="black-notice">Name</td>
+              <td>Takeru Tomii</td>
+            </tr>
             <tr>
               <td class="black-notice">Lv</td>
               <td><span>26</span> (years old)</td>
