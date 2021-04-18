@@ -56,6 +56,10 @@ label {
   font-weight: bold;
 }
 
+.badge {
+  font-size: xx-small;
+}
+
 input, textarea {
   border-right:none;
   border-left:none;
