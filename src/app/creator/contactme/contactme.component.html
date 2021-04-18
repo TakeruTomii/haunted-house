@@ -1,31 +1,51 @@
 <div id="bg-washi" class="d-flex flex-lg-row">
   <!-- charactor  -->
-  <div id="chara_side" class="d-flex col-4">
+  <div id="chara_side" class="d-flex col-4 flex-column justify-content-center">
+    <div class="bubble">
+      <p>Fullfill the form and send Tommy message!</p>
+    </div>
     <div id="akabeko" class="charactors d-flex">
       <img src="../../../assets/img/Akabeko_neutral.png" alt="Akabeko">
-      <div class="bubble">
-        <p>Fullfill the form and send Tommy message!</p>
-      </div>
     </div>
   </div>
   <!-- input form  -->
-  <div id="form_side" class="d-flex col-8 flex-column">
-    <!-- Name -->
-    <div class="form-group">
-      <label for="name">Name</label>
-      <input type="text" class="form-control" id="name" placeholder="John Doe">
-    </div>
-    <!-- Email -->
-    <div class="form-group">
-      <label for="email_address">Email address</label>
-      <input type="email" class="form-control" id="email_address" placeholder="example@xxx.mail.com">
-    </div>
-    <!-- Message -->
-    <div class="form-group">
-      <label for="message">Name</label>
-      <textarea class="form-control" id="message" placeholder="You are hired." rows="10"></textarea>
-    </div>
-    <!-- Send Button -->
-    <button id="send" type="button">Send</button>
+  <div id="form_side" class="d-flex col-8 flex-column justify-content-around">
+    <form #Inquiry="ngForm" (ngSubmit)="sendInquiry()" novalidate>
+      <!-- Name -->
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" class="form-control" id="name" name="name" placeholder="John Doe"
+          [(ngModel)]="inquiry.name" #name="ngModel" required maxlength="100">
+      </div>
+      <span *ngIf="name.errors?.required && name.dirty" class="err-msg">
+        Name is required.
+      </span>
+
+      <!-- Email -->
+      <div class="form-group">
+        <label for="mail">E-mail address</label>
+        <input type="email" class="form-control" id="mail" name="mail" placeholder="example@xxx.mail.com"
+          [(ngModel)]="inquiry.mail" #mail="ngModel" required email>
+      </div>
+      <span *ngIf="mail.errors?.required && mail.dirty" class="err-msg">
+        E-mail address is required.
+      </span>
+      <span *ngIf="mail.errors?.email && mail.touched" class="err-msg">
+        Invalid E-mail address. Input it in the correct format.
+      </span>
+      <!-- Message -->
+      <div class="form-group">
+        <label for="message">Message</label>
+        <textarea class="form-control" id="message" name="message" placeholder="You are hired." rows="10"
+        [(ngModel)]="inquiry.message" #message="ngModel" required></textarea>
+      </div>
+      <span *ngIf="message.errors?.required && message.dirty" class="err-msg">
+        Message is required.
+      </span>
+      <!-- Send Button -->
+      <div class="form-group">
+        <button id="send" type="submit" [disabled]="Inquiry.invalid">Send</button>
+      </div>
+    </form>
   </div>
 </div>

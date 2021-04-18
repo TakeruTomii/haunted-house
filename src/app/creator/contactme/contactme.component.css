@@ -8,8 +8,8 @@
 }
 
 #akabeko {
-  width: 8em;
-  height: 8em;
+  width: 100%;
+  height: auto;
 }
 
 #akabeko img {
@@ -23,11 +23,12 @@
   display: flex;
   width: max-content;
   min-width: 10em;
+  max-width: 90%;
   font-size: large;
   align-items: center;
   justify-content: center;
   color:black;
-  padding: 1em;
+  padding: 2em;
   background-color: white;
   border-radius: 50%;
   margin-left: 1em;
@@ -38,16 +39,21 @@
   display: block;
   z-index: 1;
   border-style: solid;
-  border-color: transparent white;
-  border-width: 10px 10px 10px 0;
-  top: 50%;
-  left: -0.5em;
-  margin-top: -0.5em;
+  border-color: white transparent ;
+  border-width: 10px 10px 0 10px;
+  top: 100%;
+  left: 50%;
+  margin-bottom: 0.5em;
 }
 
 
 #form_side {
   height: 100vh;
+}
+
+label {
+  font-size: large;
+  font-weight: bold;
 }
 
 input, textarea {
@@ -62,6 +68,20 @@ input, textarea {
 input:focus, textarea:focus {
   background-color: transparent;
   outline: 0;
+}
+
+input.ng-dirty.ng-invalid, textarea.ng-dirty.ng-invalid {
+  border-color: maroon;
+}
+
+#mail.ng-untouched.ng-invalid {
+  border-color: silver;
+}
+
+.err-msg {
+  width: 100%;
+  font-size: small;
+  color: maroon;
 }
 
 #send {
