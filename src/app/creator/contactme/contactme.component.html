@@ -2,7 +2,7 @@
   <!-- charactor  -->
   <div id="chara_side" class="d-flex col-4 flex-column justify-content-center">
     <div class="bubble">
-      <p>Fullfill the form and send Tommy message!</p>
+      <p>{{bubble_content}}</p>
     </div>
     <div id="akabeko" class="charactors d-flex">
       <img src="../../../assets/img/Akabeko_neutral.png" alt="Akabeko">
@@ -10,12 +10,13 @@
   </div>
   <!-- input form  -->
   <div id="form_side" class="d-flex col-8 flex-column justify-content-around">
-    <form #Inquiry="ngForm" (ngSubmit)="sendInquiry()" novalidate>
+    <form name="Inquiry" #Inquiry="ngForm" novalidate>
       <!-- Name -->
       <div class="form-group">
         <label for="name">Name</label>
         <input type="text" class="form-control" id="name" name="name" placeholder="John Doe"
-          [(ngModel)]="inquiry.name" #name="ngModel" required maxlength="100">
+          [(ngModel)]="inquiry.name" #name="ngModel" required maxlength="100"
+          [disabled]="this.isSend">
       </div>
       <span *ngIf="name.errors?.required && name.dirty" class="err-msg">
         Name is required.
@@ -25,7 +26,8 @@
       <div class="form-group">
         <label for="mail">E-mail address</label>
         <input type="email" class="form-control" id="mail" name="mail" placeholder="example@xxx.mail.com"
-          [(ngModel)]="inquiry.mail" #mail="ngModel" required email>
+          [(ngModel)]="inquiry.mail" #mail="ngModel" required email
+          [disabled]="this.isSend">
       </div>
       <span *ngIf="mail.errors?.required && mail.dirty" class="err-msg">
         E-mail address is required.
@@ -37,14 +39,18 @@
       <div class="form-group">
         <label for="message">Message</label>
         <textarea class="form-control" id="message" name="message" placeholder="You are hired." rows="10"
-        [(ngModel)]="inquiry.message" #message="ngModel" required></textarea>
+          [(ngModel)]="inquiry.message" #message="ngModel" required
+          [disabled]="this.isSend"></textarea>
       </div>
       <span *ngIf="message.errors?.required && message.dirty" class="err-msg">
         Message is required.
       </span>
       <!-- Send Button -->
       <div class="form-group">
-        <button id="send" type="submit" [disabled]="Inquiry.invalid">Send</button>
+        <button id="send" type="button" (click)="sendInquiry()"
+        [disabled]="Inquiry.invalid || this.isSend">
+          {{send_button_content}}
+        </button>
       </div>
     </form>
   </div>
