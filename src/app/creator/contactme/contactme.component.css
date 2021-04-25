@@ -1,6 +1,7 @@
 #bg-washi {
   background-image: url('../../../assets/img/tesukiwashi-pattern-08.jpg');
   background-size: cover;
+  margin: 0;
 }
 
 #chara_side {
@@ -9,6 +10,7 @@
 
 #akabeko {
   width: 100%;
+  max-width: 30em;
   height: auto;
 }
 

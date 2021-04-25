@@ -22,6 +22,7 @@ export class ContactMeComponent implements OnInit {
   }
 
   sendInquiry() {
+    window.scrollTo({top: 0, behavior: "smooth"});
     if(this.isConfirmed){
       this.bubble_content = "I send him ya messages! Ask me for next step!!"
       this.send_button_content = "Not twice ;)"
