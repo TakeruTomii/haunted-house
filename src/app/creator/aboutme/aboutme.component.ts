@@ -23,6 +23,7 @@ export class AboutMeComponent implements OnInit {
   comment_content : string;
   speacies : string;
   exp_content : string;
+  current_age : number;
 
   // Carousel of Skills
   slides = SKILL_SLIDES;
@@ -41,6 +42,8 @@ export class AboutMeComponent implements OnInit {
     let len_patterns = STATUS_PATTERNS.length;
     let index = Math.floor(Math.random() * len_patterns);
     let current_status = STATUS_PATTERNS[index];
+    let birth_date = new Date('1994-07-18 00:00:00');
+    let seconds_of_year = 365 * 24 * 60 * 60 * 1000;
 
     // set display items
     this.portrait_path = IMG_PATH_ABOUT_ME + PREFIX_PORTRAIT + current_status.attr + EXT_PORTRAIT;
@@ -50,6 +53,7 @@ export class AboutMeComponent implements OnInit {
     this.comment_content = current_status.comment;
     this.speacies = current_status.speacies;
     this.exp_content = current_status.exp;
+    this.current_age = Math.floor((Date.now() - birth_date.getTime()) / seconds_of_year);
   }
 
   // Open modal for serifs
