@@ -228,5 +228,54 @@
     "emotion": "neutral",
     "animation": "none",
     "extention": "png"
+  },
+  {
+    "id": 15,
+    "serif": "Are you going back?",
+    "room": "ContactMe",
+    "clicked": "Akabeko",
+    "speacker": "Akabeko",
+    "isStart": true,
+    "next": [
+        {
+            "option": "Can I go back the living room?",
+            "nextId": "16"
+        },
+        {
+            "option": "Just talked to you. I stay a bit more.",
+            "nextId": "17"
+        }
+    ],
+    "transition": "",
+    "emotion": "neutral",
+    "animation": "none",
+    "extention": "png"
+  },
+  {
+    "id": 16,
+    "serif": "Gacha! That's why I came here! Ride on baby!!!",
+    "room": "ContactMe",
+    "clicked": "Akabeko",
+    "speacker": "Akabeko",
+    "isStart": false,
+    "next": [],
+    "transition": "./home",
+    "emotion": "neutral",
+    "animation": "none",
+    "extention": "png"
+  },
+  {
+    "id": 17,
+    "serif": "OK! Enjoy more!! You can even stay to death, hee hee!",
+    "room": "ContactMe",
+    "clicked": "Akabeko",
+    "speacker": "Akabeko",
+    "isStart": false,
+    "next": [],
+    "transition": "",
+    "emotion": "neutral",
+    "animation": "none",
+    "extention": "png"
   }
+
 ]

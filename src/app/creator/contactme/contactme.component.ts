@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
+import { SerifComponent } from '../../shared/serif/serif.component';
 
 @Component({
   selector: 'app-contactme',
@@ -6,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./contactme.component.css']
 })
 export class ContactMeComponent implements OnInit {
+  modalRef: BsModalRef;
   inquiry = {
     name: '',
     mail: '',
@@ -16,7 +19,7 @@ export class ContactMeComponent implements OnInit {
   isConfirmed = false;
   isSend = false;
 
-  constructor() { }
+  constructor(private modal: BsModalService) { }
 
   ngOnInit(): void {
   }
@@ -36,4 +39,22 @@ export class ContactMeComponent implements OnInit {
       this.isConfirmed = true;
     }
   }
+
+    // Open modal for serifs
+    openSerifs(room : string, clicked : string){
+
+      // Configs to open
+      let initialState = {
+        room: room,
+        clicked: clicked
+      };
+
+      let show_config = {
+        initialState,
+        class: 'serif-modal',
+        animated: false
+      }
+
+      this.modalRef = this.modal.show(SerifComponent, show_config);
+    }
 }
