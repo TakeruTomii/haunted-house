@@ -85,10 +85,39 @@ export const STATUS_PATTERNS = [
 
 // Slide Properties
 export const SKILL_SLIDES = [
+  // Summary
+  {
+    'title': 'Summary',
+    'rows': [
+      {
+        'item': 'Coding',
+        'rate': 4
+      },
+      {
+        'item': 'Cooking',
+        'rate': 5
+      },
+      {
+        'item': 'Karaoke',
+        'rate': 5
+      },
+      {
+        'item': 'Money',
+        'rate': 1
+      },
+      {
+        'item': 'Fame',
+        'rate': 0
+      },
+      {
+        'item': 'Potential',
+        'rate': 7
+      }
+    ]
+  },
   // Language
   {
     'title': 'Language',
-    'clazz': 'bg-blue',
     'rows': [
       {
         'item': 'HTML',
@@ -122,7 +151,6 @@ export const SKILL_SLIDES = [
   // Frameworks
   {
     'title': 'Framework',
-    'clazz': 'bg-yellow',
     'rows': [
       {
         'item': 'ASP.NET MVC',
@@ -148,7 +176,6 @@ export const SKILL_SLIDES = [
   // OS
   {
     'title': 'OS',
-    'clazz': 'bg-yellow',
     'rows': [
       {
         'item': 'Windows',
@@ -167,7 +194,6 @@ export const SKILL_SLIDES = [
   // DB
   {
     'title': 'DB',
-    'clazz': 'bg-yellow',
     'rows': [
       {
         'item': 'SQL Server',
@@ -186,7 +212,6 @@ export const SKILL_SLIDES = [
   // Cloud
   {
     'title': 'Cloud',
-    'clazz': 'bg-yellow',
     'rows': [
       {
         'item': 'Azure Logic Apps',
