@@ -17,21 +17,10 @@
 .strongly {
   font-size: x-large;
   font-weight: bold;
-  color:gold;
-}
-
-.notice {
-  font-size: large;
-  color: palegoldenrod;
-}
-
-.black-strongly {
-  font-size: x-large;
-  font-weight: bold;
   color:black;
 }
 
-.black-notice {
+.notice {
   font-size: large;
   font-weight: bold;
   color: black;
