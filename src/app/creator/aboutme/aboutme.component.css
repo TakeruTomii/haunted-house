@@ -4,14 +4,11 @@
   background-color: rgba(0, 0, 0, 0);
 }
 
-h1 {
+.section-title {
   font-size: 5em;
   font-weight: bolder;
   font-family: 'Monotype Corsiva', fantasy;
   color: black;
-}
-
-.section-title {
   width: max-content;
   border-bottom: black 3px solid;
   padding: 0 1em 0 1em;
@@ -80,126 +77,6 @@ h1 {
 
 
 /* Ice Breaking */
-.japanese-pattern {
-  width: 100%;
-  height: 25vh;
-  overflow: hidden;
-  position: relative;
-  display: flex;
-
-  background-image:
-  radial-gradient(circle at 100% 150%, silver 24%, white 24%, white 28%, silver 28%, silver 36%, white 36%, white 40%, transparent 40%, transparent),
-  radial-gradient(circle at 0    150%, silver 24%, white 24%, white 28%, silver 28%, silver 36%, white 36%, white 40%, transparent 40%, transparent),
-  radial-gradient(circle at 50%  100%, white 10%, silver 10%, silver 23%, white 23%, white 30%, silver 30%, silver 43%, white 43%, white 50%, silver 50%, silver 63%, white 63%, white 71%, transparent 71%, transparent),
-  radial-gradient(circle at 100% 50%, white 5%, silver 5%, silver 15%, white 15%, white 20%, silver 20%, silver 29%, white 29%, white 34%, silver 34%, silver 44%, white 44%, white 49%, transparent 49%, transparent),
-  radial-gradient(circle at 0    50%, white 5%, silver 5%, silver 15%, white 15%, white 20%, silver 20%, silver 29%, white 29%, white 34%, silver 34%, silver 44%, white 44%, white 49%, transparent 49%, transparent);
-  background-size: 100px 50px;
-
-}
-
-/* clouds scroll horizontally and loop  */
-.cloud {
-  width: 20vw;
-  object-fit: contain;
-}
-
-#cloud0 {
-  animation: loop0 20s -20s linear infinite;
-}
-
-#cloud1 {
-  animation: loop1 20s -15s linear infinite;
-}
-#cloud2 {
-  animation: loop2 20s -10s linear infinite;
-}
-#cloud3 {
-  animation: loop3 20s -5s linear infinite;
-}
-#cloud4 {
-  animation: loop4 20s 0s linear infinite;
-}
-
-@keyframes loop0 {
-  0% {
-    transform: translateX(100vw);
-  }
-  100% {
-    transform: translateX(-260vw);
-  }
-}
-
-@keyframes loop1 {
-  0% {
-    transform: translateX(120vw);
-  }
-  100% {
-    transform: translateX(-220vw);
-  }
-}
-
-@keyframes loop2 {
-  0% {
-    transform: translateX(140vw);
-  }
-  100% {
-    transform: translateX(-180vw);
-  }
-}
-
-@keyframes loop3 {
-  0% {
-    transform: translateX(160vw);
-  }
-  100% {
-    transform: translateX(-140vw);
-  }
-}
-
-@keyframes loop4 {
-  0% {
-    transform: translateX(180vw);
-  }
-  100% {
-    transform: translateX(-100vw);
-  }
-}
-
-#greeting_title {
-  width: 10em;
-  height: 10em;
-  position: absolute;
-  top:22.5vh;
-  left:50%;
-  transform: rotate(45deg) translate(-55%,0);
-  background-color: goldenrod;
-  border: goldenrod 1px solid;
-  white-space: nowrap;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-#greeting_title h1, i {
-  transform: rotate(-45deg);
-}
-
-#greeting_title h1 {
-  position:absolute;
-  font-size: xx-large;
-  padding: 0.3em 0.5em 0 0.5em;
-  color: white;
-  border-top: white 1px solid;
-  top: 40%;
-  left: 5%;
-}
-
-#greeting_title i {
-  position:absolute;
-  top: 25%;
-  left: 15%;
-  color: whitesmoke;
-}
 
 #greeting_area {
   width: 100%;
