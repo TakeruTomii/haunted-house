@@ -65,6 +65,20 @@
   background-position: 5em center;
 }
 
+.horror-mouths {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background:
+    url('../../../assets/img/mouth_smile.png') left 10% top 10% / 30% auto no-repeat fixed,
+    url('../../../assets/img/mouth_smile.png') left 90% top 30% / 20% auto no-repeat fixed,
+    url('../../../assets/img/mouth_smile.png') left 60% top 90% / 20% auto no-repeat fixed,
+    url('../../../assets/img/mouth_smile.png') left 20% top 80% / 10% auto no-repeat fixed,
+    url('../../../assets/img/mouth_bite.png') left 90% top 95% / 10% auto no-repeat fixed,
+    url('../../../assets/img/mouth_clench.png') left 40% top 50% / 15% auto no-repeat fixed;
+  background-color: black;
+
+}
 
 /* Ice Breaking */
 
@@ -342,6 +356,192 @@ slide table tr td:nth-of-type(2) {
   width: 100%;
 }
 
+/* horror-mouths */
+.horror-mouths img:nth-child(1) {
+  position: absolute;
+  top: 10vh;
+  left: 0;
+  width: 15vw;
+  height: auto;
+  animation: simple-bounce 10s 0s linear infinite;
+}
+
+@keyframes simple-bounce {
+  from {
+    transform: translate(0vw, 0vh);
+  }
+  20% {
+    transform: translate(50vw, 70vh);
+  }
+  40% {
+    transform: translate(83vw, 0vh);
+  }
+  60% {
+    transform: translate(30vw, -18vh);
+  }
+  80% {
+    transform: translate(10vw, 70vh);
+  }
+  to {
+    transform: translate(0, 0);
+  }
+}
+
+.horror-mouths img:nth-child(2) {
+  position: absolute;
+  top: 5vh;
+  left: 80vw;
+  width: 10vw;
+  height: auto;
+  animation: sudden-appear 10s 0s linear infinite;
+}
+
+.horror-mouths img:nth-child(3) {
+  position: absolute;
+  top: 5vh;
+  left: 80vw;
+  width: 10vw;
+  height: auto;
+  animation: sudden-appear 10s -8s linear infinite;
+}
+
+@keyframes sudden-appear {
+  from {
+    opacity: 1;
+  }
+  12% {
+    opacity: 0;
+    transform: translate(0, 0);
+  }
+  24% {
+    opacity: 0;
+    transform: translate(-80vw, 20vh);
+  }
+  25% {
+    opacity: 1;
+  }
+  37% {
+    transform: translate(-80vw, 20vh);
+    opacity: 0;
+  }
+  49% {
+    transform: translate(-70vw, 70vh);
+    opacity: 0;
+  }
+  50% {
+    transform: translate(-70vw, 70vh);
+    opacity: 1;
+  }
+  62% {
+    transform: translate(-70vw, 70vh);
+    opacity: 0;
+  }
+  74% {
+    transform: translate(0, 60vh);
+    opacity: 0;
+  }
+  75% {
+    transform: translate(0, 60vh);
+    opacity: 1;
+  }
+  87% {
+    transform: translate(0, 60vh);
+    opacity: 0;
+  }
+  99% {
+    transform: translate(0, 0);
+    opacity: 0;
+  }
+  to {
+    transform: translate(0, 0);
+    opacity: 1;
+  }
+}
+
+.horror-mouths img:nth-child(4) {
+  position: absolute;
+  top: 65vh;
+  left: 80vw;
+  width: 15vw;
+  height: auto;
+  animation: spyral 10s 0s linear infinite;
+}
+
+@keyframes spyral {
+  from {
+    transform: translate(0, 0) rotate(-1080deg);
+  }
+  12% {
+    transform: translate(-85vw, 0vh) rotate(1080deg);
+  }
+  25% {
+    transform: translate(0, -20vh) rotate(-1080deg);
+  }
+  37% {
+    transform: translate(-85vw, -40vh) rotate(1080deg);
+  }
+  50% {
+    transform: translate(0, -60vh) rotate(-1080deg);
+  }
+  62% {
+    transform: translate(-85vw, -60vh) rotate(1080deg);
+  }
+  75% {
+    transform: translate(0, -40vh) rotate(-1080deg);
+  }
+  87% {
+    transform: translate(-85vw, -20vh) rotate(1080deg);
+  }
+  to {
+    transform: translate(0, 0) rotate(-1080deg);
+  }
+}
+
+
+.horror-mouths img:nth-child(5) {
+  position: absolute;
+  top: 50vh;
+  left: 50vw;
+  width: 10vw;
+  height: auto;
+  animation: bullshit-movement 10s 0s linear infinite;
+}
+
+@keyframes bullshit-movement {
+  from {
+    transform: translate(0, 0) rotate(-1080deg) skew(80deg, 50deg);
+  }
+  10% {
+    transform: translate(-20vw, 40vh) rotate(540deg);
+  }
+  20% {
+    transform: translate(10vw, 30vh) rotate(-720deg);
+  }
+  30% {
+    transform: translate(-15vw, -30vh) rotate(-360deg) skew(0deg, -70deg);
+  }
+  40% {
+    transform: translate(-20vw, 20vh) rotate(1080deg);
+  }
+  50% {
+    transform: translate(-40vw, 0vh) rotate(540deg) skew(-50deg, 80deg);
+  }
+  60% {
+    transform: translate(0vw, -40vh) rotate(360deg);
+  }
+  70% {
+    transform: translate(20vw, -25vh) rotate(-1080deg);
+  }
+  80% {
+    transform: translate(20vw, 35vh) rotate(-180deg);
+  }
+  90% {
+    transform: translate(30vw, -40vh) rotate(720deg);
+  }
+  to {
+    transform: translate(0, 0) rotate(-1080deg) skew(80deg, 50deg);
+  }
+}
 
 /* Education and Personal history */
 #career_area {
