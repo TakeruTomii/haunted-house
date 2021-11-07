@@ -12,6 +12,7 @@
   width: max-content;
   border-bottom: black 3px solid;
   padding: 0 1em 0 1em;
+  margin-bottom: 0.5em;
 }
 
 .strongly {
@@ -156,6 +157,7 @@
 }
 
 #str_title {
+  padding-top: 2px;
   font-size: x-small;
 }
 
