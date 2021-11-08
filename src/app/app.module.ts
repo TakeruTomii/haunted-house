@@ -20,6 +20,8 @@ import { InitConfComponent } from './init-conf/init-conf.component';
 import { LoadingComponent } from './loading/loading.component';
 import { TitleComponent } from './title/title.component';
 import { HomeScreenComponent } from './home-screen/home-screen.component';
+import { CharacterListComponent } from './site/character-list/character-list.component';
+import { ConceptComponent } from './site/concept/concept.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +29,9 @@ import { HomeScreenComponent } from './home-screen/home-screen.component';
     TitleComponent,
     HomeScreenComponent,
     LoadingComponent,
-    InitConfComponent
+    InitConfComponent,
+    CharacterListComponent,
+    ConceptComponent
   ],
   imports: [
     BrowserModule,
