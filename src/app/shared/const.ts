@@ -245,3 +245,33 @@ export const SKILL_SLIDES = [
     ]
   }
 ]
+
+// Character List
+// Character Data List
+export const IMG_PATH_CHARACTER_LIST = '../../../assets/img/';
+export const EXT_CHARACTER = '.png';
+
+// Characters
+export const CHARACTER_DATA = [
+  {
+    'id': 0,
+    'name': 'Akabeko',
+    'main_image_file': 'Akabeko_neutral',
+    'select_image_file': IMG_PATH_CHARACTER_LIST + 'Akabeko_neutral' + EXT_CHARACTER,
+    'explanation': 'Akabeko was born from a old toy.\nCutest yokai in the world.'
+  },
+  {
+    'id': 1,
+    'name': 'Nurarihyon',
+    'main_image_file': 'Nurarihyon_neutral',
+    'select_image_file': IMG_PATH_CHARACTER_LIST + 'Nurarihyon_neutral' + EXT_CHARACTER,
+    'explanation': 'Nurarihyon looks old man.\nHe acts like your old friend but you cannot notice.'
+  },
+  {
+    'id': 2,
+    'name': 'Jessica',
+    'main_image_file': 'Jessica_neutral',
+    'select_image_file': IMG_PATH_CHARACTER_LIST + 'Jessica_neutral' + EXT_CHARACTER,
+    'explanation': 'She is my wife.\nShe is sexy and I know it.'
+  }
+]

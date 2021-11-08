@@ -11,15 +11,16 @@
 </div>
 <div class="main-container">
   <div class="character-frame">
-    <h1></h1>
+    <h1>{{character_name}}</h1>
     <div class="main-image">
-      <img src="../../../assets/img/Akabeko_neutral.png" alt="character">
+      <img [src]="main_image_path" alt="character">
+      <div class=""></div>
     </div>
-    <div class="character-exp">
-      he is very cutie.
-    </div>
+    <div class="character-exp">{{character_exp}}</div>
   </div>
   <div class="character-select">
-
+    <div *ngFor="let d of character_data;">
+      <img [src]="d.select_image_file" alt="character">
+    </div>
   </div>
 </div>
