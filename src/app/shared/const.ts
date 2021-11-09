@@ -273,5 +273,12 @@ export const CHARACTER_DATA = [
     'main_image_file': 'Jessica_neutral',
     'select_image_file': IMG_PATH_CHARACTER_LIST + 'Jessica_neutral' + EXT_CHARACTER,
     'explanation': 'She is my wife.\nShe is sexy and I know it.'
+  },
+  {
+    'id': 3,
+    'name': 'Ittan momen',
+    'main_image_file': 'Ittan-momen_neutral',
+    'select_image_file': IMG_PATH_CHARACTER_LIST + 'Ittan-momen_neutral' + EXT_CHARACTER,
+    'explanation': 'He come from Kagoshima.\nHe can choke you to death if he was angry.'
   }
 ]
