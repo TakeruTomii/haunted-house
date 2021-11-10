@@ -19,30 +19,33 @@
 
   <div class="character-frame">
     <!-- background part -->
-    <div class="background-part">
-
-    </div>
-    <!-- character part -->
-    <div class="character-part">
-      <div class="character-name">
-        <div class="outer-name">
-          <div class="inner-name">
-            <h1>{{character_name}}</h1>
+    <div class="backstage">
+      <div class="stage-object">
+        <!-- character part -->
+        <div class="character-part">
+          <div class="character-name">
+            <div class="outer-name">
+              <div class="inner-name">
+                <h1>{{character_name}}</h1>
+              </div>
+            </div>
           </div>
-        </div>
-      </div>
-      <div class="d-flex flex-column-reverse flex-sm-row align-items-center">
-        <div class="main-image">
-          <img [src]="main_image_path" alt="character">
-        </div>
-        <div class="character-exp">
-          <div class="inner-exp">
-            {{character_exp}}
+          <div class="d-flex flex-column-reverse flex-sm-row align-items-sm-stretch align-items-center character-container">
+            <div class="main-image">
+              <img [src]="main_image_path" alt="character">
+            </div>
+            <div class="character-exp">
+              <div class="inner-exp">
+                {{character_exp}}
+              </div>
+            </div>
           </div>
-        </div>
-      </div>
 
+        </div>
+
+      </div>
     </div>
+
   </div>
 
   <!-- Character select -->

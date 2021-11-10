@@ -7,21 +7,52 @@
 
 
 /* Character frame area */
-.character-frame {
+
+.backstage {
   position: relative;
+  height: 100vh;
+  display: flex;
+  justify-content: space-between;
+  background: linear-gradient(135deg, #704308 0%, #ffce08 40%, #e1ce08 60%, #704308 100%);
 }
 
-.background-part {
-  background-color: paleturquoise;
-  height: 100vh;
+.backstage::before {
+  position: absolute;
+  top: 70%;
+  left: 80%;
+  z-index: 1;
+  content: "";
+  background: url('../../../assets/img/matsu-illust6.png') no-repeat;
+  background-size: contain;
+  width:60vw;
+  height:60vh;
+  transform: translate(-50%, -100%);
+}
+
+.backstage::after {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  border-top: #2b2b2b 5px inset;
+  border-bottom: #583822  3px ridge;
+  content: "";
+  background: url('../../../assets/img/flooring-pattern-oil.jpg') repeat center/100px ;
+  width: 100%;
+  height: 30%;
+  z-index: 0;
 }
 
 .character-part {
-  background-color: rgba(200, 0, 0, 0.2);
+  padding-bottom: 2em;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
   width: 100%;
-  height: auto;
+  height: 100vh;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
 }
 
 .character-name {
@@ -47,19 +78,24 @@
 }
 
 .main-image {
-  min-width: 200px;
-  height:auto;
-  flex-grow: 1;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  justify-content: flex-end;
 }
 
 .main-image img {
-  width: 100%;
-  height: 100%;
+  width: 50vw;
+  height: 50vh;
   object-fit: contain;
 }
 
+.character-container {
+
+}
+
 .character-exp {
-  height: 100%;
+  height: auto;
   min-height: 5em;
   display: flex;
   justify-content: center;
@@ -71,7 +107,7 @@
   height: 90%;
   min-height: 5em;
   padding: 1em;
-  background: rgba(0, 0, 0, 0.1);
+  background: rgba(0, 0, 0, 0.4);
   color: white;
   border-radius: 3px;
 }
