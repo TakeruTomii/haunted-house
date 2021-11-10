@@ -5,9 +5,19 @@
   background: black;
 }
 
-/* Character frame area */
 
+/* Character frame area */
 .character-frame {
+  position: relative;
+}
+
+.background-part {
+  background-color: paleturquoise;
+  height: 100vh;
+}
+
+.character-part {
+  background-color: rgba(200, 0, 0, 0.2);
   width: 100%;
   height: auto;
   display: flex;
@@ -73,6 +83,7 @@
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-around;
+  background-color: seagreen;
 }
 
 .character-circle {
