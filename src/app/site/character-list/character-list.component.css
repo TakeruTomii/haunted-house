@@ -1,9 +1,31 @@
 
-.dark-zone {
+.stage-header, .stage-footer {
   width: 100%;
   height: 15em;
-  background: black;
+  background: linear-gradient(to right,#281a14 3%, #8a3b00 3% 100%);
+  background-size: 50px auto;
 }
+
+.stage-header {
+  border-bottom: #281a14 3px ridge;
+}
+
+.stage-footer {
+  border-top: #281a14 3px ridge;
+}
+
+.stage-header div {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom,black 80%, transparent);
+}
+
+.stage-footer div {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to top,black 80%, transparent);
+}
+
 
 
 /* Character frame area */
@@ -18,15 +40,15 @@
 
 .backstage::before {
   position: absolute;
-  top: 70%;
-  left: 80%;
+  top: 80%;
+  right: 10%;
   z-index: 1;
   content: "";
   background: url('../../../assets/img/matsu-illust6.png') no-repeat;
   background-size: contain;
-  width:60vw;
-  height:60vh;
-  transform: translate(-50%, -100%);
+  width:70vh;
+  height:70vh;
+  transform: translate(0, -100%);
 }
 
 .backstage::after {
@@ -67,7 +89,7 @@
   padding: 0.5em;
   width: max-content;
   height: 100%;
-  background: green;
+  background: linear-gradient(135deg, #316745, #007b43);
 }
 
 .inner-name {
