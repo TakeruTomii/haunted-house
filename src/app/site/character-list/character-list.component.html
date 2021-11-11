@@ -58,7 +58,7 @@
   <!-- Character select -->
   <div class="character-select">
     <ng-container *ngFor="let d of character_data;">
-      <div class="character-circle" (click)="setCurrentCharacter(d.id)">
+      <div class="select-background" (click)="setCurrentCharacter(d.id)">
         <img [src]="d.select_image_file" alt="character">
       </div>
     </ng-container>
