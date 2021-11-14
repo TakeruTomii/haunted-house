@@ -97,7 +97,6 @@ export class CharacterListComponent implements OnInit {
     var close_open = anime.timeline({
       targets: ".curtain",
       easing: 'linear',
-      duration: 1200,
       delay: delaytime
     });
 
@@ -107,11 +106,11 @@ export class CharacterListComponent implements OnInit {
       duration: 500
     })
     .add ({
-      duration: 200
+      duration: 500
     })
     .add({
       width: "0%",
-      duration: 500
+      duration: 1500
     })
   }
 
