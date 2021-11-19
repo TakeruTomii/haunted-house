@@ -1,5 +1,16 @@
 #bg-title {
-  background-image: url(../../assets/img/obakeyashiki.png);
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: flex-end;
+}
+
+.house {
+  width: 100%;
+  height: auto;
+}
+
+.house img{
+  width: 100%;
 }
 
 /* TODO:BootStrapで改修 */

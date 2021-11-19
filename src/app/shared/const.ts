@@ -256,7 +256,7 @@ export const CHARACTER_DATA = [
   {
     'id': 0,
     'name': 'Akabeko',
-    'main_image_file': 'Akabeko_neutral',
+    'main_image_file': 'Akabeko_map',
     'select_image_file': IMG_PATH_CHARACTER_LIST + 'Akabeko_neutral' + EXT_CHARACTER,
     'explanation': 'Akabeko was born from a old toy.\nCutest yokai in the world.'
   },
