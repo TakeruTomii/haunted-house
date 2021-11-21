@@ -1,6 +1,13 @@
-.main-container {
+#main-container {
   background: url('../../../assets/img/bg-pond.jpg'), no-repeat;
   background-attachment: fixed;
+}
+
+.last-scroll {
+  background: url('../../../assets/img/mouth_smile.png'), repeat !important;
+  background-size: 50px 50px !important;
+  background-color: firebrick !important;
+  animation-duration: 0.5s;
 }
 
 .inner-container {
@@ -117,5 +124,8 @@ dd {
 }
 
 p iframe {
-  margin:2em;
+  width: 80%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  margin:1em;
 }

@@ -11,7 +11,7 @@
   <h1>制作秘話</h1>
 </div>
 
-<div class="main-container">
+<div id="main-container">
   <div class="inner-container">
     <div id="site_purpose" class="section">
       <details>
@@ -278,7 +278,7 @@
     </div>
 
     <div id="acknowledge" class="section">
-      <details>
+      <details (click)="setOpenStateOfLastAccordion()">
         <summary>
           <div class="accordion-title">
             <p>
@@ -320,7 +320,7 @@
               <a href="https://en.wikipedia.org/wiki/The_Addams_Family_(2019_film)" target="blank">The Addams Family</a> twice.
               And give me your autograph, please.
               My sister is an enthusiastic fan of you, one of your soul sisters.
-              <iframe width="560" height="315" src="https://www.youtube.com/embed/ECtJp58ELcE"
+              <iframe src="https://www.youtube.com/embed/ECtJp58ELcE"
               title="YouTube video player" frameborder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowfullscreen></iframe>
