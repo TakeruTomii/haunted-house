@@ -13,13 +13,20 @@
   width: 100%;
 }
 
-/* TODO:BootStrapで改修 */
 #enter {
   position:fixed;
-  width:5em;
-  height:2em;
-  top:80vh;
+  width:max-content;
+  height:5em;
+  top:90vh;
   left:50vw;
   transform: translate(-50%, -50%);
-  font-size: xx-large;
+  font-size: 2em;
+  color: #bf783a;
+	animation: blink 4s linear infinite;
+}
+
+@keyframes blink {
+	0% { opacity: 0; }
+	50% { opacity: 1; }
+  100% { opacity: 0; }
 }
