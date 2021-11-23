@@ -4,6 +4,27 @@
   align-items: flex-end;
 }
 
+#title-logo {
+  position:absolute;
+  width:55vw;
+  height:auto;
+  top:40vh;
+  left:50vw;
+  transform: translate(-50%, -50%);
+}
+
+@media screen and (orientation: portrait) {
+  #title-logo {
+    width:80vw;
+  }
+}
+
+#title-logo img {
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+}
+
 .house {
   width: 100%;
   height: auto;
