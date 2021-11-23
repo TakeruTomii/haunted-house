@@ -1,5 +1,6 @@
 nav {
   background: linear-gradient(to right bottom,  black, indigo);
+  height: 3em;
 }
 
 a {
@@ -25,6 +26,10 @@ li {
   background:rgba(0,0,0,0.9);
 }
 
+button img{
+  margin-right: 0.5em
+}
+
 .page-category {
   font: xx-large bold;
   color: gold;
@@ -33,6 +38,15 @@ li {
 .conf-category {
   font: xx-large bold;
   color: hotpink;
+}
+
+.navbar-brand {
+  height:100%;
+}
+
+.navbar-brand img {
+  width: auto;
+  height: 100%;
 }
 
 .sound {
