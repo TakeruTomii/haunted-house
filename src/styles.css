@@ -153,13 +153,17 @@
   }
 }
 
+.outer-diamond {
+  position: absolute;
+  top:25vh;
+  left:50%;
+  transform:translate(-50%,-50%);
+}
+
 .header-diamond {
   width: 10em;
   height: 10em;
-  position: absolute;
-  top:22.5vh;
-  left:50%;
-  transform: rotate(45deg) translate(-55%,0);
+  transform: rotate(45deg);
   background-color: goldenrod;
   border: goldenrod 1px solid;
   white-space: nowrap;
@@ -169,24 +173,23 @@
   z-index: 1;
 }
 
-.header-diamond h1, i {
+.header-diamond div {
+  position: absolute;
   transform: rotate(-45deg);
 }
 
-.header-diamond h1 {
-  position:absolute;
-  font-size: xx-large;
-  padding: 0.3em 0.5em 0 0.5em;
-  color: white;
-  border-top: white 1px solid;
-  top: 40%;
-  left: 5%;
+.header-diamond hr {
+  border-color: white;
 }
 
-.header-diamond i {
-  position:absolute;
-  top: 25%;
-  left: 15%;
+.header-diamond h1 {
+  font-size: xx-large;
+  padding: 0 0.5em;
+  color: white;
+}
+
+.header-diamond p {
+  text-align: center;
   color: whitesmoke;
 }
 
