@@ -29,8 +29,12 @@ export class ConceptComponent implements OnInit {
         // action when scroll to the bottom
         if (scrollTop >= pageMostBottom) {
           document.getElementById('main-container').classList.add("last-scroll");
+          let accordion = document.querySelector("#acknowledge .accordion-content");
+          accordion.classList.add("clear-background");
         } else {
           document.getElementById('main-container').classList.remove("last-scroll");
+          let accordion = document.querySelector("#acknowledge .accordion-content");
+          accordion.classList.remove("clear-background");
         }
       }
     });

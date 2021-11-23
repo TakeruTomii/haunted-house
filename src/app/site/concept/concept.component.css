@@ -10,6 +10,15 @@
   animation-duration: 0.5s;
 }
 
+.clear-background {
+  background-image: none!important;
+}
+
+.clear-background .paper{
+  background: rgba(255, 255, 255, 0.1)!important;
+}
+
+
 .inner-container {
   padding-top: 7em;
   padding-bottom: 2em;
