@@ -87,25 +87,26 @@
 
 /* clouds scroll horizontally and loop  */
 .cloud {
-  width: 20vw;
+  width: auto;
+  height: 100%;
   object-fit: contain;
 }
 
 #cloud0 {
-  animation: loop0 20s -20s linear infinite;
+  animation: loop0 25s -25s linear infinite;
 }
 
 #cloud1 {
-  animation: loop1 20s -15s linear infinite;
+  animation: loop0 25s -20s linear infinite;
 }
 #cloud2 {
-  animation: loop2 20s -10s linear infinite;
+  animation: loop0 25s -15s linear infinite;
 }
 #cloud3 {
-  animation: loop3 20s -5s linear infinite;
+  animation: loop0 25s -10s linear infinite;
 }
 #cloud4 {
-  animation: loop4 20s 0s linear infinite;
+  animation: loop0 25s -5s linear infinite;
 }
 
 @keyframes loop0 {
@@ -113,7 +114,7 @@
     transform: translateX(100vw);
   }
   100% {
-    transform: translateX(-260vw);
+    transform: translateX(-300vw);
   }
 }
 
@@ -122,7 +123,7 @@
     transform: translateX(120vw);
   }
   100% {
-    transform: translateX(-220vw);
+    transform: translateX(-240vw);
   }
 }
 
@@ -131,7 +132,7 @@
     transform: translateX(140vw);
   }
   100% {
-    transform: translateX(-180vw);
+    transform: translateX(-200vw);
   }
 }
 
@@ -140,7 +141,7 @@
     transform: translateX(160vw);
   }
   100% {
-    transform: translateX(-140vw);
+    transform: translateX(-160vw);
   }
 }
 
@@ -149,7 +150,7 @@
     transform: translateX(180vw);
   }
   100% {
-    transform: translateX(-100vw);
+    transform: translateX(-120vw);
   }
 }
 
