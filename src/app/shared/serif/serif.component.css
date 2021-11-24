@@ -1,11 +1,13 @@
-/* キャラクター */
+/* Character */
 #serif-container {
-  margin: 0 5vw;
+  margin: 0;
+  padding: 1em;
+  width: 100%;
   height: 100vh;
 }
 
 #serif-content {
-  height: 100vh;
+  height: 100%;
 }
 
 #character-box {
@@ -19,31 +21,38 @@
 }
 
 
-/* セリフ */
+/* serif */
 #serif-box {
   height: 30%;
+  display: flex;
+  flex-direction: column;
 }
 
 #name-area {
+  padding: 0 1em;
   width: fit-content;
   height: 2em;
   color: white;
-  border:outset red 5px;
-  background: linear-gradient(to top right, red, black);
+  border:none;
+  border-radius: 5% 1em;
+  background: rgba(100, 0, 0, 0.9);
   font-size: x-large;
+  transform: translate(-5%, 25%);
 }
 
 #serif-area {
+  padding: 0.5em;
+  border-radius: 5% 1em;
+  border:none;
+  flex-grow: 1;
   width: 100%;
-  height: 8em;
-  border:inset red 5px;
   color: white;
-  background: linear-gradient(to top right, red, black);
+  background: rgba(0, 0, 0, 0.9);
   font-size: x-large;
   overflow-y: auto;
 }
 
-/* 選択肢 */
+/* selection */
 .choice {
   margin: 1em 0 1em 10vw;
   background-image: url('../../../assets/img/choice_bar.png');
@@ -52,5 +61,4 @@
   height: 5em;
   color: white;
   font-size: x-large;
-  /* text-align: center; */
 }

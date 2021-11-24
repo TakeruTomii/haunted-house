@@ -1,11 +1,11 @@
 <div id="serif-container">
   <div id="serif-content" class="d-flex flex-column">
-    <!-- キャラクター表示 -->
+    <!-- Display Character -->
     <div id="character-box" class="d-flex justify-content-center">
       <img [src]="img_chara" alt="charactor">
     </div>
 
-    <!-- セリフのエリア -->
+    <!-- Serif Area -->
     <div id="serif-box">
       <div id="name-area">{{name_chara}}</div>
       <div id="serif-area" (click)="onTalk()">
@@ -16,7 +16,7 @@
   </div>
 </div>
 
-<!-- 選択肢モーダル -->
+<!-- Selection Modal -->
 <div *ngIf="isSelection" bsModal #selectionModal="bs-modal"
   class="modal fade" [config]="{ show: true, backdrop: 'static' }">
   <div class="d-flex flex-column justify-content-center">
