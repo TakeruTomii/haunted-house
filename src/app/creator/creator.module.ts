@@ -6,15 +6,20 @@ import { AboutMeComponent } from './aboutme/aboutme.component'
 import { AccordionModule } from 'ngx-bootstrap/accordion';
 import { ContactMeComponent } from './contactme/contactme.component';
 import { CarouselModule } from 'ngx-bootstrap/carousel';
+import { SharedModule } from '../shared/shared.module';
 
 @NgModule({
-  declarations: [AboutMeComponent, ContactMeComponent],
+  declarations: [
+    AboutMeComponent,
+    ContactMeComponent
+  ],
   imports: [
     CommonModule,
     BrowserAnimationsModule,
     CarouselModule.forRoot(),
     AccordionModule.forRoot(),
-    FormsModule
+    FormsModule,
+    SharedModule
   ]
 })
 export class CreatorModule { }

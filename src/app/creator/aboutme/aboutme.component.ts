@@ -2,12 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
 import { SerifComponent } from '../../shared/serif/serif.component';
 import { STATUS_PATTERNS, SKILL_SLIDES, PREFIX_PORTRAIT, IMG_PATH_ABOUT_ME, EXT_PORTRAIT, EXT_ATTR} from '../../shared/const';
-import { fromEvent } from 'rxjs';
 
 @Component({
   selector: 'app-aboutme',
   templateUrl: './aboutme.component.html',
-  styleUrls: ['./aboutme.component.css']
+  styleUrls: ['./aboutme.component.css'],
 })
 export class AboutMeComponent implements OnInit {
   modalRef: BsModalRef;
