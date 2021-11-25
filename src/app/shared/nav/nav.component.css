@@ -26,6 +26,11 @@ li {
   background:rgba(0,0,0,0.9);
 }
 
+.dropdown-menu {
+  margin: 0;
+  border-radius: 0;
+}
+
 button img{
   margin-right: 0.5em
 }
@@ -41,6 +46,7 @@ button img{
 }
 
 .navbar-brand {
+  padding-left:1em;
   height:100%;
 }
 
@@ -49,7 +55,25 @@ button img{
   height: 100%;
 }
 
-.sound {
-  width:100%;
-  display: inline;
+#sound {
+  padding-right: 1em;
+  color: white;
+}
+
+#sound input {
+  width: 5em;
+}
+
+#sound-icon {
+  margin-right:0.5em;
+}
+
+.volume-zero::before {
+  position:absolute;
+  content:"";
+  width: 3px;
+  height: 30px;
+  border-radius: 20%;
+  background: white;
+  transform: translate(15px, 0) rotate(45deg);
 }

@@ -1,60 +1,45 @@
 
 <nav class="d-flex justify-content-between sticky-top">
-  <!-- SiteMap -->
-  <div class="btn-group" dropdown>
-    <button id="sitemap" dropdownToggle type="button" class="btn dropdown-toggle"
-            aria-controls="sitemap-dropdown">
-      <img src="../../../assets/img/icon_sitemap.png" width="30" height="30" alt="sitemap">
-      <span class="d-none d-sm-inline">Site Map</span>
-    </button>
-    <ul id="sitemap-dropdown" *dropdownMenu class="dropdown-menu nav-dropdown"
-        role="menu" aria-labelledby="sitemap">
-      <li class="page-category">Creator</li>
-      <li role="menuitem"><a class="dropdown-item" href="/aboutme">About Me</a></li>
-      <li role="menuitem"><a class="dropdown-item" href="/contactme">Contact Me</a></li>
-      <li class="divider dropdown-divider"></li>
 
-      <li class="page-category">Site</li>
-      <li role="menuitem"><a class="dropdown-item" href="/concept">Concept</a></li>
-      <li role="menuitem"><a class="dropdown-item" href="/character-list">Character List</a></li>
-      <li class="divider dropdown-divider"></li>
-
-      <li class="page-category">Works</li>
-      <li role="menuitem"><a class="dropdown-item" href="#">Blog</a></li>
-      <li role="menuitem"><a class="dropdown-item" href="#">Services</a></li>
-      <li role="menuitem"><a class="dropdown-item" href="#">Mini Games</a></li>
-    </ul>
-  </div>
   <!-- LOGO -->
   <div class="navbar-brand">
     <a href="home">
       <img src="../../../assets/img/Logo_shortversion.png" alt="logo">
     </a>
   </div>
+  <!-- menu -->
+  <div class="d-flex justify-content-between">
+    <!-- Sound -->
+    <div id="sound" class="d-flex align-items-center">
+      <div>
+        <span id="vol_value">50</span>
+      </div>
+      <div id="sound-icon">
+        <img src="../../../assets/img/volume.png" alt="volume" width="25" height="25">
+      </div>
+      <input id="sound_input" type="range" name="sound" min="0" max="100" vaule="50">
+    </div>
+    <!-- SiteMap -->
+    <div class="btn-group" dropdown>
+      <button id="sitemap" dropdownToggle type="button" class="btn dropdown-toggle"
+              aria-controls="sitemap-dropdown">
+        <img src="../../../assets/img/icon_sitemap.png" width="30" height="30" alt="sitemap">
+        <span class="d-none d-sm-inline">Site Map</span>
+      </button>
+      <ul id="sitemap-dropdown" *dropdownMenu class="dropdown-menu dropdown-menu-right nav-dropdown"
+          role="menu" aria-labelledby="sitemap">
+        <li class="page-category">Creator</li>
+        <li role="menuitem"><a class="dropdown-item" href="/aboutme">About Me</a></li>
+        <li role="menuitem"><a class="dropdown-item" href="/contactme">Contact Me</a></li>
+        <li class="divider dropdown-divider"></li>
 
-  <!-- Config -->
-  <div class="btn-group" dropdown>
-    <button id="config" dropdownToggle type="button" class="btn dropdown-toggle"
-            aria-controls="config-dropdown">
-      <img src="../../../assets/img/icon_config.png" width="30" height="30" alt="config">
-      <span class="d-none d-sm-inline">Config</span>
-    </button>
-    <ul id="config-dropdown" *dropdownMenu class="dropdown-menu dropdown-menu-right nav-dropdown"
-        role="menu" aria-labelledby="config">
-      <li class="conf-category">Sound</li>
-      <li role="menuitem">
-        <!-- サウンド設定 -->
-        <div class="sound">
-          <ng-container *ngFor="let s of sounds">
-            <label>
-              <input type="radio" name="sounds"
-              [(ngModel)]="sound_selected"
-              [value]="s.value">
-              {{s.label}}
-            </label><br>
-          </ng-container>
-        </div>
-      </li>
-    </ul>
+        <li class="page-category">Site</li>
+        <li role="menuitem"><a class="dropdown-item" href="/concept">Concept</a></li>
+        <li role="menuitem"><a class="dropdown-item" href="/character-list">Character List</a></li>
+        <li class="divider dropdown-divider"></li>
+
+      </ul>
+    </div>
   </div>
+
 </nav>
