@@ -3,7 +3,7 @@ nav {
   height: 3em;
 }
 
-a {
+.dropdown-item {
   color: white;
 }
 
@@ -60,8 +60,9 @@ button img{
   color: white;
 }
 
-#sound input {
-  width: 5em;
+#sound_input {
+  width: 4em;
+  cursor: pointer;
 }
 
 #sound-icon {
@@ -75,5 +76,5 @@ button img{
   height: 30px;
   border-radius: 20%;
   background: white;
-  transform: translate(15px, 0) rotate(45deg);
+  transform: translate(10px, -2px) rotate(45deg);
 }
