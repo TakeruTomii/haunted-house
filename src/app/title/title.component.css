@@ -3,10 +3,90 @@
   flex-direction: column-reverse;
   align-items: flex-end;
   background: radial-gradient(circle at bottom, #2e2930 1%, black);
+  overflow:hidden;
 }
+
+.lightnings {
+  position:absolute;
+  top:0;
+  left:0;
+  z-index: 1;
+  width: 100vw;
+  height: 100vh;
+}
+
+.lightnings img {
+  position:absolute;
+  width:auto;
+  max-width: 50vw;
+}
+
+#lightning1 {
+  top:3vh;
+  left: 5vw;
+  height: 50vh;
+  animation: strike 8s linear infinite;
+}
+#lightning2 {
+  top:0vh;
+  left: 25vw;
+  height: 60vh;
+  animation: strike 15s linear infinite;
+}
+#lightning3 {
+  top:10vh;
+  left:50vw;
+  height: 50vh;
+  transform: rotate3d(1, 0, 0, 45deg);
+  animation: strike 10s linear infinite;
+}
+
+#lightning4 {
+  top: 2vh;
+  right: 10vw;
+  height: 20vh;
+  animation: strike 4s linear infinite;
+}
+
+#lightning5 {
+  top: 5vh;
+  right: 10vw;
+  height: 40vh;
+  transform: rotate3d(1, 0, 0, 180deg);
+  animation: strike 7s linear infinite;
+}
+
+@keyframes strike {
+	0% {
+    opacity: 0;
+    filter:drop-shadow(0 0 0 whitesmoke);
+  }
+  3% {
+    opacity: 1;
+    filter:drop-shadow(0 0 1em violet);
+  }
+	6% {
+    opacity: 1;
+    filter:drop-shadow(0 0 1.25em whitesmoke);
+  }
+  9% {
+    opacity: 1;
+    filter:drop-shadow(0 0 1em violet);
+  }
+  12% {
+    opacity: 0;
+    filter:drop-shadow(0 0 0 whitesmoke);
+  }
+  100% {
+    opacity: 0;
+    filter:drop-shadow(0 0 0 whitesmoke);
+  }
+}
+
 
 #title-logo {
   position:absolute;
+  z-index: 4;
   width:55vw;
   height:auto;
   top:40vh;
@@ -27,6 +107,8 @@
 }
 
 .house {
+  position: relative;
+  z-index: 2;
   width: 100%;
   height: auto;
 }
@@ -37,6 +119,7 @@
 
 #enter {
   position:fixed;
+  z-index: 3;
   width:max-content;
   height:5em;
   top:90vh;
