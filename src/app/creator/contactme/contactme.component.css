@@ -6,7 +6,8 @@
 }
 
 #chara_side {
-  height: 100vh;
+  padding-top: 1em;
+  height: max-content;
 }
 
 #akabeko {
@@ -93,12 +94,25 @@ input.ng-dirty.ng-invalid, textarea.ng-dirty.ng-invalid {
 
 #send {
   width: max-content;
+  min-width: 50%;
   height: max-content;
   padding: 0.5em 1em;
   border: 3px black double;
-  background-color: transparent;
+  border-radius: 3px;
+}
+
+@media screen and (max-width:768px) {
+  #send {
+    width: 100%;
+  }
+}
+
+#send:enabled {
+  background:url('../../../assets/img/umemon.png') repeat;
+  background-size: 300px 300px;
+  color:white;
 }
 
 #send:enabled:hover {
-  background-color: rgba(100, 100, 200, 0.5);
+  background-color: rgba(100, 100, 100, 0.5);
 }
