@@ -23,6 +23,7 @@ export class ContactMeComponent implements OnInit {
   constructor(private modal: BsModalService) { }
 
   ngOnInit(): void {
+    // show movement
     AOS.init({
       duration:1000,
       once:true

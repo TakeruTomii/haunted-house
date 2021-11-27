@@ -1,6 +1,7 @@
 import { animation } from '@angular/animations';
 import { Component, OnInit } from '@angular/core';
 import anime from 'animejs/lib/anime.es.js';
+import AOS from 'aos';
 
 @Component({
   selector: 'app-concept',
@@ -13,6 +14,13 @@ export class ConceptComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+
+    // accordion show movement
+    AOS.init({
+      duration:1000,
+      once:true,
+      offset: -100
+    });
 
     // gimmick in scroll
     // show mouths background when scroll to the end with last accordion open
