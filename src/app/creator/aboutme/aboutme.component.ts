@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
 import { SerifComponent } from '../../shared/serif/serif.component';
 import { STATUS_PATTERNS, SKILL_SLIDES, PREFIX_PORTRAIT, IMG_PATH_ABOUT_ME, EXT_PORTRAIT, EXT_ATTR} from '../../shared/const';
+import AOS from 'aos';
 
 @Component({
   selector: 'app-aboutme',
@@ -30,10 +31,14 @@ export class AboutMeComponent implements OnInit {
   stop_sliding = 0; // prevent sliding of carousel
 
 
-  constructor(private modal: BsModalService) { }
+  constructor(private modal: BsModalService) {}
 
   ngOnInit(): void {
-    this.setPortraitAttr()
+    AOS.init({
+      duration:1000,
+      once:true
+    });
+    this.setPortraitAttr();
   }
 
   setPortraitAttr() {
