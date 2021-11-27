@@ -52,16 +52,15 @@ export class AboutMeComponent implements OnInit {
       var horror_eye = document.getElementById('horror_eye');
       var horror_eye_top = horror_eye.getBoundingClientRect().top;
 
-
       var horror_mouths = document.getElementById('horror_mouths');
       var horror_mouths_top = horror_mouths.getBoundingClientRect().top;
 
-
-      if(horror_eye_top < window_half_top){
+      // eye movement
+      if(horror_eye_top <= window_half_top){
         var eye_appear = anime.timeline({
           targets: horror_eye,
           easing: 'easeInQuad',
-          duration: 300
+          duration: 100
         });
 
         eye_appear
@@ -72,11 +71,12 @@ export class AboutMeComponent implements OnInit {
         horror_eye.style.height = "0px";
       }
 
-      if(horror_mouths_top < window_half_top){
+      //mouths movement
+      if(horror_mouths_top <= window_half_top){
         var mouths_appear = anime.timeline({
           targets: horror_mouths,
           easing: 'easeInQuad',
-          duration: 300
+          duration: 150
         });
 
         mouths_appear
@@ -100,7 +100,7 @@ export class AboutMeComponent implements OnInit {
       }
     });
 
-
+    // Initiate display items of status
     this.setPortraitAttr();
   }
 
