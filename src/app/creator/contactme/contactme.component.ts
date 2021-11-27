@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
 import { SerifComponent } from '../../shared/serif/serif.component';
+import AOS from 'aos';
 
 @Component({
   selector: 'app-contactme',
@@ -22,6 +23,10 @@ export class ContactMeComponent implements OnInit {
   constructor(private modal: BsModalService) { }
 
   ngOnInit(): void {
+    AOS.init({
+      duration:1000,
+      once:true
+    });
   }
 
   sendInquiry() {

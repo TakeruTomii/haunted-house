@@ -35,7 +35,7 @@ export class AboutMeComponent implements OnInit {
 
   ngOnInit(): void {
     AOS.init({
-      duration:1000,
+      duration:2000,
       once:true
     });
     this.setPortraitAttr();
