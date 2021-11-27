@@ -46,7 +46,7 @@ export class AboutMeComponent implements OnInit {
     // scroll movement
     window.addEventListener('scroll', () => {
       var window_half_top = window.innerHeight / 2;
-      var eye_height = window.innerHeight * 0.3;
+      var eye_height = window.innerHeight * 0.5;
       var mouths_height = window.innerHeight;
 
       var horror_eye = document.getElementById('horror_eye');
