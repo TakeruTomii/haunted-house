@@ -48,7 +48,7 @@
 
       <div class="row">
         <div class="left-half col-lg-4 d-flex justify-content-center">
-          <div id="card" data-aos="fade-down-right">
+          <div id="card" data-aos="zoom-out">
             <div id="inner-box">
               <div id="rarelity">★★★★★</div>
               <div id="portrait">
@@ -68,7 +68,7 @@
         </div>
 
         <div class="right-half col-lg-8 d-flex flex-column justify-content-between"
-          data-aos="fade-left" >
+          data-aos="fade-left">
           <div id="comment">
             {{comment_content}}
           </div>
@@ -151,7 +151,7 @@
   </div>
 
   <!-- parallax background -->
-  <div class="horror-eye parallax-bg"></div>
+  <div id="horror_eye" class="horror-eye parallax-bg"></div>
 
   <!-- Skill Sets -->
   <div id="skills_area" class="skills">
@@ -356,7 +356,7 @@
   </div>
 
   <!-- parallax background -->
-  <div class="horror-mouths parallax-bg">
+  <div id="horror_mouths" class="horror-mouths parallax-bg">
     <img src="../../../assets/img/mouth_smile.png" alt="Mouth">
     <img src="../../../assets/img/mouth_smile.png" alt="Mouth">
     <img src="../../../assets/img/mouth_smile.png" alt="Mouth">
@@ -450,7 +450,7 @@
   </div>
 
   <!-- Move other pages -->
-  <div id="exit" class="d-flex justify-content-center">
+  <div id="exit">
     <div id="akabeko" class="charactors d-flex justify-content-center"
     (click)="openSerifs('AboutMe', 'Akabeko')">
       <img src="../../../assets/img/Akabeko_map.png" alt="Akabeko">

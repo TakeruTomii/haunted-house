@@ -3,6 +3,8 @@ import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
 import { SerifComponent } from '../../shared/serif/serif.component';
 import { STATUS_PATTERNS, SKILL_SLIDES, PREFIX_PORTRAIT, IMG_PATH_ABOUT_ME, EXT_PORTRAIT, EXT_ATTR} from '../../shared/const';
 import AOS from 'aos';
+import anime from 'animejs/lib/anime.es.js';
+import { TargetLocator } from 'selenium-webdriver';
 
 @Component({
   selector: 'app-aboutme',
@@ -34,12 +36,74 @@ export class AboutMeComponent implements OnInit {
   constructor(private modal: BsModalService) {}
 
   ngOnInit(): void {
+    // simple show movement
     AOS.init({
       duration:2000,
       once:true
     });
+
+    // horror effects
+    // scroll movement
+    window.addEventListener('scroll', () => {
+      var window_half_top = window.innerHeight / 2;
+      var eye_height = window.innerHeight * 0.3;
+      var mouths_height = window.innerHeight;
+
+      var horror_eye = document.getElementById('horror_eye');
+      var horror_eye_top = horror_eye.getBoundingClientRect().top;
+
+
+      var horror_mouths = document.getElementById('horror_mouths');
+      var horror_mouths_top = horror_mouths.getBoundingClientRect().top;
+
+
+      if(horror_eye_top < window_half_top){
+        var eye_appear = anime.timeline({
+          targets: horror_eye,
+          easing: 'easeInQuad',
+          duration: 300
+        });
+
+        eye_appear
+        .add({
+          height: eye_height,
+        });
+      } else {
+        horror_eye.style.height = "0px";
+      }
+
+      if(horror_mouths_top < window_half_top){
+        var mouths_appear = anime.timeline({
+          targets: horror_mouths,
+          easing: 'easeInQuad',
+          duration: 300
+        });
+
+        mouths_appear
+        .add({
+          height: mouths_height,
+        });
+      } else {
+        horror_mouths.style.height = "0px";
+      }
+    });
+
+    //scroll(makimono) associate movement
+    //open dimension
+    var makimono = document.querySelector('details');
+    makimono.addEventListener('toggle', () => {
+      var exit_area = document.getElementById('exit');
+      if(makimono.open) {
+        exit_area.style.display = 'flex';
+      } else {
+        exit_area.style.display = 'none';
+      }
+    });
+
+
     this.setPortraitAttr();
   }
+
 
   setPortraitAttr() {
     // Initiate display items of status
