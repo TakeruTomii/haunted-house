@@ -18,6 +18,9 @@ export class SerifComponent implements OnInit{
   name_chara="";
   isSelection=false;
   selections=[];
+  isTalking=false;
+  interval_id:any;
+  current_data:any;
 
   // Path of Image Forlder
   private img_folder : string = "../../../assets/img/";
@@ -47,6 +50,7 @@ export class SerifComponent implements OnInit{
     this.serifs.initSerifs(params);
 
     let serif_info : any = this.serifs.popSerif();
+    this.current_data = serif_info;
     this.setDisplayInfos(serif_info);
 
     if (serif_info['next'].length >= 2) {
@@ -57,9 +61,18 @@ export class SerifComponent implements OnInit{
 
   // keep conversation forward
   onTalk() : void {
-    let next_data = this.serifs.popSerif();
-
-    if (next_data == null) {
+    if (this.isTalking){
+      // Case : on talking
+      // quit typewriting and show all sentence
+      clearInterval(this.interval_id);
+      this.current_serif = this.current_data['serif'];
+      this.showSerifTriangle();
+      this.isTalking = false;
+    } else {
+      this.hideSerifTriangle();
+      let next_data = this.serifs.popSerif();
+      this.current_data = next_data;
+      if (next_data == null) {
         // Case : the end of serifs
         // close modal
         this.bsModalRef.hide();
@@ -68,19 +81,22 @@ export class SerifComponent implements OnInit{
         if(this.transition_url) {
           this.transitScreen(this.transition_url);
         }
-    } else if (next_data['next'].length >= 2) {
-      // Case : Selections
-      this.showSelection(next_data['next']);
-    } else {
-      // Case : Proceed
-      // Display new serif
-      this.setDisplayInfos(next_data);
-      // Case : TransitonTransition
-      // Cache in buffer the URL to transit
-      if(next_data['transition']) {
-        this.transition_url = next_data['transition'];
+      } else if (next_data['next'].length >= 2) {
+        // Case : Selections
+        this.showSelection(next_data['next']);
+      } else {
+        // Case : Proceed
+        // Display new serif
+        this.isTalking = true;
+        this.setDisplayInfos(next_data);
+        // Case : TransitonTransition
+        // Cache in buffer the URL to transit
+        if(next_data['transition']) {
+          this.transition_url = next_data['transition'];
+        }
       }
     }
+
   }
 
   // Select Selections
@@ -114,10 +130,30 @@ export class SerifComponent implements OnInit{
 
   // Set Informations to display
   private setDisplayInfos(serif_info : any) {
-    this.current_serif = serif_info['serif'];
     this.name_chara = serif_info['speacker'];
     this.img_chara = this.getImgPath(
       serif_info['speacker'], serif_info['emotion'], serif_info['extention']);
+
+    // clear current serif
+    this.isTalking = true;
+    this.current_serif = "";
+    // type current serif
+    this.interval_id = setInterval(()=>{this.typewriteSentence(serif_info['serif'])}, 20);
+  }
+
+  // display sentence by one character
+  private typewriteSentence(sentense: string) {
+    let written_length = this.current_serif.length;
+    let all_length = sentense.length;
+
+    if(written_length < all_length) {
+      this.current_serif = this.current_serif.concat(sentense.charAt(written_length));
+    } else {
+      clearInterval(this.interval_id);
+      this.showSerifTriangle();
+      this.isTalking = false;
+    }
+
   }
 
   // Transition after serifs
@@ -133,6 +169,16 @@ export class SerifComponent implements OnInit{
       // Open in the current window.
       location.href = url;
     }
+  }
+
+  // show triangle at the last of sentence
+  private showSerifTriangle() {
+    document.querySelector('#serif-area span').classList.add('show-triangle');
+  }
+
+  // show triangle at the last of sentence
+  private hideSerifTriangle() {
+    document.querySelector('#serif-area span').classList.remove('show-triangle');
   }
 
 }

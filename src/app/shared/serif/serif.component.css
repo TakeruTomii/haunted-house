@@ -41,16 +41,42 @@
 }
 
 #serif-area {
-  padding: 0.5em;
   border-radius: 5% 1em;
   border:none;
   flex-grow: 1;
   width: 100%;
   color: white;
   background: rgba(0, 0, 0, 0.9);
+  display: flex;
+  flex-direction: column;
+  padding: 0.5em;
   font-size: x-large;
   overflow-y: auto;
 }
+
+.show-triangle::after {
+  content: "▼";
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  font-size: small;
+  background: transparent;
+  margin: 0 0.5em;
+  animation: floating 1s ease-in-out infinite;
+}
+
+@keyframes floating {
+  0% {
+    transform: translate(0, -0.5em) rotateY(0deg);
+  }
+  50% {
+    transform: translate(0, 0) rotateY(180deg);
+  }
+  100% {
+    transform: translate(0, -0.5em) rotateY(360deg);
+  }
+}
+
 
 /* selection */
 .choice {
