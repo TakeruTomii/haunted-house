@@ -4,6 +4,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { FormsModule, NgForm } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 // Common Parts
 import { SharedModule } from './shared/shared.module';
@@ -39,7 +40,8 @@ import { HomeScreenComponent } from './home-screen/home-screen.component';
     BrowserAnimationsModule,
     SharedModule,
     MapsModule,
-    CreatorModule
+    CreatorModule,
+    HttpClientModule
   ],
   providers: [MoveRoomService],
   bootstrap: [AppComponent]

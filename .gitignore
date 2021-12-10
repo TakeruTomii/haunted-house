@@ -45,3 +45,5 @@ testem.log
 .DS_Store
 Thumbs.db
 workspace.code-workspace
+src/environments/dynamic.ts
+.env

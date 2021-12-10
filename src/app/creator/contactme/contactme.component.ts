@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
 import { SerifComponent } from '../../shared/serif/serif.component';
 import AOS from 'aos';
+import { ContactmeService } from './contactme.service';
+import { sendMailInfo } from '../../shared/dto'
 
 @Component({
   selector: 'app-contactme',
@@ -20,7 +22,9 @@ export class ContactMeComponent implements OnInit {
   isConfirmed = false;
   isSend = false;
 
-  constructor(private modal: BsModalService) { }
+
+
+  constructor(private modal: BsModalService, private service: ContactmeService) { }
 
   ngOnInit(): void {
     // show movement
@@ -38,7 +42,8 @@ export class ContactMeComponent implements OnInit {
       this.send_button_content = "Not twice ;)"
       this.isConfirmed = false;
       this.isSend = true;
-      //TODO: Request Mail Sending Api
+      //Request Mail Sending Api
+      this.sendMail()
     }
     else {
       this.bubble_content = "Confirm the content before sending. Can I truly send these contents?"
@@ -63,5 +68,47 @@ export class ContactMeComponent implements OnInit {
       }
 
       this.modalRef = this.modal.show(SerifComponent, show_config);
+    }
+
+    sendMail() {
+      console.log("Send Mail Start");
+      let info: sendMailInfo = {
+        "mail_from": "dev.haunted.house@gmail.com",
+        "mail_to": "inquiry.haunted.house@gmail.com",
+        "title": this.createTitle(),
+        "message": this.createMessage()
+      }
+      console.log('message = ' + this.createMessage())
+
+      this.service
+      .sendMail(info)
+      .subscribe(()=>{console.log("Send Mail end");})
+    }
+
+    private createTitle(){
+      let prefix = "[haunted-house] inquiry ";
+      let now = new Date();
+
+      let UTCYear = now.getUTCFullYear();
+      let UTCMonth = now.getUTCMonth()+1;
+      let UTCDate = now.getUTCDate();
+      let UTCHour = now.getUTCHours();
+      let UTCMin = now.getUTCMinutes();
+      let UTCSec = now.getUTCSeconds();
+
+      let currentDate = UTCYear + "-" + UTCMonth + "-" + UTCDate + " "
+          + UTCHour + ":" + UTCMin + ":" + UTCSec;
+
+      return prefix + currentDate;
+    }
+
+    private createMessage() {
+      let msg = "<h2>You've got a mail from haunted house.</h2>" +
+                " name: <strong>" + this.inquiry.name +"</strong><br>" +
+                " email address: <strong>"+ this.inquiry.mail +"</strong><br><br>" +
+                "<h2>Message Content</h2>" +
+                "<p><pre><b>" + this.inquiry.message + "</b></pre></p>"
+
+      return msg;
     }
 }
