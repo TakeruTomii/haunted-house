@@ -46,10 +46,7 @@ export class NavComponent implements OnInit {
     return (event) => {
       // volume setting
       let vol =  Number(volume.value) / 100;
-      console.log('vol = ' + vol);
-      console.log('before volume_controller = ' + this.volume_controller.gain.value);
       this.volume_controller.gain.value = vol;
-      console.log('after volume_controller = ' + this.volume_controller.gain.value);
       // volume icon display
       target.innerHTML = volume.value;
       var icon = document.getElementById('sound-icon');
