@@ -51,7 +51,8 @@ export class TitleComponent implements OnInit {
     //play BGM
     let ctx = new AudioContext();
     let buf = await this.soundFunc.setupAudioBuffer(ctx, '../../assets/sound/utakata_no_yume.mp3');
-    let source = this.soundFunc.createAudioSource(ctx, buf);
+    let gain = this.soundFunc.getGainNode(ctx, 1);
+    let source = this.soundFunc.createAudioSource(ctx, buf, gain);
     source.start(4);
     return source;
   }
@@ -62,7 +63,8 @@ export class TitleComponent implements OnInit {
     //play BGM
     let ctx = new AudioContext();
     let buf = await this.soundFunc.setupAudioBuffer(ctx, '../../assets/sound/se_drop.mp3');
-    let source = this.soundFunc.createAudioSource(ctx, buf);
+    let gain = this.soundFunc.getGainNode(ctx, 1);
+    let source = this.soundFunc.createAudioSource(ctx, buf, gain);
     return source;
   }
 
