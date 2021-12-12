@@ -16,9 +16,10 @@ export class Sound {
   }
 
   // get audio source object
-  createAudioSource(ctx:AudioContext, audioBuffer:AudioBuffer, gainNode:GainNode):AudioBufferSourceNode{
+  createAudioSource(ctx:AudioContext, audioBuffer:AudioBuffer, gainNode:GainNode, isLoop:boolean=false):AudioBufferSourceNode{
     let source = ctx.createBufferSource();
     source.buffer = audioBuffer;
+    source.loop = isLoop;
     source.connect(gainNode);
     gainNode.connect(ctx.destination);
     return source;

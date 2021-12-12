@@ -37,7 +37,7 @@ export class NavComponent implements OnInit {
     let ctx = new AudioContext();
     let buf = await this.soundFunc.setupAudioBuffer(ctx, url);
     let gain = this.soundFunc.getGainNode(ctx, volume);
-    let source = this.soundFunc.createAudioSource(ctx, buf, gain);
+    let source = this.soundFunc.createAudioSource(ctx, buf, gain, true);
     this.volume_controller = gain;
     return source;
   }
