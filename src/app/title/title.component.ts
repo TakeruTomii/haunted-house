@@ -8,10 +8,12 @@ import { Router } from '@angular/router';
   styleUrls: ['./title.component.css']
 })
 export class TitleComponent implements OnInit {
+  bgm_source :AudioBufferSourceNode = null;
+  enter_source :AudioBufferSourceNode = null;
 
   constructor(private router: Router) { }
 
-  ngOnInit(): void {
+  async ngOnInit(): Promise<void> {
 
       //Logo movement
       var logo = anime.timeline({
@@ -30,22 +32,40 @@ export class TitleComponent implements OnInit {
       })
 
       //Music Play
-      this.startBGM();
+      this.bgm_source = await this.startBGM();
+
+      //prepare sound effect source to enter
+      this.enter_source = await this.prepareSoundEffectSource();
   }
 
   // Transition to home screen
   transitHome() {
+    this.bgm_source.stop();
+    this.enter_source.start();
     this.router.navigate(['/home']);
   }
 
-  async startBGM() {
-    //Audio play
+  async startBGM():Promise<AudioBufferSourceNode> {
+    //play BGM
     let ctx = new AudioContext();
     let buf = await this.setupAudioBuffer(ctx, '../../assets/sound/utakata_no_yume.mp3');
     let source = ctx.createBufferSource();
     source.buffer = buf;
     source.connect(ctx.destination);
     source.start(4);
+    return source;
+  }
+
+
+  //prepare sound effect source to enter
+  async prepareSoundEffectSource():Promise<AudioBufferSourceNode> {
+    //play BGM
+    let ctx = new AudioContext();
+    let buf = await this.setupAudioBuffer(ctx, '../../assets/sound/se_drop.mp3');
+    let source = ctx.createBufferSource();
+    source.buffer = buf;
+    source.connect(ctx.destination);
+    return source;
   }
 
   // setup audio buffer
