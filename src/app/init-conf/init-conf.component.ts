@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { InitConf } from '../shared/dto';
 import { INIT_LANGS, INIT_SOUNDS } from '../shared/const';
 import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
+import { promise } from 'protractor';
 
 @Component({
   selector: 'app-init-conf',
@@ -32,9 +33,17 @@ export class InitConfComponent implements OnInit, AfterViewInit{
     this.modalRef = this.modalService.show(template, {'backdrop': 'static'});
   }
 
-
   // Pass initial settings to Loading Screen
-  configure(){
+  async configure(){
+    //Audio play
+    let ctx = new AudioContext();
+    let buf = await this.setupAudioBuffer(ctx, '../../assets/sound/se_thunderbolt.mp3');
+    let source = ctx.createBufferSource();
+    source.buffer = buf;
+    source.connect(ctx.destination);
+    source.start(3.3);
+
+
     // Parameters to pass
     let conf : InitConf = {
       lang:this.lang_selected,
@@ -43,4 +52,13 @@ export class InitConfComponent implements OnInit, AfterViewInit{
     // Transit Loading Screen
     this.router.navigate(['/loading', conf])
   }
+
+  // setup audio buffer
+  async setupAudioBuffer(ctx:any, url: string): Promise<any> {
+    const response = await fetch(url);
+    const arrayBuffer = await response.arrayBuffer();
+    const audioBuffer = await ctx.decodeAudioData(arrayBuffer);
+    return audioBuffer;
+  }
+
 }

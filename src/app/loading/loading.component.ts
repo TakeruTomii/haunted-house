@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, ParamMap } from '@angular/router';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-loading',
@@ -11,7 +12,7 @@ export class LoadingComponent implements OnInit {
   lang=''
   sound=''
 
-  constructor(private route: ActivatedRoute) { }
+  constructor(private route: ActivatedRoute, private router: Router) { }
 
   ngOnInit(): void {
     // Fetch passed initial parameters
@@ -22,15 +23,12 @@ export class LoadingComponent implements OnInit {
       }
 
     );
-    // Go to title Screen in 3 seconds
-    setTimeout(this.movePage(this.lang), 5000);
-  }
 
-  // Screen Transition
-  // Transit Screen along Languages
-  private movePage(lang) {
-    //TODO: Code switching process when multilingual supports
-    return 'location.href = "./title";';
+    // Go to title Screen in 3 seconds
+    setTimeout(()=>{
+      this.router.navigate(['/title'])
+    },3000);
+
   }
 
 }
