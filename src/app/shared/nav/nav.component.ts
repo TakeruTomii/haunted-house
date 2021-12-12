@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { BsDropdownConfig } from 'ngx-bootstrap/dropdown';
+import { Sound } from '../../../app/shared/sharedFunction';
 
 @Component({
   selector: 'app-nav',
@@ -15,24 +16,39 @@ export class NavComponent implements OnInit {
     {label:'ON', value: 'on'},
     {label:'OFF', value: 'off'}
   ]
+  bgm_source :AudioBufferSourceNode = null;
+  soundFunc = new Sound();
 
   constructor() { }
 
-  ngOnInit(): void {
+  async ngOnInit(): Promise<void> {
+    // bgm
+    this.bgm_source = await this.setBGM('koto_wo_omotte.mp3')
+    this.bgm_source.start(1);
+    // volume
     var volume = document.getElementById('sound_input');
     var target = document.getElementById('vol_value');
-    var rangeValue =  (volume, target) => {
-      return (event) => {
-        target.innerHTML = volume.value;
-        var icon = document.getElementById('sound-icon');
-        if(volume.value === "0"){
-          icon.classList.add('volume-zero');
-        }else{
-          icon.classList.remove('volume-zero');
-        }
+    volume.addEventListener('input', this.volumeChange(volume, target));
+  }
+
+  async setBGM(bgm_filename:string):Promise<AudioBufferSourceNode>{
+    let url = '../../../assets/sound/' + bgm_filename;
+    let ctx = new AudioContext();
+    let buf = await this.soundFunc.setupAudioBuffer(ctx, url);
+    let source = this.soundFunc.createAudioSource(ctx, buf);
+    return source;
+  }
+
+  volumeChange(volume, target) {
+    return (event) => {
+      target.innerHTML = volume.value;
+      var icon = document.getElementById('sound-icon');
+      if(volume.value === "0"){
+        icon.classList.add('volume-zero');
+      }else{
+        icon.classList.remove('volume-zero');
       }
     }
-    volume.addEventListener('input', rangeValue(volume, target));
   }
 
 }

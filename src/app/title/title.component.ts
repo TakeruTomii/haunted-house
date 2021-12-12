@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import anime from 'animejs/lib/anime.es.js';
 import { Router } from '@angular/router';
+import { Sound } from '../../app/shared/sharedFunction';
 
 @Component({
   selector: 'app-title',
@@ -10,6 +11,7 @@ import { Router } from '@angular/router';
 export class TitleComponent implements OnInit {
   bgm_source :AudioBufferSourceNode = null;
   enter_source :AudioBufferSourceNode = null;
+  soundFunc = new Sound();
 
   constructor(private router: Router) { }
 
@@ -48,10 +50,8 @@ export class TitleComponent implements OnInit {
   async startBGM():Promise<AudioBufferSourceNode> {
     //play BGM
     let ctx = new AudioContext();
-    let buf = await this.setupAudioBuffer(ctx, '../../assets/sound/utakata_no_yume.mp3');
-    let source = ctx.createBufferSource();
-    source.buffer = buf;
-    source.connect(ctx.destination);
+    let buf = await this.soundFunc.setupAudioBuffer(ctx, '../../assets/sound/utakata_no_yume.mp3');
+    let source = this.soundFunc.createAudioSource(ctx, buf);
     source.start(4);
     return source;
   }
@@ -61,19 +61,11 @@ export class TitleComponent implements OnInit {
   async prepareSoundEffectSource():Promise<AudioBufferSourceNode> {
     //play BGM
     let ctx = new AudioContext();
-    let buf = await this.setupAudioBuffer(ctx, '../../assets/sound/se_drop.mp3');
-    let source = ctx.createBufferSource();
-    source.buffer = buf;
-    source.connect(ctx.destination);
+    let buf = await this.soundFunc.setupAudioBuffer(ctx, '../../assets/sound/se_drop.mp3');
+    let source = this.soundFunc.createAudioSource(ctx, buf);
     return source;
   }
 
-  // setup audio buffer
-  async setupAudioBuffer(ctx:any, url: string): Promise<any> {
-    const response = await fetch(url);
-    const arrayBuffer = await response.arrayBuffer();
-    const audioBuffer = await ctx.decodeAudioData(arrayBuffer);
-    return audioBuffer;
-  }
+
 
 }

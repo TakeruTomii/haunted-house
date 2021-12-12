@@ -3,7 +3,7 @@ import { Router } from '@angular/router';
 import { InitConf } from '../shared/dto';
 import { INIT_LANGS, INIT_SOUNDS } from '../shared/const';
 import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
-import { promise } from 'protractor';
+import { Sound } from '../../app/shared/sharedFunction';
 
 @Component({
   selector: 'app-init-conf',
@@ -19,6 +19,7 @@ export class InitConfComponent implements OnInit, AfterViewInit{
   sound_selected='on';
   sounds = INIT_SOUNDS;
   modalRef: BsModalRef;
+  soundFunc = new Sound();
 
   constructor(private router: Router, private modalService: BsModalService) { }
   @ViewChild('init_modal') public init_modal: TemplateRef<any>;
@@ -37,10 +38,8 @@ export class InitConfComponent implements OnInit, AfterViewInit{
   async configure(){
     //Audio play
     let ctx = new AudioContext();
-    let buf = await this.setupAudioBuffer(ctx, '../../assets/sound/se_thunderbolt.mp3');
-    let source = ctx.createBufferSource();
-    source.buffer = buf;
-    source.connect(ctx.destination);
+    let buf = await this.soundFunc.setupAudioBuffer(ctx, '../../assets/sound/se_thunderbolt.mp3');
+    let source = this.soundFunc.createAudioSource(ctx, buf);
     source.start(3.3);
 
 
@@ -51,14 +50,6 @@ export class InitConfComponent implements OnInit, AfterViewInit{
     };
     // Transit Loading Screen
     this.router.navigate(['/loading', conf])
-  }
-
-  // setup audio buffer
-  async setupAudioBuffer(ctx:any, url: string): Promise<any> {
-    const response = await fetch(url);
-    const arrayBuffer = await response.arrayBuffer();
-    const audioBuffer = await ctx.decodeAudioData(arrayBuffer);
-    return audioBuffer;
   }
 
 }

@@ -80,5 +80,5 @@ button img{
   height: 30px;
   border-radius: 20%;
   background: white;
-  transform: translate(10px, -2px) rotate(45deg);
+  transform: translate(10px, -2px) rotate(-45deg);
 }
