@@ -2,6 +2,7 @@ import { Component, OnInit, HostBinding } from '@angular/core';
 import { IMG_PATH_CHARACTER_LIST, EXT_CHARACTER, CHARACTER_DATA} from '../../shared/const';
 import { trigger, state, style, animate, transition } from '@angular/animations';
 import anime from 'animejs/lib/anime.es.js';
+import { soundInfo } from 'src/app/shared/dto';
 
 @Component({
   selector: 'app-character-list',
@@ -12,6 +13,10 @@ import anime from 'animejs/lib/anime.es.js';
   ]
 })
 export class CharacterListComponent implements OnInit {
+
+  // Sound Setting
+  page_sound:soundInfo;
+  current_volume:number = 0.5;
 
   // character variables
   character_id : number;
@@ -27,6 +32,13 @@ export class CharacterListComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    // set bgm information
+    this.page_sound = {
+      is_sound_on:true,
+      volume:this.current_volume,
+      bgm_filename:"Hanamibiyori.mp3"
+    }
+
     this.isCurtainOpen = false;
     this.setCurrentCharacter(0);
   }
@@ -47,9 +59,7 @@ export class CharacterListComponent implements OnInit {
 
   }
 
-
   animateCharacterChange(target: string){
-
     // curtain movement
     if(this.isCurtainOpen) {
       this.characterChange('0');
@@ -128,6 +138,10 @@ export class CharacterListComponent implements OnInit {
     })
 
     this.isCurtainOpen = true;
+  }
+
+  preserveVolume(volume:number) {
+    this.current_volume = volume;
   }
 
 }

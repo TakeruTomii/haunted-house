@@ -2,6 +2,7 @@ import { animation } from '@angular/animations';
 import { Component, OnInit } from '@angular/core';
 import anime from 'animejs/lib/anime.es.js';
 import AOS from 'aos';
+import { soundInfo } from 'src/app/shared/dto';
 
 @Component({
   selector: 'app-concept',
@@ -9,11 +10,21 @@ import AOS from 'aos';
   styleUrls: ['./concept.component.css']
 })
 export class ConceptComponent implements OnInit {
+  // Sound Setting
+  page_sound:soundInfo;
+  current_volume:number = 0.5;
+
   isOpenLastAccrodion = false;
 
   constructor() { }
 
   ngOnInit(): void {
+    // set bgm information
+    this.page_sound = {
+      is_sound_on:true,
+      volume:this.current_volume,
+      bgm_filename:"hanaurashi.mp3"
+    }
 
     // accordion show movement
     AOS.init({
@@ -52,4 +63,7 @@ export class ConceptComponent implements OnInit {
     this.isOpenLastAccrodion = !(this.isOpenLastAccrodion);
   }
 
+  preserveVolume(volume:number) {
+    this.current_volume = volume;
+  }
 }

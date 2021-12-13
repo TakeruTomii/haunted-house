@@ -3,15 +3,22 @@ import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
 import { SerifComponent } from '../../shared/serif/serif.component';
 import AOS from 'aos';
 import { ContactmeService } from './contactme.service';
-import { sendMailInfo } from '../../shared/dto'
+import { sendMailInfo, soundInfo } from '../../shared/dto'
 
 @Component({
   selector: 'app-contactme',
   templateUrl: './contactme.component.html',
   styleUrls: ['./contactme.component.css']
 })
+
 export class ContactMeComponent implements OnInit {
   modalRef: BsModalRef;
+
+  // Sound Setting
+  page_sound:soundInfo;
+  current_volume:number = 0.5;
+
+  //form information
   inquiry = {
     name: '',
     mail: '',
@@ -22,11 +29,17 @@ export class ContactMeComponent implements OnInit {
   isConfirmed = false;
   isSend = false;
 
-
-
   constructor(private modal: BsModalService, private service: ContactmeService) { }
 
   ngOnInit(): void {
+
+    // set bgm information
+    this.page_sound = {
+      is_sound_on:true,
+      volume:this.current_volume,
+      bgm_filename:"wafuu_no_otayori_shoukai_corner.mp3"
+    }
+
     // show movement
     AOS.init({
       duration:1000,
@@ -110,5 +123,9 @@ export class ContactMeComponent implements OnInit {
                 "<p><pre><b>" + this.inquiry.message + "</b></pre></p>"
 
       return msg;
+    }
+
+    preserveVolume(volume:number) {
+      this.current_volume = volume;
     }
 }

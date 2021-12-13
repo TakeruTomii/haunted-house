@@ -40,6 +40,7 @@ export class AboutMeComponent implements OnInit {
   constructor(private modal: BsModalService) {}
 
   ngOnInit(): void {
+    // set bgm information
     this.page_sound = {
       is_sound_on:true,
       volume:this.current_volume,
