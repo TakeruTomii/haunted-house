@@ -30,7 +30,7 @@ export const TRANSITABLE_ROOMS = {
 // BGMs for each room
 export const ROOM_BGMS = {
   'livingRoom': "koto_wo_omotte.mp3",
-  'workShop': "wafuu_dark.mp3",
+  'workShop': "Shinobitoon.mp3",
   'teaRoom': "ryuusui_to_matsu.mp3",
   'casino': "otoko_no_tamashii_mensore.mp3",
   'garden': "tsuki_no_kei.mp3"
