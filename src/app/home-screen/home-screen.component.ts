@@ -48,7 +48,6 @@ export class HomeScreenComponent implements OnInit, OnDestroy {
             volume:this.current_volume,
             bgm_filename:this.bgms[RoomInfo.roomName]
           };
-          console.log('this.room_sound.bgm_filename = ' + this.room_sound.bgm_filename)
         }
     );
   }
