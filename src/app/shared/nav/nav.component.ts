@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnChanges, OnInit, Output, SimpleChanges,EventEmitter } from '@angular/core';
 import { BsDropdownConfig } from 'ngx-bootstrap/dropdown';
 import { Sound } from '../../../app/shared/sharedFunction';
 import { soundInfo } from '../../../app/shared/dto';
@@ -9,15 +9,11 @@ import { soundInfo } from '../../../app/shared/dto';
   styleUrls: ['./nav.component.css'],
   providers: [{ provide: BsDropdownConfig, useValue: { isAnimated: true, autoClose: true } }]
 })
-export class NavComponent implements OnInit {
+export class NavComponent implements OnInit, OnChanges {
 
   // Sound Settings
   @Input() sound_setting:soundInfo;
-  sound_selected='on';
-  sounds = [
-    {label:'ON', value: 'on'},
-    {label:'OFF', value: 'off'}
-  ]
+  @Output() volume_changed:EventEmitter<Number> = new EventEmitter<Number>();
   bgm_source :AudioBufferSourceNode = null;
   soundFunc = new Sound();
   volume_controller:GainNode = null;
@@ -34,6 +30,16 @@ export class NavComponent implements OnInit {
     volume.addEventListener('input', this.volumeChange(volume, target));
   }
 
+  async ngOnChanges(changes: SimpleChanges): Promise<void> {
+    // change bgm
+    if(changes.sound_setting && !changes.sound_setting.isFirstChange()){
+      this.bgm_source.stop(0);
+      this.bgm_source = await this.setBGM(this.sound_setting.bgm_filename, this.sound_setting.volume);
+      this.bgm_source.start(0.5);
+    }
+  }
+
+  //get audio source for bgm
   async setBGM(bgm_filename:string, volume:number):Promise<AudioBufferSourceNode>{
     let url = '../../../assets/sound/' + bgm_filename;
     let ctx = new AudioContext();
@@ -44,11 +50,13 @@ export class NavComponent implements OnInit {
     return source;
   }
 
+  // change volume along range input
   volumeChange(volume, target) {
     return (event) => {
       // volume setting
       let vol =  Number(volume.value) / 100;
       this.volume_controller.gain.value = vol;
+      this.volume_changed.emit(vol);
       // volume icon display
       target.innerHTML = volume.value;
       var icon = document.getElementById('sound-icon');

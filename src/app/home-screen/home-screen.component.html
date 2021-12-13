@@ -1,4 +1,4 @@
 <!-- navication bar -->
-<app-nav [sound_setting]="room_sound"></app-nav>
+<app-nav [sound_setting]="room_sound" (volume_changed)="preserveVolume($event)"></app-nav>
 <!-- map component -->
 <ng-container *ngComponentOutlet="currentRoomComponent" ></ng-container>

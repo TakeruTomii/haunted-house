@@ -27,6 +27,15 @@ export const TRANSITABLE_ROOMS = {
   'garden': GardenComponent
 };
 
+// BGMs for each room
+export const ROOM_BGMS = {
+  'livingRoom': "koto_wo_omotte.mp3",
+  'workShop': "Cold_Heart.mp3",
+  'teaRoom': "Cold_Heart.mp3",
+  'casino': "Cold_Heart.mp3",
+  'garden': "Cold_Heart.mp3"
+};
+
 // About Me
 // Path Properties
 export const PREFIX_PORTRAIT = 'portrait_';
