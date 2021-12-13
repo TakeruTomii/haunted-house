@@ -9,6 +9,7 @@ import { Sound } from '../../app/shared/sharedFunction';
   styleUrls: ['./title.component.css']
 })
 export class TitleComponent implements OnInit {
+  thunder_source :AudioBufferSourceNode = null;
   bgm_source :AudioBufferSourceNode = null;
   enter_source :AudioBufferSourceNode = null;
   soundFunc = new Sound();
@@ -16,28 +17,31 @@ export class TitleComponent implements OnInit {
   constructor(private router: Router) { }
 
   async ngOnInit(): Promise<void> {
+    //prepare sound sources
+    this.thunder_source = await this.prepareSoundEffectSource('se_thunderbolt.mp3');
+    this.bgm_source = await this.prepareSoundEffectSource('utakata_no_yume.mp3');
+    this.enter_source = await this.prepareSoundEffectSource('se_drop.mp3');
 
-      //Logo movement
-      var logo = anime.timeline({
-        targets:"#title-logo img",
-        easing: 'linear'
-      });
+    //play music
+    this.thunder_source.start();
+    this.bgm_source.start(4);
 
-      logo
-      .add({
-        translateY: -50
-      })
-      .add({
-        opacity: 1,
-        translateY: 0,
-        duration: 1000
-      })
 
-      //Music Play
-      this.bgm_source = await this.startBGM();
+    //Logo movement
+    var logo = anime.timeline({
+      targets:"#title-logo img",
+      easing: 'linear'
+    });
 
-      //prepare sound effect source to enter
-      this.enter_source = await this.prepareSoundEffectSource();
+    logo
+    .add({
+      translateY: -50
+    })
+    .add({
+      opacity: 1,
+      translateY: 0,
+      duration: 1000
+    })
   }
 
   // Transition to home screen
@@ -47,27 +51,15 @@ export class TitleComponent implements OnInit {
     this.router.navigate(['/home']);
   }
 
-  async startBGM():Promise<AudioBufferSourceNode> {
-    //play BGM
-    let ctx = new AudioContext();
-    let buf = await this.soundFunc.setupAudioBuffer(ctx, '../../assets/sound/utakata_no_yume.mp3');
-    let gain = this.soundFunc.getGainNode(ctx, 1);
-    let source = this.soundFunc.createAudioSource(ctx, buf, gain);
-    source.start(4);
-    return source;
-  }
-
-
   //prepare sound effect source to enter
-  async prepareSoundEffectSource():Promise<AudioBufferSourceNode> {
+  async prepareSoundEffectSource(filename:string):Promise<AudioBufferSourceNode> {
+    let filePath = '../../assets/sound/' + filename
     //play BGM
     let ctx = new AudioContext();
-    let buf = await this.soundFunc.setupAudioBuffer(ctx, '../../assets/sound/se_drop.mp3');
+    let buf = await this.soundFunc.setupAudioBuffer(ctx, filePath);
     let gain = this.soundFunc.getGainNode(ctx, 1);
     let source = this.soundFunc.createAudioSource(ctx, buf, gain);
     return source;
   }
-
-
 
 }

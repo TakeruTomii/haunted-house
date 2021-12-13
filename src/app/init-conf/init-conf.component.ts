@@ -36,12 +36,13 @@ export class InitConfComponent implements OnInit, AfterViewInit{
 
   // Pass initial settings to Loading Screen
   async configure(){
-    //Audio play
+    // Audio play
+    // Play no sound file first to play successing sounds
     let ctx = new AudioContext();
-    let buf = await this.soundFunc.setupAudioBuffer(ctx, '../../assets/sound/se_thunderbolt.mp3');
+    let buf = await this.soundFunc.setupAudioBuffer(ctx, '../../assets/sound/no_sound.mp3');
     let gain = this.soundFunc.getGainNode(ctx, 1);
     let source = this.soundFunc.createAudioSource(ctx, buf, gain);
-    source.start(3.3);
+    source.start();
 
 
     // Parameters to pass
