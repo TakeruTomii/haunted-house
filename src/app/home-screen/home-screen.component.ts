@@ -29,6 +29,7 @@ export class HomeScreenComponent implements OnInit, OnDestroy {
   constructor(private move: MoveRoomService) { }
 
   ngOnInit(): void {
+    //set bgm information
     this.room_sound = {
       is_sound_on:true,
       volume:this.current_volume,

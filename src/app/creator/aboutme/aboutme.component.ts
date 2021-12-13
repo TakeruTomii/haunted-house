@@ -4,7 +4,7 @@ import { SerifComponent } from '../../shared/serif/serif.component';
 import { STATUS_PATTERNS, SKILL_SLIDES, PREFIX_PORTRAIT, IMG_PATH_ABOUT_ME, EXT_PORTRAIT, EXT_ATTR} from '../../shared/const';
 import AOS from 'aos';
 import anime from 'animejs/lib/anime.es.js';
-import { TargetLocator } from 'selenium-webdriver';
+import { soundInfo } from 'src/app/shared/dto';
 
 @Component({
   selector: 'app-aboutme',
@@ -13,6 +13,10 @@ import { TargetLocator } from 'selenium-webdriver';
 })
 export class AboutMeComponent implements OnInit {
   modalRef: BsModalRef;
+
+  // Sound Setting
+  page_sound:soundInfo;
+  current_volume:number = 0.5;
 
   // URLs of Certifications
   url_ipa_exam = "https://www.jitec.ipa.go.jp/2_01english/02examcategories.html";
@@ -36,6 +40,12 @@ export class AboutMeComponent implements OnInit {
   constructor(private modal: BsModalService) {}
 
   ngOnInit(): void {
+    this.page_sound = {
+      is_sound_on:true,
+      volume:this.current_volume,
+      bgm_filename:"shamisendokusou_ma.mp3"
+    }
+
     // simple show movement
     AOS.init({
       duration:2000,
@@ -141,6 +151,10 @@ export class AboutMeComponent implements OnInit {
     }
 
     this.modalRef = this.modal.show(SerifComponent, show_config);
+  }
+
+  preserveVolume(volume:number) {
+    this.current_volume = volume;
   }
 
 }

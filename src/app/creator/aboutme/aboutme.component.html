@@ -1,5 +1,5 @@
 <!-- Navication bar -->
-<app-nav></app-nav>
+<app-nav [sound_setting]="page_sound" (volume_changed)="preserveVolume($event)"></app-nav>
 <!-- Common header zone -->
   <div class="header-belt">
     <img src="../../../assets/img/Clouds_004.png" id="cloud0" class="cloud" alt="cloud">
