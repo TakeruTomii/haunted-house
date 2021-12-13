@@ -25,3 +25,10 @@ export class sendMailInfo {
   title: string;
   message: string;
 }
+
+// Informations to Control
+export class soundInfo {
+  is_sound_on: boolean;
+  volume: number;
+  bgm_filename: string;
+}

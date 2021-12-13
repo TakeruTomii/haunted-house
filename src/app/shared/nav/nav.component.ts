@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { BsDropdownConfig } from 'ngx-bootstrap/dropdown';
 import { Sound } from '../../../app/shared/sharedFunction';
+import { soundInfo } from '../../../app/shared/dto';
 
 @Component({
   selector: 'app-nav',
@@ -11,6 +12,7 @@ import { Sound } from '../../../app/shared/sharedFunction';
 export class NavComponent implements OnInit {
 
   // Sound Settings
+  @Input() sound_setting:soundInfo;
   sound_selected='on';
   sounds = [
     {label:'ON', value: 'on'},
@@ -24,7 +26,7 @@ export class NavComponent implements OnInit {
 
   async ngOnInit(): Promise<void> {
     // bgm
-    this.bgm_source = await this.setBGM('koto_wo_omotte.mp3', 0.5);
+    this.bgm_source = await this.setBGM(this.sound_setting.bgm_filename, this.sound_setting.volume);
     this.bgm_source.start(1);
     // volume
     var volume = document.getElementById('sound_input');
