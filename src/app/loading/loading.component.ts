@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, ParamMap } from '@angular/router';
 import { Router } from '@angular/router';
+import { Sound } from '../../app/shared/sharedFunction';
 
 @Component({
   selector: 'app-loading',
@@ -12,9 +13,18 @@ export class LoadingComponent implements OnInit {
   lang=''
   sound=''
 
+  //sound setting
+  soundFunc = new Sound();
+
   constructor(private route: ActivatedRoute, private router: Router) { }
 
-  ngOnInit(): void {
+  async ngOnInit(): Promise<void> {
+    let ctx = new AudioContext();
+    let buf = await this.soundFunc.setupAudioBuffer(ctx, '../../assets/sound/takibi.mp3');
+    let gain = this.soundFunc.getGainNode(ctx, 1);
+    let source = this.soundFunc.createAudioSource(ctx, buf, gain);
+    source.start();
+
     // Fetch passed initial parameters
     this.route.paramMap.subscribe(
       (conf:ParamMap)=>{
@@ -26,6 +36,7 @@ export class LoadingComponent implements OnInit {
 
     // Go to title Screen in 3 seconds
     setTimeout(()=>{
+      source.stop();
       this.router.navigate(['/title'])
     },3000);
 
