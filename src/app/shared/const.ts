@@ -289,5 +289,12 @@ export const CHARACTER_DATA = [
     'main_image_file': 'Ittan-momen_neutral',
     'select_image_file': IMG_PATH_CHARACTER_LIST + 'Ittan-momen_neutral' + EXT_CHARACTER,
     'explanation': 'He come from Kagoshima.\nHe can choke you to death if he was angry.'
+  },
+  {
+    'id': 4,
+    'name': 'Eye-mirror',
+    'main_image_file': 'Eye-mirror_neutral',
+    'select_image_file': IMG_PATH_CHARACTER_LIST + 'Eye-mirror_neutral' + EXT_CHARACTER,
+    'explanation': 'Nothing is known about it.\nIt is said it might be the agent to another entertainment.'
   }
 ]

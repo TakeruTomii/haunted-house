@@ -1,3 +1,4 @@
+/* background */
 #bg-living-room {
   background: url('../../../assets/img/living-room_close_landscape.png') no-repeat center;
   background-size: auto 100vh;
@@ -12,6 +13,7 @@
   }
 }
 
+/* characters */
 .characters {
   position: absolute;
   top: 50%;
@@ -23,17 +25,33 @@
   height: 100%;
 }
 
+#eye-mirror {
+  width: auto;
+  height: 18vh;
+  transform: translate(8vh, -1vh);
+}
+
+@media screen and (orientation: portrait)  {
+  #eye-mirror {
+    width: 18vw;
+    height: auto;
+    transform: translate(3vw, -2.5vw);
+    top: 52%;
+  }
+}
+
+
 #tommy {
   width: auto;
   height: 37vh;
-  transform: translate(15vh, 20vh);
+  transform: translate(15vh, 18vh);
 }
 
 @media screen and (orientation: portrait)  {
   #tommy {
     width: 30vw;
     height: auto;
-    transform: translate(10vw, 32vw);
+    transform: translate(10vw, 28vw);
   }
 }
 

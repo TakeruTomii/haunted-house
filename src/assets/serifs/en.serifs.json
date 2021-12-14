@@ -276,6 +276,19 @@
     "emotion": "neutral",
     "animation": "none",
     "extention": "png"
+  },
+  {
+    "id": 17,
+    "serif": "................................................................................",
+    "room": "LivingRoom",
+    "clicked": "Eye-mirror",
+    "speacker": "Eye-mirror",
+    "isStart": true,
+    "next": [],
+    "transition": "",
+    "emotion": "neutral",
+    "animation": "none",
+    "extention": "png"
   }
 
 ]

@@ -35,8 +35,15 @@ export class HandleSerifsService {
       // Case : First serif
       let res = this.current_serifs.find(x => x.isStart);
       this.current_serifs = this.current_serifs.filter(x => !x.isStart);
-      this.next_serif_id = parseInt(res['next'][0]['nextId']);
       this.is_start = false;
+
+      if(res['next'].length == 0){
+        // Case : no next serifs
+        this.next_serif_id = -1;
+      } else {
+        // Case : have next serif
+        this.next_serif_id = parseInt(res['next'][0]['nextId']);
+      }
 
       return res;
 
