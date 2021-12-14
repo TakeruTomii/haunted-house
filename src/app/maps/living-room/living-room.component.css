@@ -1,42 +1,54 @@
 #bg-living-room {
-  background-image: url('../../../assets/img/washitsu.png');
+  background: url('../../../assets/img/living-room_close_landscape.png') no-repeat center;
+  background-size: auto 100vh;
+  background-color: black;
 }
 
-#nurarihyon {
+@media screen and (orientation: portrait)  {
+  #bg-living-room {
+    background: url('../../../assets/img/livinng-room_closed_portrait.png') no-repeat center;
+    background-color: black;
+    background-size: 100vw auto;
+  }
+}
+
+.characters {
   position: absolute;
-  top: 60%;
+  top: 50%;
   left: 50%;
-  width: 10em;
-  height: auto;
 }
 
-#nurarihyon img {
+.characters img {
   width: 100%;
   height: 100%;
 }
+
+#tommy {
+  width: auto;
+  height: 37vh;
+  transform: translate(15vh, 20vh);
+}
+
+@media screen and (orientation: portrait)  {
+  #tommy {
+    width: 30vw;
+    height: auto;
+    transform: translate(10vw, 32vw);
+  }
+}
+
+
 
 #jessica {
-  position: absolute;
-  top: 70%;
-  left: 20%;
-  width: 10em;
-  height: auto;
+  width: auto;
+  height: 30vh;
+  transform: translate(-40vh, 15vh);
 }
 
-#jessica img {
-  width: 100%;
-  height: 100%;
-}
-
-#nurarihyon:hover {
-  animation: hopping 0.25s cubic-bezier(0.075, 0.82, 0.165, 1) 0s infinite alternate both;
-}
-
-@keyframes hopping {
-  0% {
-    top: 60%;
-  }
-  100% {
-    top: 55%;
+@media screen and (orientation: portrait)  {
+  #jessica {
+    width: 20vw;
+    height: auto;
+    transform: translate(-30vw, 35vw);
   }
 }

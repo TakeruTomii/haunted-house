@@ -271,10 +271,10 @@ export const CHARACTER_DATA = [
   },
   {
     'id': 1,
-    'name': 'Nurarihyon',
-    'main_image_file': 'Nurarihyon_neutral',
-    'select_image_file': IMG_PATH_CHARACTER_LIST + 'Nurarihyon_neutral' + EXT_CHARACTER,
-    'explanation': 'Nurarihyon looks old man.\nHe acts like your old friend but you cannot notice.'
+    'name': 'Tommy',
+    'main_image_file': 'Tommy_map',
+    'select_image_file': IMG_PATH_CHARACTER_LIST + 'Tommy_neutral' + EXT_CHARACTER,
+    'explanation': 'Tommy looks old man.\nHe acts like your old friend but you cannot notice.'
   },
   {
     'id': 2,

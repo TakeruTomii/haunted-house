@@ -3,8 +3,8 @@
       "id": 1,
       "serif": "Welcome!",
       "room": "LivingRoom",
-      "clicked": "Nurarihyon",
-      "speacker": "Nurarihyon",
+      "clicked": "Tommy",
+      "speacker": "Tommy",
       "isStart": true,
       "next": [
           {
@@ -21,8 +21,8 @@
       "id": 2,
       "serif": "This is test to display serifs!\n It'll be main entertainment of this site.",
       "room": "LivingRoom",
-      "clicked": "Nurarihyon",
-      "speacker": "Nurarihyon",
+      "clicked": "Tommy",
+      "speacker": "Tommy",
       "isStart": false,
       "next": [
           {
@@ -39,8 +39,8 @@
       "id": 3,
       "serif": "Ask me anytime you worried. Do you have questions?",
       "room": "LivingRoom",
-      "clicked": "Nurarihyon",
-      "speacker": "Nurarihyon",
+      "clicked": "Tommy",
+      "speacker": "Tommy",
       "isStart": false,
       "next": [
           {
@@ -159,8 +159,8 @@
       "id": 10,
       "serif": "Ahh... You've just lost. OK, then here's the exit. Be careful your way home!!",
       "room": "LivingRoom",
-      "clicked": "Nurarihyon",
-      "speacker": "Nurarihyon",
+      "clicked": "Tommy",
+      "speacker": "Tommy",
       "isStart": false,
       "next": [],
       "transition": "./",
@@ -172,8 +172,8 @@
       "id": 11,
       "serif": "Hahha! I like energitic kiddo! Have a good time!\n I reccomend to go work shop. There's many things to see!",
       "room": "LivingRoom",
-      "clicked": "Nurarihyon",
-      "speacker": "Nurarihyon",
+      "clicked": "Tommy",
+      "speacker": "Tommy",
       "isStart": false,
       "next": [],
       "transition": "",

@@ -1,6 +1,5 @@
 import { Component, OnInit, HostBinding } from '@angular/core';
 import { IMG_PATH_CHARACTER_LIST, EXT_CHARACTER, CHARACTER_DATA} from '../../shared/const';
-import { trigger, state, style, animate, transition } from '@angular/animations';
 import anime from 'animejs/lib/anime.es.js';
 import { soundInfo } from 'src/app/shared/dto';
 
