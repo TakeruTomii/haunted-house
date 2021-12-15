@@ -2,7 +2,7 @@ import { animation } from '@angular/animations';
 import { Component, OnInit } from '@angular/core';
 import anime from 'animejs/lib/anime.es.js';
 import AOS from 'aos';
-import { soundInfo } from 'src/app/shared/dto';
+import { SoundInfo } from 'src/app/shared/dto';
 
 @Component({
   selector: 'app-concept',
@@ -11,7 +11,7 @@ import { soundInfo } from 'src/app/shared/dto';
 })
 export class ConceptComponent implements OnInit {
   // Sound Setting
-  page_sound:soundInfo;
+  page_sound:SoundInfo;
   current_volume:number = 0.5;
 
   isOpenLastAccrodion = false;

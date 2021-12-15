@@ -3,7 +3,7 @@ import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
 import { SerifComponent } from '../../shared/serif/serif.component';
 import AOS from 'aos';
 import { ContactmeService } from './contactme.service';
-import { sendMailInfo, soundInfo } from '../../shared/dto'
+import { SendMailInfo, SoundInfo } from '../../shared/dto'
 
 @Component({
   selector: 'app-contactme',
@@ -15,7 +15,7 @@ export class ContactMeComponent implements OnInit {
   modalRef: BsModalRef;
 
   // Sound Setting
-  page_sound:soundInfo;
+  page_sound:SoundInfo;
   current_volume:number = 0.5;
 
   //form information
@@ -85,7 +85,7 @@ export class ContactMeComponent implements OnInit {
 
     sendMail() {
       console.log("Send Mail Start");
-      let info: sendMailInfo = {
+      let info: SendMailInfo = {
         "mail_from": "dev.haunted.house@gmail.com",
         "mail_to": "inquiry.haunted.house@gmail.com",
         "title": this.createTitle(),

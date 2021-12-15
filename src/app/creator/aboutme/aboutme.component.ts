@@ -4,7 +4,7 @@ import { SerifComponent } from '../../shared/serif/serif.component';
 import { STATUS_PATTERNS, SKILL_SLIDES, PREFIX_PORTRAIT, IMG_PATH_ABOUT_ME, EXT_PORTRAIT, EXT_ATTR} from '../../shared/const';
 import AOS from 'aos';
 import anime from 'animejs/lib/anime.es.js';
-import { soundInfo } from 'src/app/shared/dto';
+import { SoundInfo } from 'src/app/shared/dto';
 
 @Component({
   selector: 'app-aboutme',
@@ -15,7 +15,7 @@ export class AboutMeComponent implements OnInit {
   modalRef: BsModalRef;
 
   // Sound Setting
-  page_sound:soundInfo;
+  page_sound:SoundInfo;
   current_volume:number = 0.5;
 
   // URLs of Certifications

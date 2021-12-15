@@ -1,7 +1,7 @@
 import { Component, Input, OnChanges, OnInit, Output, SimpleChanges,EventEmitter } from '@angular/core';
 import { BsDropdownConfig } from 'ngx-bootstrap/dropdown';
 import { Sound } from '../../../app/shared/sharedFunction';
-import { soundInfo } from '../../../app/shared/dto';
+import { SoundInfo } from '../../../app/shared/dto';
 
 @Component({
   selector: 'app-nav',
@@ -12,7 +12,7 @@ import { soundInfo } from '../../../app/shared/dto';
 export class NavComponent implements OnInit, OnChanges {
 
   // Sound Settings
-  @Input() sound_setting:soundInfo;
+  @Input() sound_setting:SoundInfo;
   @Output() volume_changed:EventEmitter<Number> = new EventEmitter<Number>();
   bgm_source :AudioBufferSourceNode = null;
   soundFunc = new Sound();

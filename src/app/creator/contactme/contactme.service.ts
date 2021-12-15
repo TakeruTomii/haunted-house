@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
 import { catchError, retry } from 'rxjs/operators';
-import { sendMailInfo } from '../../shared/dto';
+import { SendMailInfo } from '../../shared/dto';
 import { environment } from '../../../environments/environment';
 
 @Injectable({
@@ -13,7 +13,7 @@ export class ContactmeService {
   constructor(private http: HttpClient) { }
   private endpoint = environment.dynamic.mailSendURL;
 
-  sendMail(body: sendMailInfo): Observable<sendMailInfo> {
+  sendMail(body: SendMailInfo): Observable<SendMailInfo> {
     let auth_header = 'BASIC ' + environment.dynamic.mailSendKey;
 
     let httpOptions = {
@@ -22,7 +22,7 @@ export class ContactmeService {
         'Authorization': auth_header
       })
     };
-    return this.http.post<sendMailInfo>(this.endpoint, body, httpOptions)
+    return this.http.post<SendMailInfo>(this.endpoint, body, httpOptions)
       .pipe(
         catchError(err => { throw 'error in source. Details: ' + err.message; })
       );

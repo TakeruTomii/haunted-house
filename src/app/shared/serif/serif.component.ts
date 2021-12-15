@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { BsModalRef, ModalDirective } from 'ngx-bootstrap/modal';
-import { fetchSerifsParam } from '../../shared/dto';
+import { FetchSerifsParam } from '../../shared/dto';
 import { HandleSerifsService } from 'src/app/shared/serif/handle-serifs/handle-serifs.service';
 
 @Component({
@@ -41,7 +41,7 @@ export class SerifComponent implements OnInit{
   // Initiate serifs when opening modal
   initModal() : void {
     // configure calling serifs
-    let params : fetchSerifsParam = {
+    let params : FetchSerifsParam = {
       lang: 'en',
       room: this.room,
       clicked: this.clicked

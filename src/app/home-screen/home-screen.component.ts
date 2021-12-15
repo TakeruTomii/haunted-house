@@ -1,6 +1,6 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
-import { RoomInfo, soundInfo } from '../shared/dto';
+import { RoomInfo, SoundInfo } from '../shared/dto';
 import { TRANSITABLE_ROOMS, ROOM_BGMS } from '../shared/const';
 import { MoveRoomService } from '../maps/move-room/move-room.service';
 
@@ -11,7 +11,7 @@ import { MoveRoomService } from '../maps/move-room/move-room.service';
 })
 export class HomeScreenComponent implements OnInit, OnDestroy {
   // Sound Setting
-  room_sound:soundInfo;
+  room_sound:SoundInfo;
   current_volume:number = 0.5;
 
   // Show Living Room for Initiation.

@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { fetchSerifsParam } from '../../dto';
+import { FetchSerifsParam } from '../../dto';
 import enSerifs from 'src/assets/serifs/en.serifs.json'
 
 @Injectable({
@@ -13,7 +13,7 @@ export class HandleSerifsService {
   constructor() { }
 
   // Initiate Serifs
-  initSerifs(param : fetchSerifsParam){
+  initSerifs(param : FetchSerifsParam){
     // Search condition
     let lang = param.lang;
     let room = param.room;

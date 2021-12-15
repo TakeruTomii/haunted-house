@@ -1,7 +1,7 @@
 import { Component, OnInit, HostBinding } from '@angular/core';
 import { IMG_PATH_CHARACTER_LIST, EXT_CHARACTER, CHARACTER_DATA} from '../../shared/const';
 import anime from 'animejs/lib/anime.es.js';
-import { soundInfo } from 'src/app/shared/dto';
+import { SoundInfo } from 'src/app/shared/dto';
 
 @Component({
   selector: 'app-character-list',
@@ -14,7 +14,7 @@ import { soundInfo } from 'src/app/shared/dto';
 export class CharacterListComponent implements OnInit {
 
   // Sound Setting
-  page_sound:soundInfo;
+  page_sound:SoundInfo;
   current_volume:number = 0.5;
 
   // character variables
