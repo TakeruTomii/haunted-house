@@ -18,7 +18,7 @@ export const INIT_SOUNDS = [
 ]
 
 //BGM filename map of each page
-export const BGM_FILENAME_MAP = {
+export const PAGE_BGMS = {
   'init-conf':'no_sound.mp3',
   'loading':'takibi.mp3',
   'title':'utakata_no_yume.mp3',

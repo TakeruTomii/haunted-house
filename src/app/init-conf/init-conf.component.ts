@@ -1,7 +1,7 @@
 import { ChangeDetectionStrategy, AfterViewInit, Component, OnInit, TemplateRef, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 import { SoundInfo, CrossScreenContext } from '../shared/dto';
-import { INIT_LANGS, INIT_SOUNDS, BGM_FILENAME_MAP } from '../shared/const';
+import { INIT_LANGS, INIT_SOUNDS, PAGE_BGMS } from '../shared/const';
 import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
 import { Sound } from '../../app/shared/sharedFunction';
 
@@ -42,7 +42,7 @@ export class InitConfComponent implements OnInit, AfterViewInit{
     let _sound : SoundInfo = {
       is_sound_on: isSoundOn,
       volume: vol,
-      bgm_filename: BGM_FILENAME_MAP['loading']
+      bgm_filename: PAGE_BGMS['loading']
     };
     let crossScreenCtx : CrossScreenContext = {
       sound: _sound
@@ -50,7 +50,7 @@ export class InitConfComponent implements OnInit, AfterViewInit{
 
     // Audio play
     // Play no sound file first to play successing sounds
-    let filepath = '../../assets/sound/' + BGM_FILENAME_MAP['init-conf']
+    let filepath = '../../assets/sound/' + PAGE_BGMS['init-conf']
     let ctx = new AudioContext();
     let buf = await this.soundFunc.setupAudioBuffer(ctx, filepath);
     let gain = this.soundFunc.getGainNode(ctx, 1);
