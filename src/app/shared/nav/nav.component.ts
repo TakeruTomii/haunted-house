@@ -4,7 +4,7 @@ import { Sound } from '../../../app/shared/sharedFunction';
 import { SoundInfo } from '../../../app/shared/dto';
 import { ContextService } from '../inter-screen/context.service';
 import { Router } from '@angular/router';
-import { PAGE_BGMS } from '../const';
+import { PAGE_BGMS, ROOM_BGMS } from '../const';
 
 @Component({
   selector: 'app-nav',
@@ -95,6 +95,22 @@ export class NavComponent implements OnInit, OnChanges {
     // Transit Loading Screen
     let path = '/' + page;
     this.router.navigate([path])
+  }
+
+  transitHome() {
+    // Stop BGM
+    this.bgm_source.stop();
+
+    // Set information to next screen
+    let sound: SoundInfo = {
+      is_sound_on: this.sound_setting.is_sound_on,
+      volume: this.sound_setting.volume,
+      bgm_filename: ROOM_BGMS.livingRoom
+    }
+    this.screenCtx.setSound(sound);
+
+    // Transit Loading Screen
+    this.router.navigate(['/home'])
   }
 
 }
