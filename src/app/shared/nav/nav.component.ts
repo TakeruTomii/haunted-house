@@ -17,6 +17,7 @@ export class NavComponent implements OnInit, OnChanges {
   bgm_source :AudioBufferSourceNode = null;
   soundFunc = new Sound();
   volume_controller:GainNode = null;
+  volume_display:string = '';
 
   constructor() { }
 
@@ -28,6 +29,7 @@ export class NavComponent implements OnInit, OnChanges {
     var volume = document.getElementById('sound_input');
     var target = document.getElementById('vol_value');
     volume.addEventListener('input', this.volumeChange(volume, target));
+    this.volume_display = String(this.sound_setting.volume * 100);
   }
 
   async ngOnChanges(changes: SimpleChanges): Promise<void> {
@@ -58,7 +60,7 @@ export class NavComponent implements OnInit, OnChanges {
       this.volume_controller.gain.value = vol;
       this.volume_changed.emit(vol);
       // volume icon display
-      target.innerHTML = volume.value;
+      this.volume_display = volume.value;
       var icon = document.getElementById('sound-icon');
       if(volume.value === "0"){
         icon.classList.add('volume-zero');
