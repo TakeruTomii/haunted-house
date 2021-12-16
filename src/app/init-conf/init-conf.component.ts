@@ -45,14 +45,14 @@ export class InitConfComponent implements OnInit, AfterViewInit{
     let sound : SoundInfo = {
       is_sound_on: isSoundOn,
       volume: vol,
-      bgm_filename: PAGE_BGMS['loading']
+      bgm_filename: PAGE_BGMS.loading
     };
 
     this.screenCtx.setSound(sound);
 
     // Audio play
     // Play no sound file first to play successing sounds
-    let filepath = '../../assets/sound/' + PAGE_BGMS['init-conf']
+    let filepath = '../../assets/sound/' + PAGE_BGMS.initConf;
     let ctx = new AudioContext();
     let buf = await this.soundFunc.setupAudioBuffer(ctx, filepath);
     let gain = this.soundFunc.getGainNode(ctx, vol);

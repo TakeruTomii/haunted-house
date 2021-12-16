@@ -61,7 +61,7 @@ export class TitleComponent implements OnInit {
     let sound:SoundInfo = {
       is_sound_on: this.page_sound.is_sound_on,
       volume:  this.page_sound.volume,
-      bgm_filename: ROOM_BGMS['livingRoom']
+      bgm_filename: ROOM_BGMS.livingRoom
     }
     this.screenCtx.setSound(sound);
 

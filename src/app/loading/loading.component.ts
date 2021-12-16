@@ -38,7 +38,7 @@ export class LoadingComponent implements OnInit {
     let sound:SoundInfo = {
       is_sound_on: this.page_sound.is_sound_on,
       volume:  this.page_sound.volume,
-      bgm_filename: PAGE_BGMS['title']
+      bgm_filename: PAGE_BGMS.title
     }
     this.screenCtx.setSound(sound);
 
