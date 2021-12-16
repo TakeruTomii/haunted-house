@@ -91,14 +91,12 @@ export class ContactMeComponent implements OnInit {
     }
 
     sendMail() {
-      console.log("Send Mail Start");
       let info: SendMailInfo = {
         "mail_from": "dev.haunted.house@gmail.com",
         "mail_to": "inquiry.haunted.house@gmail.com",
         "title": this.createTitle(),
         "message": this.createMessage()
       }
-      console.log('message = ' + this.createMessage())
 
       this.service
       .sendMail(info)

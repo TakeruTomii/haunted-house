@@ -42,8 +42,6 @@ export class AboutMeComponent implements OnInit {
               private screenCtx: ContextService) {}
 
   ngOnInit(): void {
-    console.log('aboutme screenCtx: '+this.screenCtx.getSound().bgm_filename)
-
     // set bgm information
     this.page_sound = this.screenCtx.getSound();
     // TODO: error handling

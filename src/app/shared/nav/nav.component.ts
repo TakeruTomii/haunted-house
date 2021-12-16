@@ -26,17 +26,19 @@ export class NavComponent implements OnInit, OnChanges {
               private router: Router) { }
 
   async ngOnInit(): Promise<void> {
-    console.log('ngOnInit screenCtx: '+this.screenCtx.getSound().bgm_filename)
     this.sound_setting = this.screenCtx.getSound();
 
     // bgm
     this.bgm_source = await this.setBGM(this.sound_setting.bgm_filename, this.sound_setting.volume);
     this.bgm_source.start(1);
+
     // volume
-    var volume = document.getElementById('sound_input');
-    var target = document.getElementById('vol_value');
+    let volume:any = document.getElementById('sound_input');
+    let target = document.getElementById('vol_value');
     volume.addEventListener('input', this.volumeChange(volume, target));
-    this.volume_display = String(Math.floor(this.sound_setting.volume * 100));
+    let vol_val = Math.floor(this.sound_setting.volume * 100)
+    this.volume_display = String(vol_val);
+    volume.value = vol_val;
   }
 
   async ngOnChanges(changes: SimpleChanges): Promise<void> {
@@ -89,8 +91,6 @@ export class NavComponent implements OnInit, OnChanges {
       bgm_filename: PAGE_BGMS[page]
     }
     this.screenCtx.setSound(sound);
-
-    console.log('transitPage screenCtx: '+this.screenCtx.getSound().bgm_filename)
 
     // Transit Loading Screen
     let path = '/' + page;
