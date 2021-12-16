@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import AOS from 'aos';
+import { PAGE_BGMS } from 'src/app/shared/const';
 import { SoundInfo } from 'src/app/shared/dto';
+import { ContextService } from 'src/app/shared/inter-screen/context.service';
 
 @Component({
   selector: 'app-concept',
@@ -9,19 +11,23 @@ import { SoundInfo } from 'src/app/shared/dto';
 })
 export class ConceptComponent implements OnInit {
   // Sound Setting
-  page_sound:SoundInfo;
-  current_volume:number = 0.5;
+  page_sound:SoundInfo = null;
+  current_volume:number = 0;
 
   isOpenLastAccrodion = false;
 
-  constructor() { }
+  constructor(private screenCtx:ContextService) { }
 
   ngOnInit(): void {
     // set bgm information
-    this.page_sound = {
-      is_sound_on:true,
-      volume:this.current_volume,
-      bgm_filename:"hanaurashi.mp3"
+    this.page_sound = this.screenCtx.getSound();
+    // TODO: error handling
+    if(!this.page_sound) {
+      this.page_sound = {
+        is_sound_on: false,
+        volume: 0,
+        bgm_filename: PAGE_BGMS["concept"]
+      }
     }
 
     // accordion show movement

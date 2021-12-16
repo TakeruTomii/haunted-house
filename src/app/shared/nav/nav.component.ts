@@ -2,6 +2,9 @@ import { Component, Input, OnChanges, OnInit, Output, SimpleChanges,EventEmitter
 import { BsDropdownConfig } from 'ngx-bootstrap/dropdown';
 import { Sound } from '../../../app/shared/sharedFunction';
 import { SoundInfo } from '../../../app/shared/dto';
+import { ContextService } from '../inter-screen/context.service';
+import { Router } from '@angular/router';
+import { PAGE_BGMS } from '../const';
 
 @Component({
   selector: 'app-nav',
@@ -19,9 +22,13 @@ export class NavComponent implements OnInit, OnChanges {
   volume_controller:GainNode = null;
   volume_display:string = '';
 
-  constructor() { }
+  constructor(private screenCtx:ContextService,
+              private router: Router) { }
 
   async ngOnInit(): Promise<void> {
+    console.log('ngOnInit screenCtx: '+this.screenCtx.getSound().bgm_filename)
+    this.sound_setting = this.screenCtx.getSound();
+
     // bgm
     this.bgm_source = await this.setBGM(this.sound_setting.bgm_filename, this.sound_setting.volume);
     this.bgm_source.start(1);
@@ -29,7 +36,7 @@ export class NavComponent implements OnInit, OnChanges {
     var volume = document.getElementById('sound_input');
     var target = document.getElementById('vol_value');
     volume.addEventListener('input', this.volumeChange(volume, target));
-    this.volume_display = String(this.sound_setting.volume * 100);
+    this.volume_display = String(Math.floor(this.sound_setting.volume * 100));
   }
 
   async ngOnChanges(changes: SimpleChanges): Promise<void> {
@@ -58,6 +65,7 @@ export class NavComponent implements OnInit, OnChanges {
       // volume setting
       let vol =  Number(volume.value) / 100;
       this.volume_controller.gain.value = vol;
+      this.sound_setting.volume = vol;
       this.volume_changed.emit(vol);
       // volume icon display
       this.volume_display = volume.value;
@@ -68,6 +76,25 @@ export class NavComponent implements OnInit, OnChanges {
         icon.classList.remove('volume-zero');
       }
     }
+  }
+
+  transitPage(page: string) {
+    // Stop BGM
+    this.bgm_source.stop();
+
+    // Set information to next screen
+    let sound: SoundInfo = {
+      is_sound_on: this.sound_setting.is_sound_on,
+      volume: this.sound_setting.volume,
+      bgm_filename: PAGE_BGMS[page]
+    }
+    this.screenCtx.setSound(sound);
+
+    console.log('transitPage screenCtx: '+this.screenCtx.getSound().bgm_filename)
+
+    // Transit Loading Screen
+    let path = '/' + page;
+    this.router.navigate([path])
   }
 
 }

@@ -1,10 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
 import { SerifComponent } from '../../shared/serif/serif.component';
-import { STATUS_PATTERNS, SKILL_SLIDES, PREFIX_PORTRAIT, IMG_PATH_ABOUT_ME, EXT_PORTRAIT, EXT_ATTR} from '../../shared/const';
+import { STATUS_PATTERNS, SKILL_SLIDES, PREFIX_PORTRAIT, IMG_PATH_ABOUT_ME, EXT_PORTRAIT, EXT_ATTR, PAGE_BGMS} from '../../shared/const';
 import AOS from 'aos';
 import anime from 'animejs/lib/anime.es.js';
 import { SoundInfo } from 'src/app/shared/dto';
+import { ContextService } from 'src/app/shared/inter-screen/context.service';
 
 @Component({
   selector: 'app-aboutme',
@@ -15,8 +16,8 @@ export class AboutMeComponent implements OnInit {
   modalRef: BsModalRef;
 
   // Sound Setting
-  page_sound:SoundInfo;
-  current_volume:number = 0.5;
+  page_sound:SoundInfo = null;
+  current_volume:number = 0;
 
   // URLs of Certifications
   url_ipa_exam = "https://www.jitec.ipa.go.jp/2_01english/02examcategories.html";
@@ -37,14 +38,21 @@ export class AboutMeComponent implements OnInit {
   stop_sliding = 0; // prevent sliding of carousel
 
 
-  constructor(private modal: BsModalService) {}
+  constructor(private modal: BsModalService,
+              private screenCtx: ContextService) {}
 
   ngOnInit(): void {
+    console.log('aboutme screenCtx: '+this.screenCtx.getSound().bgm_filename)
+
     // set bgm information
-    this.page_sound = {
-      is_sound_on:true,
-      volume:this.current_volume,
-      bgm_filename:"shamisendokusou_ma.mp3"
+    this.page_sound = this.screenCtx.getSound();
+    // TODO: error handling
+    if(!this.page_sound) {
+      this.page_sound = {
+        is_sound_on: false,
+        volume: 0,
+        bgm_filename: PAGE_BGMS["aboutme"]
+      }
     }
 
     // simple show movement

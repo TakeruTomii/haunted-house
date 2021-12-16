@@ -10,6 +10,7 @@ export class ContextService {
   constructor() { }
 
   setSound(sound:SoundInfo) {
+    this._sound = new SoundInfo();
     this._sound = sound;
   }
 

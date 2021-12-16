@@ -1,7 +1,8 @@
 import { Component, OnInit, HostBinding } from '@angular/core';
-import { IMG_PATH_CHARACTER_LIST, EXT_CHARACTER, CHARACTER_DATA} from '../../shared/const';
+import { IMG_PATH_CHARACTER_LIST, EXT_CHARACTER, CHARACTER_DATA, PAGE_BGMS} from '../../shared/const';
 import anime from 'animejs/lib/anime.es.js';
 import { SoundInfo } from 'src/app/shared/dto';
+import { ContextService } from 'src/app/shared/inter-screen/context.service';
 
 @Component({
   selector: 'app-character-list',
@@ -11,11 +12,14 @@ import { SoundInfo } from 'src/app/shared/dto';
 
   ]
 })
+
+
+
 export class CharacterListComponent implements OnInit {
 
   // Sound Setting
-  page_sound:SoundInfo;
-  current_volume:number = 0.5;
+  page_sound:SoundInfo = null;
+  current_volume:number = 0;
 
   // character variables
   character_id : number;
@@ -28,14 +32,18 @@ export class CharacterListComponent implements OnInit {
   // Characters Data
   character_data = CHARACTER_DATA;
 
-  constructor() { }
+  constructor(private screenCtx: ContextService) { }
 
   ngOnInit(): void {
     // set bgm information
-    this.page_sound = {
-      is_sound_on:true,
-      volume:this.current_volume,
-      bgm_filename:"Hanamibiyori.mp3"
+    this.page_sound = this.screenCtx.getSound();
+    // TODO: error handling
+    if(!this.page_sound) {
+      this.page_sound = {
+        is_sound_on: false,
+        volume: 0,
+        bgm_filename: PAGE_BGMS["character-list"]
+      }
     }
 
     this.isCurtainOpen = false;

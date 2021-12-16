@@ -52,7 +52,7 @@ export class InitConfComponent implements OnInit, AfterViewInit{
 
     // Audio play
     // Play no sound file first to play successing sounds
-    let filepath = '../../assets/sound/' + PAGE_BGMS.initConf;
+    let filepath = '../../assets/sound/' + PAGE_BGMS['init-conf'];
     let ctx = new AudioContext();
     let buf = await this.soundFunc.setupAudioBuffer(ctx, filepath);
     let gain = this.soundFunc.getGainNode(ctx, vol);

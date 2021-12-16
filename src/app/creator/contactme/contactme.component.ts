@@ -4,6 +4,8 @@ import { SerifComponent } from '../../shared/serif/serif.component';
 import AOS from 'aos';
 import { SendMailService } from './sendmail.service';
 import { SendMailInfo, SoundInfo } from '../../shared/dto'
+import { ContextService } from 'src/app/shared/inter-screen/context.service';
+import { PAGE_BGMS } from 'src/app/shared/const';
 
 @Component({
   selector: 'app-contactme',
@@ -15,8 +17,8 @@ export class ContactMeComponent implements OnInit {
   modalRef: BsModalRef;
 
   // Sound Setting
-  page_sound:SoundInfo;
-  current_volume:number = 0.5;
+  page_sound:SoundInfo = null;
+  current_volume:number = 0;
 
   //form information
   inquiry = {
@@ -29,15 +31,20 @@ export class ContactMeComponent implements OnInit {
   isConfirmed = false;
   isSend = false;
 
-  constructor(private modal: BsModalService, private service: SendMailService) { }
+  constructor(private modal: BsModalService,
+              private service: SendMailService,
+              private screenCtx: ContextService) { }
 
   ngOnInit(): void {
-
     // set bgm information
-    this.page_sound = {
-      is_sound_on:true,
-      volume:this.current_volume,
-      bgm_filename:"wafuu_no_otayori_shoukai_corner.mp3"
+    this.page_sound = this.screenCtx.getSound();
+    // TODO: error handling
+    if(!this.page_sound) {
+      this.page_sound = {
+        is_sound_on: false,
+        volume: 0,
+        bgm_filename: PAGE_BGMS["contactme"]
+      }
     }
 
     // show movement

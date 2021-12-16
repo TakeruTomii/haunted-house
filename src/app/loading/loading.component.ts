@@ -27,6 +27,15 @@ export class LoadingComponent implements OnInit {
   async ngOnInit(): Promise<void> {
     //Sound Setting
     this.page_sound = this.screenCtx.getSound();
+    // TODO: error handling
+    if(!this.page_sound) {
+      this.page_sound = {
+        is_sound_on: false,
+        volume: 0,
+        bgm_filename: PAGE_BGMS["loading"]
+      }
+    }
+
     let filepath = '../../assets/sound/' + this.page_sound.bgm_filename;
     let ctx = new AudioContext();
     let buf = await this.soundFunc.setupAudioBuffer(ctx, filepath);

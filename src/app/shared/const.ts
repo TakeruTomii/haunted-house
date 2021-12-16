@@ -19,13 +19,13 @@ export const INIT_SOUNDS = [
 
 //BGM filename map of each page
 export const PAGE_BGMS = {
-  'initConf':'no_sound.mp3',
+  'init-conf':'no_sound.mp3',
   'loading':'takibi.mp3',
   'title':'utakata_no_yume.mp3',
   'aboutme':'shamisendokusou_ma.mp3',
   'contactme':'wafuu_no_otayori_shoukai_corner.mp3',
   'concept':'hanaurashi.mp3',
-  'characterList':'Hanamibiyori.mp3'
+  'character-list':'Hanamibiyori.mp3'
 };
 
 // BGMs for each room at HomeScreenComponent
