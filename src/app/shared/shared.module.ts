@@ -9,6 +9,7 @@ import { SerifComponent } from './serif/serif.component';
 import { ButtonsModule } from 'ngx-bootstrap/buttons';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { ModalModule } from 'ngx-bootstrap/modal';
+import { ContextService } from './inter-screen/context.service';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { ModalModule } from 'ngx-bootstrap/modal';
   exports: [
     NavComponent,
     SerifComponent
-  ]
+  ],
+  providers:[ContextService]
 })
 export class SharedModule { }
