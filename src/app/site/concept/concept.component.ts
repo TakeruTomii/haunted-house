@@ -1,6 +1,4 @@
-import { animation } from '@angular/animations';
 import { Component, OnInit } from '@angular/core';
-import anime from 'animejs/lib/anime.es.js';
 import AOS from 'aos';
 import { SoundInfo } from 'src/app/shared/dto';
 

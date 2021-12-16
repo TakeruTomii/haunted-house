@@ -1,7 +1,6 @@
 import { CasinoComponent } from '../maps/casino/casino.component';
 import { GardenComponent } from '../maps/garden/garden.component';
 import { LivingRoomComponent } from '../maps/living-room/living-room.component';
-import { MoveRoomService } from '../maps/move-room/move-room.service';
 import { TeaRoomComponent } from '../maps/tea-room/tea-room.component';
 import { WorkShopComponent } from '../maps/work-shop/work-shop.component';
 
@@ -18,6 +17,26 @@ export const INIT_SOUNDS = [
   {label:'OFF', value: 'off'}
 ]
 
+//BGM filename map of each page
+export const BGM_FILENAME_MAP = {
+  'init-conf':'no_sound.mp3',
+  'loading':'takibi.mp3',
+  'title':'utakata_no_yume.mp3',
+  'aboutme':'shamisendokusou_ma.mp3',
+  'contactme':'wafuu_no_otayori_shoukai_corner.mp3',
+  'concept':'hanaurashi.mp3',
+  'character-list':'Hanamibiyori.mp3'
+};
+
+// BGMs for each room at HomeScreenComponent
+export const ROOM_BGMS = {
+  'livingRoom': "koto_wo_omotte.mp3",
+  'workShop': "Shinobitoon.mp3",
+  'teaRoom': "ryuusui_to_matsu.mp3",
+  'casino': "otoko_no_tamashii_mensore.mp3",
+  'garden': "tsuki_no_kei.mp3"
+};
+
 // Transitable Rooms
 export const TRANSITABLE_ROOMS = {
   'livingRoom': LivingRoomComponent,
@@ -27,14 +46,7 @@ export const TRANSITABLE_ROOMS = {
   'garden': GardenComponent
 };
 
-// BGMs for each room
-export const ROOM_BGMS = {
-  'livingRoom': "koto_wo_omotte.mp3",
-  'workShop': "Shinobitoon.mp3",
-  'teaRoom': "ryuusui_to_matsu.mp3",
-  'casino': "otoko_no_tamashii_mensore.mp3",
-  'garden': "tsuki_no_kei.mp3"
-};
+
 
 // About Me
 // Path Properties

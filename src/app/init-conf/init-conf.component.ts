@@ -1,7 +1,7 @@
 import { ChangeDetectionStrategy, AfterViewInit, Component, OnInit, TemplateRef, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
-import { InitConf } from '../shared/dto';
-import { INIT_LANGS, INIT_SOUNDS } from '../shared/const';
+import { SoundInfo, CrossScreenContext } from '../shared/dto';
+import { INIT_LANGS, INIT_SOUNDS, BGM_FILENAME_MAP } from '../shared/const';
 import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
 import { Sound } from '../../app/shared/sharedFunction';
 
@@ -36,22 +36,29 @@ export class InitConfComponent implements OnInit, AfterViewInit{
 
   // Pass initial settings to Loading Screen
   async configure(){
+    // Parameters to pass
+    let isSoundOn : boolean = this.sound_selected === 'on' ? true : false;
+    let vol : number = isSoundOn ? 0.5 : 0;
+    let _sound : SoundInfo = {
+      is_sound_on: isSoundOn,
+      volume: vol,
+      bgm_filename: BGM_FILENAME_MAP['loading']
+    };
+    let crossScreenCtx : CrossScreenContext = {
+      sound: _sound
+    }
+
     // Audio play
     // Play no sound file first to play successing sounds
+    let filepath = '../../assets/sound/' + BGM_FILENAME_MAP['init-conf']
     let ctx = new AudioContext();
-    let buf = await this.soundFunc.setupAudioBuffer(ctx, '../../assets/sound/no_sound.mp3');
+    let buf = await this.soundFunc.setupAudioBuffer(ctx, filepath);
     let gain = this.soundFunc.getGainNode(ctx, 1);
     let source = this.soundFunc.createAudioSource(ctx, buf, gain);
     source.start();
 
-
-    // Parameters to pass
-    let conf : InitConf = {
-      lang:this.lang_selected,
-      sound:this.sound_selected
-    };
     // Transit Loading Screen
-    this.router.navigate(['/loading', conf])
+    this.router.navigate(['/loading'])
   }
 
 }

@@ -43,15 +43,15 @@
 
 #tommy {
   width: auto;
-  height: 37vh;
-  transform: translate(15vh, 18vh);
+  height: 45vh;
+  transform: translate(22vh, 8vh);
 }
 
 @media screen and (orientation: portrait)  {
   #tommy {
     width: 30vw;
     height: auto;
-    transform: translate(10vw, 28vw);
+    transform: translate(12vw, 20vw);
   }
 }
 
