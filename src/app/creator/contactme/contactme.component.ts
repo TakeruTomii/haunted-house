@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
 import { SerifComponent } from '../../shared/serif/serif.component';
 import AOS from 'aos';
-import { ContactmeService } from './contactme.service';
+import { SendMailService } from './sendmail.service';
 import { SendMailInfo, SoundInfo } from '../../shared/dto'
 
 @Component({
@@ -29,7 +29,7 @@ export class ContactMeComponent implements OnInit {
   isConfirmed = false;
   isSend = false;
 
-  constructor(private modal: BsModalService, private service: ContactmeService) { }
+  constructor(private modal: BsModalService, private service: SendMailService) { }
 
   ngOnInit(): void {
 

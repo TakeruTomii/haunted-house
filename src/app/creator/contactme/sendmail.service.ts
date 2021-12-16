@@ -8,7 +8,7 @@ import { environment } from '../../../environments/environment';
 @Injectable({
   providedIn: 'root'
 })
-export class ContactmeService {
+export class SendMailService {
 
   constructor(private http: HttpClient) { }
   private endpoint = environment.dynamic.mailSendURL;
