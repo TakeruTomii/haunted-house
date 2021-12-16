@@ -2,6 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, ParamMap } from '@angular/router';
 import { Router } from '@angular/router';
 import { Sound } from '../../app/shared/sharedFunction';
+import { PAGE_BGMS } from '../shared/const';
+import { SoundInfo } from '../shared/dto';
+import { ContextService } from '../shared/inter-screen/context.service';
 
 @Component({
   selector: 'app-loading',
@@ -9,30 +12,35 @@ import { Sound } from '../../app/shared/sharedFunction';
   styleUrls: ['./loading.component.css']
 })
 export class LoadingComponent implements OnInit {
+
   // Initial Settings
   lang=''
   sound=''
 
   //sound setting
+  page_sound:SoundInfo = null;
   soundFunc = new Sound();
 
-  constructor(private route: ActivatedRoute, private router: Router) { }
+  constructor(private router: Router,
+              private screenCtx: ContextService) { }
 
   async ngOnInit(): Promise<void> {
+    //Sound Setting
+    this.page_sound = this.screenCtx.getSound();
+    let filepath = '../../assets/sound/' + this.page_sound.bgm_filename;
     let ctx = new AudioContext();
-    let buf = await this.soundFunc.setupAudioBuffer(ctx, '../../assets/sound/takibi.mp3');
-    let gain = this.soundFunc.getGainNode(ctx, 1);
+    let buf = await this.soundFunc.setupAudioBuffer(ctx, filepath);
+    let gain = this.soundFunc.getGainNode(ctx, this.page_sound.volume);
     let source = this.soundFunc.createAudioSource(ctx, buf, gain);
     source.start();
 
-    // Fetch passed initial parameters
-    this.route.paramMap.subscribe(
-      (conf:ParamMap)=>{
-        this.lang = conf.get('lang');
-        this.sound = conf.get('sound');
-      }
-
-    );
+    // Set information for next page
+    let sound:SoundInfo = {
+      is_sound_on: this.page_sound.is_sound_on,
+      volume:  this.page_sound.volume,
+      bgm_filename: PAGE_BGMS['title']
+    }
+    this.screenCtx.setSound(sound);
 
     // Go to title Screen in 3 seconds
     setTimeout(()=>{

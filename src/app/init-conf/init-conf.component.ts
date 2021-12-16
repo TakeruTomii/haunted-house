@@ -4,6 +4,7 @@ import { SoundInfo, CrossScreenContext } from '../shared/dto';
 import { INIT_LANGS, INIT_SOUNDS, PAGE_BGMS } from '../shared/const';
 import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
 import { Sound } from '../../app/shared/sharedFunction';
+import { ContextService } from '../shared/inter-screen/context.service';
 
 @Component({
   selector: 'app-init-conf',
@@ -21,7 +22,9 @@ export class InitConfComponent implements OnInit, AfterViewInit{
   modalRef: BsModalRef;
   soundFunc = new Sound();
 
-  constructor(private router: Router, private modalService: BsModalService) { }
+  constructor(private router: Router,
+              private modalService: BsModalService,
+              private screenCtx: ContextService) { }
   @ViewChild('init_modal') public init_modal: TemplateRef<any>;
 
   ngOnInit(): void {  }
@@ -39,21 +42,20 @@ export class InitConfComponent implements OnInit, AfterViewInit{
     // Parameters to pass
     let isSoundOn : boolean = this.sound_selected === 'on' ? true : false;
     let vol : number = isSoundOn ? 0.5 : 0;
-    let _sound : SoundInfo = {
+    let sound : SoundInfo = {
       is_sound_on: isSoundOn,
       volume: vol,
       bgm_filename: PAGE_BGMS['loading']
     };
-    let crossScreenCtx : CrossScreenContext = {
-      sound: _sound
-    }
+
+    this.screenCtx.setSound(sound);
 
     // Audio play
     // Play no sound file first to play successing sounds
     let filepath = '../../assets/sound/' + PAGE_BGMS['init-conf']
     let ctx = new AudioContext();
     let buf = await this.soundFunc.setupAudioBuffer(ctx, filepath);
-    let gain = this.soundFunc.getGainNode(ctx, 1);
+    let gain = this.soundFunc.getGainNode(ctx, vol);
     let source = this.soundFunc.createAudioSource(ctx, buf, gain);
     source.start();
 

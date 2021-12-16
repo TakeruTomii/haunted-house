@@ -13,7 +13,7 @@ export class ContextService {
     this._sound = sound;
   }
 
-  getSound(sound:SoundInfo) {
+  getSound() {
     return this._sound;
   }
 }

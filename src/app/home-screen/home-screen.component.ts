@@ -3,6 +3,7 @@ import { Subscription } from 'rxjs';
 import { RoomInfo, SoundInfo } from '../shared/dto';
 import { TRANSITABLE_ROOMS, ROOM_BGMS } from '../shared/const';
 import { MoveRoomService } from '../maps/move-room/move-room.service';
+import { ContextService } from '../shared/inter-screen/context.service';
 
 @Component({
   selector: 'app-home-screen',
@@ -11,8 +12,8 @@ import { MoveRoomService } from '../maps/move-room/move-room.service';
 })
 export class HomeScreenComponent implements OnInit, OnDestroy {
   // Sound Setting
-  room_sound:SoundInfo;
-  current_volume:number = 0.5;
+  room_sound: SoundInfo = null;
+  current_volume: number = 0;
 
   // Show Living Room for Initiation.
   public room : RoomInfo = { roomName: 'livingRoom' }
@@ -26,15 +27,22 @@ export class HomeScreenComponent implements OnInit, OnDestroy {
 
   private subscription : Subscription;
 
-  constructor(private move: MoveRoomService) { }
+  constructor(private move: MoveRoomService,
+              private screenCtx: ContextService) { }
 
   ngOnInit(): void {
     //set bgm information
-    this.room_sound = {
-      is_sound_on:true,
-      volume:this.current_volume,
-      bgm_filename:"koto_wo_omotte.mp3"
+    this.room_sound = this.screenCtx.getSound();
+    // TODO: error handling
+    if(!this.room_sound) {
+      this.room_sound = {
+        is_sound_on: false,
+        volume: 0,
+        bgm_filename: ROOM_BGMS["livingRoom"]
+      }
     }
+
+    this.current_volume = this.room_sound['volume'];
 
     // Automatically follow updating room informations
     // It's a type of event listener
