@@ -20,7 +20,7 @@ export class TitleComponent implements OnInit {
   soundFunc = new Sound();
 
   constructor(private router: Router,
-              private screenCtx:ContextService) { }
+              private screenCtx: ContextService) { }
 
   async ngOnInit(): Promise<void> {
     //prepare sound sources

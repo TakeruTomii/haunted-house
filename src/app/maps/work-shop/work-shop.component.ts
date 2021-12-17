@@ -1,9 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { RoomInfo } from '../../shared/dto';
+import { RoomInfo, SoundInfo } from '../../shared/dto';
 
 import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
 import { MoveRoomService } from '../move-room/move-room.service';
 import { SerifComponent } from 'src/app/shared/serif/serif.component';
+import { Sound } from 'src/app/shared/sharedFunction';
+import { ContextService } from 'src/app/shared/inter-screen/context.service';
 
 @Component({
   selector: 'app-work-shop',
@@ -14,13 +16,27 @@ import { SerifComponent } from 'src/app/shared/serif/serif.component';
 export class WorkShopComponent implements OnInit {
   modalRef: BsModalRef;
 
-  constructor(private move: MoveRoomService, private modal: BsModalService) { }
+  // Sound Settings
+  room_sound:SoundInfo = null;
+  move_source :AudioBufferSourceNode = null;
+  soundFunc = new Sound();
 
-  ngOnInit(): void {
+  constructor(private move: MoveRoomService,
+              private modal: BsModalService,
+              private screenCtx: ContextService) { }
+
+  async ngOnInit(): Promise<void> {
+    this.room_sound = this.screenCtx.getSound();
+    this.move_source = await this.prepareSoundEffectSource('kodutsumi.mp3');
   }
 
   // Move Rooms
   onMove(rname: string) {
+    if(this.room_sound.is_sound_on) {
+      //play music
+      this.move_source.start();
+    }
+
     let room : RoomInfo = { roomName : rname };
     this.move.moveRoom(room);
   }
@@ -42,4 +58,15 @@ export class WorkShopComponent implements OnInit {
 
     this.modalRef = this.modal.show(SerifComponent, show_config);
   }
+
+  //prepare sound effect source to enter
+  async prepareSoundEffectSource(filename:string):Promise<AudioBufferSourceNode> {
+    let filePath = '../../assets/sound/' + filename
+    let ctx = new AudioContext();
+    let buf = await this.soundFunc.setupAudioBuffer(ctx, filePath);
+    let gain = this.soundFunc.getGainNode(ctx, 1);
+    let source = this.soundFunc.createAudioSource(ctx, buf, gain);
+    return source;
+  }
+
 }
