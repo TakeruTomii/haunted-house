@@ -18,15 +18,18 @@ export class NavComponent implements OnInit, OnChanges {
   @Input() sound_setting:SoundInfo;
   @Output() volume_changed:EventEmitter<Number> = new EventEmitter<Number>();
   bgm_source :AudioBufferSourceNode = null;
+  move_source :AudioBufferSourceNode = null;
   soundFunc = new Sound();
   volume_controller:GainNode = null;
   volume_display:string = '';
+
 
   constructor(private screenCtx:ContextService,
               private router: Router) { }
 
   async ngOnInit(): Promise<void> {
     this.sound_setting = this.screenCtx.getSound();
+    this.move_source = await this.prepareSoundEffectSource('kodutsumi.mp3');
 
     // bgm
     this.bgm_source = await this.setBGM(this.sound_setting.bgm_filename, this.sound_setting.volume);
@@ -92,6 +95,7 @@ export class NavComponent implements OnInit, OnChanges {
     if(this.sound_setting.is_sound_on) {
       // Stop BGM
       this.bgm_source.stop();
+      this.move_source.start();
     }
 
     // Set information to next screen
@@ -111,6 +115,7 @@ export class NavComponent implements OnInit, OnChanges {
     if(this.sound_setting.is_sound_on) {
       // Stop BGM
       this.bgm_source.stop();
+      this.move_source.start();
     }
 
     // Set information to next screen
@@ -123,6 +128,16 @@ export class NavComponent implements OnInit, OnChanges {
 
     // Transit Loading Screen
     this.router.navigate(['/home'])
+  }
+
+  //prepare sound effect source to enter
+  async prepareSoundEffectSource(filename:string):Promise<AudioBufferSourceNode> {
+    let filePath = '../../assets/sound/' + filename
+    let ctx = new AudioContext();
+    let buf = await this.soundFunc.setupAudioBuffer(ctx, filePath);
+    let gain = this.soundFunc.getGainNode(ctx, 1);
+    let source = this.soundFunc.createAudioSource(ctx, buf, gain);
+    return source;
   }
 
 }
