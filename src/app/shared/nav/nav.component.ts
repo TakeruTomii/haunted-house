@@ -30,7 +30,9 @@ export class NavComponent implements OnInit, OnChanges {
 
     // bgm
     this.bgm_source = await this.setBGM(this.sound_setting.bgm_filename, this.sound_setting.volume);
-    this.bgm_source.start(1);
+    if(this.sound_setting.is_sound_on) {
+      this.bgm_source.start(1);
+    }
 
     // volume
     let volume:any = document.getElementById('sound_input');
@@ -48,9 +50,11 @@ export class NavComponent implements OnInit, OnChanges {
   async ngOnChanges(changes: SimpleChanges): Promise<void> {
     // change bgm
     if(changes.sound_setting && !changes.sound_setting.isFirstChange()){
-      this.bgm_source.stop(0);
-      this.bgm_source = await this.setBGM(this.sound_setting.bgm_filename, this.sound_setting.volume);
-      this.bgm_source.start(0.5);
+      if(this.sound_setting.is_sound_on){
+        this.bgm_source.stop(0);
+        this.bgm_source = await this.setBGM(this.sound_setting.bgm_filename, this.sound_setting.volume);
+        this.bgm_source.start(0.5);
+      }
     }
   }
 
@@ -85,8 +89,10 @@ export class NavComponent implements OnInit, OnChanges {
   }
 
   transitPage(page: string) {
-    // Stop BGM
-    this.bgm_source.stop();
+    if(this.sound_setting.is_sound_on) {
+      // Stop BGM
+      this.bgm_source.stop();
+    }
 
     // Set information to next screen
     let sound: SoundInfo = {
@@ -102,8 +108,10 @@ export class NavComponent implements OnInit, OnChanges {
   }
 
   transitHome() {
-    // Stop BGM
-    this.bgm_source.stop();
+    if(this.sound_setting.is_sound_on) {
+      // Stop BGM
+      this.bgm_source.stop();
+    }
 
     // Set information to next screen
     let sound: SoundInfo = {
