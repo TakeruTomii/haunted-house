@@ -39,6 +39,10 @@ export class NavComponent implements OnInit, OnChanges {
     let vol_val = Math.floor(this.sound_setting.volume * 100)
     this.volume_display = String(vol_val);
     volume.value = vol_val;
+    if(vol_val === 0) {
+      let icon = document.getElementById('sound-icon');
+      icon.classList.add('volume-zero');
+    }
   }
 
   async ngOnChanges(changes: SimpleChanges): Promise<void> {
@@ -71,7 +75,7 @@ export class NavComponent implements OnInit, OnChanges {
       this.volume_changed.emit(vol);
       // volume icon display
       this.volume_display = volume.value;
-      var icon = document.getElementById('sound-icon');
+      let icon = document.getElementById('sound-icon');
       if(volume.value === "0"){
         icon.classList.add('volume-zero');
       }else{
