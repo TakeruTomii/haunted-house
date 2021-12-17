@@ -50,14 +50,16 @@ export class InitConfComponent implements OnInit, AfterViewInit{
 
     this.screenCtx.setSound(sound);
 
-    // Audio play
-    // Play no sound file first to play successing sounds
-    let filepath = '../../assets/sound/' + PAGE_BGMS['init-conf'];
-    let ctx = new AudioContext();
-    let buf = await this.soundFunc.setupAudioBuffer(ctx, filepath);
-    let gain = this.soundFunc.getGainNode(ctx, vol);
-    let source = this.soundFunc.createAudioSource(ctx, buf, gain);
-    source.start();
+    if(sound.is_sound_on) {
+      // Audio play
+      // Play no sound file first to play successing sounds
+      let filepath = '../../assets/sound/' + PAGE_BGMS['init-conf'];
+      let ctx = new AudioContext();
+      let buf = await this.soundFunc.setupAudioBuffer(ctx, filepath);
+      let gain = this.soundFunc.getGainNode(ctx, vol);
+      let source = this.soundFunc.createAudioSource(ctx, buf, gain);
+      source.start();
+    }
 
     // Transit Loading Screen
     this.router.navigate(['/loading'])

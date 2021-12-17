@@ -36,12 +36,15 @@ export class LoadingComponent implements OnInit {
       }
     }
 
-    let filepath = '../../assets/sound/' + this.page_sound.bgm_filename;
-    let ctx = new AudioContext();
-    let buf = await this.soundFunc.setupAudioBuffer(ctx, filepath);
-    let gain = this.soundFunc.getGainNode(ctx, this.page_sound.volume);
-    let source = this.soundFunc.createAudioSource(ctx, buf, gain);
-    source.start();
+    let source: AudioBufferSourceNode = null;
+    if(this.page_sound.is_sound_on) {
+      let filepath = '../../assets/sound/' + this.page_sound.bgm_filename;
+      let ctx = new AudioContext();
+      let buf = await this.soundFunc.setupAudioBuffer(ctx, filepath);
+      let gain = this.soundFunc.getGainNode(ctx, this.page_sound.volume);
+      source = this.soundFunc.createAudioSource(ctx, buf, gain);
+      source.start();
+    }
 
     // Set information for next page
     let sound:SoundInfo = {
@@ -53,7 +56,9 @@ export class LoadingComponent implements OnInit {
 
     // Go to title Screen in 3 seconds
     setTimeout(()=>{
-      source.stop();
+      if(this.page_sound.is_sound_on) {
+        source.stop();
+      }
       this.router.navigate(['/title'])
     },3000);
 

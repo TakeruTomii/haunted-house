@@ -38,10 +38,11 @@ export class TitleComponent implements OnInit {
     this.bgm_source = await this.prepareSoundEffectSource(this.page_sound.bgm_filename);
     this.enter_source = await this.prepareSoundEffectSource('se_drop.mp3');
 
-    //play music
-    this.thunder_source.start();
-    this.bgm_source.start(4);
-
+    if(this.page_sound.is_sound_on) {
+      //play music
+      this.thunder_source.start();
+      this.bgm_source.start(4);
+    }
 
     //Logo movement
     var logo = anime.timeline({
@@ -62,8 +63,10 @@ export class TitleComponent implements OnInit {
 
   // Transition to home screen
   transitHome() {
-    this.bgm_source.stop();
-    this.enter_source.start();
+    if(this.page_sound.is_sound_on){
+      this.bgm_source.stop();
+      this.enter_source.start();
+    }
 
     // Set information for next page
     let sound:SoundInfo = {
