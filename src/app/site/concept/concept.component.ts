@@ -1,8 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import AOS from 'aos';
 import { PAGE_BGMS } from 'src/app/shared/const';
 import { SoundInfo } from 'src/app/shared/dto';
 import { ContextService } from 'src/app/shared/inter-screen/context.service';
+import { NavComponent } from 'src/app/shared/nav/nav.component';
+import { Sound } from 'src/app/shared/sharedFunction';
 
 @Component({
   selector: 'app-concept',
@@ -11,14 +13,18 @@ import { ContextService } from 'src/app/shared/inter-screen/context.service';
 })
 export class ConceptComponent implements OnInit {
   // Sound Setting
-  page_sound:SoundInfo = null;
-  current_volume:number = 0;
+  @ViewChild(NavComponent) private bgmVolume: NavComponent;
+  is_bgm_stopped: boolean = false;
+  page_sound: SoundInfo = null;
+  current_volume: number = 0;
+  horror_se_source :AudioBufferSourceNode = null;
+  soundFunc = new Sound();
 
   isOpenLastAccrodion = false;
 
   constructor(private screenCtx:ContextService) { }
 
-  ngOnInit(): void {
+  async ngOnInit(): Promise<void> {
     // set bgm information
     this.page_sound = this.screenCtx.getSound();
     // TODO: error handling
@@ -29,6 +35,8 @@ export class ConceptComponent implements OnInit {
         bgm_filename: PAGE_BGMS["concept"]
       }
     }
+    this.current_volume = this.page_sound.volume;
+    this.horror_se_source = await this.soundFunc.createSound('se_concept_horror.mp3');
 
     // accordion show movement
     AOS.init({
@@ -39,7 +47,7 @@ export class ConceptComponent implements OnInit {
 
     // gimmick in scroll
     // show mouths background when scroll to the end with last accordion open
-    window.addEventListener('scroll', () => {
+    window.addEventListener('scroll', async () => {
       if(this.isOpenLastAccrodion) {
         let scrollHeight = Math.max(
           document.body.scrollHeight, document.documentElement.scrollHeight,
@@ -54,10 +62,26 @@ export class ConceptComponent implements OnInit {
           document.getElementById('main-container').classList.add("last-scroll");
           let accordion = document.querySelector("#acknowledge .accordion-content");
           accordion.classList.add("clear-background");
+
+          if(this.page_sound.is_sound_on) {
+            this.bgmVolume.setVolume(0);
+            if(this.is_bgm_stopped) {
+              this.horror_se_source = await this.soundFunc.createSound('se_concept_horror.mp3');
+            } else {
+              this.horror_se_source.start();
+            }
+            this.is_bgm_stopped = true;
+          }
+
         } else {
           document.getElementById('main-container').classList.remove("last-scroll");
           let accordion = document.querySelector("#acknowledge .accordion-content");
           accordion.classList.remove("clear-background");
+
+          if(this.page_sound.is_sound_on && this.is_bgm_stopped){
+            this.bgmVolume.setVolume(this.current_volume);
+            this.is_bgm_stopped = false;
+          }
         }
       }
     });

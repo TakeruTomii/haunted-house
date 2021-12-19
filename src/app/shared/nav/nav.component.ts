@@ -32,9 +32,9 @@ export class NavComponent implements OnInit, OnChanges {
     this.move_source = await this.soundFunc.createSound('kodutsumi.mp3', 1, false, '../../../assets/sound/');
 
     // bgm
-    this.bgm_source = await this.soundFunc.createSound(this.sound_setting.bgm_filename, this.sound_setting.volume, true, '../../../assets/sound/');
+    this.bgm_source = await this.setBGM(this.sound_setting.bgm_filename, this.sound_setting.volume);
     if(this.sound_setting.is_sound_on) {
-      this.bgm_source.start(1);
+      this.bgm_source.start();
     }
 
     // volume
@@ -61,6 +61,17 @@ export class NavComponent implements OnInit, OnChanges {
     }
   }
 
+  //get audio source for bgm
+  async setBGM(bgm_filename:string, volume:number):Promise<AudioBufferSourceNode>{
+    let url = '../../../assets/sound/' + bgm_filename;
+    let ctx = new AudioContext();
+    let buf = await this.soundFunc.setupAudioBuffer(ctx, url);
+    let gain = this.soundFunc.getGainNode(ctx, volume);
+    let source = this.soundFunc.createAudioSource(ctx, buf, gain, true);
+    this.volume_controller = gain;
+    return source;
+  }
+
   // change volume along range input
   volumeChange(volume, target) {
     return (event) => {
@@ -78,6 +89,13 @@ export class NavComponent implements OnInit, OnChanges {
         icon.classList.remove('volume-zero');
       }
     }
+  }
+
+  // set volume from external component temporary
+  // use like stop bgm for sound effect
+  // set back volume aftter what you did
+  setVolume(volume:number) {
+    this.volume_controller.gain.value = volume;
   }
 
   transitPage(page: string) {

@@ -4,9 +4,9 @@
 }
 
 .last-scroll {
-  background: url('../../../assets/img/whose_eye.png'), repeat !important;
-  background-size: 50px 50px !important;
-  background-color: #640125 !important;
+  background: url('../../../assets/img/Thankyou.png'), repeat !important;
+  background-size: 500px auto !important;
+  background-color: black !important;
   animation-duration: 0.5s;
 }
 
