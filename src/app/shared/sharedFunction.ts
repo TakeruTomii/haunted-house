@@ -25,26 +25,16 @@ export class Sound {
     return source;
   }
 
-  //prepare audio source for BGM
-  //set volume any value
-  async prepareBGM(filename:string, volume:number):Promise<AudioBufferSourceNode> {
-    let filePath = '../../assets/sound/' + filename
+  //prepare audio source
+  async createSound(filename:string, volume:number=1, isLoop:boolean=false,
+                    fileDir:string='../../assets/sound/'):Promise<AudioBufferSourceNode> {
+    let filePath = fileDir + filename;
     let ctx = new AudioContext();
     let buf = await this.setupAudioBuffer(ctx, filePath);
     let gain = this.getGainNode(ctx, volume);
-    let source = this.createAudioSource(ctx, buf, gain);
+    let source = this.createAudioSource(ctx, buf, gain, isLoop);
     return source;
   }
 
-  //prepare audio source for sound effect
-  //fix bolume max
-  async prepareSoundEffectSource(filename:string):Promise<AudioBufferSourceNode> {
-    let filePath = '../../../assets/sound/' + filename
-    let ctx = new AudioContext();
-    let buf = await this.setupAudioBuffer(ctx, filePath);
-    let gain = this.getGainNode(ctx, 1);
-    let source = this.createAudioSource(ctx, buf, gain);
-    return source;
-  }
 };
 

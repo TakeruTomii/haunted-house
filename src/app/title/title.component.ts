@@ -34,9 +34,9 @@ export class TitleComponent implements OnInit {
       }
     }
 
-    this.thunder_source = await this.soundFunc.prepareSoundEffectSource('se_thunderbolt.mp3');
-    this.bgm_source = await this.soundFunc.prepareBGM(this.page_sound.bgm_filename, this.page_sound.volume);
-    this.enter_source = await this.soundFunc.prepareSoundEffectSource('se_drop.mp3');
+    this.thunder_source = await this.soundFunc.createSound('se_thunderbolt.mp3');
+    this.bgm_source = await this.soundFunc.createSound(this.page_sound.bgm_filename, this.page_sound.volume, true);
+    this.enter_source = await this.soundFunc.createSound('se_drop.mp3');
 
     if(this.page_sound.is_sound_on) {
       //play music

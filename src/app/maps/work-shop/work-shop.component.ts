@@ -27,7 +27,7 @@ export class WorkShopComponent implements OnInit {
 
   async ngOnInit(): Promise<void> {
     this.room_sound = this.screenCtx.getSound();
-    this.move_source = await this.soundFunc.prepareSoundEffectSource('kodutsumi.mp3');
+    this.move_source = await this.soundFunc.createSound('kodutsumi.mp3');
   }
 
   // Move Rooms

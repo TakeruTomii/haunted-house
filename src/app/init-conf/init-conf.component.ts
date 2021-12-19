@@ -50,7 +50,7 @@ export class InitConfComponent implements OnInit, AfterViewInit{
 
     this.screenCtx.setSound(sound);
 
-    const source :AudioBufferSourceNode = await this.soundFunc.prepareSoundEffectSource(PAGE_BGMS['init-conf']);
+    const source :AudioBufferSourceNode = await this.soundFunc.createSound(PAGE_BGMS['init-conf']);
     if(sound.is_sound_on) {
       // Audio play
       // Play no sound file first to play successing sounds

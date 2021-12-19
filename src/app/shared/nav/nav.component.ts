@@ -29,10 +29,10 @@ export class NavComponent implements OnInit, OnChanges {
 
   async ngOnInit(): Promise<void> {
     this.sound_setting = this.screenCtx.getSound();
-    this.move_source = await this.setSoundEffect('kodutsumi.mp3');
+    this.move_source = await this.soundFunc.createSound('kodutsumi.mp3', 1, false, '../../../assets/sound/');
 
     // bgm
-    this.bgm_source = await this.setBGM(this.sound_setting.bgm_filename, this.sound_setting.volume);
+    this.bgm_source = await this.soundFunc.createSound(this.sound_setting.bgm_filename, this.sound_setting.volume, true, '../../../assets/sound/');
     if(this.sound_setting.is_sound_on) {
       this.bgm_source.start(1);
     }
@@ -55,21 +55,10 @@ export class NavComponent implements OnInit, OnChanges {
     if(changes.sound_setting && !changes.sound_setting.isFirstChange()){
       if(this.sound_setting.is_sound_on){
         this.bgm_source.stop(0);
-        this.bgm_source = await this.setBGM(this.sound_setting.bgm_filename, this.sound_setting.volume);
+        this.bgm_source = await this.soundFunc.createSound(this.sound_setting.bgm_filename, this.sound_setting.volume, true, '../../../assets/sound/');
         this.bgm_source.start(0.5);
       }
     }
-  }
-
-  //get audio source for bgm
-  async setBGM(bgm_filename:string, volume:number):Promise<AudioBufferSourceNode>{
-    let url = '../../../assets/sound/' + bgm_filename;
-    let ctx = new AudioContext();
-    let buf = await this.soundFunc.setupAudioBuffer(ctx, url);
-    let gain = this.soundFunc.getGainNode(ctx, volume);
-    let source = this.soundFunc.createAudioSource(ctx, buf, gain, true);
-    this.volume_controller = gain;
-    return source;
   }
 
   // change volume along range input
@@ -128,16 +117,6 @@ export class NavComponent implements OnInit, OnChanges {
 
     // Transit Loading Screen
     this.router.navigate(['/home'])
-  }
-
-  //prepare sound effect source to enter
-  async setSoundEffect(filename:string):Promise<AudioBufferSourceNode> {
-    let filePath = '../../../assets/sound/' + filename
-    let ctx = new AudioContext();
-    let buf = await this.soundFunc.setupAudioBuffer(ctx, filePath);
-    let gain = this.soundFunc.getGainNode(ctx, 1);
-    let source = this.soundFunc.createAudioSource(ctx, buf, gain);
-    return source;
   }
 
 }
