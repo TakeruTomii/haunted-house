@@ -29,7 +29,7 @@ export class NavComponent implements OnInit, OnChanges {
 
   async ngOnInit(): Promise<void> {
     this.sound_setting = this.screenCtx.getSound();
-    this.move_source = await this.prepareSoundEffectSource('kodutsumi.mp3');
+    this.move_source = await this.setSoundEffect('kodutsumi.mp3');
 
     // bgm
     this.bgm_source = await this.setBGM(this.sound_setting.bgm_filename, this.sound_setting.volume);
@@ -131,8 +131,8 @@ export class NavComponent implements OnInit, OnChanges {
   }
 
   //prepare sound effect source to enter
-  async prepareSoundEffectSource(filename:string):Promise<AudioBufferSourceNode> {
-    let filePath = '../../assets/sound/' + filename
+  async setSoundEffect(filename:string):Promise<AudioBufferSourceNode> {
+    let filePath = '../../../assets/sound/' + filename
     let ctx = new AudioContext();
     let buf = await this.soundFunc.setupAudioBuffer(ctx, filePath);
     let gain = this.soundFunc.getGainNode(ctx, 1);

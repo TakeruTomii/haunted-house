@@ -21,7 +21,7 @@ export class TeaRoomComponent implements OnInit {
 
   async ngOnInit(): Promise<void> {
     this.room_sound = this.screenCtx.getSound();
-    this.move_source = await this.prepareSoundEffectSource('kodutsumi.mp3');
+    this.move_source = await this.soundFunc.prepareSoundEffectSource('kodutsumi.mp3');
   }
 
   onMove(rname: string){
@@ -33,16 +33,6 @@ export class TeaRoomComponent implements OnInit {
 
     let room : RoomInfo = { roomName : rname };
     this.move.moveRoom(room);
-  }
-
-  //prepare sound effect source to enter
-  async prepareSoundEffectSource(filename:string):Promise<AudioBufferSourceNode> {
-    let filePath = '../../assets/sound/' + filename
-    let ctx = new AudioContext();
-    let buf = await this.soundFunc.setupAudioBuffer(ctx, filePath);
-    let gain = this.soundFunc.getGainNode(ctx, 1);
-    let source = this.soundFunc.createAudioSource(ctx, buf, gain);
-    return source;
   }
 
 }

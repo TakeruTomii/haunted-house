@@ -24,5 +24,27 @@ export class Sound {
     gainNode.connect(ctx.destination);
     return source;
   }
+
+  //prepare audio source for BGM
+  //set volume any value
+  async prepareBGM(filename:string, volume:number):Promise<AudioBufferSourceNode> {
+    let filePath = '../../assets/sound/' + filename
+    let ctx = new AudioContext();
+    let buf = await this.setupAudioBuffer(ctx, filePath);
+    let gain = this.getGainNode(ctx, volume);
+    let source = this.createAudioSource(ctx, buf, gain);
+    return source;
+  }
+
+  //prepare audio source for sound effect
+  //fix bolume max
+  async prepareSoundEffectSource(filename:string):Promise<AudioBufferSourceNode> {
+    let filePath = '../../../assets/sound/' + filename
+    let ctx = new AudioContext();
+    let buf = await this.setupAudioBuffer(ctx, filePath);
+    let gain = this.getGainNode(ctx, 1);
+    let source = this.createAudioSource(ctx, buf, gain);
+    return source;
+  }
 };
 

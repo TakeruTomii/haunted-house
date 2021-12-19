@@ -40,9 +40,9 @@ export class InitConfComponent implements OnInit, AfterViewInit{
   // Pass initial settings to Loading Screen
   async configure(){
     // Parameters to pass
-    let isSoundOn : boolean = this.sound_selected === 'on' ? true : false;
-    let vol : number = isSoundOn ? 0.5 : 0;
-    let sound : SoundInfo = {
+    const isSoundOn : boolean = this.sound_selected === 'on' ? true : false;
+    const vol : number = isSoundOn ? 0.5 : 0;
+    const sound : SoundInfo = {
       is_sound_on: isSoundOn,
       volume: vol,
       bgm_filename: PAGE_BGMS.loading
@@ -50,14 +50,10 @@ export class InitConfComponent implements OnInit, AfterViewInit{
 
     this.screenCtx.setSound(sound);
 
+    const source :AudioBufferSourceNode = await this.soundFunc.prepareSoundEffectSource(PAGE_BGMS['init-conf']);
     if(sound.is_sound_on) {
       // Audio play
       // Play no sound file first to play successing sounds
-      let filepath = '../../assets/sound/' + PAGE_BGMS['init-conf'];
-      let ctx = new AudioContext();
-      let buf = await this.soundFunc.setupAudioBuffer(ctx, filepath);
-      let gain = this.soundFunc.getGainNode(ctx, vol);
-      let source = this.soundFunc.createAudioSource(ctx, buf, gain);
       source.start();
     }
 

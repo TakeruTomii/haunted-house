@@ -26,7 +26,7 @@ export class LivingRoomComponent implements OnInit {
 
   async ngOnInit(): Promise<void> {
     this.room_sound = this.screenCtx.getSound();
-    this.move_source = await this.prepareSoundEffectSource('kodutsumi.mp3');
+    this.move_source = await this.soundFunc.prepareSoundEffectSource('kodutsumi.mp3');
   }
 
   // Move Rooms
@@ -57,16 +57,6 @@ export class LivingRoomComponent implements OnInit {
     }
 
     this.modalRef = this.modal.show(SerifComponent, show_config);
-  }
-
-  //prepare sound effect source to enter
-  async prepareSoundEffectSource(filename:string):Promise<AudioBufferSourceNode> {
-    let filePath = '../../assets/sound/' + filename
-    let ctx = new AudioContext();
-    let buf = await this.soundFunc.setupAudioBuffer(ctx, filePath);
-    let gain = this.soundFunc.getGainNode(ctx, 1);
-    let source = this.soundFunc.createAudioSource(ctx, buf, gain);
-    return source;
   }
 
 }

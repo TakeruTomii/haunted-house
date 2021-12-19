@@ -36,18 +36,13 @@ export class LoadingComponent implements OnInit {
       }
     }
 
-    let source: AudioBufferSourceNode = null;
+    const source: AudioBufferSourceNode = await this.soundFunc.prepareBGM(this.page_sound.bgm_filename, this.page_sound.volume);
     if(this.page_sound.is_sound_on) {
-      let filepath = '../../assets/sound/' + this.page_sound.bgm_filename;
-      let ctx = new AudioContext();
-      let buf = await this.soundFunc.setupAudioBuffer(ctx, filepath);
-      let gain = this.soundFunc.getGainNode(ctx, this.page_sound.volume);
-      source = this.soundFunc.createAudioSource(ctx, buf, gain);
       source.start();
     }
 
     // Set information for next page
-    let sound:SoundInfo = {
+    const sound:SoundInfo = {
       is_sound_on: this.page_sound.is_sound_on,
       volume:  this.page_sound.volume,
       bgm_filename: PAGE_BGMS.title

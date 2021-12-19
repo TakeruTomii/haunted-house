@@ -34,9 +34,9 @@ export class TitleComponent implements OnInit {
       }
     }
 
-    this.thunder_source = await this.prepareSoundEffectSource('se_thunderbolt.mp3');
-    this.bgm_source = await this.prepareSoundEffectSource(this.page_sound.bgm_filename);
-    this.enter_source = await this.prepareSoundEffectSource('se_drop.mp3');
+    this.thunder_source = await this.soundFunc.prepareSoundEffectSource('se_thunderbolt.mp3');
+    this.bgm_source = await this.soundFunc.prepareBGM(this.page_sound.bgm_filename, this.page_sound.volume);
+    this.enter_source = await this.soundFunc.prepareSoundEffectSource('se_drop.mp3');
 
     if(this.page_sound.is_sound_on) {
       //play music
@@ -77,17 +77,6 @@ export class TitleComponent implements OnInit {
     this.screenCtx.setSound(sound);
 
     this.router.navigate(['/home']);
-  }
-
-  //prepare sound effect source to enter
-  async prepareSoundEffectSource(filename:string):Promise<AudioBufferSourceNode> {
-    let filePath = '../../assets/sound/' + filename
-    //play BGM
-    let ctx = new AudioContext();
-    let buf = await this.soundFunc.setupAudioBuffer(ctx, filePath);
-    let gain = this.soundFunc.getGainNode(ctx, this.page_sound.volume);
-    let source = this.soundFunc.createAudioSource(ctx, buf, gain);
-    return source;
   }
 
 }
