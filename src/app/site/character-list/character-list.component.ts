@@ -9,12 +9,8 @@ import { Sound } from 'src/app/shared/sharedFunction';
   selector: 'app-character-list',
   templateUrl: './character-list.component.html',
   styleUrls: ['./character-list.component.css'],
-  animations: [
-
-  ]
+  animations: []
 })
-
-
 
 export class CharacterListComponent implements OnInit {
 
@@ -119,12 +115,16 @@ export class CharacterListComponent implements OnInit {
   }
 
   async characterChange(delaytime: string) {
-    this.close_source.start();
-    this.close_source = await this.soundFunc.createSound('se_hyoushigi.mp3');
-    setTimeout(async () => {
-      this.open_source.start();
-      this.open_source = await this.soundFunc.createSound('se_wadaiko.mp3');
-    }, 1000);
+    if(this.page_sound.is_sound_on) {
+      this.close_source.start();
+      this.close_source = await this.soundFunc.createSound('se_hyoushigi.mp3');
+
+      setTimeout(async () => {
+        this.open_source.start();
+        this.open_source = await this.soundFunc.createSound('se_wadaiko.mp3');
+      }, 1000);
+
+    }
 
     var close_open = anime.timeline({
       targets: ".curtain",
@@ -147,8 +147,10 @@ export class CharacterListComponent implements OnInit {
   }
 
   async openCurtain(delaytime: string) {
-    this.open_source.start();
-    this.open_source = await this.soundFunc.createSound('se_wadaiko.mp3');
+    if(this.page_sound.is_sound_on) {
+      this.open_source.start();
+      this.open_source = await this.soundFunc.createSound('se_wadaiko.mp3');
+    }
 
     var open = anime.timeline({
       targets: ".curtain",
