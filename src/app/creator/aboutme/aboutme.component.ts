@@ -6,6 +6,7 @@ import AOS from 'aos';
 import anime from 'animejs/lib/anime.es.js';
 import { SoundInfo } from 'src/app/shared/dto';
 import { ContextService } from 'src/app/shared/inter-screen/context.service';
+import { Sound } from 'src/app/shared/sharedFunction';
 
 @Component({
   selector: 'app-aboutme',
@@ -18,6 +19,11 @@ export class AboutMeComponent implements OnInit {
   // Sound Setting
   page_sound:SoundInfo = null;
   current_volume:number = 0;
+  horror_eye_source :AudioBufferSourceNode = null;
+  horror_mouths_source :AudioBufferSourceNode = null;
+  soundFunc = new Sound();
+  is_horror_eye_played :boolean = false;
+  is_horror_mouths_played :boolean = false;
 
   // URLs of Certifications
   url_ipa_exam = "https://www.jitec.ipa.go.jp/2_01english/02examcategories.html";
@@ -41,7 +47,7 @@ export class AboutMeComponent implements OnInit {
   constructor(private modal: BsModalService,
               private screenCtx: ContextService) {}
 
-  ngOnInit(): void {
+  async ngOnInit(): Promise<void> {
     // set bgm information
     this.page_sound = this.screenCtx.getSound();
     // TODO: error handling
@@ -52,6 +58,9 @@ export class AboutMeComponent implements OnInit {
         bgm_filename: PAGE_BGMS["aboutme"]
       }
     }
+
+    this.horror_eye_source = await this.soundFunc.createSound('se_horror_eye.mp3');
+    this.horror_mouths_source = await this.soundFunc.createSound('se_horror_mouths.mp3');
 
     // simple show movement
     AOS.init({
@@ -84,6 +93,13 @@ export class AboutMeComponent implements OnInit {
         .add({
           height: eye_height,
         });
+
+        //play sound
+        if(this.page_sound.is_sound_on && !this.is_horror_eye_played) {
+          this.horror_eye_source.start();
+          this.is_horror_eye_played = true;
+        }
+
       } else {
         horror_eye.style.height = "0px";
       }
@@ -100,6 +116,13 @@ export class AboutMeComponent implements OnInit {
         .add({
           height: mouths_height,
         });
+
+        //play sound
+        if(this.page_sound.is_sound_on && !this.is_horror_mouths_played) {
+          this.horror_mouths_source.start();
+          this.is_horror_mouths_played = true;
+        }
+
       } else {
         horror_mouths.style.height = "0px";
       }
