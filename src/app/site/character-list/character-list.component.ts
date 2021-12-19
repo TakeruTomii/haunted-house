@@ -3,6 +3,7 @@ import { IMG_PATH_CHARACTER_LIST, EXT_CHARACTER, CHARACTER_DATA, PAGE_BGMS} from
 import anime from 'animejs/lib/anime.es.js';
 import { SoundInfo } from 'src/app/shared/dto';
 import { ContextService } from 'src/app/shared/inter-screen/context.service';
+import { Sound } from 'src/app/shared/sharedFunction';
 
 @Component({
   selector: 'app-character-list',
@@ -20,6 +21,9 @@ export class CharacterListComponent implements OnInit {
   // Sound Setting
   page_sound:SoundInfo = null;
   current_volume:number = 0;
+  open_source :AudioBufferSourceNode = null;
+  close_source :AudioBufferSourceNode = null;
+  soundFunc = new Sound();
 
   // character variables
   character_id : number;
@@ -34,7 +38,7 @@ export class CharacterListComponent implements OnInit {
 
   constructor(private screenCtx: ContextService) { }
 
-  ngOnInit(): void {
+  async ngOnInit(): Promise<void> {
     // set bgm information
     this.page_sound = this.screenCtx.getSound();
     // TODO: error handling
@@ -45,6 +49,9 @@ export class CharacterListComponent implements OnInit {
         bgm_filename: PAGE_BGMS["character-list"]
       }
     }
+
+    this.open_source = await this.soundFunc.createSound('se_wadaiko.mp3');
+    this.close_source = await this.soundFunc.createSound('se_hyoushigi.mp3');
 
     this.isCurtainOpen = false;
     this.setCurrentCharacter(0);
@@ -66,7 +73,8 @@ export class CharacterListComponent implements OnInit {
 
   }
 
-  animateCharacterChange(target: string){
+  async animateCharacterChange(target: string){
+
     // curtain movement
     if(this.isCurtainOpen) {
       this.characterChange('0');
@@ -110,7 +118,14 @@ export class CharacterListComponent implements OnInit {
 
   }
 
-  characterChange(delaytime: string) {
+  async characterChange(delaytime: string) {
+    this.close_source.start();
+    this.close_source = await this.soundFunc.createSound('se_hyoushigi.mp3');
+    setTimeout(async () => {
+      this.open_source.start();
+      this.open_source = await this.soundFunc.createSound('se_wadaiko.mp3');
+    }, 1000);
+
     var close_open = anime.timeline({
       targets: ".curtain",
       easing: 'linear',
@@ -131,7 +146,10 @@ export class CharacterListComponent implements OnInit {
     })
   }
 
-  openCurtain(delaytime: string) {
+  async openCurtain(delaytime: string) {
+    this.open_source.start();
+    this.open_source = await this.soundFunc.createSound('se_wadaiko.mp3');
+
     var open = anime.timeline({
       targets: ".curtain",
       easing: 'linear',
