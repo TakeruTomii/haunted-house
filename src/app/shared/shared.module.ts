@@ -10,11 +10,13 @@ import { ButtonsModule } from 'ngx-bootstrap/buttons';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { ModalModule } from 'ngx-bootstrap/modal';
 import { ContextService } from './inter-screen/context.service';
+import { ErrorComponent } from './error/error.component';
 
 @NgModule({
   declarations: [
     NavComponent,
-    SerifComponent
+    SerifComponent,
+    ErrorComponent
   ],
   imports: [
     CommonModule,

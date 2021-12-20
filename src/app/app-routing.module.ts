@@ -11,12 +11,15 @@ import { AboutMeComponent } from './creator/aboutme/aboutme.component';
 import { ContactMeComponent } from './creator/contactme/contactme.component'
 import { CharacterListComponent } from './site/character-list/character-list.component';
 import { ConceptComponent } from './site/concept/concept.component';
+import { ErrorComponent } from './shared/error/error.component';
 
 // Routing table
 // Add items when creating new pages
 const routes: Routes = [
   { path: '', component: InitConfComponent },
   { path: 'loading', component: LoadingComponent },
+  { path: 'error', component: ErrorComponent },
+
   //Path for English
   { path: 'title', component: TitleComponent },
   { path: 'home', component: HomeScreenComponent },
@@ -26,7 +29,7 @@ const routes: Routes = [
   { path: 'concept', component: ConceptComponent },
   //TODO: Path for Japanese
   //default
-  { path: '**', component: LoadingComponent }
+  { path: '**', component: ErrorComponent }
 ];
 
 @NgModule({

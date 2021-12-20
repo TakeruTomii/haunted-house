@@ -1,0 +1,41 @@
+#error_background {
+  background-color: black;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+  position: relative;
+}
+
+#title_gameover {
+  height: 30%;
+  text-align: center;
+}
+#title_gameover img {
+  width: auto;
+  height: 100%;
+}
+
+#exp {
+  height: 20%;
+  color: whitesmoke;
+  text-align: center;
+}
+
+#grave {
+  height: 50%;
+  filter: drop-shadow(0 -5em 4em rgb(70, 75, 65));
+  text-align: center;
+}
+#grave img {
+  width: auto;
+  height: 100%;
+}
+
+#restart {
+  position: absolute;
+  bottom: 10%;
+  right: 20%;
+  color: goldenrod;
+  font: xx-large;
+}
+
