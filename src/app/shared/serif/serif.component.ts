@@ -1,7 +1,9 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { BsModalRef, ModalDirective } from 'ngx-bootstrap/modal';
-import { FetchSerifsParam } from '../../shared/dto';
+import { FetchSerifsParam, SoundInfo } from '../../shared/dto';
 import { HandleSerifsService } from 'src/app/shared/serif/handle-serifs/handle-serifs.service';
+import { Sound } from '../sharedFunction';
+import { ContextService } from '../inter-screen/context.service';
 
 @Component({
   selector: 'app-serif',
@@ -9,6 +11,13 @@ import { HandleSerifsService } from 'src/app/shared/serif/handle-serifs/handle-s
   styleUrls: ['./serif.component.css']
 })
 export class SerifComponent implements OnInit{
+  //sound setting
+  page_sound: SoundInfo = null;
+  open_source :AudioBufferSourceNode = null;
+  close_source :AudioBufferSourceNode = null;
+  next_source :AudioBufferSourceNode = null;
+  soundFunc = new Sound();
+
   // Modal for Selections
   @ViewChild('selectionModal', {static: false}) public selectionModal: ModalDirective;
 
@@ -32,14 +41,27 @@ export class SerifComponent implements OnInit{
   //URL to transit
   private transition_url: string;
 
-  constructor(private serifs:HandleSerifsService, public bsModalRef: BsModalRef) {}
+  constructor(private serifs:HandleSerifsService,
+              public bsModalRef: BsModalRef,
+              private screenCtx:ContextService) {}
 
-  ngOnInit(): void {
+  async ngOnInit(): Promise<void> {
+    // set bgm information
+    this.page_sound = this.screenCtx.getSound();
+    this.open_source = await this.soundFunc.createSound('se_open_serif.mp3', 1, false, '../../../assets/sound/');
+    this.close_source = await this.soundFunc.createSound('se_close_serif.mp3', 1, false, '../../../assets/sound/');
+    this.next_source = await this.soundFunc.createSound('se_next_serif.mp3', 1, false, '../../../assets/sound/');
+
     this.initModal();
   }
 
   // Initiate serifs when opening modal
   initModal() : void {
+    //play sound open modal
+    if(this.page_sound.is_sound_on) {
+      this.open_source.start();
+    }
+
     // configure calling serifs
     let params : FetchSerifsParam = {
       lang: 'en',
@@ -60,7 +82,7 @@ export class SerifComponent implements OnInit{
   }
 
   // keep conversation forward
-  onTalk() : void {
+  async onTalk() : Promise<void> {
     if (this.isTalking){
       // Case : on talking
       // quit typewriting and show all sentence
@@ -68,12 +90,20 @@ export class SerifComponent implements OnInit{
       this.current_serif = this.current_data['serif'];
       this.showSerifTriangle();
       this.isTalking = false;
+
     } else {
+
+
       this.hideSerifTriangle();
       let next_data = this.serifs.popSerif();
       this.current_data = next_data;
       if (next_data == null) {
         // Case : the end of serifs
+        //play sound close serif
+        if(this.page_sound.is_sound_on) {
+          this.close_source.start();
+          this.close_source = await this.soundFunc.createSound('se_close_serif.mp3', 1, false, '../../../assets/sound/');
+        }
         // close modal
         this.bsModalRef.hide();
         // Case : Transiton
@@ -86,6 +116,12 @@ export class SerifComponent implements OnInit{
         this.showSelection(next_data['next']);
       } else {
         // Case : Proceed
+        //play sound next serif
+        if(this.page_sound.is_sound_on) {
+          this.next_source.start();
+          this.next_source = await this.soundFunc.createSound('se_next_serif.mp3', 1, false, '../../../assets/sound/');
+        }
+
         // Display new serif
         this.isTalking = true;
         this.setDisplayInfos(next_data);
