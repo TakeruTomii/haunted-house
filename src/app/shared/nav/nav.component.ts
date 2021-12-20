@@ -55,7 +55,7 @@ export class NavComponent implements OnInit, OnChanges {
     if(changes.sound_setting && !changes.sound_setting.isFirstChange()){
       if(this.sound_setting.is_sound_on){
         this.bgm_source.stop(0);
-        this.bgm_source = await this.soundFunc.createSound(this.sound_setting.bgm_filename, this.sound_setting.volume, true, '../../../assets/sound/');
+        this.bgm_source = await this.setBGM(this.sound_setting.bgm_filename, this.sound_setting.volume);
         this.bgm_source.start(0.5);
       }
     }
@@ -98,11 +98,13 @@ export class NavComponent implements OnInit, OnChanges {
     this.volume_controller.gain.value = volume;
   }
 
-  transitPage(page: string) {
+  async transitPage(page: string) {
     if(this.sound_setting.is_sound_on) {
       // Stop BGM
       this.bgm_source.stop();
       this.move_source.start();
+      // this.bgm_source = await this.setBGM(this.sound_setting.bgm_filename, this.sound_setting.volume);
+      this.move_source =  await this.soundFunc.createSound('kodutsumi.mp3', 1, false, '../../../assets/sound/');
     }
 
     // Set information to next screen
@@ -118,11 +120,12 @@ export class NavComponent implements OnInit, OnChanges {
     this.router.navigate([path])
   }
 
-  transitHome() {
+  async transitHome() {
     if(this.sound_setting.is_sound_on) {
       // Stop BGM
       this.bgm_source.stop();
       this.move_source.start();
+      this.move_source =  await this.soundFunc.createSound('kodutsumi.mp3', 1, false, '../../../assets/sound/');
     }
 
     // Set information to next screen
