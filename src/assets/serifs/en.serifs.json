@@ -278,12 +278,43 @@
     "extention": "png"
   },
   {
-    "id": 17,
+    "id": 18,
     "serif": "................................................................................",
     "room": "LivingRoom",
     "clicked": "Eye-mirror",
     "speacker": "Eye-mirror",
     "isStart": true,
+    "next": [],
+    "transition": "",
+    "emotion": "neutral",
+    "animation": "none",
+    "extention": "png"
+  },
+  {
+    "id": 19,
+    "serif": "?????????!?!??!?!?!?!?!!?!??!?!!?????!?!??!?!?!!!!!?!?!?!?!!!?!?????",
+    "room": "Error",
+    "clicked": "Akabeko",
+    "speacker": "Akabeko",
+    "isStart": true,
+    "next": [
+      {
+        "option": "",
+        "nextId": "20"
+      }
+    ],
+    "transition": "",
+    "emotion": "neutral",
+    "animation": "none",
+    "extention": "png"
+  },
+  {
+    "id": 20,
+    "serif": "Look what you've done... If only you tried to violate the taboo.... I was an idiot to believe you!!!!",
+    "room": "Error",
+    "clicked": "Akabeko",
+    "speacker": "Akabeko",
+    "isStart": false,
     "next": [],
     "transition": "",
     "emotion": "neutral",
