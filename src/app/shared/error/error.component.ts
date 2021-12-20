@@ -2,6 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
 import { SerifComponent } from '../serif/serif.component';
 import anime from 'animejs/lib/anime.es.js';
+import { SoundInfo } from '../dto';
+import { Sound } from '../sharedFunction';
+import { ContextService } from '../inter-screen/context.service';
 
 @Component({
   selector: 'app-error',
@@ -11,9 +14,21 @@ import anime from 'animejs/lib/anime.es.js';
 export class ErrorComponent implements OnInit {
   modalRef: BsModalRef;
 
-  constructor(private modal: BsModalService) { }
+  // Sound Setting
+  page_sound:SoundInfo = null;
+  current_volume:number = 0;
+  gameover_source :AudioBufferSourceNode = null;
+  restart_source :AudioBufferSourceNode = null;
+  soundFunc = new Sound();
 
-  ngOnInit(): void {
+  constructor(private modal: BsModalService, private screenCtx: ContextService) { }
+
+  async ngOnInit(): Promise<void> {
+    this.page_sound = this.screenCtx.getSound();
+    if(this.page_sound.is_sound_on) {
+      this.gameover_source = await this.soundFunc.createSound('gameover.mp3', 1, false, '../../../assets/sound/');
+      this.restart_source = await this.soundFunc.createSound('se_drop.mp3', 1, false, '../../../assets/sound/');
+    }
     this.openSerifs("Error", "Akabeko");
     this.modal.onHide.subscribe(()=>{
       this.showGameOver();
@@ -39,6 +54,10 @@ export class ErrorComponent implements OnInit {
   }
 
   showGameOver() {
+    if(this.page_sound.is_sound_on) {
+      this.gameover_source.start();
+    }
+
     const title_gameover = anime.timeline({
       targets: "#title_gameover",
       easing: 'easeInQuad'
@@ -52,7 +71,7 @@ export class ErrorComponent implements OnInit {
     .add({
       opacity: 1,
       translateY: 0,
-      duration: 800
+      duration: 1000
     });
 
     const exp = anime.timeline({
@@ -94,7 +113,12 @@ export class ErrorComponent implements OnInit {
   }
 
   restart(){
-    location.href = '/';
+    if(this.page_sound.is_sound_on) {
+      this.restart_source.start();
+    }
+    setTimeout(() => {
+      location.href = '/';
+    }, 1000);
   }
 
 }
