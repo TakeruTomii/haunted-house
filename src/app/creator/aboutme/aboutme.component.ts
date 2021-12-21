@@ -50,14 +50,6 @@ export class AboutMeComponent implements OnInit {
   async ngOnInit(): Promise<void> {
     // set bgm information
     this.page_sound = this.screenCtx.getSound();
-    // TODO: error handling
-    if(!this.page_sound) {
-      this.page_sound = {
-        is_sound_on: false,
-        volume: 0,
-        bgm_filename: PAGE_BGMS["aboutme"]
-      }
-    }
 
     this.horror_eye_source = await this.soundFunc.createSound('se_horror_eye.mp3');
     this.horror_mouths_source = await this.soundFunc.createSound('se_horror_mouths.mp3');

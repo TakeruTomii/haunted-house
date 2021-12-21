@@ -38,14 +38,6 @@ export class ContactMeComponent implements OnInit {
   ngOnInit(): void {
     // set bgm information
     this.page_sound = this.screenCtx.getSound();
-    // TODO: error handling
-    if(!this.page_sound) {
-      this.page_sound = {
-        is_sound_on: false,
-        volume: 0,
-        bgm_filename: PAGE_BGMS["contactme"]
-      }
-    }
 
     // show movement
     AOS.init({

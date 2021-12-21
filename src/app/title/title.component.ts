@@ -25,14 +25,6 @@ export class TitleComponent implements OnInit {
   async ngOnInit(): Promise<void> {
     //prepare sound sources
     this.page_sound = this.screenCtx.getSound();
-    // TODO: error handling
-    if(!this.page_sound) {
-      this.page_sound = {
-        is_sound_on: false,
-        volume: 0,
-        bgm_filename: PAGE_BGMS["title"]
-      }
-    }
 
     this.thunder_source = await this.soundFunc.createSound('se_thunderbolt.mp3');
     this.bgm_source = await this.soundFunc.createSound(this.page_sound.bgm_filename, this.page_sound.volume, true);

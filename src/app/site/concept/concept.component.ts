@@ -27,14 +27,7 @@ export class ConceptComponent implements OnInit {
   async ngOnInit(): Promise<void> {
     // set bgm information
     this.page_sound = this.screenCtx.getSound();
-    // TODO: error handling
-    if(!this.page_sound) {
-      this.page_sound = {
-        is_sound_on: false,
-        volume: 0,
-        bgm_filename: PAGE_BGMS["concept"]
-      }
-    }
+
     this.current_volume = this.page_sound.volume;
     this.horror_se_source = await this.soundFunc.createSound('se_concept_horror.mp3');
 

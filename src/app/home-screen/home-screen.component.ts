@@ -33,14 +33,6 @@ export class HomeScreenComponent implements OnInit, OnDestroy {
   ngOnInit(): void {
     //set bgm information
     this.room_sound = this.screenCtx.getSound();
-    // TODO: error handling
-    if(!this.room_sound) {
-      this.room_sound = {
-        is_sound_on: false,
-        volume: 0,
-        bgm_filename: ROOM_BGMS["livingRoom"]
-      }
-    }
 
     this.current_volume = this.room_sound['volume'];
 

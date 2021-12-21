@@ -37,14 +37,6 @@ export class CharacterListComponent implements OnInit {
   async ngOnInit(): Promise<void> {
     // set bgm information
     this.page_sound = this.screenCtx.getSound();
-    // TODO: error handling
-    if(!this.page_sound) {
-      this.page_sound = {
-        is_sound_on: false,
-        volume: 0,
-        bgm_filename: PAGE_BGMS["character-list"]
-      }
-    }
 
     this.open_source = await this.soundFunc.createSound('se_wadaiko.mp3');
     this.close_source = await this.soundFunc.createSound('se_hyoushigi.mp3');

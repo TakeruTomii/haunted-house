@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { ErrorHandler, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppComponent } from './app.component';
@@ -24,6 +24,7 @@ import { InitConfComponent } from './init-conf/init-conf.component';
 import { LoadingComponent } from './loading/loading.component';
 import { TitleComponent } from './title/title.component';
 import { HomeScreenComponent } from './home-screen/home-screen.component';
+import { HandleErrorService } from './shared/error/handle-error.service';
 
 @NgModule({
   declarations: [
@@ -43,7 +44,13 @@ import { HomeScreenComponent } from './home-screen/home-screen.component';
     CreatorModule,
     HttpClientModule
   ],
-  providers: [MoveRoomService],
+  providers: [
+    MoveRoomService,
+    {
+      provide: ErrorHandler,
+      useClass: HandleErrorService,
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
