@@ -1,11 +1,12 @@
 import { Injectable } from '@angular/core';
-import { SoundInfo } from '../dto';
+import { ErrorInfo, SoundInfo } from '../dto';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ContextService {
   private _sound: SoundInfo;
+  private _error: ErrorInfo;
 
   constructor() { }
 
@@ -28,5 +29,20 @@ export class ContextService {
       }
     }
     return this._sound;
+  }
+
+  setError(err: ErrorInfo) {
+    this._error = err;
+    console.log("setError = " + err)
+  }
+
+  getError() {
+    if(!this._error) {
+      const message = 'Unexpected error occured.';
+      this._error = {
+        message: message
+      }
+    }
+    return this._error;
   }
 }

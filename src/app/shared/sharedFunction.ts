@@ -38,3 +38,13 @@ export class Sound {
 
 };
 
+//Validation functions
+export class Validation {
+  isOnOff(value:string):boolean{
+    const correctArray = ['on', 'off'];
+    if(correctArray.includes(value)){
+      return true;
+    }
+    return false;
+  }
+};

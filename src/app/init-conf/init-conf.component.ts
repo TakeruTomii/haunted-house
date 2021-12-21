@@ -1,10 +1,11 @@
-import { ChangeDetectionStrategy, AfterViewInit, Component, OnInit, TemplateRef, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, OnInit, TemplateRef, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
-import { SoundInfo, CrossScreenContext } from '../shared/dto';
-import { INIT_LANGS, INIT_SOUNDS, PAGE_BGMS } from '../shared/const';
+import { SoundInfo, ErrorInfo } from '../shared/dto';
+import { INIT_LANGS, INIT_SOUNDS, PAGE_BGMS, VALUE_CHEATED } from '../shared/const';
 import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
-import { Sound } from '../../app/shared/sharedFunction';
+import { Sound, Validation } from '../../app/shared/sharedFunction';
 import { ContextService } from '../shared/inter-screen/context.service';
+import { InvalidOperationError } from '../shared/error/errorClass';
 
 @Component({
   selector: 'app-init-conf',
@@ -21,6 +22,7 @@ export class InitConfComponent implements OnInit, AfterViewInit{
   sounds = INIT_SOUNDS;
   modalRef: BsModalRef;
   soundFunc = new Sound();
+  validFunc = new Validation();
 
   constructor(private router: Router,
               private modalService: BsModalService,
@@ -39,6 +41,14 @@ export class InitConfComponent implements OnInit, AfterViewInit{
 
   // Pass initial settings to Loading Screen
   async configure(){
+    // Validation
+    if(this.validFunc.isOnOff(this.sound_selected)){
+      const message = VALUE_CHEATED;
+      const err:ErrorInfo = { 'message': message }
+      this.screenCtx.setError(err);
+      throw new InvalidOperationError(message);
+    }
+
     // Parameters to pass
     const isSoundOn : boolean = this.sound_selected === 'on' ? true : false;
     const vol : number = isSoundOn ? 0.5 : 0;

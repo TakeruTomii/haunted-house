@@ -47,7 +47,6 @@ export const TRANSITABLE_ROOMS = {
 };
 
 
-
 // About Me
 // Path Properties
 export const PREFIX_PORTRAIT = 'portrait_';
@@ -310,3 +309,7 @@ export const CHARACTER_DATA = [
     'explanation': 'Nothing is known about it.\nIt is said it might be the agent to another entertainment.'
   }
 ]
+
+// Error Component
+// Error Messages
+export const VALUE_CHEATED = 'Do not cheat the value of form.';

@@ -6,9 +6,12 @@ import { Router } from '@angular/router';
 })
 export class HandleErrorService implements ErrorHandler {
 
-  constructor(private router: Router, private zone: NgZone) { }
-  handleError(error: any) {
-    console.log(error.message);
+  constructor(private router: Router,
+              private zone: NgZone) { }
+
+  handleError(error: Error) {
+    console.error(error.message);
+
     this.zone.run(() => {
       this.router.navigate(['error']);
     });

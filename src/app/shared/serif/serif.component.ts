@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output, ViewChild } from '@angular/core';
 import { BsModalRef, ModalDirective } from 'ngx-bootstrap/modal';
 import { FetchSerifsParam, SoundInfo } from '../../shared/dto';
 import { HandleSerifsService } from 'src/app/shared/serif/handle-serifs/handle-serifs.service';
@@ -33,6 +33,9 @@ export class SerifComponent implements OnInit{
 
   // Path of Image Forlder
   private img_folder : string = "../../../assets/img/";
+
+  //Event emitter when modal closed
+  @Output() close: EventEmitter<string> = new EventEmitter<string>();
 
   // arguments from caller screen
   private clicked: string; // clicked charactor
@@ -105,6 +108,7 @@ export class SerifComponent implements OnInit{
           this.close_source = await this.soundFunc.createSound('se_close_serif.mp3', 1, false, '../../../assets/sound/');
         }
         // close modal
+        this.close.emit();
         this.bsModalRef.hide();
         // Case : Transiton
         // Transit after finishing conversation
@@ -156,6 +160,7 @@ export class SerifComponent implements OnInit{
 
   // Close Selections Modal
   private closeSelection() {
+    this.close.emit();
     this.selectionModal.hide();
   }
 

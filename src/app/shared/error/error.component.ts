@@ -5,6 +5,7 @@ import anime from 'animejs/lib/anime.es.js';
 import { SoundInfo } from '../dto';
 import { Sound } from '../sharedFunction';
 import { ContextService } from '../inter-screen/context.service';
+import { error } from 'protractor';
 
 @Component({
   selector: 'app-error',
@@ -13,6 +14,9 @@ import { ContextService } from '../inter-screen/context.service';
 })
 export class ErrorComponent implements OnInit {
   modalRef: BsModalRef;
+
+  //cause of death
+  cause_of_death:string = '';
 
   // Sound Setting
   page_sound:SoundInfo = null;
@@ -24,15 +28,22 @@ export class ErrorComponent implements OnInit {
   constructor(private modal: BsModalService, private screenCtx: ContextService) { }
 
   async ngOnInit(): Promise<void> {
+    //get error informations
+    const errorInfo = this.screenCtx.getError();
+    this.cause_of_death = errorInfo.message;
+
+    //get sound infomation
     this.page_sound = this.screenCtx.getSound();
     if(this.page_sound.is_sound_on) {
       this.gameover_source = await this.soundFunc.createSound('gameover.mp3', 1, false, '../../../assets/sound/');
       this.restart_source = await this.soundFunc.createSound('se_drop.mp3', 1, false, '../../../assets/sound/');
     }
+
     this.openSerifs("Error", "Akabeko");
-    this.modal.onHide.subscribe(()=>{
+    this.modalRef.content.close.subscribe(()=>{
       this.showGameOver();
     });
+
   }
 
   // Open modal for serifs
@@ -40,6 +51,7 @@ export class ErrorComponent implements OnInit {
 
     // Configs to open
     let initialState = {
+      modal_id: 'error_modal',
       room: room,
       clicked: clicked
     };

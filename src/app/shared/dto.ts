@@ -35,3 +35,9 @@ export class SoundInfo {
   volume: number;
   bgm_filename: string;
 }
+
+// Informations to handle exceptions
+export class ErrorInfo {
+  message: string;
+}
+
