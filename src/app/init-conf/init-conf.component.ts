@@ -42,7 +42,7 @@ export class InitConfComponent implements OnInit, AfterViewInit{
   // Pass initial settings to Loading Screen
   async configure(){
     // Validation
-    if(this.validFunc.isOnOff(this.sound_selected)){
+    if(!this.validFunc.isOnOff(this.sound_selected)){
       const message = VALUE_CHEATED;
       const err:ErrorInfo = { 'message': message }
       this.screenCtx.setError(err);
