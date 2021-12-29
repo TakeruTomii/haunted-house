@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
 import { SerifComponent } from '../../shared/serif/serif.component';
 import { STATUS_PATTERNS, SKILL_SLIDES, PREFIX_PORTRAIT, IMG_PATH_ABOUT_ME, EXT_PORTRAIT, EXT_ATTR, PAGE_BGMS} from '../../shared/const';
@@ -13,7 +13,7 @@ import { Sound } from 'src/app/shared/sharedFunction';
   templateUrl: './aboutme.component.html',
   styleUrls: ['./aboutme.component.css'],
 })
-export class AboutMeComponent implements OnInit {
+export class AboutMeComponent implements OnInit, OnDestroy {
   modalRef: BsModalRef;
 
   // Sound Setting
@@ -62,69 +62,14 @@ export class AboutMeComponent implements OnInit {
 
     // horror effects
     // scroll movement
-    window.addEventListener('scroll', () => {
-      var window_half_top = window.innerHeight / 2;
-      var eye_height = window.innerHeight * 0.5;
-      var mouths_height = window.innerHeight;
 
-      var horror_eye = document.getElementById('horror_eye');
-      var horror_eye_top = horror_eye.getBoundingClientRect().top;
-
-      var horror_mouths = document.getElementById('horror_mouths');
-      var horror_mouths_top = horror_mouths.getBoundingClientRect().top;
-
-      // eye movement
-      if(horror_eye_top <= window_half_top){
-        var eye_appear = anime.timeline({
-          targets: horror_eye,
-          easing: 'easeInQuad',
-          duration: 100
-        });
-
-        eye_appear
-        .add({
-          height: eye_height,
-        });
-
-        //play sound
-        if(this.page_sound.is_sound_on && !this.is_horror_eye_played) {
-          this.horror_eye_source.start();
-          this.is_horror_eye_played = true;
-        }
-
-      } else {
-        horror_eye.style.height = "0px";
-      }
-
-      //mouths movement
-      if(horror_mouths_top <= window_half_top){
-        var mouths_appear = anime.timeline({
-          targets: horror_mouths,
-          easing: 'easeInQuad',
-          duration: 150
-        });
-
-        mouths_appear
-        .add({
-          height: mouths_height,
-        });
-
-        //play sound
-        if(this.page_sound.is_sound_on && !this.is_horror_mouths_played) {
-          this.horror_mouths_source.start();
-          this.is_horror_mouths_played = true;
-        }
-
-      } else {
-        horror_mouths.style.height = "0px";
-      }
-    });
+    document.addEventListener('scroll', this.horrorEffect);
 
     //scroll(makimono) associate movement
     //open dimension
-    var makimono = document.querySelector('details');
+    const makimono = document.querySelector('details');
     makimono.addEventListener('toggle', () => {
-      var exit_area = document.getElementById('exit');
+      const exit_area = document.getElementById('exit');
       if(makimono.open) {
         exit_area.style.display = 'flex';
       } else {
@@ -134,6 +79,70 @@ export class AboutMeComponent implements OnInit {
 
     // Initiate display items of status
     this.setPortraitAttr();
+  }
+
+  // define horror effect on scrolling
+  horrorEffect = (event: any): void =>  {
+    const window_half_top = window.innerHeight / 2;
+    const eye_height = window.innerHeight * 0.5;
+    const mouths_height = window.innerHeight;
+
+    const horror_eye = document.getElementById('horror_eye');
+    const horror_eye_top = horror_eye.getBoundingClientRect().top;
+
+    const horror_mouths = document.getElementById('horror_mouths');
+    const horror_mouths_top = horror_mouths.getBoundingClientRect().top;
+
+    // eye movement
+    if(horror_eye_top <= window_half_top){
+      const eye_appear = anime.timeline({
+        targets: horror_eye,
+        easing: 'easeInQuad',
+        duration: 100
+      });
+
+      eye_appear
+      .add({
+        height: eye_height
+      });
+
+      //play sound
+      if(this.page_sound.is_sound_on && !this.is_horror_eye_played) {
+        this.horror_eye_source.start();
+        this.is_horror_eye_played = true;
+      }
+
+    } else {
+      horror_eye.style.height = "0px";
+    }
+
+    //mouths movement
+    if(horror_mouths_top <= window_half_top){
+      const mouths_appear = anime.timeline({
+        targets: horror_mouths,
+        easing: 'easeInQuad',
+        duration: 150
+      });
+
+      mouths_appear
+      .add({
+        height: mouths_height,
+      });
+
+      //play sound
+      if(this.page_sound.is_sound_on && !this.is_horror_mouths_played) {
+        this.horror_mouths_source.start();
+        this.is_horror_mouths_played = true;
+      }
+
+    } else {
+      horror_mouths.style.height = "0px";
+    }
+  }
+
+  // remove eventlistener of scroll
+  ngOnDestroy() {
+    document.removeEventListener('scroll', this.horrorEffect);
   }
 
 
