@@ -45,7 +45,7 @@ export class HomeScreenComponent implements OnInit, OnDestroy {
           this.currentRoomComponent = this.rooms[RoomInfo.roomName];
           //change sound
           this.room_sound = {
-            is_sound_on:true,
+            is_sound_on:this.room_sound.is_sound_on,
             volume:this.current_volume,
             bgm_filename:this.bgms[RoomInfo.roomName]
           };
