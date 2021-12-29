@@ -1,3 +1,4 @@
+import { PAGE_NAME_LIST, ROOM_NAME_LIST } from "./const";
 
 // Sound Functions
 export class Sound {
@@ -40,8 +41,26 @@ export class Sound {
 
 //Validation functions
 export class Validation {
+  // Return true if the value is 'on' or 'off'
   isOnOff(value:string):boolean{
     const correctArray = ['on', 'off'];
+    if(correctArray.includes(value)){
+      return true;
+    }
+    return false;
+  }
+  // Return true if the value is a valid Room Name of HomeComponent
+  isValidRoomName(value:string):boolean {
+    const correctArray = ROOM_NAME_LIST;
+    if(correctArray.includes(value)){
+      return true;
+    }
+    return false;
+  }
+
+  // Return true if the value is a valid Page Name
+  isValidPageName(value:string):boolean {
+    const correctArray = PAGE_NAME_LIST;
     if(correctArray.includes(value)){
       return true;
     }

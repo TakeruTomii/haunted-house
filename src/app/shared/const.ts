@@ -17,6 +17,17 @@ export const INIT_SOUNDS = [
   {label:'OFF', value: 'off'}
 ]
 
+// Valid Page Names
+export const PAGE_NAME_LIST = [
+  'init-conf',
+  'loading',
+  'title',
+  'aboutme',
+  'contactme',
+  'concept',
+  'character-list'
+];
+
 //BGM filename map of each page
 export const PAGE_BGMS = {
   'init-conf':'no_sound.mp3',
@@ -27,6 +38,15 @@ export const PAGE_BGMS = {
   'concept':'hanaurashi.mp3',
   'character-list':'Hanamibiyori.mp3'
 };
+
+// Valid Room Names of HomeScreenComponent
+export const ROOM_NAME_LIST = [
+  'livingRoom',
+  'workShop',
+  'teaRoom',
+  'casino',
+  'garden'
+];
 
 // BGMs for each room at HomeScreenComponent
 export const ROOM_BGMS = {
@@ -313,3 +333,5 @@ export const CHARACTER_DATA = [
 // Error Component
 // Error Messages
 export const VALUE_CHEATED = 'Do not cheat the value of form.';
+export const ROOM_NAME_CHEATED = 'Do not cheat the name of room.';
+export const PAGE_NAME_CHEATED = 'Do not cheat the value of page.';
