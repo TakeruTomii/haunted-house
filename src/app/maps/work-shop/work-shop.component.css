@@ -1,16 +1,38 @@
 #bg-work-shop {
-  background-image: url('../../../assets/img/workshop.png');
+  background: url('../../../assets/img/workshop_landscape.png') no-repeat center;
+  background-size: auto 100vh;
+  background-color: black;
+}
+
+@media screen and (orientation: portrait)  {
+  #bg-work-shop {
+    background: url('../../../assets/img/workshop_portrait.png') no-repeat center;
+    background-color: black;
+    background-size: 100vw auto;
+  }
+}
+
+.characters {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+}
+
+.characters img {
+  width: 100%;
+  height: 100%;
 }
 
 #ittan-momen {
-  position: absolute;
-  top: 40%;
-  left: 30%;
-  width: 10em;
-  height: auto;
+  width: auto;
+  height: 45vh;
+  transform: translate(22vh, 8vh);
 }
 
-#ittan-momen img {
-  width: 100%;
-  height: 100%;
+@media screen and (orientation: portrait)  {
+  #ittan-momen {
+    width: 30vw;
+    height: auto;
+    transform: translate(12vw, 20vw);
+  }
 }
