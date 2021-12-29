@@ -116,7 +116,6 @@ export class NavComponent implements OnInit, OnChanges {
       // Stop BGM
       this.bgm_source.stop();
       this.move_source.start();
-      // this.bgm_source = await this.setBGM(this.sound_setting.bgm_filename, this.sound_setting.volume);
       this.move_source =  await this.soundFunc.createSound('kodutsumi.mp3', 1, false, '../../../assets/sound/');
     }
 
