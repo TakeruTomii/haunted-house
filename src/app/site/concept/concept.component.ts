@@ -33,7 +33,7 @@ export class ConceptComponent implements OnInit, OnDestroy {
 
     // accordion show movement
     AOS.init({
-      duration:1000,
+      duration:1500,
       once:true,
       offset: -100
     });
