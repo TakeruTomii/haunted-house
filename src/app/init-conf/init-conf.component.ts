@@ -22,6 +22,8 @@ export class InitConfComponent implements OnInit, AfterViewInit{
   sounds = INIT_SOUNDS;
   modalRef: BsModalRef;
   soundFunc = new Sound();
+
+  // Validation
   validFunc = new Validation();
 
   constructor(private router: Router,

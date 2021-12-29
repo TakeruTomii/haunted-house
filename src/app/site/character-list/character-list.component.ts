@@ -1,9 +1,10 @@
 import { Component, OnInit, HostBinding } from '@angular/core';
-import { IMG_PATH_CHARACTER_LIST, EXT_CHARACTER, CHARACTER_DATA, PAGE_BGMS} from '../../shared/const';
+import { IMG_PATH_CHARACTER_LIST, EXT_CHARACTER, CHARACTER_DATA, PAGE_BGMS, NO_EXIST_CHARACTER} from '../../shared/const';
 import anime from 'animejs/lib/anime.es.js';
-import { SoundInfo } from 'src/app/shared/dto';
+import { ErrorInfo, SoundInfo } from 'src/app/shared/dto';
 import { ContextService } from 'src/app/shared/inter-screen/context.service';
-import { Sound } from 'src/app/shared/sharedFunction';
+import { Sound, Validation } from 'src/app/shared/sharedFunction';
+import { InvalidOperationError } from 'src/app/shared/error/errorClass';
 
 @Component({
   selector: 'app-character-list',
@@ -20,6 +21,9 @@ export class CharacterListComponent implements OnInit {
   open_source :AudioBufferSourceNode = null;
   close_source :AudioBufferSourceNode = null;
   soundFunc = new Sound();
+
+  // Validation
+  validFunc = new Validation();
 
   // character variables
   character_id : number;
@@ -46,6 +50,15 @@ export class CharacterListComponent implements OnInit {
   }
 
   setCurrentCharacter(chara_id : number) {
+    // Validation
+    const isValidCharacterId: boolean = (0 <= chara_id) && (chara_id < CHARACTER_DATA.length);
+    if(!isValidCharacterId) {
+      const message = NO_EXIST_CHARACTER;
+      const err:ErrorInfo = { 'message': message }
+      this.screenCtx.setError(err);
+      throw new InvalidOperationError(message);
+    }
+
     let chara = this.character_data[chara_id];
     let id_selecter = "#character_" + chara_id + " img";
 

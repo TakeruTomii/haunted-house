@@ -335,3 +335,4 @@ export const CHARACTER_DATA = [
 export const VALUE_CHEATED = 'Do not cheat the value of form.';
 export const ROOM_NAME_CHEATED = 'Do not cheat the name of room.';
 export const PAGE_NAME_CHEATED = 'Do not cheat the value of page.';
+export const NO_EXIST_CHARACTER = 'You cannnot choose a character which doesn\'t exist.';
