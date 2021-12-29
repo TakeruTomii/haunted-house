@@ -1,10 +1,11 @@
 import { Component, Input, OnChanges, OnInit, Output, SimpleChanges,EventEmitter } from '@angular/core';
 import { BsDropdownConfig } from 'ngx-bootstrap/dropdown';
-import { Sound } from '../../../app/shared/sharedFunction';
-import { SoundInfo } from '../../../app/shared/dto';
+import { Sound, Validation } from '../../../app/shared/sharedFunction';
+import { ErrorInfo, SoundInfo } from '../../../app/shared/dto';
 import { ContextService } from '../inter-screen/context.service';
 import { Router } from '@angular/router';
-import { PAGE_BGMS, ROOM_BGMS } from '../const';
+import { PAGE_BGMS, PAGE_NAME_CHEATED, ROOM_BGMS } from '../const';
+import { InvalidOperationError } from '../error/errorClass';
 
 @Component({
   selector: 'app-nav',
@@ -22,6 +23,9 @@ export class NavComponent implements OnInit, OnChanges {
   soundFunc = new Sound();
   volume_controller:GainNode = null;
   volume_display:string = '';
+
+  //Validation
+  validFunc = new Validation();
 
 
   constructor(private screenCtx:ContextService,
@@ -98,7 +102,16 @@ export class NavComponent implements OnInit, OnChanges {
     this.volume_controller.gain.value = volume;
   }
 
+  // move to other page on navigation bar
   async transitPage(page: string) {
+    // Validation
+    if(!this.validFunc.isValidPageName(page)){
+      const message = PAGE_NAME_CHEATED;
+      const err:ErrorInfo = { 'message': message }
+      this.screenCtx.setError(err);
+      throw new InvalidOperationError(message);
+    }
+
     if(this.sound_setting.is_sound_on) {
       // Stop BGM
       this.bgm_source.stop();
@@ -120,6 +133,7 @@ export class NavComponent implements OnInit, OnChanges {
     this.router.navigate([path])
   }
 
+  // move to HomeScreenComponent
   async transitHome() {
     if(this.sound_setting.is_sound_on) {
       // Stop BGM
