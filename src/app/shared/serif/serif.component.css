@@ -29,9 +29,8 @@
 }
 
 #name-area {
-  padding: 0 1em;
+  padding: 0.1em 1em;
   width: fit-content;
-  height: 2em;
   color: white;
   border:none;
   border-radius: 5% 1em;
