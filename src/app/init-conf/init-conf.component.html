@@ -5,7 +5,8 @@
     </div>
     <form #confForm="ngForm" (ngSubmit)="configure()">
       <div class="modal-body">
-        <div class="lang form-check-inline">
+        <!-- TODO: i18n -->
+        <!-- <div class="lang form-check-inline">
           <label>Langage:</label>
           <div class="btn-group">
             <ng-container *ngFor="let la of langs">
@@ -17,10 +18,10 @@
               </label>
             </ng-container>
           </div>
-          </div>
+        </div> -->
 
         <div class="sound">
-          <label>Sound:</label>
+          <label class="item">Sound:</label>
           <div class="btn-group">
             <ng-container *ngFor="let s of sounds">
               <label class="btn btn-outline-primary">
