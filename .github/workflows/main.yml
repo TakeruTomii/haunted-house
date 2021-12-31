@@ -15,8 +15,8 @@ jobs:
           MAIL_SEND_URL: ${{ secrets.MAIL_SEND_URL }}
           MAIL_SEND_KEY: ${{ secrets.MAIL_SEND_KEY }}
         run: |
-          echo mailSendURL=$MAIL_SEND_URL >> .env
-          echo mailSendKey=$MAIL_SEND_KEY >> .env
+          echo MAIL_SEND_URL=$MAIL_SEND_URL >> .env
+          echo MAIL_SEND_URL=$MAIL_SEND_KEY >> .env
       - uses: akhileshns/heroku-deploy@v3.12.12
         with:
           heroku_api_key: ${{secrets.HEROKU_API_KEY}}
