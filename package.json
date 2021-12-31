@@ -1,14 +1,16 @@
 {
   "name": "haunted-house",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "scripts": {
     "ng": "ng",
-    "start": "npm run write-env && ng serve",
+    "start": "npm run write-env && node server",
+    "local-start": "npm run write-env && ng serve",
     "build": "npm run write-env && ng build",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "write-env": "ts-node ./config/write-env.ts"
+    "write-env": "ts-node ./config/write-env.ts",
+    "postinstall": "ng build --aot -prod"
   },
   "private": true,
   "dependencies": {
@@ -20,6 +22,12 @@
     "@angular/platform-browser": "~11.1.1",
     "@angular/platform-browser-dynamic": "~11.1.1",
     "@angular/router": "~11.1.1",
+    "@angular/cli": "~11.1.2",
+    "@angular/compiler-cli": "~11.1.1",
+    "@angular-devkit/build-angular": "~0.1101.2",
+    "typescript": "^4.1.6",
+    "dotenv": "^10.0.0",
+    "ts-node": "^8.3.0",
     "animejs": "^3.2.1",
     "aos": "^2.3.4",
     "bootstrap": "^4.6.0",
@@ -29,13 +37,9 @@
     "zone.js": "~0.11.3"
   },
   "devDependencies": {
-    "@angular-devkit/build-angular": "~0.1101.2",
-    "@angular/cli": "~11.1.2",
-    "@angular/compiler-cli": "~11.1.1",
     "@types/jasmine": "~3.6.0",
     "@types/node": "^12.11.1",
     "codelyzer": "^6.0.0",
-    "dotenv": "^10.0.0",
     "jasmine-core": "~3.6.0",
     "jasmine-spec-reporter": "~5.0.0",
     "karma": "~5.2.0",
@@ -44,8 +48,6 @@
     "karma-jasmine": "~4.0.0",
     "karma-jasmine-html-reporter": "^1.5.0",
     "protractor": "~7.0.0",
-    "ts-node": "^8.3.0",
-    "tslint": "~6.1.0",
-    "typescript": "^4.1.6"
+    "tslint": "~6.1.0"
   }
 }
