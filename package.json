@@ -15,7 +15,7 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "write-env": "ts-node ./config/write-env.ts",
-    "postinstall": "npm run write-env && ng build --prod"
+    "postinstall": "npm run write-env && ng build --aot --prod"
   },
   "private": true,
   "dependencies": {
