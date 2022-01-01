@@ -17,6 +17,9 @@ jobs:
         run: |
           echo MAIL_SEND_URL=$MAIL_SEND_URL >> .env
           echo MAIL_SEND_KEY=$MAIL_SEND_KEY >> .env
+      - name: write-env
+        run: |
+          npm run write-env
       - uses: akhileshns/heroku-deploy@v3.12.12
         with:
           heroku_api_key: ${{secrets.HEROKU_API_KEY}}
