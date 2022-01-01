@@ -7,10 +7,9 @@
   },
   "scripts": {
     "ng": "ng",
-    "start": "npm run write-env && node server",
-    "dev-start": "npm run write-env && ng serve",
-    "quick-start": "ng serve",
-    "build": "npm run write-env && ng build",
+    "start": "node server",
+    "dev-start": "ng serve",
+    "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
