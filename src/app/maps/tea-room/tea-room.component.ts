@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { LoadingDisplayService } from 'src/app/loading/display/loading-display.service';
 import { ROOM_NAME_CHEATED } from 'src/app/shared/const';
 import { InvalidOperationError } from 'src/app/shared/error/errorClass';
 import { ContextService } from 'src/app/shared/inter-screen/context.service';
@@ -22,11 +23,18 @@ export class TeaRoomComponent implements OnInit {
   validFunc = new Validation();
 
   constructor(private move: MoveRoomService,
-              private screenCtx: ContextService) { }
+              private screenCtx: ContextService,
+              private loading: LoadingDisplayService) { }
 
   async ngOnInit(): Promise<void> {
+    //loading start
+    this.loading.showLoading();
+
     this.room_sound = this.screenCtx.getSound();
     this.move_source = await this.soundFunc.createSound('kodutsumi.mp3');
+
+    //loading end
+    this.loading.hideLoading();
   }
 
   onMove(rname: string){

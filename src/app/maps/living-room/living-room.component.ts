@@ -7,6 +7,7 @@ import { Sound, Validation } from '../../shared/sharedFunction';
 import { ContextService } from 'src/app/shared/inter-screen/context.service';
 import { ROOM_NAME_CHEATED } from 'src/app/shared/const';
 import { InvalidOperationError } from 'src/app/shared/error/errorClass';
+import { LoadingDisplayService } from 'src/app/loading/display/loading-display.service';
 
 @Component({
   selector: 'app-living-room',
@@ -27,11 +28,18 @@ export class LivingRoomComponent implements OnInit {
 
   constructor(private move: MoveRoomService,
               private modal: BsModalService,
-              private screenCtx: ContextService) { }
+              private screenCtx: ContextService,
+              private loading: LoadingDisplayService) { }
 
   async ngOnInit(): Promise<void> {
+    //loading start
+    this.loading.showLoading();
+
     this.room_sound = this.screenCtx.getSound();
     this.move_source = await this.soundFunc.createSound('kodutsumi.mp3');
+
+    //loading end
+    this.loading.hideLoading();
   }
 
   // Move Rooms
