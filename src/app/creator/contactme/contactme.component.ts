@@ -34,8 +34,7 @@ export class ContactMeComponent implements OnInit {
 
   constructor(private modal: BsModalService,
               private service: SendMailService,
-              private screenCtx: ContextService,
-              private loading: LoadingDisplayService) { }
+              private screenCtx: ContextService) { }
 
   ngOnInit(): void {
 
