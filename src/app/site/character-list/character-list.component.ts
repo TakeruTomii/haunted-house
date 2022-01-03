@@ -37,12 +37,9 @@ export class CharacterListComponent implements OnInit {
   // Characters Data
   character_data = CHARACTER_DATA;
 
-  constructor(private screenCtx: ContextService,
-    private loading: LoadingDisplayService) { }
+  constructor(private screenCtx: ContextService) { }
 
   async ngOnInit(): Promise<void> {
-    //loading start
-    this.loading.showLoading();
 
     // set bgm information
     this.page_sound = this.screenCtx.getSound();
@@ -53,8 +50,6 @@ export class CharacterListComponent implements OnInit {
     this.isCurtainOpen = false;
     this.setCurrentCharacter(0);
 
-    //loading end
-    this.loading.hideLoading();
   }
 
   setCurrentCharacter(chara_id : number) {

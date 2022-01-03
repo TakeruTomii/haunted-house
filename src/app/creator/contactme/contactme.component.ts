@@ -38,8 +38,6 @@ export class ContactMeComponent implements OnInit {
               private loading: LoadingDisplayService) { }
 
   ngOnInit(): void {
-    //loading end
-    this.loading.hideLoading();
 
     // set bgm information
     this.page_sound = this.screenCtx.getSound();
@@ -50,8 +48,6 @@ export class ContactMeComponent implements OnInit {
       once:true
     });
 
-    //loading end
-    this.loading.hideLoading();
   }
 
   sendInquiry() {

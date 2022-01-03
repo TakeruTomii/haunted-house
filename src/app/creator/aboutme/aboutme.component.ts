@@ -46,12 +46,9 @@ export class AboutMeComponent implements OnInit, OnDestroy {
 
 
   constructor(private modal: BsModalService,
-              private screenCtx: ContextService,
-              private loading: LoadingDisplayService) {}
+              private screenCtx: ContextService) {}
 
   async ngOnInit(): Promise<void> {
-    //loading start
-    this.loading.showLoading();
 
     // set bgm information
     this.page_sound = this.screenCtx.getSound();
@@ -85,8 +82,6 @@ export class AboutMeComponent implements OnInit, OnDestroy {
     // Initiate display items of status
     this.setPortraitAttr();
 
-    //loading end
-    this.loading.hideLoading();
   }
 
   // define horror effect on scrolling

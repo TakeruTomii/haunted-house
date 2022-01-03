@@ -6,6 +6,7 @@ import { ContextService } from '../inter-screen/context.service';
 import { Router } from '@angular/router';
 import { PAGE_BGMS, PAGE_NAME_CHEATED, ROOM_BGMS } from '../const';
 import { InvalidOperationError } from '../error/errorClass';
+import { LoadingDisplayService } from 'src/app/loading/display/loading-display.service';
 
 @Component({
   selector: 'app-nav',
@@ -29,9 +30,13 @@ export class NavComponent implements OnInit, OnChanges {
 
 
   constructor(private screenCtx:ContextService,
-              private router: Router) { }
+              private router: Router,
+              private loading: LoadingDisplayService) { }
 
   async ngOnInit(): Promise<void> {
+    //loading start
+    this.loading.showLoading();
+
     this.sound_setting = this.screenCtx.getSound();
     this.move_source = await this.soundFunc.createSound('kodutsumi.mp3', 1, false, '../../../assets/sound/');
 
@@ -52,15 +57,24 @@ export class NavComponent implements OnInit, OnChanges {
       let icon = document.getElementById('sound-icon');
       icon.classList.add('volume-zero');
     }
+
+    //loading end
+    this.loading.hideLoading();
   }
 
   async ngOnChanges(changes: SimpleChanges): Promise<void> {
     // change bgm
     if(changes.sound_setting && !changes.sound_setting.isFirstChange()){
       if(this.sound_setting.is_sound_on){
+        //loading start
+        this.loading.showLoading();
+
         this.bgm_source.stop(0);
         this.bgm_source = await this.setBGM(this.sound_setting.bgm_filename, this.sound_setting.volume);
         this.bgm_source.start(0.5);
+
+        //loading end
+        this.loading.hideLoading();
       }
     }
   }

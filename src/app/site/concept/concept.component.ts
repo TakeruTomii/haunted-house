@@ -23,12 +23,9 @@ export class ConceptComponent implements OnInit, OnDestroy {
 
   isOpenLastAccrodion = false;
 
-  constructor(private screenCtx:ContextService,
-    private loading: LoadingDisplayService) { }
+  constructor(private screenCtx:ContextService) { }
 
   async ngOnInit(): Promise<void> {
-    //loading start
-    this.loading.showLoading();
 
     // set bgm information
     this.page_sound = this.screenCtx.getSound();
@@ -47,8 +44,6 @@ export class ConceptComponent implements OnInit, OnDestroy {
     // show mouths background when scroll to the end with last accordion open
     document.addEventListener('scroll', this.lastAccordionEffect);
 
-    //loading end
-    this.loading.hideLoading();
   }
 
   //define horror effect on scroling with open last accordion
