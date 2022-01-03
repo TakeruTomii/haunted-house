@@ -6,6 +6,7 @@ import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
 import { Sound, Validation } from '../../app/shared/sharedFunction';
 import { ContextService } from '../shared/inter-screen/context.service';
 import { InvalidOperationError } from '../shared/error/errorClass';
+import { LoadingDisplayService } from '../loading/display/loading-display.service';
 
 @Component({
   selector: 'app-init-conf',
@@ -28,12 +29,14 @@ export class InitConfComponent implements OnInit, AfterViewInit{
 
   constructor(private router: Router,
               private modalService: BsModalService,
-              private screenCtx: ContextService) { }
+              private screenCtx: ContextService,
+              private loading: LoadingDisplayService) { }
   @ViewChild('init_modal') public init_modal: TemplateRef<any>;
 
   ngOnInit(): void {  }
 
   ngAfterViewInit(){
+    this.loading.hideLoading();
     this.openModal(this.init_modal);
   }
 
@@ -57,7 +60,7 @@ export class InitConfComponent implements OnInit, AfterViewInit{
     const sound : SoundInfo = {
       is_sound_on: isSoundOn,
       volume: vol,
-      bgm_filename: PAGE_BGMS.loading
+      bgm_filename: PAGE_BGMS.title
     };
 
     this.screenCtx.setSound(sound);
@@ -70,7 +73,7 @@ export class InitConfComponent implements OnInit, AfterViewInit{
     }
 
     // Transit Loading Screen
-    this.router.navigate(['/loading'])
+    this.router.navigate(['/title'])
   }
 
 }

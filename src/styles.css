@@ -193,6 +193,12 @@
   color: whitesmoke;
 }
 
+/* loading screen disapear when loaded */
+.loaded {
+  opacity: 0;
+  visibility: hidden;
+}
+
 
 /* everywhere else */
 * {

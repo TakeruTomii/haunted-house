@@ -1,10 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { AfterViewInit, Component, OnInit } from '@angular/core';
 import anime from 'animejs/lib/anime.es.js';
 import { Router } from '@angular/router';
 import { Sound } from '../../app/shared/sharedFunction';
 import { SoundInfo } from '../shared/dto';
 import { ContextService } from '../shared/inter-screen/context.service';
 import { PAGE_BGMS, ROOM_BGMS } from '../shared/const';
+import { LoadingDisplayService } from '../loading/display/loading-display.service';
 
 @Component({
   selector: 'app-title',
@@ -20,9 +21,13 @@ export class TitleComponent implements OnInit {
   soundFunc = new Sound();
 
   constructor(private router: Router,
-              private screenCtx: ContextService) { }
+              private screenCtx: ContextService,
+              private loading: LoadingDisplayService) { }
 
   async ngOnInit(): Promise<void> {
+    //loading start
+    this.loading.showLoading();
+
     //prepare sound sources
     this.page_sound = this.screenCtx.getSound();
 
@@ -51,6 +56,9 @@ export class TitleComponent implements OnInit {
       translateY: 0,
       duration: 1000
     })
+
+    //loading start
+    this.loading.hideLoading();
   }
 
   // Transition to home screen

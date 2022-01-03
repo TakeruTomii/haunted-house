@@ -1,3 +1,14 @@
+/* to fix center */
+.background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transition: all 0.3s;
+  z-index: 9999;
+}
+
 /* Application-wide Styles */
 #loading-wanyudo {
   width: 100vw;
@@ -21,7 +32,7 @@
 }
 
 .text{
-  /* アニメーションの領域確保 */
+  /* space to hop */
   margin-top: 0.8em;
 }
 
@@ -30,7 +41,7 @@ h1 span{
   animation: wave-text 1s ease-in-out infinite;
 }
 
-/* アニメーション開始タイミングをずらす */
+/* delay animation time */
 h1 span:nth-of-type(1){ animation-delay: 0.0s; }
 h1 span:nth-of-type(2){ animation-delay: 0.05s; }
 h1 span:nth-of-type(3){ animation-delay: 0.1s; }
