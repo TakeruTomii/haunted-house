@@ -57,7 +57,7 @@ export class TitleComponent implements OnInit {
       duration: 1000
     })
 
-    //loading start
+    //loading end
     this.loading.hideLoading();
   }
 
