@@ -6,6 +6,7 @@ import { SendMailService } from './sendmail.service';
 import { SendMailInfo, SoundInfo } from '../../shared/dto'
 import { ContextService } from 'src/app/shared/inter-screen/context.service';
 import { PAGE_BGMS } from 'src/app/shared/const';
+import { LoadingDisplayService } from 'src/app/loading/display/loading-display.service';
 
 @Component({
   selector: 'app-contactme',
@@ -33,9 +34,13 @@ export class ContactMeComponent implements OnInit {
 
   constructor(private modal: BsModalService,
               private service: SendMailService,
-              private screenCtx: ContextService) { }
+              private screenCtx: ContextService,
+              private loading: LoadingDisplayService) { }
 
   ngOnInit(): void {
+    //loading end
+    this.loading.hideLoading();
+
     // set bgm information
     this.page_sound = this.screenCtx.getSound();
 
@@ -44,6 +49,9 @@ export class ContactMeComponent implements OnInit {
       duration:1000,
       once:true
     });
+
+    //loading end
+    this.loading.hideLoading();
   }
 
   sendInquiry() {

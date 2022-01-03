@@ -5,6 +5,7 @@ import { ErrorInfo, SoundInfo } from 'src/app/shared/dto';
 import { ContextService } from 'src/app/shared/inter-screen/context.service';
 import { Sound, Validation } from 'src/app/shared/sharedFunction';
 import { InvalidOperationError } from 'src/app/shared/error/errorClass';
+import { LoadingDisplayService } from 'src/app/loading/display/loading-display.service';
 
 @Component({
   selector: 'app-character-list',
@@ -36,9 +37,13 @@ export class CharacterListComponent implements OnInit {
   // Characters Data
   character_data = CHARACTER_DATA;
 
-  constructor(private screenCtx: ContextService) { }
+  constructor(private screenCtx: ContextService,
+    private loading: LoadingDisplayService) { }
 
   async ngOnInit(): Promise<void> {
+    //loading start
+    this.loading.showLoading();
+
     // set bgm information
     this.page_sound = this.screenCtx.getSound();
 
@@ -47,6 +52,9 @@ export class CharacterListComponent implements OnInit {
 
     this.isCurtainOpen = false;
     this.setCurrentCharacter(0);
+
+    //loading end
+    this.loading.hideLoading();
   }
 
   setCurrentCharacter(chara_id : number) {

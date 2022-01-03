@@ -7,6 +7,7 @@ import anime from 'animejs/lib/anime.es.js';
 import { SoundInfo } from 'src/app/shared/dto';
 import { ContextService } from 'src/app/shared/inter-screen/context.service';
 import { Sound } from 'src/app/shared/sharedFunction';
+import { LoadingDisplayService } from 'src/app/loading/display/loading-display.service';
 
 @Component({
   selector: 'app-aboutme',
@@ -45,9 +46,13 @@ export class AboutMeComponent implements OnInit, OnDestroy {
 
 
   constructor(private modal: BsModalService,
-              private screenCtx: ContextService) {}
+              private screenCtx: ContextService,
+              private loading: LoadingDisplayService) {}
 
   async ngOnInit(): Promise<void> {
+    //loading start
+    this.loading.showLoading();
+
     // set bgm information
     this.page_sound = this.screenCtx.getSound();
 
@@ -79,6 +84,9 @@ export class AboutMeComponent implements OnInit, OnDestroy {
 
     // Initiate display items of status
     this.setPortraitAttr();
+
+    //loading end
+    this.loading.hideLoading();
   }
 
   // define horror effect on scrolling
