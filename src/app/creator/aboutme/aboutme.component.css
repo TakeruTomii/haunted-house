@@ -97,7 +97,8 @@
 
 /* Introduction */
 #status_area {
-  background-image: url('../../../assets/img/tatami01.jpg');
+  background: url('../../../assets/img/tatami01-p.jpg') repeat;
+  background-size: 100px 100px;
   padding-bottom: 3em;
 }
 
@@ -240,7 +241,8 @@
 #skills_area {
   position: relative;
   text-align: center;
-  background: url('../../../assets/img/tatami01.jpg');
+  background: url('../../../assets/img/tatami01-p.jpg') repeat;
+  background-size: 100px 100px;
   padding-top: 3em;
   padding-bottom: 3em;
 }
@@ -548,7 +550,8 @@ slide table tr td:nth-of-type(2) {
   display: flex;
   align-items: center;
   flex-direction: column;
-  background: url('../../../assets/img/tatami01.jpg');
+  background: url('../../../assets/img/tatami01-p.jpg') repeat;
+  background-size: 100px 100px;
   min-height: 100vh;
   position: relative;
   padding-top: 3em;
