@@ -49,6 +49,10 @@ export class SerifComponent implements OnInit{
               private screenCtx:ContextService) {}
 
   async ngOnInit(): Promise<void> {
+    // protect serif area from click while loading
+    const serif_area = document.getElementById('serif-area');
+    serif_area.classList.add('disable-click');
+
     // set bgm information
     this.page_sound = this.screenCtx.getSound();
     this.open_source = await this.soundFunc.createSound('se_open_serif.mp3', 1, false, '../../../assets/sound/');
@@ -56,6 +60,9 @@ export class SerifComponent implements OnInit{
     this.next_source = await this.soundFunc.createSound('se_next_serif.mp3', 1, false, '../../../assets/sound/');
 
     this.initModal();
+
+    // remove protection
+    serif_area.classList.remove('disable-click');
   }
 
   // Initiate serifs when opening modal
@@ -96,10 +103,14 @@ export class SerifComponent implements OnInit{
 
     } else {
 
+      // protect serif area from click while loading
+      const serif_area = document.getElementById('serif-area');
+      serif_area.classList.add('disable-click');
 
-      this.hideSerifTriangle();
       let next_data = this.serifs.popSerif();
       this.current_data = next_data;
+      this.hideSerifTriangle();
+
       if (next_data == null) {
         // Case : the end of serifs
         //play sound close serif
@@ -107,6 +118,10 @@ export class SerifComponent implements OnInit{
           this.close_source.start();
           this.close_source = await this.soundFunc.createSound('se_close_serif.mp3', 1, false, '../../../assets/sound/');
         }
+
+        // remove protection
+        serif_area.classList.remove('disable-click');
+
         // close modal
         this.close.emit();
         this.bsModalRef.hide();
@@ -118,6 +133,9 @@ export class SerifComponent implements OnInit{
       } else if (next_data['next'].length >= 2) {
         // Case : Selections
         this.showSelection(next_data['next']);
+
+        // remove protection
+        serif_area.classList.remove('disable-click');
       } else {
         // Case : Proceed
         //play sound next serif
@@ -129,6 +147,10 @@ export class SerifComponent implements OnInit{
         // Display new serif
         this.isTalking = true;
         this.setDisplayInfos(next_data);
+
+        // remove protection
+        serif_area.classList.remove('disable-click');
+
         // Case : TransitonTransition
         // Cache in buffer the URL to transit
         if(next_data['transition']) {

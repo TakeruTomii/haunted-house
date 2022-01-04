@@ -76,6 +76,9 @@
   }
 }
 
+.disable-click {
+  pointer-events: none;
+}
 
 /* selection */
 .choice {
