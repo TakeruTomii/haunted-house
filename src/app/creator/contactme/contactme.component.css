@@ -109,7 +109,7 @@ input.ng-dirty.ng-invalid, textarea.ng-dirty.ng-invalid {
 
 #send:enabled {
   background:url('../../../assets/img/umemon.png') repeat;
-  background-size: 300px 300px;
+  background-size: 50% auto;
   color:white;
 }
 

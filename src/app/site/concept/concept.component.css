@@ -49,8 +49,8 @@ details summary:focus {
 }
 
 .accordion-title, .accordion-content {
-  background: url('../../../assets/img/asanoha.png') repeat;
-  background-size: 600px 600px;
+  background: url('../../../assets/img/sakurawari.png') repeat;
+  background-size: 500px auto;
 }
 
 .accordion-title {
