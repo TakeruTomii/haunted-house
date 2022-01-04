@@ -26,13 +26,13 @@
 #ittan-momen {
   width: auto;
   height: 45vh;
-  transform: translate(22vh, 8vh);
+  transform: translate(-5vh, 5vh);
 }
 
 @media screen and (orientation: portrait)  {
   #ittan-momen {
-    width: 30vw;
+    width: 50vw;
     height: auto;
-    transform: translate(12vw, 20vw);
+    transform: translate(-5vw, 10vw);
   }
 }
