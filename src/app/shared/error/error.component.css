@@ -7,17 +7,20 @@
 }
 
 #title_gameover {
+  padding-top:5%;
   opacity: 0;
   height: 30%;
   text-align: center;
 }
 
 #title_gameover img {
-  width: auto;
-  height: 100%;
+  width: 90%;
+  max-width: 50em;
+  height: auto;
 }
 
 #exp {
+  padding-top:5%;
   opacity: 0;
   height: 20%;
   color: whitesmoke;
