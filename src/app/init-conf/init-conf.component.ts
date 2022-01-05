@@ -18,7 +18,7 @@ export class InitConfComponent implements OnInit, AfterViewInit{
   langs = INIT_LANGS;
 
   // Sound setting
-  sound_selected='on';
+  sound_selected='off';
   sounds = INIT_SOUNDS;
   soundFunc = new Sound();
 
