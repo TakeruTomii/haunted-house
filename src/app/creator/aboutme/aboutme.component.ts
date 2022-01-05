@@ -7,7 +7,7 @@ import anime from 'animejs/lib/anime.es.js';
 import { SoundInfo } from 'src/app/shared/dto';
 import { ContextService } from 'src/app/shared/inter-screen/context.service';
 import { Sound } from 'src/app/shared/sharedFunction';
-import { LoadingDisplayService } from 'src/app/loading/display/loading-display.service';
+import * as _ from 'lodash';
 
 @Component({
   selector: 'app-aboutme',
@@ -44,6 +44,8 @@ export class AboutMeComponent implements OnInit, OnDestroy {
   slides = SKILL_SLIDES;
   stop_sliding = 0; // prevent sliding of carousel
 
+  horror_effect = null;
+
 
   constructor(private modal: BsModalService,
               private screenCtx: ContextService) {}
@@ -64,8 +66,8 @@ export class AboutMeComponent implements OnInit, OnDestroy {
 
     // horror effects
     // scroll movement
-
-    document.addEventListener('scroll', this.horrorEffect);
+    this.horror_effect = _.throttle(this.horrorEffect, 300)
+    document.addEventListener('scroll', this.horror_effect);
 
     //scroll(makimono) associate movement
     //open dimension
@@ -87,7 +89,7 @@ export class AboutMeComponent implements OnInit, OnDestroy {
   // define horror effect on scrolling
   horrorEffect = (event: any): void =>  {
     const window_half_top = window.innerHeight / 2;
-    const eye_height = window.innerHeight * 0.5;
+    const eye_height = window.innerHeight;
     const mouths_height = window.innerHeight;
 
     const horror_eye = document.getElementById('horror_eye');
@@ -145,7 +147,7 @@ export class AboutMeComponent implements OnInit, OnDestroy {
 
   // remove eventlistener of scroll
   ngOnDestroy() {
-    document.removeEventListener('scroll', this.horrorEffect);
+    document.removeEventListener('scroll', this.horror_effect);
   }
 
 
