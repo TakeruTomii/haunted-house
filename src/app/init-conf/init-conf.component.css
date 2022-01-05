@@ -1,4 +1,48 @@
+.background {
+  position: relative;
+}
+
+#setting_wrappar {
+  position: absolute;
+  top:50%;
+  left:50%;
+  transform: translate(-50%, -50%);
+  border: white 3px solid;
+  color: white;
+  padding: 2em;
+  animation:show 1s forwards;
+}
+
+@keyframes show {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+hr {
+  background-color: white;
+  margin: 2em 1em;
+}
+
+.option {
+  color: white;
+  margin-bottom: 0;
+}
 
 .item {
-  margin-right: 1em;
+  margin:0 1em 0 2em;
+  font-size: large;
+}
+
+#button_area {
+  background: linear-gradient(45deg, gray, whitesmoke);
+  border-radius: 10px;
+  text-align: center;
+}
+
+#button_area input {
+  width: 100%
 }

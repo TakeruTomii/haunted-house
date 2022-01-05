@@ -2,7 +2,6 @@ import { AfterViewInit, Component, OnInit, TemplateRef, ViewChild } from '@angul
 import { Router } from '@angular/router';
 import { SoundInfo, ErrorInfo } from '../shared/dto';
 import { INIT_LANGS, INIT_SOUNDS, PAGE_BGMS, VALUE_CHEATED } from '../shared/const';
-import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
 import { Sound, Validation } from '../../app/shared/sharedFunction';
 import { ContextService } from '../shared/inter-screen/context.service';
 import { InvalidOperationError } from '../shared/error/errorClass';
@@ -21,14 +20,12 @@ export class InitConfComponent implements OnInit, AfterViewInit{
   // Sound setting
   sound_selected='on';
   sounds = INIT_SOUNDS;
-  modalRef: BsModalRef;
   soundFunc = new Sound();
 
   // Validation
   validFunc = new Validation();
 
   constructor(private router: Router,
-              private modalService: BsModalService,
               private screenCtx: ContextService,
               private loading: LoadingDisplayService) { }
   @ViewChild('init_modal') public init_modal: TemplateRef<any>;
@@ -37,12 +34,8 @@ export class InitConfComponent implements OnInit, AfterViewInit{
 
   ngAfterViewInit(){
     this.loading.hideLoading();
-    this.openModal(this.init_modal);
   }
 
-  openModal(template: TemplateRef<any>) {
-    this.modalRef = this.modalService.show(template, {'backdrop': 'static'});
-  }
 
   // Pass initial settings to Loading Screen
   async configure(){
