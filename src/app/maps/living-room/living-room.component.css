@@ -56,21 +56,6 @@
 }
 
 
-
-#jessica {
-  width: auto;
-  height: 30vh;
-  transform: translate(-40vh, 15vh);
-}
-
-@media screen and (orientation: portrait)  {
-  #jessica {
-    width: 20vw;
-    height: auto;
-    transform: translate(-30vw, 35vw);
-  }
-}
-
 /* Room Move Vector */
 .move-up {
   top: 50%;
