@@ -1,13 +1,13 @@
 /* background */
 #bg-living-room {
-  background: url('../../../assets/img/living-room_close_landscape.png') no-repeat center;
+  background: url('../../../assets/img/living-room_open_landscape.png') no-repeat center;
   background-size: auto 100vh;
   background-color: black;
 }
 
 @media screen and (orientation: portrait)  {
   #bg-living-room {
-    background: url('../../../assets/img/livinng-room_closed_portrait.png') no-repeat center;
+    background: url('../../../assets/img/livinng-room_open_portrait.png') no-repeat center;
     background-color: black;
     background-size: 100vw auto;
   }
@@ -68,5 +68,18 @@
     width: 20vw;
     height: auto;
     transform: translate(-30vw, 35vw);
+  }
+}
+
+/* Room Move Vector */
+.move-up {
+  top: 50%;
+  left: 50%;
+  transform: translate(-20vh, 5vh);
+}
+
+@media screen and (orientation: portrait)  {
+  .move-up {
+    transform: translate(-18vw, 5vw);
   }
 }
