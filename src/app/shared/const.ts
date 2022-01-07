@@ -309,9 +309,9 @@ export const CHARACTER_DATA = [
   },
   {
     'id': 2,
-    'name': 'Jessica',
-    'main_image_file': 'Jessica_neutral',
-    'select_image_file': IMG_PATH_CHARACTER_LIST + 'Jessica_neutral' + EXT_CHARACTER,
+    'name': 'Jessie-Khan',
+    'main_image_file': 'Jessie-Khan_map',
+    'select_image_file': IMG_PATH_CHARACTER_LIST + 'Jessie-Khan_neutral' + EXT_CHARACTER,
     'explanation': 'She is my wife.\nShe is sexy and I know it.'
   },
   {

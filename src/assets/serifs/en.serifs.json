@@ -108,10 +108,10 @@
   },
   {
       "id": 7,
-      "serif": "Aloha! I'm Jessica, the wife of the developer and I've made images here.",
-      "room": "LivingRoom",
-      "clicked": "Jessica",
-      "speacker": "Jessica",
+      "serif": "Aloha! I'm Jessie-Khan, the wife of the developer and I've made images here.",
+      "room": "Casino",
+      "clicked": "Jessie-Khan",
+      "speacker": "Jessie-Khan",
       "isStart": true,
       "next": [
           {
@@ -127,9 +127,9 @@
   {
       "id": 8,
       "serif": "Ah? Bathroom? God knows because we don't need to pee-pee.",
-      "room": "LivingRoom",
-      "clicked": "Jessica",
-      "speacker": "Jessica",
+      "room": "Casino",
+      "clicked": "Jessie-Khan",
+      "speacker": "Jessie-Khan",
       "isStart": false,
       "next": [
           {
@@ -145,9 +145,9 @@
   {
       "id": 9,
       "serif": "It's better to ask google for the nearest one. Hurry up!",
-      "room": "LivingRoom",
-      "clicked": "Jessica",
-      "speacker": "Jessica",
+      "room": "Casino",
+      "clicked": "Jessie-Khan",
+      "speacker": "Jessie-Khan",
       "isStart": false,
       "next": [],
       "transition": "https://www.google.com",
