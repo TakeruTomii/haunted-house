@@ -298,35 +298,43 @@ export const CHARACTER_DATA = [
     'name': 'Akabeko',
     'main_image_file': 'Akabeko_map',
     'select_image_file': IMG_PATH_CHARACTER_LIST + 'Akabeko_neutral' + EXT_CHARACTER,
-    'explanation': 'Akabeko was born from a old toy.\nCutest yokai in the world.'
+    'explanation': 'Akabeko was born from a old toy.\n\n'+
+                    'The lunch box on his back was pretty delicious. ' +
+                    'Once a renowned swordman praised its taste countlessly.'
   },
   {
     'id': 1,
     'name': 'Tommy',
     'main_image_file': 'Tommy_map',
     'select_image_file': IMG_PATH_CHARACTER_LIST + 'Tommy_neutral' + EXT_CHARACTER,
-    'explanation': 'Tommy looks old man.\nHe acts like your old friend but you cannot notice.'
+    'explanation': 'The developer of this site.\n\n' +
+                    'His appearance is critisizing the dilemma of modern people ' +
+                    'that suffers between past and future and cannnot live in this moment.'
   },
   {
     'id': 2,
     'name': 'Jessie-Khan',
     'main_image_file': 'Jessie-Khan_map',
     'select_image_file': IMG_PATH_CHARACTER_LIST + 'Jessie-Khan_neutral' + EXT_CHARACTER,
-    'explanation': 'She is my wife.\nShe is sexy and I know it.'
+    'explanation': 'The illustrator of this site, and the wife of Tommy.\n\n' +
+                    'She has an extremery bad case of military neck and became such long neck.'
   },
   {
     'id': 3,
     'name': 'Ittan momen',
     'main_image_file': 'Ittan-momen_map',
     'select_image_file': IMG_PATH_CHARACTER_LIST + 'Ittan-momen_neutral' + EXT_CHARACTER,
-    'explanation': 'He come from Kagoshima.\nHe can choke you to death if he was angry.'
+    'explanation': 'A long band monster in southern part of Japan.\n\n' +
+                    'Usually they are made of cotton but somehow he is made of wool.' +
+                    'The maker abandoned him in half way so he always greeving his imcompleteness extremely.'
   },
   {
     'id': 4,
     'name': 'Eye-mirror',
     'main_image_file': 'Eye-mirror_neutral',
     'select_image_file': IMG_PATH_CHARACTER_LIST + 'Eye-mirror_neutral' + EXT_CHARACTER,
-    'explanation': 'Nothing is known about it.\nIt is said it might be the agent to another entertainment.'
+    'explanation': 'Nothing is known about it.\n\n ' +
+                    'But it is said it might be the key to another entertainment.'
   }
 ]
 
