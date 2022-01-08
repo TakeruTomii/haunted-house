@@ -333,10 +333,10 @@ export const CHARACTER_DATA = [
     'main_image_file': 'Ittan-momen_map',
     'select_image_file': IMG_PATH_CHARACTER_LIST + 'Ittan-momen_neutral' + EXT_CHARACTER,
     'explanation': 'A long scarf monster which is made of wool.\n\n' +
-                    'He was born to be an gift once, but the maker abandoned him in half way. '+
+                    'He was born to be a gift once, but the maker abandoned him in half way. '+
                     'Therefore he is always greeving his imcompleteness extremely.\n\n' +
                     'For his complex he became a perfectionist ' +
-                    'but he claims he\' just keeping his minimum quality.'
+                    'but he claims he just keeps his minimum quality.'
   },
   {
     'id': 4,
