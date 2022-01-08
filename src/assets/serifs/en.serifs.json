@@ -59,7 +59,7 @@
   },
   {
       "id": 4,
-      "serif": "Ho! A human entered here? whacha doing?",
+      "serif": "Ho! A human entered here? whacha doing? Here is workshop of tommy's work",
       "room": "WorkShop",
       "clicked": "Ittan-momen",
       "speacker": "Ittan-momen",
@@ -77,7 +77,7 @@
   },
   {
       "id": 5,
-      "serif": "Here's the world-greatest workshop made by the gifted developer Tommy the great!!",
+      "serif": "Any reccomendations here? Hmm... Did you go to \"about me\" page? You can watch his works and get hypnotized!",
       "room": "WorkShop",
       "clicked": "Ittan-momen",
       "speacker": "Ittan-momen",
@@ -95,13 +95,13 @@
   },
   {
       "id": 6,
-      "serif": "You can watch his works and get hypnotized! But remember you don't touch anything here.\nOtherwise... Hee! Hee!! Heeeeeeeeeeee!!!",
+      "serif": "Here's the way to aboutme. Have fun!",
       "room": "WorkShop",
       "clicked": "Ittan-momen",
       "speacker": "Ittan-momen",
       "isStart": false,
       "next": [],
-      "transition": "",
+      "transition": "/aboutme",
       "emotion": "neutral",
       "animation": "none",
       "extention": "png"
@@ -126,7 +126,7 @@
   },
   {
       "id": 8,
-      "serif": "Ah? Bathroom? God knows because we don't need to pee-pee.",
+      "serif": "Ah? Bathroom? I don't know... don't you have your phone?",
       "room": "Casino",
       "clicked": "Jessie-Khan",
       "speacker": "Jessie-Khan",
@@ -170,7 +170,7 @@
   },
   {
       "id": 11,
-      "serif": "Hahha! I like energitic kiddo! Have a good time!\n I reccomend to go work shop. There's many things to see!",
+      "serif": "Hahha! Anywhere you want. But as range as common sense. You might die and go gameover if you do something irregular too much",
       "room": "LivingRoom",
       "clicked": "Tommy",
       "speacker": "Tommy",
@@ -310,7 +310,7 @@
   },
   {
     "id": 20,
-    "serif": "Look what you've done... If only you tried to violate the taboo.... I was an idiot to believe you!!!!",
+    "serif": "Look what you've done... You tried the taboo....",
     "room": "Error",
     "clicked": "Akabeko",
     "speacker": "Akabeko",
