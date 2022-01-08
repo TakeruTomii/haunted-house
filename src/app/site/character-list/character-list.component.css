@@ -129,6 +129,13 @@
   color: white;
   border-radius: 3px;
   white-space: pre-line;
+  overflow-y: auto;
+}
+
+@media screen and (orientation: portrait) {
+  .inner-exp {
+    max-height: 7em;
+  }
 }
 
 .curtain {

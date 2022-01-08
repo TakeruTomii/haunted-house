@@ -300,7 +300,9 @@ export const CHARACTER_DATA = [
     'select_image_file': IMG_PATH_CHARACTER_LIST + 'Akabeko_neutral' + EXT_CHARACTER,
     'explanation': 'Akabeko was born from a old toy.\n\n'+
                     'The lunch box on his back was pretty delicious. ' +
-                    'Once a renowned swordman praised its taste countlessly.'
+                    'Once a renowned swordman praised its taste countlessly.\n\n' +
+                    'It is said he has a divine power to give you wings to fly to the paradise. ' +
+                    'Maybe since his name means "Red Bull" in direct transration.'
   },
   {
     'id': 1,
@@ -308,8 +310,10 @@ export const CHARACTER_DATA = [
     'main_image_file': 'Tommy_map',
     'select_image_file': IMG_PATH_CHARACTER_LIST + 'Tommy_neutral' + EXT_CHARACTER,
     'explanation': 'The developer of this site.\n\n' +
-                    'His appearance is critisizing the dilemma of modern people ' +
-                    'that suffers between past and future and cannnot live in this moment.'
+                    'The right of the headphone recalls the memory in his past, ' +
+                    'and the left of it rushes to unpredictable future.\n\n' +
+                    'He always suffers the dilemma just like modern people ' +
+                    'that cannot live in this moment, being trapped between past and future.'
   },
   {
     'id': 2,
@@ -317,16 +321,22 @@ export const CHARACTER_DATA = [
     'main_image_file': 'Jessie-Khan_map',
     'select_image_file': IMG_PATH_CHARACTER_LIST + 'Jessie-Khan_neutral' + EXT_CHARACTER,
     'explanation': 'The illustrator of this site, and the wife of Tommy.\n\n' +
-                    'She has an extremery bad case of military neck and became such long neck.'
+                    'She had an extremely bad case of military neck, ' +
+                    'because of using her smartphone too much. ' +
+                    'That\'s why she becomes such long neck.\n\n' +
+                    'Besides her sholders are terribly stiff and harder than iron. ' +
+                    'You can craft a Mithril armor if you mine her sholders.'
   },
   {
     'id': 3,
     'name': 'Ittan momen',
     'main_image_file': 'Ittan-momen_map',
     'select_image_file': IMG_PATH_CHARACTER_LIST + 'Ittan-momen_neutral' + EXT_CHARACTER,
-    'explanation': 'A long band monster in southern part of Japan.\n\n' +
-                    'Usually they are made of cotton but somehow he is made of wool.' +
-                    'The maker abandoned him in half way so he always greeving his imcompleteness extremely.'
+    'explanation': 'A long scarf monster which is made of wool.\n\n' +
+                    'He was born to be an gift once, but the maker abandoned him in half way. '+
+                    'Therefore he is always greeving his imcompleteness extremely.\n\n' +
+                    'For his complex he became a perfectionist ' +
+                    'but he claims he\' just keeping his minimum quality.'
   },
   {
     'id': 4,
