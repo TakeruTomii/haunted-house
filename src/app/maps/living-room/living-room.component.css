@@ -35,7 +35,7 @@
   #eye-mirror {
     width: 18vw;
     height: auto;
-    transform: translate(3vw, 0vw);
+    transform: translate(3vw, 5vw);
     top: 52%;
   }
 }
@@ -60,7 +60,7 @@
 .move-up {
   top: 50%;
   left: 50%;
-  transform: translate(-20vh, 5vh);
+  transform: translate(-20vh, 10vh);
 }
 
 @media screen and (orientation: portrait)  {
