@@ -96,7 +96,7 @@ details[open] .accordion-title::after {
 }
 
 .accordion-title p {
-  width:100%;
+  width: 100%;
   margin: 0.5em 1em;
   padding: 0.5em 1em;
   font-size: large;
@@ -148,7 +148,6 @@ p iframe {
 }
 
 /* images */
-
 #skill_board {
   width: 100%;
 }
