@@ -150,7 +150,6 @@ export class AboutMeComponent implements OnInit, OnDestroy {
           targets: horror_hand,
           delay: 150,
           duration: 1000,
-          rotate: '1turn',
           scale: 3
         })
         .add({

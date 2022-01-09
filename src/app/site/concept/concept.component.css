@@ -155,7 +155,7 @@ p iframe {
 #skill_board div{
   display: inline-block;
   height: 8em;
-  padding: 1em;
+  padding-right: 1em;
 }
 
 #skill_board div img {
