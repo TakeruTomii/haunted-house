@@ -171,6 +171,9 @@ export class AboutMeComponent implements OnInit, OnDestroy {
           translateY: 0
         });
 
+        // vibrate smartphone
+        window.navigator.vibrate(1000);
+
       }
 
       //play sound
