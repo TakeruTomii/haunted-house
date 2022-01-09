@@ -112,6 +112,14 @@
   object-fit: contain;
 }
 
+@media screen and (max-width: 576px) {
+  .main-image img {
+    width: auto;
+    height: 50vh;
+    object-fit: contain;
+  }
+}
+
 .character-exp {
   height: auto;
   min-height: 5em;
