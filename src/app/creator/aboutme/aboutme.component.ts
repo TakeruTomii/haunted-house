@@ -119,8 +119,8 @@ export class AboutMeComponent implements OnInit, OnDestroy {
       //play sound
       if(this.page_sound.is_sound_on && !this.is_horror_eye_played) {
         this.horror_eye_source.start();
-        this.is_horror_eye_played = true;
       }
+      this.is_horror_eye_played = true;
 
     } else {
       horror_eye.style.height = "0px";
@@ -140,7 +140,6 @@ export class AboutMeComponent implements OnInit, OnDestroy {
       });
 
       //hand movement
-      console.log("this.is_horror_mouths_played = " + this.is_horror_mouths_played)
       if(!this.is_horror_mouths_played) {
         const hand_appear = anime.timeline({
           easing: 'linear'
