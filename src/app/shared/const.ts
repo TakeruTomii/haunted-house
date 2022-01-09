@@ -130,8 +130,8 @@ export const SKILL_SLIDES = [
     'title': 'Summary',
     'rows': [
       {
-        'item': 'Coding',
-        'rate': 4
+        'item': 'Development',
+        'rate': 5
       },
       {
         'item': 'Cooking',
@@ -161,22 +161,22 @@ export const SKILL_SLIDES = [
     'rows': [
       {
         'item': 'HTML',
-        'rate': 4
+        'rate': 5
       },
       {
         'item': 'CSS',
-        'rate': 4
+        'rate': 5
       },
       {
         'item': 'JavaScript',
-        'rate': 4
+        'rate': 5
       },
       {
         'item': 'C#',
-        'rate': 4
+        'rate': 5
       },      {
         'item': 'Python',
-        'rate': 3
+        'rate': 5
       },
       {
         'item': 'Java',
@@ -184,7 +184,7 @@ export const SKILL_SLIDES = [
       },
       {
         'item': 'TypeScript',
-        'rate': 2
+        'rate': 3
       }
     ]
   },
@@ -206,8 +206,13 @@ export const SKILL_SLIDES = [
       },
       {
         'item': 'Node.js',
-        'rate': 2
-      },      {
+        'rate': 3
+      },
+      {
+        'item': 'Flask',
+        'rate': 3
+      },
+      {
         'item': 'Spring Framework',
         'rate': 2
       }
@@ -223,11 +228,11 @@ export const SKILL_SLIDES = [
       },
       {
         'item': 'Linux(CentOS)',
-        'rate': 3
+        'rate': 4
       },
       {
         'item': 'Mac',
-        'rate': 3
+        'rate': 2
       }
     ]
   },
