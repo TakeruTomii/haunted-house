@@ -8,6 +8,7 @@ import { SoundInfo } from 'src/app/shared/dto';
 import { ContextService } from 'src/app/shared/inter-screen/context.service';
 import { Sound } from 'src/app/shared/sharedFunction';
 import * as _ from 'lodash';
+import { add } from 'lodash';
 
 @Component({
   selector: 'app-aboutme',
@@ -44,6 +45,7 @@ export class AboutMeComponent implements OnInit, OnDestroy {
   slides = SKILL_SLIDES;
   stop_sliding = 0; // prevent sliding of carousel
 
+  //horror effect
   horror_effect = null;
 
 
@@ -98,6 +100,9 @@ export class AboutMeComponent implements OnInit, OnDestroy {
     const horror_mouths = document.getElementById('horror_mouths');
     const horror_mouths_top = horror_mouths.getBoundingClientRect().top;
 
+    const horror_hand = document.getElementById('horror-hand');
+    const horror_mouth = document.getElementById('horror-mouth');
+
     // eye movement
     if(horror_eye_top <= window_half_top){
       const eye_appear = anime.timeline({
@@ -134,11 +139,48 @@ export class AboutMeComponent implements OnInit, OnDestroy {
         height: mouths_height,
       });
 
+      //hand movement
+      console.log("this.is_horror_mouths_played = " + this.is_horror_mouths_played)
+      if(!this.is_horror_mouths_played) {
+        const hand_appear = anime.timeline({
+          easing: 'linear'
+        });
+
+        hand_appear
+        .add({
+          targets: horror_hand,
+          delay: 150,
+          duration: 1000,
+          rotate: '1turn',
+          scale: 3
+        })
+        .add({
+          targets: horror_hand,
+          delay: 500,
+          duration: 200,
+          opacity: 0,
+          translateY: -50
+        })
+        .add({
+          targets: horror_mouth,
+          duration: 200,
+          opacity: 1
+        })
+        .add({
+          targets: horror_hand,
+          duration: 100,
+          scale: 1,
+          translateY: 0
+        });
+
+      }
+
       //play sound
       if(this.page_sound.is_sound_on && !this.is_horror_mouths_played) {
         this.horror_mouths_source.start();
-        this.is_horror_mouths_played = true;
       }
+      this.is_horror_mouths_played = true;
+
 
     } else {
       horror_mouths.style.height = "0px";
