@@ -33,6 +33,7 @@
         <div class="accordion-content">
           <div class="paper">
             <p>
+              Welcome! It's the developer Tommy writing here!
               This website is a kind of portfolio to introduce myself.
               I made this site to study new technologies
               and appeal my ability of making fabulous websites to my potential customers.
@@ -114,80 +115,82 @@
               I hope you can enjoy my work twice ;)
             </p>
             <dl>
-              <dt>Serifs @ /map etc...</dt>
+              <dt>Serifs @/home etc...</dt>
               <dd>
-                This is main entertainment of this site. Basically Yokais in map area can speak.
+                This is main entertainment of this site.
+                My characters can speak by the modal.
                 The serif function has three features.
                 <ul>
                   <li>Selection</li>
                   <li>Transition</li>
-                  <li>Reading Assistance (Auto / Skip / Cancel)　★★★underway</li>
+                  <li>Typewriting display</li>
                 </ul>
                 By these function, you can enjoy wandering this website like novel game!
-                (Actually, I implemented a function of changing facial expressions,
-                but gave up for numbers of illustrations)
               </dd>
-              <dt>Map Moving @ /map</dt>
+              <dt>Map Moving @/home</dt>
               <dd>
                 You can walk around each room by clicking or tapping Vectors on map area,
-                and encounter another Yokais!
-                Some Yokais may take you to special pages,
+                and encounter another characters!
+                Some characters may take you to special pages,
                 the others might tell you the secret of this haunted house...
               </dd>
-              <dt>the Chamber of Secret @ /map</dt>
-              <dd>
-                Actually, there is a secret room on this house.
-                You may find the entrance for there, or Yokais to give you a hint.
-                Huh? Couldn't you find anything anywhere? No choice, just you and me.
-                Tap around here, until something shows reactions (hint image)
-              </dd>
-              <dt>Card Changes @ /aboutme</dt>
+              <dt>Card Changes @/aboutme</dt>
               <dd>
                 Did you notice that the pointer changes on the element of my card?
                 This means what you see; you can click it.
                 When you can click it, you would see the unknown aspects of the creator.
-                To tell the truth, the card would change when you reload in About me page.
+                For your information, the card would change when you reload in About Me page.
               </dd>
-              <dt>Skill Board Shuriken @ /aboutme</dt>
+              <dt>Skill Board Shuriken @/aboutme</dt>
               <dd>
-                Excuse me but PC only.
                 In fact, the shuriken which shows my strengths of each item,
                 would change from Ninja Star into Kunai.
-                If you resize the window of browser, they would transform to another form.
+                If you can resize the window of browser, they would transform to another form.
+                <div id="skill_board">
+                  <div>
+                    <img src="../../../assets/img/skill_board_landscape.png" alt="shuriken">
+                  </div>
+                  <div>
+                    <img src="../../../assets/img/skill_board_portrait.png" alt="kunai">
+                  </div>
+                </div>
               </dd>
-              <dt>Whose eye? Whose mouths?  @ /aboutme</dt>
+              <dt>Whose eye? Whose mouths?  @/aboutme</dt>
               <dd>
-                I'm sorry that you might scared when you scroll about me.
+                I'm sorry that you might scared when you scroll at the About Me page.
                 You might wonder that who were staring at you or smiling at you?
-                They are parts of the creater and the illustrator.
-                The best clean smile is illustrator's and the others are mine.
+                Don't worry, they are just my eye and my wife's mouth.
+                There are no cursed things in my site, I wish.
               </dd>
-              <dt>Handscroll of histry @ /aboutme</dt>
+              <dt>Handscroll of my history @/aboutme</dt>
               <dd>
                 As css efforts, this is most arduous work on this website...
                 Based on a accordion, I expressed the handscroll part by assembling pillars.
-                I've never know that golden metalic luster can illustrate
-                by gradation of yellowish colors until I made this.
-                When you open it, Akabeko would be waiting for you to pick up from the other dimension,
-                so let's talk to him.
+                The golden metalic luster can be expressed by gradation of yellowish colors, FYI.
               </dd>
-              <dt>Kabuki curtain @ /character-list</dt>
+              <dt>Kabuki curtain @/character-list</dt>
               <dd>
                 When you click or tap characters below the stage,
                 the character would dissapear like a ghost and next time appears on the stage,
                 with closing and opening curtain.
                 Actually I would feel a bit shy when I choose my character, lol.
               </dd>
-              <dt>Game Over @ /error</dt>
+              <dt>Game Over @/error</dt>
               <dd>
-                ★★★underway
                 It is common sense that some curious hacker would try to crack a site when they like it.
                 So I implemented a trap for the unauthorized operation like using developer tools.
                 When you try to do bad manners, you would go to hell and have to restart from the begining.
                 Manners maketh a man,
                 as <a href="https://en.wikipedia.org/wiki/Kingsman:_The_Secret_Service" target="blank">Galahad</a> says.
-                Although you dare try to go to hell, how about changing the language setting of URL?
+                Although you dare try to go to hell, <a href="/error">you can see the page directly from here.</a>
               </dd>
+              <!-- <dt>the Chamber of Secret @ /home</dt>
+              <dd>
+                Actually, there is a secret room on this house.
+                You may find the entrance for there, or Yokais to give you a hint.
+                Huh? Couldn't you find anything anywhere? No choice, just you and me.
+                Tap around here, until something shows reactions (hint image)
+              </dd> -->
             </dl>
           </div>
         </div>
@@ -232,25 +235,31 @@
               A Javascript animation library. Mainly I used it for complex animations.
               It was the first time I use, but I pretty like it since its basics are similar
               to normal css animation and easy to set up.
-              I might use it for my next work as well.
+            </dd>
+            <dt>AOS.js</dt>
+            <dd>
+              A Javascript animation library.
+              It can add appering effect easily.
+              I recommend it because it can modanize your site quite easily.
             </dd>
             <dt>RxJS</dt>
             <dd>
               A JavaScript library for reactive programing.
               Check it out <a href="https://rxjs.dev/guide/overview" target="blank">the official document</a>
               about reactive programing.
-              I used it to switch rooms in map.
-              Just I wanted to use it for trial.
+              I used it to switch rooms in map, showing loading screen and so on.
             </dd>
             <dt>Flask</dt>
             <dd>
-              An API framework of Python. I used it for sending mail from contact form to my Gmail.
-              It mediates as client between a user and Gmail API through OAuth2.0 Authorization Flow.
+              An API framework of Python.
+              I used it for sending mail from contact form.
+              Of course I implemented Authentication, throttling or like that as basic manners of API security.
             </dd>
-            <dt>Gmail API</dt>
+            <dt>Send Grid</dt>
             <dd>
-              An API Service which supplied from Google.
-              I thought it might apply for another automation at business or daily life.
+              An Mail Sending Service which supplied from Twilio.
+              You can send email without bothersome mail server setting through its Web API.
+              I request it via the above-mentioned Flask API.
             </dd>
           </div>
         </div>
@@ -270,9 +279,14 @@
           <div class="paper">
             <p>
               I expect Chrome or Firefox in latest version to browse my website.
-              Otherwise you might encounter unexpected experience...
+              For responsive design, I confirmed with android tablet and smartphone.
+              I'm sorry for Apple but Pixel was closer to my taste.
+            </p>
+            <p>
+              In the case you don't see in the recommended enviroments,
+              you might encounter unexpected experience...
               Internet Explorer is dead. Let her rest in peace.
-              I don't prepare polyfills for grave robbers!
+              I din't prepare polyfills for grave robbers\( ^o^ )/
             </p>
           </div>
         </div>
@@ -292,7 +306,7 @@
           <div class="paper">
             <p>
               There are too many people to thank for inspiring me to make this website creative,
-              so I write about three women as representatives this time.
+              so I write about three women as the representatives this time.
             </p>
             <p>
               First, I want thank first the illustrator, my wife.
@@ -322,10 +336,10 @@
               <a href="https://en.wikipedia.org/wiki/The_Addams_Family_(2019_film)" target="blank">The Addams Family</a> twice.
               And give me your autograph, please.
               My sister is an enthusiastic fan of you, one of your soul sisters.
-              <!-- <iframe src="https://www.youtube.com/embed/ECtJp58ELcE"
+              <iframe src="https://www.youtube.com/embed/ECtJp58ELcE"
               title="YouTube video player" frameborder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowfullscreen></iframe> -->
+              allowfullscreen></iframe>
             </p>
           </div>
         </div>

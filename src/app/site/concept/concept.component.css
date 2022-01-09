@@ -107,6 +107,10 @@ details[open] .accordion-title::after {
   padding: 1em;
 }
 
+.accordion-content p {
+  text-indent: 1em;
+}
+
 details[open] .accordion-content {
   animation: fadeIn 1s ease;
 }
@@ -141,4 +145,40 @@ p iframe {
   height: auto;
   aspect-ratio: 16 / 9;
   margin:1em;
+}
+
+/* images */
+
+#skill_board {
+  width: 100%;
+}
+
+#skill_board div{
+  display: inline-block;
+  height: 8em;
+  padding: 1em;
+}
+
+#skill_board div img {
+  height: 100%;
+}
+
+@media screen and (orientation: portrait) {
+  #skill_board div{
+    height: auto;
+  }
+  #skill_board div img {
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+/* check it out */
+dt {
+  margin-top: 1em;
+}
+
+dd {
+  margin-bottom: 2em;
+  text-indent: 1em;
 }
