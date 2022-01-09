@@ -10,6 +10,7 @@
   font-family: 'Monotype Corsiva', fantasy;
   color: black;
   width: max-content;
+  max-width: 95%;
   border-bottom: black 3px solid;
   padding: 0 1em 0 1em;
   margin-bottom: 0.5em;
@@ -620,25 +621,7 @@ details summary:focus {
   position: relative;
   height: 100vh;
   padding: 3em;
-  animation: inhaling 0.2s linear infinite;
-}
-
-@keyframes inhaling {
-  0% {
-    background: repeating-radial-gradient(circle , white 5px, black 10px, white 15px);
-  }
-  25% {
-    background: repeating-radial-gradient(circle , white 3px, black 8px, white 13px);
-  }
-  50% {
-    background: repeating-radial-gradient(circle , black 5px, white 10px, black 15px);
-  }
-  75% {
-    background: repeating-radial-gradient(circle , black 3px, white 8px, black 13px);
-  }
-  100% {
-    background: repeating-radial-gradient(circle , white 5px, black 10px, white 15px);
-  }
+  background-color: black;
 }
 
 #akabeko {
@@ -668,7 +651,7 @@ details summary:focus {
   padding: 1em;
   background-color: white;
   border-radius: 50%;
-  margin-left: 1em;
+  margin: 0 1em;
 }
 .bubble:before {
   content: '';
