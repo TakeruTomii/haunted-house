@@ -10,10 +10,15 @@
   font-family: 'Monotype Corsiva', fantasy;
   color: black;
   width: max-content;
-  max-width: 95%;
   border-bottom: black 3px solid;
-  padding: 0 1em 0 1em;
+  padding: 0 1em;
   margin-bottom: 0.5em;
+}
+
+@media screen and (max-width: 576px) {
+  .section-title {
+    padding: 0 0.5em;
+  }
 }
 
 .strongly {
