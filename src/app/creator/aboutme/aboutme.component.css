@@ -200,6 +200,7 @@
   width: 3em;
   height: 3em;
   border-radius: 50%;
+  border: gold 3px outset;
   z-index: 2;
   cursor: pointer;
 }
