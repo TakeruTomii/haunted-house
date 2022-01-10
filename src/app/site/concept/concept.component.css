@@ -148,27 +148,29 @@ p iframe {
 }
 
 /* images */
-#skill_board {
+.details_img {
   width: 100%;
+  text-indent: 0;
 }
 
-#skill_board div{
+.details_img div{
   display: inline-block;
   height: 8em;
   padding-right: 1em;
 }
 
-#skill_board div img {
+.details_img div img {
   height: 100%;
 }
 
 @media screen and (orientation: portrait) {
-  #skill_board div{
+  .details_img div{
     height: auto;
   }
-  #skill_board div img {
+  .details_img div img {
     max-width: 100%;
     height: auto;
+    margin: 1em 0;
   }
 }
 
