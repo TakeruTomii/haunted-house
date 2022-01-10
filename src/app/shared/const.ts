@@ -127,7 +127,7 @@ export const STATUS_PATTERNS = [
     'comment': 'Let\'s adjust like this. Then everyone gets happier!   ――――',
     'speacies': 'Warrior',
     'exp': 'This card contributes to create incredibly tough and sustainable systems ' +
-            'and inclease the life time of your campany by 10 years.'
+            'and increase the life time of your company by 10 years.'
   }
 ]
 
