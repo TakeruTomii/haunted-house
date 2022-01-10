@@ -235,6 +235,10 @@
   font-size: x-large;
 }
 
+#detail {
+  white-space: pre-line;
+}
+
 /* Skill Sets */
 #skills_area {
   position: relative;

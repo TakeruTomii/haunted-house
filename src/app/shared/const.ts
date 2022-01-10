@@ -81,45 +81,53 @@ export const STATUS_PATTERNS = [
     'attr': 'fire',
     'str_val' : '200',
     'str_unit' : '℃',
-    'comment': 'Does this placement truly lead users click it?  ――――',
-    'speacies': 'Zombie',
-    'exp': 'fire!! That\'s why he is called Mr. Fahrenheit.'
+    'comment': 'Does this placement truly lead users to click here?  ――――',
+    'speacies': 'Dinosaur',
+    'exp': 'His passion sets the hearts of development members ablaze ' +
+            'and the members around him gain 1000 attack points.\n' +
+            'That\'s why he is called Mr. Fahrenheit.'
   },
   // water
   {
     'attr': 'water',
     'str_val' : '40,000',
     'str_unit' : 'mL',
-    'comment': 'Like a stream, up to down. Scroll softly. Here it comes!!  ――――',
+    'comment': 'Take it easy. Everything\'s going on schedule.',
     'speacies': 'Fairy',
-    'exp': 'water!!'
+    'exp': 'While enough amount of sleeping time and iced coffee are on the field, ' +
+            'this card is unaffected by malicious software ' +
+            'and cannot be targeted for phishing attacks.'
   },
   // thunder
   {
     'attr': 'thunder',
-    'str_val' : '5,000',
+    'str_val' : '7,000',
     'str_unit' : 'kW',
-    'comment': 'Which Function? Ah, I\'ve already pushed it.  ――――',
+    'comment': 'Which function? Ah, I\'ve already pushed it.  ――――',
     'speacies': 'Spell Caster',
-    'exp': 'thunder!!'
+    'exp': 'This card save 20% man-hours of labor in total.\n' +
+            'He works pretty speedy as much as a racing car passing by like Lady Godiva.'
   },
   // wind
   {
     'attr': 'wind',
-    'str_val' : '700',
-    'str_unit' : 'km/h',
+    'str_val' : '530,000',
+    'str_unit' : 'm/s',
     'comment': 'I feel the wind of change blows...  ――――',
     'speacies': 'Winged Beast',
-    'exp': 'This card save 20% man-hours of labor in total.\n He works pretty speedy as a racing car like Lady Godiva and your project travels at the speed of light.'
+    'exp': 'When this card is warm-heartedly summoned; ' +
+            'You get the wind at your back.\n' +
+            'All cards on the field can attack twice in battle phase.'
   },
   // ground
   {
     'attr': 'ground',
-    'str_val' : '530,000',
+    'str_val' : '5',
     'str_unit' : 'Centuries',
     'comment': 'Let\'s adjust like this. Then everyone gets happier!   ――――',
-    'speacies': 'Dinosaur',
-    'exp': 'ground!!'
+    'speacies': 'Warrior',
+    'exp': 'This card contributes to create incredibly tough and sustainable systems ' +
+            'and inclease the life time of your campany by 10 years.'
   }
 ]
 
