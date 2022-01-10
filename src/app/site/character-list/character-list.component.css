@@ -140,7 +140,7 @@
   overflow-y: auto;
 }
 
-@media screen and (orientation: portrait) {
+@media screen and (max-width: 576px) {
   .inner-exp {
     max-height: 7em;
   }

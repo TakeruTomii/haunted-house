@@ -315,7 +315,7 @@ export const CHARACTER_DATA = [
                     'The lunch box on his back was pretty delicious. ' +
                     'Once a renowned swordman praised its taste countlessly.\n\n' +
                     'It is said he has a divine power to give you wings to fly to the paradise. ' +
-                    'Maybe since his name means "Red Bull" in direct transration.'
+                    'Maybe since his name means "Red Bull" in direct translation.'
   },
   {
     'id': 1,
