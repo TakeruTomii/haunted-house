@@ -350,7 +350,7 @@ export const CHARACTER_DATA = [
                     'Therefore he is always greeving his incompleteness extremely.\n\n' +
                     'For his complex he became a perfectionist ' +
                     'but he claims he just keeps his minimum quality.\n\n' +
-                    'Incidentally, Ittan momen is made of cotton generally.' +
+                    'Incidentally, Ittan momen is made of cotton generally. ' +
                     'He sometime gets teased by that and it exacerbates his complex.'
   },
   {
