@@ -349,7 +349,9 @@ export const CHARACTER_DATA = [
                     'He was born to be a gift once, but the maker abandoned him in half way. '+
                     'Therefore he is always greeving his incompleteness extremely.\n\n' +
                     'For his complex he became a perfectionist ' +
-                    'but he claims he just keeps his minimum quality.'
+                    'but he claims he just keeps his minimum quality.\n\n' +
+                    'Incidentally, Ittan momen is made of cotton generally.' +
+                    'He sometime gets teased by that and it exacerbates his complex.'
   },
   {
     'id': 4,
