@@ -93,7 +93,7 @@
     "Ittan-momen": [
       {
         "id": 1,
-        "serif": "Hey! Watch out!!\n Here's many works which Tommy developed. They're not chaep!!",
+        "serif": "Hey! Watch out!!\n Here's many works which Tommy developed. They're not cheap!!",
         "speacker": "Ittan Momen",
         "isStart": true,
         "next": [
@@ -145,7 +145,7 @@
       },
       {
         "id": 4,
-        "serif": "OK, then grab my tail! Prepare to the gravity... ",
+        "serif": "OK, then grab my tail! Prepare to the gravity... \nRepeat after me!!",
         "speacker": "Ittan Momen",
         "isStart": false,
         "next": [
@@ -161,7 +161,7 @@
       },
       {
         "id": 5,
-        "serif": "Fast and Furiooooooooooooooooooooooooooooooos !!!!!",
+        "serif": "Fast and Furioooooooooous !!!!!",
         "speacker": "Ittan Momen",
         "isStart": false,
         "next": [],
