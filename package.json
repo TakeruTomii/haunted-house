@@ -8,7 +8,7 @@
   "scripts": {
     "ng": "ng",
     "start": "node server",
-    "dev-start": "ng serve",
+    "dev": "ng serve",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
