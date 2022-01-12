@@ -92,7 +92,7 @@ export const STATUS_PATTERNS = [
     'attr': 'water',
     'str_val' : '40,000',
     'str_unit' : 'mL',
-    'comment': 'Take it easy. Everything\'s going on schedule.',
+    'comment': 'Take it easy. Everything\'s going on schedule.  ――――',
     'speacies': 'Fairy',
     'exp': 'While enough amount of sleeping time and iced coffee are on the field, ' +
             'this card is unaffected by malicious software ' +
@@ -113,7 +113,7 @@ export const STATUS_PATTERNS = [
     'attr': 'wind',
     'str_val' : '530,000',
     'str_unit' : 'm/s',
-    'comment': 'I feel the wind of change blows...  ――――',
+    'comment': 'Today is a good day to release.  ――――',
     'speacies': 'Winged Beast',
     'exp': 'When this card is warm-heartedly summoned; ' +
             'You get the wind at your back.\n' +
