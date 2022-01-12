@@ -8,15 +8,15 @@
 }
 
 #title_gameover {
-  padding-top:5%;
+  padding-top:2%;
   opacity: 0;
-  height: 20%;
+  height: 25%;
   text-align: center;
 }
 
 #title_gameover img {
   width: auto;
-  max-width: 100%;
+  max-width: 95%;
   height: 100%;
 }
 
