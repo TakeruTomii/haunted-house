@@ -37,6 +37,7 @@ export class SerifComponent implements OnInit {
   current_serif = '';
   name_chara = '';
   isSelection = false;
+  isNextSelection = false;
   selections = [];
   isTalking = false;
   interval_id: any;
@@ -120,7 +121,7 @@ export class SerifComponent implements OnInit {
 
     if (serif_info['next'].length >= 2) {
       // Case : Selections
-      this.showSelection(serif_info['next']);
+      this.prepareSelection(serif_info['next']);
     }
   }
 
@@ -166,9 +167,9 @@ export class SerifComponent implements OnInit {
         if (this.transition_url) {
           this.transitScreen(this.transition_url);
         }
-      } else if (next_data['next'].length >= 2) {
+      } else if (this.isNextSelection) {
         // Case : Selections
-        this.showSelection(next_data['next']);
+        this.showSelection();
 
         // remove protection
         serif_area.classList.remove('disable-click');
@@ -197,6 +198,11 @@ export class SerifComponent implements OnInit {
         if (next_data['transition']) {
           this.transition_url = next_data['transition'];
         }
+
+        // Case : Selections
+        if (next_data['next'].length >= 2) {
+          this.prepareSelection(next_data['next']);
+        }
       }
     }
   }
@@ -214,10 +220,16 @@ export class SerifComponent implements OnInit {
     return this.img_folder + speaker + '_' + emotion + '.' + extention;
   }
 
+  // set Selection Infomartion
+  private prepareSelection(next_option: any[]) {
+    this.selections = next_option;
+    this.isNextSelection = true;
+  }
+
   // Display Selections
-  private showSelection(next_options: any[]) {
-    this.selections = next_options;
+  private showSelection() {
     this.isSelection = true;
+    this.isNextSelection = false;
   }
 
   // Close Selections Modal

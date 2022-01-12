@@ -3,7 +3,7 @@
     "Tommy": [
       {
         "id": 1,
-        "serif": "Welcome!",
+        "serif": "Wow, are you human? What's up?\n I'm the host of this house, Tommy. Be our guest!",
         "speacker": "Tommy",
         "isStart": true,
         "next": [
@@ -19,32 +19,20 @@
       },
       {
         "id": 2,
-        "serif": "This is test to display serifs!\n It'll be main entertainment of this site.",
-        "speacker": "Tommy",
-        "isStart": false,
-        "next": [
-          {
-            "option": "",
-            "nextId": "3"
-          }
-        ],
-        "transition": "",
-        "emotion": "neutral",
-        "animation": "none",
-        "extention": "png"
-      },
-      {
-        "id": 3,
-        "serif": "Ask me anytime you worried. Do you have questions?",
+        "serif": "Ask me anytime you worried here. Do you have questions?",
         "speacker": "Tommy",
         "isStart": false,
         "next": [
           {
             "option": "Where is here? I wanna go home...",
-            "nextId": "4"
+            "nextId": "3"
           },
           {
             "option": "Nothing. I'll go walking around!",
+            "nextId": "4"
+          },
+          {
+            "option": "Yeah, Can I ask one?",
             "nextId": "5"
           }
         ],
@@ -54,10 +42,8 @@
         "extention": "png"
       },
       {
-        "id": 4,
-        "serif": "Ahh... You've just lost. OK, then here's the exit. Be careful your way home!!",
-        "room": "LivingRoom",
-        "clicked": "Tommy",
+        "id": 3,
+        "serif": "Ahh... You've just lost. OK, then here's the exit. Be careful on your way home!!",
         "speacker": "Tommy",
         "isStart": false,
         "next": [],
@@ -67,10 +53,19 @@
         "extention": "png"
       },
       {
+        "id": 4,
+        "serif": "Hahha! Anywhere you want. But as range as common sense.\nYou might die and go gameover if you do something irregular too much.",
+        "speacker": "Tommy",
+        "isStart": false,
+        "next": [],
+        "transition": "",
+        "emotion": "neutral",
+        "animation": "none",
+        "extention": "png"
+      },
+      {
         "id": 5,
-        "serif": "Hahha! Anywhere you want. But as range as common sense. You might die and go gameover if you do something irregular too much",
-        "room": "LivingRoom",
-        "clicked": "Tommy",
+        "serif": "Why not?\nWhat do you wanna know about?",
         "speacker": "Tommy",
         "isStart": false,
         "next": [],
