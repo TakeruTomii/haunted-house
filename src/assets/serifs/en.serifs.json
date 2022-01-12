@@ -1,325 +1,314 @@
-[
-  {
-      "id": 1,
-      "serif": "Welcome!",
-      "room": "LivingRoom",
-      "clicked": "Tommy",
-      "speacker": "Tommy",
-      "isStart": true,
-      "next": [
+{
+  "LivingRoom": {
+    "Tommy": [
+      {
+        "id": 1,
+        "serif": "Welcome!",
+        "speacker": "Tommy",
+        "isStart": true,
+        "next": [
           {
-              "option": "",
-              "nextId": "2"
+            "option": "",
+            "nextId": "2"
           }
-      ],
-      "transition": "",
-      "emotion": "neutral",
-      "animation": "none",
-      "extention": "png"
-  },
-  {
-      "id": 2,
-      "serif": "This is test to display serifs!\n It'll be main entertainment of this site.",
-      "room": "LivingRoom",
-      "clicked": "Tommy",
-      "speacker": "Tommy",
-      "isStart": false,
-      "next": [
+        ],
+        "transition": "",
+        "emotion": "neutral",
+        "animation": "none",
+        "extention": "png"
+      },
+      {
+        "id": 2,
+        "serif": "This is test to display serifs!\n It'll be main entertainment of this site.",
+        "speacker": "Tommy",
+        "isStart": false,
+        "next": [
           {
-              "option": "",
-              "nextId": "3"
+            "option": "",
+            "nextId": "3"
           }
-      ],
-      "transition": "",
-      "emotion": "neutral",
-      "animation": "none",
-      "extention": "png"
-  },
-  {
-      "id": 3,
-      "serif": "Ask me anytime you worried. Do you have questions?",
-      "room": "LivingRoom",
-      "clicked": "Tommy",
-      "speacker": "Tommy",
-      "isStart": false,
-      "next": [
+        ],
+        "transition": "",
+        "emotion": "neutral",
+        "animation": "none",
+        "extention": "png"
+      },
+      {
+        "id": 3,
+        "serif": "Ask me anytime you worried. Do you have questions?",
+        "speacker": "Tommy",
+        "isStart": false,
+        "next": [
           {
-              "option": "Where is here? I wanna go home...",
-              "nextId": "10"
+            "option": "Where is here? I wanna go home...",
+            "nextId": "4"
           },
           {
-              "option": "Nothing. I'll go walking around!",
-              "nextId": "11"
+            "option": "Nothing. I'll go walking around!",
+            "nextId": "5"
           }
-      ],
-      "transition": "",
-      "emotion": "neutral",
-      "animation": "none",
-      "extention": "png"
-  },
-  {
-      "id": 4,
-      "serif": "Ho! A human entered here? whacha doing? Here is workshop of tommy's work",
-      "room": "WorkShop",
-      "clicked": "Ittan-momen",
-      "speacker": "Ittan-momen",
-      "isStart": true,
-      "next": [
-          {
-              "option": "",
-              "nextId": "5"
-          }
-      ],
-      "transition": "",
-      "emotion": "neutral",
-      "animation": "none",
-      "extention": "png"
-  },
-  {
-      "id": 5,
-      "serif": "Any reccomendations here? Hmm... Did you go to \"about me\" page? You can watch his works and get hypnotized!",
-      "room": "WorkShop",
-      "clicked": "Ittan-momen",
-      "speacker": "Ittan-momen",
-      "isStart": false,
-      "next": [
-          {
-              "option": "",
-              "nextId": "6"
-          }
-      ],
-      "transition": "",
-      "emotion": "neutral",
-      "animation": "none",
-      "extention": "png"
-  },
-  {
-      "id": 6,
-      "serif": "Here's the way to aboutme. Have fun!",
-      "room": "WorkShop",
-      "clicked": "Ittan-momen",
-      "speacker": "Ittan-momen",
-      "isStart": false,
-      "next": [],
-      "transition": "/aboutme",
-      "emotion": "neutral",
-      "animation": "none",
-      "extention": "png"
-  },
-  {
-      "id": 7,
-      "serif": "Aloha! I'm Jessie-Khan, the wife of the developer and I've made images here.",
-      "room": "Casino",
-      "clicked": "Jessie-Khan",
-      "speacker": "Jessie-Khan",
-      "isStart": true,
-      "next": [
-          {
-              "option": "",
-              "nextId": "8"
-          }
-      ],
-      "transition": "",
-      "emotion": "neutral",
-      "animation": "none",
-      "extention": "png"
-  },
-  {
-      "id": 8,
-      "serif": "Ah? Bathroom? I don't know... don't you have your phone?",
-      "room": "Casino",
-      "clicked": "Jessie-Khan",
-      "speacker": "Jessie-Khan",
-      "isStart": false,
-      "next": [
-          {
-              "option": "",
-              "nextId": "9"
-          }
-      ],
-      "transition": "",
-      "emotion": "neutral",
-      "animation": "none",
-      "extention": "png"
-  },
-  {
-      "id": 9,
-      "serif": "It's better to ask google for the nearest one. Hurry up!",
-      "room": "Casino",
-      "clicked": "Jessie-Khan",
-      "speacker": "Jessie-Khan",
-      "isStart": false,
-      "next": [],
-      "transition": "https://www.google.com",
-      "emotion": "neutral",
-      "animation": "none",
-      "extention": "png"
-  },
-  {
-      "id": 10,
-      "serif": "Ahh... You've just lost. OK, then here's the exit. Be careful your way home!!",
-      "room": "LivingRoom",
-      "clicked": "Tommy",
-      "speacker": "Tommy",
-      "isStart": false,
-      "next": [],
-      "transition": "./",
-      "emotion": "neutral",
-      "animation": "none",
-      "extention": "png"
-  },
-  {
-      "id": 11,
-      "serif": "Hahha! Anywhere you want. But as range as common sense. You might die and go gameover if you do something irregular too much",
-      "room": "LivingRoom",
-      "clicked": "Tommy",
-      "speacker": "Tommy",
-      "isStart": false,
-      "next": [],
-      "transition": "",
-      "emotion": "neutral",
-      "animation": "none",
-      "extention": "png"
-  },
-  {
-    "id": 12,
-    "serif": "Hey dude! Did ya finished here? Where do ya wanna go?",
-    "room": "AboutMe",
-    "clicked": "Akabeko",
-    "speacker": "Akabeko",
-    "isStart": true,
-    "next": [
-        {
-            "option": "Can I go back the living room?",
-            "nextId": "13"
-        },
-        {
-            "option": "Just talked to you. I stay a bit more.",
-            "nextId": "14"
-        }
-    ],
-    "transition": "",
-    "emotion": "neutral",
-    "animation": "none",
-    "extention": "png"
-  },
-  {
-    "id": 13,
-    "serif": "Gacha! That's why I came here! Ride on baby!!!",
-    "room": "AboutMe",
-    "clicked": "Akabeko",
-    "speacker": "Akabeko",
-    "isStart": false,
-    "next": [],
-    "transition": "./home",
-    "emotion": "neutral",
-    "animation": "none",
-    "extention": "png"
-  },
-  {
-    "id": 14,
-    "serif": "OK! Enjoy more!! You can even stay to death, hee hee!",
-    "room": "AboutMe",
-    "clicked": "Akabeko",
-    "speacker": "Akabeko",
-    "isStart": false,
-    "next": [],
-    "transition": "",
-    "emotion": "neutral",
-    "animation": "none",
-    "extention": "png"
-  },
-  {
-    "id": 15,
-    "serif": "Are you going back?",
-    "room": "ContactMe",
-    "clicked": "Akabeko",
-    "speacker": "Akabeko",
-    "isStart": true,
-    "next": [
-        {
-            "option": "Can I go back the living room?",
-            "nextId": "16"
-        },
-        {
-            "option": "Just talked to you. I stay a bit more.",
-            "nextId": "17"
-        }
-    ],
-    "transition": "",
-    "emotion": "neutral",
-    "animation": "none",
-    "extention": "png"
-  },
-  {
-    "id": 16,
-    "serif": "Gacha! That's why I came here! Ride on baby!!!",
-    "room": "ContactMe",
-    "clicked": "Akabeko",
-    "speacker": "Akabeko",
-    "isStart": false,
-    "next": [],
-    "transition": "./home",
-    "emotion": "neutral",
-    "animation": "none",
-    "extention": "png"
-  },
-  {
-    "id": 17,
-    "serif": "OK! Enjoy more!! You can even stay to death, hee hee!",
-    "room": "ContactMe",
-    "clicked": "Akabeko",
-    "speacker": "Akabeko",
-    "isStart": false,
-    "next": [],
-    "transition": "",
-    "emotion": "neutral",
-    "animation": "none",
-    "extention": "png"
-  },
-  {
-    "id": 18,
-    "serif": "................................................................................",
-    "room": "LivingRoom",
-    "clicked": "Eye-mirror",
-    "speacker": "Eye-mirror",
-    "isStart": true,
-    "next": [],
-    "transition": "",
-    "emotion": "neutral",
-    "animation": "none",
-    "extention": "png"
-  },
-  {
-    "id": 19,
-    "serif": "?????????!?!??!?!?!?!?!!?!??!?!!?????!?!??!?!?!!!!!?!?!?!?!!!?!?????",
-    "room": "Error",
-    "clicked": "Akabeko",
-    "speacker": "Akabeko",
-    "isStart": true,
-    "next": [
+        ],
+        "transition": "",
+        "emotion": "neutral",
+        "animation": "none",
+        "extention": "png"
+      },
       {
-        "option": "",
-        "nextId": "20"
+        "id": 4,
+        "serif": "Ahh... You've just lost. OK, then here's the exit. Be careful your way home!!",
+        "room": "LivingRoom",
+        "clicked": "Tommy",
+        "speacker": "Tommy",
+        "isStart": false,
+        "next": [],
+        "transition": "/",
+        "emotion": "neutral",
+        "animation": "none",
+        "extention": "png"
+      },
+      {
+        "id": 5,
+        "serif": "Hahha! Anywhere you want. But as range as common sense. You might die and go gameover if you do something irregular too much",
+        "room": "LivingRoom",
+        "clicked": "Tommy",
+        "speacker": "Tommy",
+        "isStart": false,
+        "next": [],
+        "transition": "",
+        "emotion": "neutral",
+        "animation": "none",
+        "extention": "png"
       }
     ],
-    "transition": "",
-    "emotion": "neutral",
-    "animation": "none",
-    "extention": "png"
+    "Eye-mirror": [
+      {
+        "id": 1,
+        "serif": "...........................",
+        "speacker": "Eye Mirror",
+        "isStart": true,
+        "next": [],
+        "transition": "",
+        "emotion": "neutral",
+        "animation": "none",
+        "extention": "png"
+      }
+    ]
   },
-  {
-    "id": 20,
-    "serif": "Look what you've done... You tried the taboo....",
-    "room": "Error",
-    "clicked": "Akabeko",
-    "speacker": "Akabeko",
-    "isStart": false,
-    "next": [],
-    "transition": "",
-    "emotion": "neutral",
-    "animation": "none",
-    "extention": "png"
+  "WorkShop": {
+    "Ittan-momen": [
+      {
+        "id": 1,
+        "serif": "Ho! A human entered here? whacha doing? Here is workshop of tommy's work",
+        "speacker": "Ittan Momen",
+        "isStart": true,
+        "next": [
+          {
+            "option": "",
+            "nextId": "2"
+          }
+        ],
+        "transition": "",
+        "emotion": "neutral",
+        "animation": "none",
+        "extention": "png"
+      },
+      {
+        "id": 2,
+        "serif": "Any reccomendations here? Hmm... Did you go to \"about me\" page? You can watch his works and get hypnotized!",
+        "speacker": "Ittan Momen",
+        "isStart": false,
+        "next": [
+          {
+            "option": "",
+            "nextId": "3"
+          }
+        ],
+        "transition": "",
+        "emotion": "neutral",
+        "animation": "none",
+        "extention": "png"
+      },
+      {
+        "id": 3,
+        "serif": "Here's the way to aboutme. Have fun!",
+        "speacker": "Ittan Momen",
+        "isStart": false,
+        "next": [],
+        "transition": "aboutme",
+        "emotion": "neutral",
+        "animation": "none",
+        "extention": "png"
+      }
+    ]
+  },
+  "Casino": {
+    "Jessie-Khan": [
+      {
+        "id": 1,
+        "serif": "Aloha! I'm Jessie-Khan, the wife of the developer and I've made images here.",
+        "speacker": "Jessie Khan",
+        "isStart": true,
+        "next": [
+          {
+            "option": "",
+            "nextId": "2"
+          }
+        ],
+        "transition": "",
+        "emotion": "neutral",
+        "animation": "none",
+        "extention": "png"
+      },
+      {
+        "id": 2,
+        "serif": "Ah? Bathroom? I don't know... don't you have your phone?",
+        "speacker": "Jessie Khan",
+        "isStart": false,
+        "next": [
+          {
+            "option": "",
+            "nextId": "3"
+          }
+        ],
+        "transition": "",
+        "emotion": "neutral",
+        "animation": "none",
+        "extention": "png"
+      },
+      {
+        "id": 3,
+        "serif": "It's better to ask google for the nearest one. Hurry up!",
+        "speacker": "Jessie Khan",
+        "isStart": false,
+        "next": [],
+        "transition": "https://www.google.com",
+        "emotion": "neutral",
+        "animation": "none",
+        "extention": "png"
+      }
+    ]
+  },
+  "AboutMe": {
+    "Akabeko": [
+      {
+        "id": 1,
+        "serif": "Hey dude! Did ya finished here? Where do ya wanna go?",
+        "speacker": "Akabeko",
+        "isStart": true,
+        "next": [
+          {
+            "option": "Can I go back the living room?",
+            "nextId": "2"
+          },
+          {
+            "option": "Just talked to you. I stay a bit more.",
+            "nextId": "3"
+          }
+        ],
+        "transition": "",
+        "emotion": "neutral",
+        "animation": "none",
+        "extention": "png"
+      },
+      {
+        "id": 2,
+        "serif": "Gacha! That's why I came here! Ride on baby!!!",
+        "speacker": "Akabeko",
+        "isStart": false,
+        "next": [],
+        "transition": "./home",
+        "emotion": "neutral",
+        "animation": "none",
+        "extention": "png"
+      },
+      {
+        "id": 3,
+        "serif": "OK! Enjoy more!! You can even stay to death, hee hee!",
+        "speacker": "Akabeko",
+        "isStart": false,
+        "next": [],
+        "transition": "",
+        "emotion": "neutral",
+        "animation": "none",
+        "extention": "png"
+      }
+    ]
+  },
+  "ContactMe": {
+    "Akabeko": [
+      {
+        "id": 1,
+        "serif": "Are you going back?",
+        "speacker": "Akabeko",
+        "isStart": true,
+        "next": [
+          {
+            "option": "Can I go back the living room?",
+            "nextId": "2"
+          },
+          {
+            "option": "Just talked to you. I stay a bit more.",
+            "nextId": "3"
+          }
+        ],
+        "transition": "",
+        "emotion": "neutral",
+        "animation": "none",
+        "extention": "png"
+      },
+      {
+        "id": 2,
+        "serif": "Gacha! That's why I came here! Ride on baby!!!",
+        "speacker": "Akabeko",
+        "isStart": false,
+        "next": [],
+        "transition": "./home",
+        "emotion": "neutral",
+        "animation": "none",
+        "extention": "png"
+      },
+      {
+        "id": 3,
+        "serif": "OK! Enjoy more!! You can even stay to death, hee hee!",
+        "speacker": "Akabeko",
+        "isStart": false,
+        "next": [],
+        "transition": "",
+        "emotion": "neutral",
+        "animation": "none",
+        "extention": "png"
+      }
+    ]
+  },
+  "Error": {
+    "Akabeko": [
+      {
+        "id": 1,
+        "serif": "?????????!?!??!?!?!?!???",
+        "speacker": "Akabeko",
+        "isStart": true,
+        "next": [
+          {
+            "option": "",
+            "nextId": "2"
+          }
+        ],
+        "transition": "",
+        "emotion": "neutral",
+        "animation": "none",
+        "extention": "png"
+      },
+      {
+        "id": 2,
+        "serif": "Look what you've done... You shouldn't have tried the taboo....",
+        "speacker": "Akabeko",
+        "isStart": false,
+        "next": [],
+        "transition": "",
+        "emotion": "neutral",
+        "animation": "none",
+        "extention": "png"
+      }
+    ]
   }
-
-]
+}

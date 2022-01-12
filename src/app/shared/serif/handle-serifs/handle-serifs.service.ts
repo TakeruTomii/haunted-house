@@ -23,9 +23,7 @@ export class HandleSerifsService {
     let serif_source = enSerifs;
 
     // Initiating Serifs
-    this.current_serifs = serif_source.filter(
-      x => x.room === room &&
-      x.clicked === clicked);
+    this.current_serifs = serif_source[room][clicked];
 
     this.is_start = true;
   }

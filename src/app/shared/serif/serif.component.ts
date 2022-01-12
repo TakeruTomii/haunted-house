@@ -1,52 +1,70 @@
-import { Component, EventEmitter, OnInit, Output, ViewChild } from '@angular/core';
+import {
+  Component,
+  EventEmitter,
+  OnInit,
+  Output,
+  ViewChild,
+} from '@angular/core';
 import { BsModalRef, ModalDirective } from 'ngx-bootstrap/modal';
-import { FetchSerifsParam, SoundInfo } from '../../shared/dto';
+import { ErrorInfo, FetchSerifsParam, SoundInfo } from '../../shared/dto';
 import { HandleSerifsService } from 'src/app/shared/serif/handle-serifs/handle-serifs.service';
-import { Sound } from '../sharedFunction';
+import { Sound, Validation } from '../sharedFunction';
 import { ContextService } from '../inter-screen/context.service';
+import { InvalidOperationError } from '../error/errorClass';
+import { PAGE_BGMS, PAGE_NAME_CHEATED, ROOM_BGMS } from '../const';
+import { Router } from '@angular/router';
+import { NavComponent } from '../nav/nav.component';
 
 @Component({
   selector: 'app-serif',
   templateUrl: './serif.component.html',
-  styleUrls: ['./serif.component.css']
+  styleUrls: ['./serif.component.css'],
 })
-export class SerifComponent implements OnInit{
+export class SerifComponent implements OnInit {
   //sound setting
   page_sound: SoundInfo = null;
-  open_source :AudioBufferSourceNode = null;
-  close_source :AudioBufferSourceNode = null;
-  next_source :AudioBufferSourceNode = null;
+  open_source: AudioBufferSourceNode = null;
+  close_source: AudioBufferSourceNode = null;
+  next_source: AudioBufferSourceNode = null;
   soundFunc = new Sound();
 
   // Modal for Selections
-  @ViewChild('selectionModal', {static: false}) public selectionModal: ModalDirective;
+  @ViewChild('selectionModal', { static: false })
+  public selectionModal: ModalDirective;
 
   // Information for display
-  img_chara="";
-  current_serif="";
-  name_chara="";
-  isSelection=false;
-  selections=[];
-  isTalking=false;
-  interval_id:any;
-  current_data:any;
+  img_chara = '';
+  current_serif = '';
+  name_chara = '';
+  isSelection = false;
+  selections = [];
+  isTalking = false;
+  interval_id: any;
+  current_data: any;
 
   // Path of Image Forlder
-  private img_folder : string = "../../../assets/img/";
+  private img_folder: string = '../../../assets/img/';
 
   //Event emitter when modal closed
   @Output() close: EventEmitter<string> = new EventEmitter<string>();
 
   // arguments from caller screen
   private clicked: string; // clicked charactor
-  private room: string;    // room
+  private room: string; // room
 
   //URL to transit
   private transition_url: string;
+  @ViewChild(NavComponent) private bgm: NavComponent;
 
-  constructor(private serifs:HandleSerifsService,
-              public bsModalRef: BsModalRef,
-              private screenCtx:ContextService) {}
+  //Validation
+  validFunc = new Validation();
+
+  constructor(
+    private router: Router,
+    private serifs: HandleSerifsService,
+    public bsModalRef: BsModalRef,
+    private screenCtx: ContextService
+  ) {}
 
   async ngOnInit(): Promise<void> {
     // protect serif area from click while loading
@@ -55,9 +73,24 @@ export class SerifComponent implements OnInit{
 
     // set bgm information
     this.page_sound = this.screenCtx.getSound();
-    this.open_source = await this.soundFunc.createSound('se_open_serif.mp3', 1, false, '../../../assets/sound/');
-    this.close_source = await this.soundFunc.createSound('se_close_serif.mp3', 1, false, '../../../assets/sound/');
-    this.next_source = await this.soundFunc.createSound('se_next_serif.mp3', 1, false, '../../../assets/sound/');
+    this.open_source = await this.soundFunc.createSound(
+      'se_open_serif.mp3',
+      1,
+      false,
+      '../../../assets/sound/'
+    );
+    this.close_source = await this.soundFunc.createSound(
+      'se_close_serif.mp3',
+      1,
+      false,
+      '../../../assets/sound/'
+    );
+    this.next_source = await this.soundFunc.createSound(
+      'se_next_serif.mp3',
+      1,
+      false,
+      '../../../assets/sound/'
+    );
 
     this.initModal();
 
@@ -66,22 +99,22 @@ export class SerifComponent implements OnInit{
   }
 
   // Initiate serifs when opening modal
-  initModal() : void {
+  initModal(): void {
     //play sound open modal
-    if(this.page_sound.is_sound_on) {
+    if (this.page_sound.is_sound_on) {
       this.open_source.start();
     }
 
     // configure calling serifs
-    let params : FetchSerifsParam = {
+    let params: FetchSerifsParam = {
       lang: 'en',
       room: this.room,
-      clicked: this.clicked
+      clicked: this.clicked,
     };
     // Initiate serifs
     this.serifs.initSerifs(params);
 
-    let serif_info : any = this.serifs.popSerif();
+    let serif_info: any = this.serifs.popSerif();
     this.current_data = serif_info;
     this.setDisplayInfos(serif_info);
 
@@ -92,17 +125,15 @@ export class SerifComponent implements OnInit{
   }
 
   // keep conversation forward
-  async onTalk() : Promise<void> {
-    if (this.isTalking){
+  async onTalk(): Promise<void> {
+    if (this.isTalking) {
       // Case : on talking
       // quit typewriting and show all sentence
       clearInterval(this.interval_id);
       this.current_serif = this.current_data['serif'];
       this.showSerifTriangle();
       this.isTalking = false;
-
     } else {
-
       // protect serif area from click while loading
       const serif_area = document.getElementById('serif-area');
       serif_area.classList.add('disable-click');
@@ -114,9 +145,14 @@ export class SerifComponent implements OnInit{
       if (next_data == null) {
         // Case : the end of serifs
         //play sound close serif
-        if(this.page_sound.is_sound_on) {
+        if (this.page_sound.is_sound_on) {
           this.close_source.start();
-          this.close_source = await this.soundFunc.createSound('se_close_serif.mp3', 1, false, '../../../assets/sound/');
+          this.close_source = await this.soundFunc.createSound(
+            'se_close_serif.mp3',
+            1,
+            false,
+            '../../../assets/sound/'
+          );
         }
 
         // remove protection
@@ -127,7 +163,7 @@ export class SerifComponent implements OnInit{
         this.bsModalRef.hide();
         // Case : Transiton
         // Transit after finishing conversation
-        if(this.transition_url) {
+        if (this.transition_url) {
           this.transitScreen(this.transition_url);
         }
       } else if (next_data['next'].length >= 2) {
@@ -139,9 +175,14 @@ export class SerifComponent implements OnInit{
       } else {
         // Case : Proceed
         //play sound next serif
-        if(this.page_sound.is_sound_on) {
+        if (this.page_sound.is_sound_on) {
           this.next_source.start();
-          this.next_source = await this.soundFunc.createSound('se_next_serif.mp3', 1, false, '../../../assets/sound/');
+          this.next_source = await this.soundFunc.createSound(
+            'se_next_serif.mp3',
+            1,
+            false,
+            '../../../assets/sound/'
+          );
         }
 
         // Display new serif
@@ -153,12 +194,11 @@ export class SerifComponent implements OnInit{
 
         // Case : TransitonTransition
         // Cache in buffer the URL to transit
-        if(next_data['transition']) {
+        if (next_data['transition']) {
           this.transition_url = next_data['transition'];
         }
       }
     }
-
   }
 
   // Select Selections
@@ -170,12 +210,12 @@ export class SerifComponent implements OnInit{
   }
 
   // Return the path to the Image of the charactor
-  private getImgPath (speaker : string, emotion : string, extention : string) {
+  private getImgPath(speaker: string, emotion: string, extention: string) {
     return this.img_folder + speaker + '_' + emotion + '.' + extention;
   }
 
   // Display Selections
-  private showSelection(next_options : any[]) {
+  private showSelection(next_options: any[]) {
     this.selections = next_options;
     this.isSelection = true;
   }
@@ -187,21 +227,26 @@ export class SerifComponent implements OnInit{
   }
 
   // Hide Selection Modal from DOM
-  private onHidden(){
+  private onHidden() {
     this.isSelection = false;
   }
 
   // Set Informations to display
-  private setDisplayInfos(serif_info : any) {
+  private setDisplayInfos(serif_info: any) {
     this.name_chara = serif_info['speacker'];
     this.img_chara = this.getImgPath(
-      serif_info['speacker'], serif_info['emotion'], serif_info['extention']);
+      this.clicked,
+      serif_info['emotion'],
+      serif_info['extention']
+    );
 
     // clear current serif
     this.isTalking = true;
-    this.current_serif = "";
+    this.current_serif = '';
     // type current serif
-    this.interval_id = setInterval(()=>{this.typewriteSentence(serif_info['serif'])}, 20);
+    this.interval_id = setInterval(() => {
+      this.typewriteSentence(serif_info['serif']);
+    }, 20);
   }
 
   // display sentence by one character
@@ -209,14 +254,15 @@ export class SerifComponent implements OnInit{
     let written_length = this.current_serif.length;
     let all_length = sentense.length;
 
-    if(written_length < all_length) {
-      this.current_serif = this.current_serif.concat(sentense.charAt(written_length));
+    if (written_length < all_length) {
+      this.current_serif = this.current_serif.concat(
+        sentense.charAt(written_length)
+      );
     } else {
       clearInterval(this.interval_id);
       this.showSerifTriangle();
       this.isTalking = false;
     }
-
   }
 
   // Transition after serifs
@@ -227,10 +273,38 @@ export class SerifComponent implements OnInit{
       // Only for "https"
       window.open(url);
     } else {
-      // Others are set in relative path
-      // URL which expressed in relative path means internal site
+      // Others are set in page name or room name
       // Open in the current window.
-      location.href = url;
+
+      // set filename of bgm
+      let filename = "";
+      if(url === "/"){
+        //Case: back to init-conf
+        location.href = '/';
+      } else if(this.validFunc.isValidPageName(url)) {
+        //Case: go to somewhere except for /home
+        filename = PAGE_BGMS[url];
+      } else if (this.validFunc.isValidRoomName(url)) {
+        //Case: go to /home
+        filename = ROOM_BGMS['livingRoom'];
+      } else{
+        // Validation
+        const message = PAGE_NAME_CHEATED;
+        const err: ErrorInfo = { message: message };
+        this.screenCtx.setError(err);
+        throw new InvalidOperationError(message);
+      }
+
+      // Set information to next screen
+      const sound: SoundInfo = {
+        is_sound_on: this.page_sound.is_sound_on,
+        volume: this.page_sound.volume,
+        bgm_filename: filename
+      }
+      this.screenCtx.setSound(sound);
+
+      const path = '/' + url;
+      location.href = path;
     }
   }
 
@@ -241,7 +315,8 @@ export class SerifComponent implements OnInit{
 
   // show triangle at the last of sentence
   private hideSerifTriangle() {
-    document.querySelector('#serif-area span').classList.remove('show-triangle');
+    document
+      .querySelector('#serif-area span')
+      .classList.remove('show-triangle');
   }
-
 }

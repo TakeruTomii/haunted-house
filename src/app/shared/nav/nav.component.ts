@@ -116,6 +116,11 @@ export class NavComponent implements OnInit, OnChanges {
     this.volume_controller.gain.value = volume;
   }
 
+  // stop BGM from other component
+  stopBGM() {
+    this.bgm_source.stop(0);
+  }
+
   // move to other page on navigation bar
   async transitPage(page: string) {
     // Validation
@@ -134,15 +139,15 @@ export class NavComponent implements OnInit, OnChanges {
     }
 
     // Set information to next screen
-    let sound: SoundInfo = {
+    const sound: SoundInfo = {
       is_sound_on: this.sound_setting.is_sound_on,
       volume: this.sound_setting.volume,
       bgm_filename: PAGE_BGMS[page]
     }
     this.screenCtx.setSound(sound);
 
-    // Transit Loading Screen
-    let path = '/' + page;
+    // Transit to the Screen
+    const path = '/' + page;
     this.router.navigate([path])
   }
 
@@ -156,7 +161,7 @@ export class NavComponent implements OnInit, OnChanges {
     }
 
     // Set information to next screen
-    let sound: SoundInfo = {
+    const sound: SoundInfo = {
       is_sound_on: this.sound_setting.is_sound_on,
       volume: this.sound_setting.volume,
       bgm_filename: ROOM_BGMS.livingRoom

@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, OnInit, TemplateRef, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { SoundInfo, ErrorInfo } from '../shared/dto';
 import { INIT_LANGS, INIT_SOUNDS, PAGE_BGMS, VALUE_CHEATED } from '../shared/const';
@@ -28,7 +28,6 @@ export class InitConfComponent implements OnInit, AfterViewInit{
   constructor(private router: Router,
               private screenCtx: ContextService,
               private loading: LoadingDisplayService) { }
-  @ViewChild('init_modal') public init_modal: TemplateRef<any>;
 
   ngOnInit(): void {  }
 

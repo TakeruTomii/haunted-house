@@ -1,7 +1,5 @@
 import { Component, OnDestroy, OnInit, ViewChild } from '@angular/core';
 import AOS from 'aos';
-import { LoadingDisplayService } from 'src/app/loading/display/loading-display.service';
-import { PAGE_BGMS } from 'src/app/shared/const';
 import { SoundInfo } from 'src/app/shared/dto';
 import { ContextService } from 'src/app/shared/inter-screen/context.service';
 import { NavComponent } from 'src/app/shared/nav/nav.component';
