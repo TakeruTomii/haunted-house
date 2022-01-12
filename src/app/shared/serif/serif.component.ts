@@ -247,9 +247,9 @@ export class SerifComponent implements OnInit {
 
   // Set Informations to display
   private setDisplayInfos(serif_info: any) {
-    this.name_chara = serif_info['speacker'];
+    this.name_chara = serif_info['name'];
     this.img_chara = this.getImgPath(
-      this.clicked,
+      serif_info['speaker'],
       serif_info['emotion'],
       serif_info['extention']
     );

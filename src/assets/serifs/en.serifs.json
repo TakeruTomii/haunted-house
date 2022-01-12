@@ -4,7 +4,8 @@
       {
         "id": 1,
         "serif": "Wow, are you human? What's up?\n I'm the host of this house, Tommy. Be our guest!",
-        "speacker": "Tommy",
+        "speaker": "Tommy",
+        "name": "Tommy",
         "isStart": true,
         "next": [
           {
@@ -20,7 +21,8 @@
       {
         "id": 2,
         "serif": "Ask me anytime you worried here. Do you have questions?",
-        "speacker": "Tommy",
+        "speaker": "Tommy",
+        "name": "Tommy",
         "isStart": false,
         "next": [
           {
@@ -44,7 +46,7 @@
       {
         "id": 3,
         "serif": "Ahh... You've just lost. OK, then here's the exit. Be careful on your way home!!",
-        "speacker": "Tommy",
+        "speaker": "Tommy",
         "isStart": false,
         "next": [],
         "transition": "/",
@@ -55,7 +57,8 @@
       {
         "id": 4,
         "serif": "Hahha! Anywhere you want. But as range as common sense.\nYou might die and go gameover if you do something irregular too much.",
-        "speacker": "Tommy",
+        "speaker": "Tommy",
+        "name": "Tommy",
         "isStart": false,
         "next": [],
         "transition": "",
@@ -66,7 +69,8 @@
       {
         "id": 5,
         "serif": "Why not?\nWhat do you wanna know about?",
-        "speacker": "Tommy",
+        "speaker": "Tommy",
+        "name": "Tommy",
         "isStart": false,
         "next": [],
         "transition": "",
@@ -79,7 +83,8 @@
       {
         "id": 1,
         "serif": "...........................",
-        "speacker": "Eye Mirror",
+        "speaker": "Eye-mirror",
+        "name": "Eye Mirror",
         "isStart": true,
         "next": [],
         "transition": "",
@@ -94,7 +99,8 @@
       {
         "id": 1,
         "serif": "Hey! Watch out!!\n Here's many works which Tommy developed. They're not cheap!!",
-        "speacker": "Ittan Momen",
+        "speaker": "Ittan-momen",
+        "name": "Ittan Momen",
         "isStart": true,
         "next": [
           {
@@ -110,7 +116,8 @@
       {
         "id": 2,
         "serif": "Any recomendations here? Hmm... Did you go to \"About Me\" page?\nYou can watch his works and get hypnotized!",
-        "speacker": "Ittan Momen",
+        "speaker": "Ittan-momen",
+        "name": "Ittan Momen",
         "isStart": false,
         "next": [
           {
@@ -126,7 +133,8 @@
       {
         "id": 3,
         "serif": "Do you wanna go to \"About Me\"? ",
-        "speacker": "Ittan Momen",
+        "speaker": "Ittan-momen",
+        "name": "Ittan Momen",
         "isStart": false,
         "next": [
           {
@@ -146,7 +154,8 @@
       {
         "id": 4,
         "serif": "OK, then grab my tail! Prepare to the gravity... \nRepeat after me!!",
-        "speacker": "Ittan Momen",
+        "speaker": "Ittan-momen",
+        "name": "Ittan Momen",
         "isStart": false,
         "next": [
           {
@@ -162,7 +171,8 @@
       {
         "id": 5,
         "serif": "Fast and Furioooooooooous !!!!!",
-        "speacker": "Ittan Momen",
+        "speaker": "Ittan-momen",
+        "name": "Ittan Momen",
         "isStart": false,
         "next": [],
         "transition": "aboutme",
@@ -173,7 +183,8 @@
       {
         "id": 6,
         "serif": "Bleh...",
-        "speacker": "Ittan Momen",
+        "speaker": "Ittan-momen",
+        "name": "Ittan Momen",
         "isStart": false,
         "next": [],
         "transition": "",
@@ -187,13 +198,18 @@
     "Jessie-Khan": [
       {
         "id": 1,
-        "serif": "Aloha! I'm Jessie-Khan, the wife of the developer and I've made images here.",
-        "speacker": "Jessie Khan",
+        "serif": "Ola! Do you come here to play?\nYeah, only simple ones are avarable. Excuse me but I'm in training.",
+        "speaker": "Jessie-Khan",
+        "name": "Jessie Khan",
         "isStart": true,
         "next": [
           {
-            "option": "",
+            "option": "I come to see the beauty.",
             "nextId": "2"
+          },
+          {
+            "option": "It's OK. Show me your progress, Lady.",
+            "nextId": "7"
           }
         ],
         "transition": "",
@@ -203,8 +219,9 @@
       },
       {
         "id": 2,
-        "serif": "Ah? Bathroom? I don't know... don't you have your phone?",
-        "speacker": "Jessie Khan",
+        "serif": "Fooa! You know the spot huh?\nI let you flatter me every second hahaha.",
+        "speaker": "Jessie-Khan",
+        "name": "Jessie Khan",
         "isStart": false,
         "next": [
           {
@@ -219,11 +236,327 @@
       },
       {
         "id": 3,
-        "serif": "It's better to ask google for the nearest one. Hurry up!",
-        "speacker": "Jessie Khan",
+        "serif": "Do you like the beauty with long neck?\nIt's a bit handy to kiss at any height lol.",
+        "speaker": "Jessie-Khan",
+        "name": "Jessie Khan",
+        "isStart": false,
+        "next": [
+          {
+            "option": "",
+            "nextId": "4"
+          }
+        ],
+        "transition": "",
+        "emotion": "neutral",
+        "animation": "none",
+        "extention": "png"
+      },
+      {
+        "id": 4,
+        "serif": "Hey Jessie! Are you cheating on me?",
+        "speaker": "Tommy",
+        "name": "Tommy",
+        "isStart": false,
+        "next": [
+          {
+            "option": "",
+            "nextId": "5"
+          }
+        ],
+        "transition": "",
+        "emotion": "neutral",
+        "animation": "none",
+        "extention": "png"
+      },
+      {
+        "id": 5,
+        "serif": "Of course not!! Don't be jealous of my customer!!\n I can't keep my business!!!!!!!",
+        "speaker": "Jessie-Khan",
+        "name": "Jessie Khan",
+        "isStart": false,
+        "next": [
+          {
+            "option": "",
+            "nextId": "6"
+          }
+        ],
+        "transition": "",
+        "emotion": "neutral",
+        "animation": "none",
+        "extention": "png"
+      },
+      {
+        "id": 6,
+        "serif": "Huh, recently he always doubts me...\nAt least I want him to stop doubting even when I'm complimenting Henry Cavill...",
+        "speaker": "Jessie-Khan",
+        "name": "Jessie Khan",
         "isStart": false,
         "next": [],
-        "transition": "https://www.google.com",
+        "transition": "",
+        "emotion": "neutral",
+        "animation": "none",
+        "extention": "png"
+      },
+      {
+        "id": 7,
+        "serif": "OK, then let's play High and Low!\n I'll draw a card, then guess if the next card is higher or lower number.",
+        "speaker": "Jessie-Khan",
+        "name": "Jessie Khan",
+        "isStart": false,
+        "next": [
+          {
+            "option": "",
+            "nextId": "8"
+          }
+        ],
+        "transition": "",
+        "emotion": "neutral",
+        "animation": "none",
+        "extention": "png"
+      },
+      {
+        "id": 8,
+        "serif": "Round 1... I drew \"10\" !",
+        "speaker": "Jessie-Khan",
+        "name": "Jessie Khan",
+        "isStart": false,
+        "next": [
+          {
+            "option": "High",
+            "nextId": "9"
+          },
+          {
+            "option": "Low",
+            "nextId": "10"
+          }
+        ],
+        "transition": "",
+        "emotion": "neutral",
+        "animation": "none",
+        "extention": "png"
+      },
+      {
+        "id": 9,
+        "serif": "Ohhhh, Sorry it was \"7\". Maybe next time.",
+        "speaker": "Jessie-Khan",
+        "name": "Jessie Khan",
+        "isStart": false,
+        "next": [],
+        "transition": "",
+        "emotion": "neutral",
+        "animation": "none",
+        "extention": "png"
+      },
+      {
+        "id": 10,
+        "serif": "Hoo! Bingo! It was \"7\". You have luck today.",
+        "speaker": "Jessie-Khan",
+        "name": "Jessie Khan",
+        "isStart": false,
+        "next": [
+          {
+            "option": "",
+            "nextId": "11"
+          }
+        ],
+        "transition": "",
+        "emotion": "neutral",
+        "animation": "none",
+        "extention": "png"
+      },
+      {
+        "id": 11,
+        "serif": "Round 2... I drew \"3\" !",
+        "speaker": "Jessie-Khan",
+        "name": "Jessie Khan",
+        "isStart": false,
+        "next": [
+          {
+            "option": "High",
+            "nextId": "12"
+          },
+          {
+            "option": "Low",
+            "nextId": "13"
+          }
+        ],
+        "transition": "",
+        "emotion": "neutral",
+        "animation": "none",
+        "extention": "png"
+      },
+      {
+        "id": 12,
+        "serif": "Jesus, it was \"2\". That was so close, but you lost.",
+        "speaker": "Jessie-Khan",
+        "name": "Jessie Khan",
+        "isStart": false,
+        "next": [],
+        "transition": "",
+        "emotion": "neutral",
+        "animation": "none",
+        "extention": "png"
+      },
+      {
+        "id": 13,
+        "serif": "It was \"2\"! Unbelievable... You're a bold gambler",
+        "speaker": "Jessie-Khan",
+        "name": "Jessie Khan",
+        "isStart": false,
+        "next": [
+          {
+            "option": "",
+            "nextId": "14"
+          }
+        ],
+        "transition": "",
+        "emotion": "neutral",
+        "animation": "none",
+        "extention": "png"
+      },
+      {
+        "id": 14,
+        "serif": "It's Final Round!! So... as much as you can... choose whatever you’ll regret the least.",
+        "speaker": "Jessie-Khan",
+        "name": "Jessie Khan",
+        "isStart": false,
+        "next": [
+          {
+            "option": "",
+            "nextId": "15"
+          }
+        ],
+        "transition": "",
+        "emotion": "neutral",
+        "animation": "none",
+        "extention": "png"
+      },
+      {
+        "id": 15,
+        "serif": "I drew \"8\" !",
+        "speaker": "Jessie-Khan",
+        "name": "Jessie Khan",
+        "isStart": false,
+        "next": [
+          {
+            "option": "High",
+            "nextId": "16"
+          },
+          {
+            "option": "Low",
+            "nextId": "18"
+          }
+        ],
+        "transition": "",
+        "emotion": "neutral",
+        "animation": "none",
+        "extention": "png"
+      },
+      {
+        "id": 16,
+        "serif": "Nooo, It was \"5\"!\nNever thought it continues three damn times, right? I'm sorry...",
+        "speaker": "Jessie-Khan",
+        "name": "Jessie Khan",
+        "isStart": false,
+        "next": [
+          {
+            "option": "",
+            "nextId": "17"
+          }
+        ],
+        "transition": "",
+        "emotion": "neutral",
+        "animation": "none",
+        "extention": "png"
+      },
+      {
+        "id": 17,
+        "serif": "But I strongly recommend to try again, because we can speak the same serifs at current XD\n See you next time!",
+        "speaker": "Jessie-Khan",
+        "name": "Jessie Khan",
+        "isStart": false,
+        "next": [],
+        "transition": "",
+        "emotion": "neutral",
+        "animation": "none",
+        "extention": "png"
+      },
+      {
+        "id": 18,
+        "serif": "Oh my god, oh my god, OH MY GOD!!! It was \"5\"!\nCongrats!! You won all at last!!!",
+        "speaker": "Jessie-Khan",
+        "name": "Jessie Khan",
+        "isStart": false,
+        "next": [
+          {
+            "option": "",
+            "nextId": "19"
+          }
+        ],
+        "transition": "",
+        "emotion": "neutral",
+        "animation": "none",
+        "extention": "png"
+      },
+      {
+        "id": 19,
+        "serif": "You are truly blessed... Might it be better to get out here right now and go to lottery by today!?",
+        "speaker": "Jessie-Khan",
+        "name": "Jessie Khan",
+        "isStart": false,
+        "next": [
+          {
+            "option": "",
+            "nextId": "20"
+          }
+        ],
+        "transition": "",
+        "emotion": "neutral",
+        "animation": "none",
+        "extention": "png"
+      },
+      {
+        "id": 20,
+        "serif": "By the way... I give it to you on your cheek for reward of this victory.",
+        "speaker": "Jessie-Khan",
+        "name": "Jessie Khan",
+        "isStart": false,
+        "next": [
+          {
+            "option": "",
+            "nextId": "21"
+          }
+        ],
+        "transition": "",
+        "emotion": "neutral",
+        "animation": "none",
+        "extention": "png"
+      },
+      {
+        "id": 21,
+        "serif": "(mwah)",
+        "speaker": "Jessie-Khan",
+        "name": "Jessie Khan",
+        "isStart": false,
+        "next": [
+          {
+            "option": "",
+            "nextId": "22"
+          }
+        ],
+        "transition": "",
+        "emotion": "neutral",
+        "animation": "none",
+        "extention": "png"
+      },
+      {
+        "id": 22,
+        "serif": "Come back anytime! Keep it secret to my husband!!",
+        "speaker": "Jessie-Khan",
+        "name": "Jessie Khan",
+        "isStart": false,
+        "next": [],
+        "transition": "",
         "emotion": "neutral",
         "animation": "none",
         "extention": "png"
@@ -235,7 +568,8 @@
       {
         "id": 1,
         "serif": "Hey dude! Did ya finished here? Where do ya wanna go?",
-        "speacker": "Akabeko",
+        "speaker": "Akabeko",
+        "name": "Akabeko",
         "isStart": true,
         "next": [
           {
@@ -255,7 +589,8 @@
       {
         "id": 2,
         "serif": "Gacha! That's why I came here! Ride on baby!!!",
-        "speacker": "Akabeko",
+        "speaker": "Akabeko",
+        "name": "Akabeko",
         "isStart": false,
         "next": [],
         "transition": "./home",
@@ -266,7 +601,8 @@
       {
         "id": 3,
         "serif": "OK! Enjoy more!! You can even stay to death, hee hee!",
-        "speacker": "Akabeko",
+        "speaker": "Akabeko",
+        "name": "Akabeko",
         "isStart": false,
         "next": [],
         "transition": "",
@@ -281,7 +617,8 @@
       {
         "id": 1,
         "serif": "Are you going back?",
-        "speacker": "Akabeko",
+        "speaker": "Akabeko",
+        "name": "Akabeko",
         "isStart": true,
         "next": [
           {
@@ -301,7 +638,8 @@
       {
         "id": 2,
         "serif": "Gacha! That's why I came here! Ride on baby!!!",
-        "speacker": "Akabeko",
+        "speaker": "Akabeko",
+        "name": "Akabeko",
         "isStart": false,
         "next": [],
         "transition": "./home",
@@ -312,7 +650,8 @@
       {
         "id": 3,
         "serif": "OK! Enjoy more!! You can even stay to death, hee hee!",
-        "speacker": "Akabeko",
+        "speaker": "Akabeko",
+        "name": "Akabeko",
         "isStart": false,
         "next": [],
         "transition": "",
@@ -327,7 +666,8 @@
       {
         "id": 1,
         "serif": "?????????!?!??!?!?!?!???",
-        "speacker": "Akabeko",
+        "speaker": "Akabeko",
+        "name": "Akabeko",
         "isStart": true,
         "next": [
           {
@@ -343,7 +683,8 @@
       {
         "id": 2,
         "serif": "Look what you've done... You shouldn't have tried the taboo....",
-        "speacker": "Akabeko",
+        "speaker": "Akabeko",
+        "name": "Akabeko",
         "isStart": false,
         "next": [],
         "transition": "",
