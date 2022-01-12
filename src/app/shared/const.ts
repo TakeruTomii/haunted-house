@@ -330,7 +330,7 @@ export const CHARACTER_DATA = [
   },
   {
     'id': 2,
-    'name': 'Jessie-Khan',
+    'name': 'Jessie Khan',
     'main_image_file': 'Jessie-Khan_map',
     'select_image_file': IMG_PATH_CHARACTER_LIST + 'Jessie-Khan_neutral' + EXT_CHARACTER,
     'explanation': 'The illustrator of this site, and the wife of Tommy.\n\n' +
@@ -342,7 +342,7 @@ export const CHARACTER_DATA = [
   },
   {
     'id': 3,
-    'name': 'Ittan momen',
+    'name': 'Ittan Momen',
     'main_image_file': 'Ittan-momen_map',
     'select_image_file': IMG_PATH_CHARACTER_LIST + 'Ittan-momen_neutral' + EXT_CHARACTER,
     'explanation': 'A long scarf monster which is made of wool.\n\n' +
@@ -355,7 +355,7 @@ export const CHARACTER_DATA = [
   },
   {
     'id': 4,
-    'name': 'Eye-mirror',
+    'name': 'Eye Mirror',
     'main_image_file': 'Eye-mirror_neutral',
     'select_image_file': IMG_PATH_CHARACTER_LIST + 'Eye-mirror_neutral' + EXT_CHARACTER,
     'explanation': 'Nothing is known about it.\n\n ' +
