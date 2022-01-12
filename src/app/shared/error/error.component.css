@@ -1,4 +1,5 @@
 #error_background {
+  overflow-y: hidden;
   background-color: black;
   flex-direction: column;
   align-items: center;
@@ -9,14 +10,14 @@
 #title_gameover {
   padding-top:5%;
   opacity: 0;
-  height: 30%;
+  height: 20%;
   text-align: center;
 }
 
 #title_gameover img {
-  width: 90%;
-  max-width: 50em;
-  height: auto;
+  width: auto;
+  max-width: 100%;
+  height: 100%;
 }
 
 #exp {
