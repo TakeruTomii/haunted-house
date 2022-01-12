@@ -115,7 +115,7 @@ export class SerifComponent implements OnInit {
     // Initiate serifs
     this.serifs.initSerifs(params);
 
-    let serif_info: any = this.serifs.popSerif();
+    const serif_info: any = this.serifs.popSerif();
     this.current_data = serif_info;
     this.setDisplayInfos(serif_info);
 
@@ -139,11 +139,13 @@ export class SerifComponent implements OnInit {
       const serif_area = document.getElementById('serif-area');
       serif_area.classList.add('disable-click');
 
-      let next_data = this.serifs.popSerif();
-      this.current_data = next_data;
+      if(!this.isNextSelection) {
+        const next_data = this.serifs.popSerif();
+        this.current_data = next_data;
+      }
       this.hideSerifTriangle();
 
-      if (next_data == null) {
+      if (this.current_data == null) {
         // Case : the end of serifs
         //play sound close serif
         if (this.page_sound.is_sound_on) {
@@ -188,20 +190,20 @@ export class SerifComponent implements OnInit {
 
         // Display new serif
         this.isTalking = true;
-        this.setDisplayInfos(next_data);
+        this.setDisplayInfos(this.current_data);
 
         // remove protection
         serif_area.classList.remove('disable-click');
 
         // Case : TransitonTransition
         // Cache in buffer the URL to transit
-        if (next_data['transition']) {
-          this.transition_url = next_data['transition'];
+        if (this.current_data['transition']) {
+          this.transition_url = this.current_data['transition'];
         }
 
         // Case : Selections
-        if (next_data['next'].length >= 2) {
-          this.prepareSelection(next_data['next']);
+        if (this.current_data['next'].length >= 2) {
+          this.prepareSelection(this.current_data['next']);
         }
       }
     }

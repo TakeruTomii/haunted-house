@@ -93,7 +93,7 @@
     "Ittan-momen": [
       {
         "id": 1,
-        "serif": "Ho! A human entered here? whacha doing? Here is workshop of tommy's work",
+        "serif": "Hey! Watch out!!\n Here's many works which Tommy developed. They're not chaep!!",
         "speacker": "Ittan Momen",
         "isStart": true,
         "next": [
@@ -109,7 +109,7 @@
       },
       {
         "id": 2,
-        "serif": "Any reccomendations here? Hmm... Did you go to \"about me\" page? You can watch his works and get hypnotized!",
+        "serif": "Any recomendations here? Hmm... Did you go to \"About Me\" page?\nYou can watch his works and get hypnotized!",
         "speacker": "Ittan Momen",
         "isStart": false,
         "next": [
@@ -125,11 +125,58 @@
       },
       {
         "id": 3,
-        "serif": "Here's the way to aboutme. Have fun!",
+        "serif": "Do you wanna go to \"About Me\"? ",
+        "speacker": "Ittan Momen",
+        "isStart": false,
+        "next": [
+          {
+            "option": "Yes, take me there!",
+            "nextId": "4"
+          },
+          {
+            "option": "Not intrigued.",
+            "nextId": "6"
+          }
+        ],
+        "transition": "",
+        "emotion": "neutral",
+        "animation": "none",
+        "extention": "png"
+      },
+      {
+        "id": 4,
+        "serif": "OK, then grab my tail! Prepare to the gravity... ",
+        "speacker": "Ittan Momen",
+        "isStart": false,
+        "next": [
+          {
+            "option": "",
+            "nextId": "5"
+          }
+        ],
+        "transition": "",
+        "emotion": "neutral",
+        "animation": "none",
+        "extention": "png"
+      },
+      {
+        "id": 5,
+        "serif": "Fast and Furiooooooooooooooooooooooooooooooos !!!!!",
         "speacker": "Ittan Momen",
         "isStart": false,
         "next": [],
         "transition": "aboutme",
+        "emotion": "neutral",
+        "animation": "none",
+        "extention": "png"
+      },
+      {
+        "id": 6,
+        "serif": "Bleh...",
+        "speacker": "Ittan Momen",
+        "isStart": false,
+        "next": [],
+        "transition": "",
         "emotion": "neutral",
         "animation": "none",
         "extention": "png"
