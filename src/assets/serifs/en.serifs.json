@@ -79,7 +79,7 @@
           },
           {
             "option": "Why did you create here?",
-            "nextId": "0"
+            "nextId": "14"
           }
         ],
         "transition": "",
@@ -231,6 +231,220 @@
         "isStart": true,
         "next": [],
         "transition": "",
+        "emotion": "neutral",
+        "animation": "none",
+        "extention": "png"
+      },
+      {
+        "id": 14,
+        "serif": "I created here to inform about me for those are searching their staffs.",
+        "speaker": "Tommy",
+        "name": "Tommy",
+        "isStart": true,
+        "next": [
+          {
+            "option": "",
+            "nextId": "15"
+          }
+        ],
+        "transition": "",
+        "emotion": "neutral",
+        "animation": "none",
+        "extention": "png"
+      },
+      {
+        "id": 15,
+        "serif": "If you want information about myself, it's better to go to \"About Me\".",
+        "speaker": "Tommy",
+        "name": "Tommy",
+        "isStart": true,
+        "next": [
+          {
+            "option": "",
+            "nextId": "16"
+          }
+        ],
+        "transition": "",
+        "emotion": "neutral",
+        "animation": "none",
+        "extention": "png"
+      },
+      {
+        "id": 16,
+        "serif": "In the case you want to know about the episodes about this site like making process, you can go to \"Concept\" page. ",
+        "speaker": "Tommy",
+        "name": "Tommy",
+        "isStart": true,
+        "next": [
+          {
+            "option": "",
+            "nextId": "17"
+          }
+        ],
+        "transition": "",
+        "emotion": "neutral",
+        "animation": "none",
+        "extention": "png"
+      },
+      {
+        "id": 17,
+        "serif": "Shall I take you if you want? How do you think?",
+        "speaker": "Tommy",
+        "name": "Tommy",
+        "isStart": true,
+        "next": [
+          {
+            "option": "Take me to \"About Me\".",
+            "nextId": "19"
+          },
+          {
+            "option": "\"Concept\" seems interesting.",
+            "nextId": "23"
+          },
+          {
+            "option": "No thank you. Maybe later.",
+            "nextId": "18"
+          }
+        ],
+        "transition": "",
+        "emotion": "neutral",
+        "animation": "none",
+        "extention": "png"
+      },
+      {
+        "id": 18,
+        "serif": "If you say so... but you can go there from \"Site Map\" on the navigation bar too, when you want.\nDon't miss it!",
+        "speaker": "Tommy",
+        "name": "Tommy",
+        "isStart": true,
+        "next": [],
+        "transition": "",
+        "emotion": "neutral",
+        "animation": "none",
+        "extention": "png"
+      },
+      {
+        "id": 19,
+        "serif": "Gotcha! Now your talking! Ride on my shoulder.",
+        "speaker": "Tommy",
+        "name": "Tommy",
+        "isStart": true,
+        "next": [
+          {
+            "option": "",
+            "nextId": "20"
+          }
+        ],
+        "transition": "",
+        "emotion": "neutral",
+        "animation": "none",
+        "extention": "png"
+      },
+      {
+        "id": 20,
+        "serif": "(Lifting you up)",
+        "speaker": "Tommy",
+        "name": "Tommy",
+        "isStart": true,
+        "next": [
+          {
+            "option": "",
+            "nextId": "21"
+          }
+        ],
+        "transition": "",
+        "emotion": "neutral",
+        "animation": "none",
+        "extention": "png"
+      },
+      {
+        "id": 21,
+        "serif": "Stand by for a scrumble... 3... 2... 1......",
+        "speaker": "Tommy",
+        "name": "Tommy",
+        "isStart": true,
+        "next": [
+          {
+            "option": "",
+            "nextId": "22"
+          }
+        ],
+        "transition": "",
+        "emotion": "neutral",
+        "animation": "none",
+        "extention": "png"
+      },
+      {
+        "id": 22,
+        "serif": "↑ + B Smaaaaaaaaaaaaaaaaaaaaaaaash !!!!!",
+        "speaker": "Tommy",
+        "name": "Tommy",
+        "isStart": true,
+        "next": [],
+        "transition": "aboutme",
+        "emotion": "neutral",
+        "animation": "none",
+        "extention": "png"
+      },
+      {
+        "id": 23,
+        "serif": "Yes! Sure! I put all my passions and philosophy there!\nThen ride on my shoulder.",
+        "speaker": "Tommy",
+        "name": "Tommy",
+        "isStart": true,
+        "next": [
+          {
+            "option": "",
+            "nextId": "24"
+          }
+        ],
+        "transition": "",
+        "emotion": "neutral",
+        "animation": "none",
+        "extention": "png"
+      },
+      {
+        "id": 24,
+        "serif": "(Lifting you up)",
+        "speaker": "Tommy",
+        "name": "Tommy",
+        "isStart": true,
+        "next": [
+          {
+            "option": "",
+            "nextId": "25"
+          }
+        ],
+        "transition": "",
+        "emotion": "neutral",
+        "animation": "none",
+        "extention": "png"
+      },
+      {
+        "id": 25,
+        "serif": "Stand by for a scrumble... 3... 2... 1......",
+        "speaker": "Tommy",
+        "name": "Tommy",
+        "isStart": true,
+        "next": [
+          {
+            "option": "",
+            "nextId": "26"
+          }
+        ],
+        "transition": "",
+        "emotion": "neutral",
+        "animation": "none",
+        "extention": "png"
+      },
+      {
+        "id": 26,
+        "serif": "↑ + B Smaaaaaaaaaaaaaaaaaaaaaaaash !!!!!",
+        "speaker": "Tommy",
+        "name": "Tommy",
+        "isStart": true,
+        "next": [],
+        "transition": "concept",
         "emotion": "neutral",
         "animation": "none",
         "extention": "png"
