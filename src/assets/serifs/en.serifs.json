@@ -486,7 +486,7 @@
       },
       {
         "id": 2,
-        "serif": "Any recomendations here? Hmm... Did you go to \"About Me\" page?\nYou can watch his works and get hypnotized!",
+        "serif": "Any recomendations here? Hmm... Did you go to \"Character List\" page?\nYou can see the detail settings of us. You must get hypnotized!",
         "speaker": "Ittan-momen",
         "name": "Ittan Momen",
         "isStart": false,
@@ -503,7 +503,7 @@
       },
       {
         "id": 3,
-        "serif": "Do you wanna go to \"About Me\"? ",
+        "serif": "Do you wanna go to \"Character List\"? ",
         "speaker": "Ittan-momen",
         "name": "Ittan Momen",
         "isStart": false,
@@ -546,7 +546,7 @@
         "name": "Ittan Momen",
         "isStart": false,
         "next": [],
-        "transition": "aboutme",
+        "transition": "character-list",
         "emotion": "neutral",
         "animation": "none",
         "extention": "png"
