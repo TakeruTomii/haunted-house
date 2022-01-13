@@ -26,16 +26,16 @@
         "isStart": false,
         "next": [
           {
-            "option": "Where is here? I wanna go home...",
-            "nextId": "3"
+            "option": "Yeah, Can I ask one?",
+            "nextId": "5"
           },
           {
             "option": "Nothing. I'll go walking around!",
             "nextId": "4"
           },
           {
-            "option": "Yeah, Can I ask one?",
-            "nextId": "5"
+            "option": "Where is here? I wanna go home...",
+            "nextId": "3"
           }
         ],
         "transition": "",
@@ -45,7 +45,7 @@
       },
       {
         "id": 3,
-        "serif": "Ahh... You've just lost. OK, then here's the exit. Be careful on your way home!!",
+        "serif": "Ahh... You've just lost. OK, then here's the exit.\nBe careful on your way home!!",
         "speaker": "Tommy",
         "isStart": false,
         "next": [],
@@ -72,6 +72,163 @@
         "speaker": "Tommy",
         "name": "Tommy",
         "isStart": false,
+        "next": [
+          {
+            "option": "What can I do here?",
+            "nextId": "6"
+          },
+          {
+            "option": "Why did you create here?",
+            "nextId": "0"
+          }
+        ],
+        "transition": "",
+        "emotion": "neutral",
+        "animation": "none",
+        "extention": "png"
+      },
+      {
+        "id": 6,
+        "serif": "This is a small portfolio site, and you can enjoy simply.\nBasically, there are 3 ways to do here.",
+        "speaker": "Tommy",
+        "name": "Tommy",
+        "isStart": true,
+        "next": [
+          {
+            "option": "",
+            "nextId": "7"
+          }
+        ],
+        "transition": "",
+        "emotion": "neutral",
+        "animation": "none",
+        "extention": "png"
+      },
+      {
+        "id": 7,
+        "serif": "1. Talk to Yokai\nClick it when you find any characters on the screeen.\nThey are called\"Yokai\", a kind of goblins in Japan.",
+        "speaker": "Tommy",
+        "name": "Tommy",
+        "isStart": true,
+        "next": [
+          {
+            "option": "",
+            "nextId": "8"
+          }
+        ],
+        "transition": "",
+        "emotion": "neutral",
+        "animation": "none",
+        "extention": "png"
+      },
+      {
+        "id": 8,
+        "serif": "Enjoy chatting with them. Incidentally, they sometimes guide you to introduce \"Special Pages\".",
+        "speaker": "Tommy",
+        "name": "Tommy",
+        "isStart": true,
+        "next": [
+          {
+            "option": "",
+            "nextId": "9"
+          }
+        ],
+        "transition": "",
+        "emotion": "neutral",
+        "animation": "none",
+        "extention": "png"
+      },
+      {
+        "id": 9,
+        "serif": "2. Move rooms\nDid you talked all Yokais here? At that time, concentrate and awaken your force...\nYou must find some \"Semitransparent Vectors\".",
+        "speaker": "Tommy",
+        "name": "Tommy",
+        "isStart": true,
+        "next": [
+          {
+            "option": "",
+            "nextId": "10"
+          }
+        ],
+        "transition": "",
+        "emotion": "neutral",
+        "animation": "none",
+        "extention": "png"
+      },
+      {
+        "id": 10,
+        "serif": "When you click the vector, you will move to another room and find another Yokai to talk.",
+        "speaker": "Tommy",
+        "name": "Tommy",
+        "isStart": true,
+        "next": [
+          {
+            "option": "",
+            "nextId": "11"
+          }
+        ],
+        "transition": "",
+        "emotion": "neutral",
+        "animation": "none",
+        "extention": "png"
+      },
+      {
+        "id": 11,
+        "serif": "3.Confirm Site Map.\n Can you see the purple navigation bar above me? On the right of it, there is \"Site Map\" icon.",
+        "speaker": "Tommy",
+        "name": "Tommy",
+        "isStart": true,
+        "next": [
+          {
+            "option": "",
+            "nextId": "12"
+          }
+        ],
+        "transition": "",
+        "emotion": "neutral",
+        "animation": "none",
+        "extention": "png"
+      },
+      {
+        "id": 11,
+        "serif": "You can move to important pages like \"About Me\" or \"Concept\" from the menu.\nI organized links there for your convinience.",
+        "speaker": "Tommy",
+        "name": "Tommy",
+        "isStart": true,
+        "next": [
+          {
+            "option": "",
+            "nextId": "12"
+          }
+        ],
+        "transition": "",
+        "emotion": "neutral",
+        "animation": "none",
+        "extention": "png"
+      },
+      {
+        "id": 12,
+        "serif": "In the case you are a recruiter, it's better to click it first to get my information quickly.",
+        "speaker": "Tommy",
+        "name": "Tommy",
+        "isStart": true,
+        "next": [
+          {
+            "option": "",
+            "nextId": "13"
+          }
+        ],
+        "transition": "",
+        "emotion": "neutral",
+        "animation": "none",
+        "extention": "png"
+      },
+      {
+        "id": 13,
+        "serif": "That's all! Go and explore by yourself about the rest.\nYou can ask me whenever you forgot.",
+        "speaker": "Tommy",
+        "name": "Tommy",
+        "isStart": true,
         "next": [],
         "transition": "",
         "emotion": "neutral",
@@ -471,7 +628,7 @@
       },
       {
         "id": 17,
-        "serif": "But I strongly recommend to try again, since we can speak the same serifs at current XD\n See you next time!",
+        "serif": "But I strongly recommend to try again, since we can speak only the same serifs at current XD\n See you next time!",
         "speaker": "Jessie-Khan",
         "name": "Jessie Khan",
         "isStart": false,

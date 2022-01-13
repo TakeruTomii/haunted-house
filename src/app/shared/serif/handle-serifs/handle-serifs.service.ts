@@ -32,7 +32,6 @@ export class HandleSerifsService {
     if(this.is_start){
       // Case : First serif
       let res = this.current_serifs.find(x => x.isStart);
-      this.current_serifs = this.current_serifs.filter(x => !x.isStart);
       this.is_start = false;
 
       if(res['next'].length == 0){
@@ -48,7 +47,6 @@ export class HandleSerifsService {
     } else if(this.next_serif_id == -1) {
       // Case : Last of serifs
       let res = this.current_serifs.find(x => x.id == this.next_serif_id);
-      this.current_serifs = this.current_serifs.filter(x => !(x.id == this.next_serif_id));
       this.discardSerif();
 
       return null;
@@ -56,7 +54,6 @@ export class HandleSerifsService {
     } else {
       // Case : Proceed
       let res = this.current_serifs.find(x => x.id == this.next_serif_id);
-      this.current_serifs = this.current_serifs.filter(x => !(x.id == this.next_serif_id));
 
       if(res['next'].length == 0){
         // Case : no next serifs
