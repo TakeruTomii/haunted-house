@@ -140,7 +140,7 @@
       },
       {
         "id": 9,
-        "serif": "2. Move rooms\nDid you talked all Yokais here? At that time, concentrate and awaken your force...\nYou must find some \"Semitransparent Vectors\".",
+        "serif": "2. Move rooms\nDid you talked all Yokais here? At that time, concentrate and awaken your force...\nYou must find some \"Semitransparent Arrows\".",
         "speaker": "Tommy",
         "name": "Tommy",
         "isStart": true,
@@ -157,7 +157,7 @@
       },
       {
         "id": 10,
-        "serif": "When you click the vector, you will move to another room and find another Yokai to talk.",
+        "serif": "When you click the arrows, you will move to another room and find another Yokai to talk.",
         "speaker": "Tommy",
         "name": "Tommy",
         "isStart": true,
