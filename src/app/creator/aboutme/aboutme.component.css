@@ -635,11 +635,13 @@ details summary:focus {
 }
 
 #akabeko {
-  width: 50%;
-  height: 30%;
+  width: 40%;
+  height: 40%;
   position: absolute;
   top: 50%;
   transform: translate(0%, -50%);
+  display: flex;
+  align-items: center;
 }
 
 #akabeko img {
@@ -654,6 +656,8 @@ details summary:focus {
   display: flex;
   width: max-content;
   min-width: 10em;
+  height: max-content;
+  min-height: 10em;
   font-size: large;
   align-items: center;
   justify-content: center;

@@ -376,7 +376,7 @@
       },
       {
         "id": 22,
-        "serif": "↑ + B Smaaaaaaaaaaaaaaaaaaaaaaaash !!!!!",
+        "serif": "↑ + B Smaaaaaaash !!!!!",
         "speaker": "Tommy",
         "name": "Tommy",
         "isStart": true,
@@ -439,7 +439,7 @@
       },
       {
         "id": 26,
-        "serif": "↑ + B Smaaaaaaaaaaaaaaaaaaaaaaaash !!!!!",
+        "serif": "↑ + B Smaaaaaaash !!!!!",
         "speaker": "Tommy",
         "name": "Tommy",
         "isStart": true,
@@ -938,18 +938,14 @@
     "Akabeko": [
       {
         "id": 1,
-        "serif": "Hey dude! Did ya finished here? Where do ya wanna go?",
+        "serif": "Wow, thank you for reading \"About Me\" to the end.\nDid you enjoy it?",
         "speaker": "Akabeko",
         "name": "Akabeko",
         "isStart": true,
         "next": [
           {
-            "option": "Can I go back the living room?",
+            "option": "",
             "nextId": "2"
-          },
-          {
-            "option": "Just talked to you. I stay a bit more.",
-            "nextId": "3"
           }
         ],
         "transition": "",
@@ -959,24 +955,167 @@
       },
       {
         "id": 2,
-        "serif": "Gacha! That's why I came here! Ride on baby!!!",
+        "serif": "Surrounded by the severest people on qualities, he became a quite thoughtful developer who never spare efforts to make users happy.",
         "speaker": "Akabeko",
         "name": "Akabeko",
         "isStart": false,
-        "next": [],
-        "transition": "./home",
+        "next": [
+          {
+            "option": "",
+            "nextId": "3"
+          }
+        ],
+        "transition": "",
         "emotion": "neutral",
         "animation": "none",
         "extention": "png"
       },
       {
         "id": 3,
-        "serif": "OK! Enjoy more!! You can even stay to death, hee hee!",
+        "serif": "With keen insights like a Ninja, he reveals your true desires and realize systems that fit you perfectly.",
+        "speaker": "Akabeko",
+        "name": "Akabeko",
+        "isStart": false,
+        "next": [
+          {
+            "option": "",
+            "nextId": "4"
+          }
+        ],
+        "transition": "",
+        "emotion": "neutral",
+        "animation": "none",
+        "extention": "png"
+      },
+      {
+        "id": 4,
+        "serif": "Ah... it spends centuries to express his attractions. I'm sorry but I have a proposal now.",
+        "speaker": "Akabeko",
+        "name": "Akabeko",
+        "isStart": false,
+        "next": [
+          {
+            "option": "",
+            "nextId": "5"
+          }
+        ],
+        "transition": "",
+        "emotion": "neutral",
+        "animation": "none",
+        "extention": "png"
+      },
+      {
+        "id": 5,
+        "serif": "Why don't you go to \"Concept\" page? He wrote the details of this site.",
+        "speaker": "Akabeko",
+        "name": "Akabeko",
+        "isStart": false,
+        "next": [
+          {
+            "option": "",
+            "nextId": "6"
+          }
+        ],
+        "transition": "",
+        "emotion": "neutral",
+        "animation": "none",
+        "extention": "png"
+      },
+      {
+        "id": 6,
+        "serif": "It might help you to estimate if he truly matches for your business.\nWill I take there?",
+        "speaker": "Akabeko",
+        "name": "Akabeko",
+        "isStart": false,
+        "next": [
+          {
+            "option": "You bet!",
+            "nextId": "8"
+          },          {
+            "option": "Enough...",
+            "nextId": "7"
+          }
+        ],
+        "transition": "",
+        "emotion": "neutral",
+        "animation": "none",
+        "extention": "png"
+      },
+      {
+        "id": 6,
+        "serif": "It might help you to estimate if he truly matches for your business.\nWill I take there?",
+        "speaker": "Akabeko",
+        "name": "Akabeko",
+        "isStart": false,
+        "next": [
+          {
+            "option": "You bet!",
+            "nextId": "8"
+          },
+          {
+            "option": "No, that’s fine.",
+            "nextId": "7"
+          }
+        ],
+        "transition": "",
+        "emotion": "neutral",
+        "animation": "none",
+        "extention": "png"
+      },
+      {
+        "id": 7,
+        "serif": "I was sure you would love it...",
         "speaker": "Akabeko",
         "name": "Akabeko",
         "isStart": false,
         "next": [],
         "transition": "",
+        "emotion": "neutral",
+        "animation": "none",
+        "extention": "png"
+      },
+      {
+        "id": 8,
+        "serif": "I know you'll come! Akabeko gives you wings... Accio!!",
+        "speaker": "Akabeko",
+        "name": "Akabeko",
+        "isStart": false,
+        "next": [
+          {
+            "option": "",
+            "nextId": "9"
+          }
+        ],
+        "transition": "",
+        "emotion": "neutral",
+        "animation": "none",
+        "extention": "png"
+      },
+      {
+        "id": 9,
+        "serif": "(Flying to your back)",
+        "speaker": "Buffalo_Wings",
+        "name": "Buffalo Wings",
+        "isStart": false,
+        "next": [
+          {
+            "option": "",
+            "nextId": "10"
+          }
+        ],
+        "transition": "",
+        "emotion": "neutral",
+        "animation": "none",
+        "extention": "png"
+      },
+      {
+        "id": 10,
+        "serif": "Buffalo Wings lead you to the promised land!",
+        "speaker": "Akabeko",
+        "name": "Akabeko",
+        "isStart": false,
+        "next": [],
+        "transition": "concept",
         "emotion": "neutral",
         "animation": "none",
         "extention": "png"
