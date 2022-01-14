@@ -148,7 +148,12 @@ export class NavComponent implements OnInit, OnChanges {
 
     // Transit to the Screen
     const path = '/' + page;
-    this.router.navigate([path])
+    if(path === location.pathname) {
+      setTimeout(()=>{location.href = path;}, 500)
+    } else {
+      this.router.navigate([path])
+    }
+
   }
 
   // move to HomeScreenComponent
