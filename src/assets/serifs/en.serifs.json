@@ -1126,18 +1126,14 @@
     "Akabeko": [
       {
         "id": 1,
-        "serif": "Are you going back?",
+        "serif": "Hi! Are you writing a letter to him?",
         "speaker": "Akabeko",
         "name": "Akabeko",
         "isStart": true,
         "next": [
           {
-            "option": "Can I go back the living room?",
+            "option": "",
             "nextId": "2"
-          },
-          {
-            "option": "Just talked to you. I stay a bit more.",
-            "nextId": "3"
           }
         ],
         "transition": "",
@@ -1147,24 +1143,96 @@
       },
       {
         "id": 2,
-        "serif": "Gacha! That's why I came here! Ride on baby!!!",
+        "serif": "If you wanna contact him in another way, I can show you some.",
         "speaker": "Akabeko",
         "name": "Akabeko",
         "isStart": false,
-        "next": [],
-        "transition": "./home",
+        "next": [
+          {
+            "option": "",
+            "nextId": "3"
+          }
+        ],
+        "transition": "",
         "emotion": "neutral",
         "animation": "none",
         "extention": "png"
       },
       {
         "id": 3,
-        "serif": "OK! Enjoy more!! You can even stay to death, hee hee!",
+        "serif": "Do you wanna use the others?",
+        "speaker": "Akabeko",
+        "name": "Akabeko",
+        "isStart": false,
+        "next": [
+          {
+            "option": "LinkedIn",
+            "nextId": "5"
+          },
+          {
+            "option": "No, thanks.",
+            "nextId": "4"
+          }
+        ],
+        "transition": "",
+        "emotion": "neutral",
+        "animation": "none",
+        "extention": "png"
+      },
+      {
+        "id": 4,
+        "serif": "I see. Then I don't disturb you. Keep it on!",
         "speaker": "Akabeko",
         "name": "Akabeko",
         "isStart": false,
         "next": [],
         "transition": "",
+        "emotion": "neutral",
+        "animation": "none",
+        "extention": "png"
+      },
+      {
+        "id": 5,
+        "serif": "All right! Akabeko gives you wings... Accio!!",
+        "speaker": "Akabeko",
+        "name": "Akabeko",
+        "isStart": false,
+        "next": [
+          {
+            "option": "",
+            "nextId": "6"
+          }
+        ],
+        "transition": "",
+        "emotion": "neutral",
+        "animation": "none",
+        "extention": "png"
+      },
+      {
+        "id": 6,
+        "serif": "(Flying to your back)",
+        "speaker": "Buffalo_Wings",
+        "name": "Buffalo Wings",
+        "isStart": false,
+        "next": [
+          {
+            "option": "",
+            "nextId": "7"
+          }
+        ],
+        "transition": "",
+        "emotion": "neutral",
+        "animation": "none",
+        "extention": "png"
+      },
+      {
+        "id": 7,
+        "serif": "To his LinkedIn! Go!",
+        "speaker": "Akabeko",
+        "name": "Akabeko",
+        "isStart": false,
+        "next": [],
+        "transition": "https://www.linkedin.com/in/takeru-tomii-call-me-tommy/",
         "emotion": "neutral",
         "animation": "none",
         "extention": "png"
