@@ -28,6 +28,13 @@
   flex-direction: column;
 }
 
+#upper-part {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  transform: translate(0, 25%);
+}
+
 #name-area {
   padding: 0.1em 1em;
   width: fit-content;
@@ -36,8 +43,36 @@
   border-radius: 5% 1em;
   background: rgba(100, 0, 0, 0.9);
   font-size: x-large;
-  transform: translate(-5%, 25%);
 }
+
+#cancel {
+  width: 2em;
+  height: 2em;
+  border-radius: 3px;
+  background-color: #c9171e;
+  transform: translate(-100%, 50%);
+}
+
+#cancel::before, #cancel:after {
+  position: absolute;
+  content:"";
+  width: 3px;
+  height: 1em;
+  background-color: white;
+  border-color: white;
+  border-radius: 1px;
+  top: 0.5em;
+  left: 45%;
+}
+
+#cancel::before {
+  transform: rotate(45deg);
+}
+
+#cancel:after {
+  transform: rotate(-45deg);
+}
+
 
 #serif-area {
   border-radius: 5% 1em;
@@ -80,6 +115,7 @@
 .disable-click {
   pointer-events: none;
 }
+
 
 /* selection */
 .choice {

@@ -7,7 +7,10 @@
 
     <!-- Serif Area -->
     <div id="serif-box">
-      <div id="name-area">{{name_chara}}</div>
+      <div id="upper-part">
+        <div id="name-area">{{name_chara}}</div>
+        <div id="cancel" (click)="onCancel()"></div>
+      </div>
       <div id="serif-area" (click)="onTalk()">
         <span id="serif-span">{{current_serif}}</span>
       </div>

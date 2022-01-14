@@ -333,4 +333,9 @@ export class SerifComponent implements OnInit {
       .querySelector('#serif-area span')
       .classList.remove('show-triangle');
   }
+
+  //close modal in the middle of conversation
+  onCancel() {
+    this.bsModalRef.hide();
+  }
 }
