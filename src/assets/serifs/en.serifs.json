@@ -47,6 +47,7 @@
         "id": 3,
         "serif": "Ahh... You've just lost. OK, then here's the exit.\nBe careful on your way home!!",
         "speaker": "Tommy",
+        "name": "Tommy",
         "isStart": false,
         "next": [],
         "transition": "/",

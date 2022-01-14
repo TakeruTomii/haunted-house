@@ -69,8 +69,7 @@ export class SerifComponent implements OnInit {
 
   async ngOnInit(): Promise<void> {
     // protect serif area from click while loading
-    const serif_area = document.getElementById('serif-area');
-    serif_area.classList.add('disable-click');
+    this.protectButtons();
 
     // set bgm information
     this.page_sound = this.screenCtx.getSound();
@@ -96,7 +95,7 @@ export class SerifComponent implements OnInit {
     this.initModal();
 
     // remove protection
-    serif_area.classList.remove('disable-click');
+    this.removeProtection()
   }
 
   // Initiate serifs when opening modal
@@ -134,10 +133,10 @@ export class SerifComponent implements OnInit {
       this.current_serif = this.current_data['serif'];
       this.showSerifTriangle();
       this.isTalking = false;
+
     } else {
       // protect serif area from click while loading
-      const serif_area = document.getElementById('serif-area');
-      serif_area.classList.add('disable-click');
+      this.protectButtons();
 
       if(!this.isNextSelection) {
         const next_data = this.serifs.popSerif();
@@ -159,7 +158,7 @@ export class SerifComponent implements OnInit {
         }
 
         // remove protection
-        serif_area.classList.remove('disable-click');
+        this.removeProtection();
 
         // close modal
         this.close.emit();
@@ -174,7 +173,7 @@ export class SerifComponent implements OnInit {
         this.showSelection();
 
         // remove protection
-        serif_area.classList.remove('disable-click');
+        this.removeProtection();
       } else {
         // Case : Proceed
         //play sound next serif
@@ -193,7 +192,7 @@ export class SerifComponent implements OnInit {
         this.setDisplayInfos(this.current_data);
 
         // remove protection
-        serif_area.classList.remove('disable-click');
+        this.removeProtection();
 
         // Case : TransitonTransition
         // Cache in buffer the URL to transit
@@ -336,7 +335,24 @@ export class SerifComponent implements OnInit {
 
   //close modal in the middle of conversation
   onCancel() {
-    this.close.emit();
-    this.bsModalRef.hide();
+    if(!this.isTalking){
+      this.close.emit();
+      this.bsModalRef.hide();
+    }
   }
+
+  private protectButtons () {
+    const serif_area = document.getElementById('serif-area');
+    const cancel_button = document.getElementById('cancel');
+    serif_area.classList.add('disable-click');
+    cancel_button.classList.add('disable-click');
+  }
+
+  private removeProtection () {
+    const serif_area = document.getElementById('serif-area');
+    const cancel_button = document.getElementById('cancel');
+    serif_area.classList.remove('disable-click');
+    cancel_button.classList.remove('disable-click');
+  }
+
 }
