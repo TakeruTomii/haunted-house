@@ -1240,12 +1240,12 @@
     ]
   },
   "Error": {
-    "Akabeko": [
+    "Tommy": [
       {
         "id": 1,
-        "serif": "?????????!?!??!?!?!?!???",
-        "speaker": "Akabeko",
-        "name": "Akabeko",
+        "serif": "????? ????!? !??!?!?!?!???",
+        "speaker": "Tommy",
+        "name": "Tommy",
         "isStart": true,
         "next": [
           {
@@ -1260,9 +1260,26 @@
       },
       {
         "id": 2,
-        "serif": "Look what you've done... You shouldn't have tried the taboo....",
-        "speaker": "Akabeko",
-        "name": "Akabeko",
+        "serif": "I think I said \"As range as common sense. \"... didn't I?",
+        "speaker": "Tommy",
+        "name": "Tommy",
+        "isStart": false,
+        "next": [
+          {
+            "option": "",
+            "nextId": "3"
+          }
+        ],
+        "transition": "",
+        "emotion": "neutral",
+        "animation": "none",
+        "extention": "png"
+      },
+      {
+        "id": 3,
+        "serif": "Look what you've done... You shouldn't have tried it...\nSorry, I can't save you this time. Maybe next life.",
+        "speaker": "Tommy",
+        "name": "Tommy",
         "isStart": false,
         "next": [],
         "transition": "",

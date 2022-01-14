@@ -39,7 +39,7 @@ export class ErrorComponent implements OnInit {
       this.restart_source = await this.soundFunc.createSound('se_drop.mp3', 1, false, '../../../assets/sound/');
     }
 
-    this.openSerifs("Error", "Akabeko");
+    this.openSerifs("Error", "Tommy");
     this.modalRef.content.close.subscribe(()=>{
       this.showGameOver();
     });
