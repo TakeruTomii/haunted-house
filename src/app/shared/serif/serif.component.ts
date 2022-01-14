@@ -336,6 +336,7 @@ export class SerifComponent implements OnInit {
 
   //close modal in the middle of conversation
   onCancel() {
+    this.close.emit();
     this.bsModalRef.hide();
   }
 }
