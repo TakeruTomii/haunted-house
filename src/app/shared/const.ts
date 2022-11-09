@@ -168,6 +168,18 @@ export const SKILL_SLIDES = [
     'title': 'Language',
     'rows': [
       {
+        'item': 'C#',
+        'rate': 5
+      },
+      {
+        'item': 'JavaScript',
+        'rate': 5
+      },
+      {
+        'item': 'TypeScript',
+        'rate': 5
+      },
+      {
         'item': 'HTML',
         'rate': 5
       },
@@ -176,24 +188,10 @@ export const SKILL_SLIDES = [
         'rate': 5
       },
       {
-        'item': 'JavaScript',
-        'rate': 5
-      },
-      {
-        'item': 'C#',
-        'rate': 5
-      },      {
         'item': 'Python',
         'rate': 5
-      },
-      {
-        'item': 'Java',
-        'rate': 3
-      },
-      {
-        'item': 'TypeScript',
-        'rate': 3
       }
+
     ]
   },
   // Frameworks
@@ -213,16 +211,8 @@ export const SKILL_SLIDES = [
         'rate': 5
       },
       {
-        'item': 'Node.js',
-        'rate': 3
-      },
-      {
         'item': 'Flask',
         'rate': 3
-      },
-      {
-        'item': 'Spring Framework',
-        'rate': 2
       }
     ]
   },
@@ -232,7 +222,7 @@ export const SKILL_SLIDES = [
     'rows': [
       {
         'item': 'Windows',
-        'rate': 4
+        'rate': 5
       },
       {
         'item': 'Linux(CentOS)',
@@ -267,32 +257,32 @@ export const SKILL_SLIDES = [
     'title': 'Cloud',
     'rows': [
       {
-        'item': 'Azure Logic Apps',
-        'rate': 5
-      },
-      {
         'item': 'Azure Functions',
         'rate': 5
       },
       {
-        'item': 'Azure API Management',
-        'rate': 4
-      }
-      ,
-      {
-        'item': 'Azure App Service',
-        'rate': 3
+        'item': 'Azure Logic Apps',
+        'rate': 5
       },
       {
         'item': 'Azure Strage Blob',
-        'rate': 3
-      },
-      {
-        'item': 'Azure DevOps',
-        'rate': 2
+        'rate': 5
       },
       {
         'item': 'Azure SQL Database',
+        'rate': 4
+      },
+      {
+        'item': 'Azure API Management',
+        'rate': 4
+      },
+
+      {
+        'item': 'Azure App Service',
+        'rate': 4
+      },
+      {
+        'item': 'Azure DevOps',
         'rate': 2
       }
     ]
