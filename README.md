@@ -1,27 +1,35 @@
 # HauntedHouse
+This is a portfolio site that introduce myself to Recruiters.
 
+[Click here if you'd like to confirm this project immidiately.](https://www.samayou.net/)
+
+
+## Environment
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.1.2.
 
 ## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+***Only for the first time**
 
-## Code scaffolding
+* Create ``.env`` file right under the ``haunted-house`` directory.
+* Copy and paste the dummy value on the ``.env`` file. ***On production environment, These variables are stored in system environment variables on your server.** 
+```.env
+MAIL_SEND_URL=http://localhost:60000/dummy
+MAIL_SEND_KEY=DUMMYAUTHENTICATIONKEYOFMAILAPI
+```
+* Execute the commands below.
+```
+npm install
+npm run write-env
+```
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
-## Build
+##### Note: ``write-env`` is a command to create a configration file. ```(/src/environments/dynamic.ts) ```
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+**Deployment to a dev server**
 
-## Running unit tests
+```
+npm run dev
+```
+ Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
