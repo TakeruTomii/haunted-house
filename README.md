@@ -12,7 +12,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 ***Only for the first time**
 
 * Create ``.env`` file right under the ``haunted-house`` directory.
-* Copy and paste the dummy value on the ``.env`` file. ***On production environment, These variables are stored in system environment variables on your server.** 
+* Copy and paste the dummy values on the ``.env`` file. ***On production environment, These variables are stored in system environment variables on your server.** 
 ```.env
 MAIL_SEND_URL=http://localhost:60000/dummy
 MAIL_SEND_KEY=DUMMYAUTHENTICATIONKEYOFMAILAPI
